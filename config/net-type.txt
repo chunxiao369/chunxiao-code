@@ -1,0 +1,2 @@
+Broadcom Netlink(TM) Fast Ethernet
+Intel(R) PRO/Wireless 3945ABG Network Connection

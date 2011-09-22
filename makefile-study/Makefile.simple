@@ -1,0 +1,7 @@
+#
+#
+
+CSRC= a.c
+OBJ= $(CSRC:.c=.o)
+all:
+	@echo ${OBJ}

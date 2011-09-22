@@ -1,0 +1,51 @@
+/**
+ * Dec, 12, 2010
+ */
+|----sqlite
+     SQLite is a software library that implements a self-contained,
+     serverless, zero-configuration, transactional SQL database engine.
+     SQLite is the most widely deployed SQL database engine in the world.
+     The source code for SQLite is in the public domain.
+
+/**
+ * Dec, 13, 2010
+ */
+|----Swep rebel
+     watch phone
+
+|----Justin Drew Bieber
+     (born March 1, 1994) is a Canadian pop-R&B singer
+
+/**
+ * Dec, 14, 2010
+ */
+|----spider
+     爬虫为搜索引擎从万维网上下载网页。
+     传统爬虫从一个或若干初始网页的URL开始，
+     获得初始网页上的URL，
+     在抓取网页的过程中，
+     不断从当前页面上抽取新的URL放入队列，
+     直到满足系统的一定停止条件。
+|----rpc
+     http://shake863.javaeye.com/blog/215834
+
+/**
+ * Dec, 15, 2010
+ */
+|----tcp half close
+     when use rsh -l root 10.1.26.128 sort < a.txt
+
+|----magic number
+     0x077CB531 一个数末尾0的个数
+     0x5F3759DF 将一个数开平方并取倒
+     http://graphics.stanford.edu/~seander/bithacks.html
+
+/**
+ * Dec, 17, 2010
+ */
+|----google app inventor
+|----The Men Who Stole the World
+     Wednesday, Nov. 24, 2010
+     The Men Who Stole the World
+     By Lev Grossman
+     http://www.time.com/time/specials/packages/printout/0,29239,2032304_2032746_2032903,00.html

@@ -1,0 +1,18 @@
+[user]
+	name = xu.chunxiao
+	email = xu.chunxiao@embedway.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	showconfig = config -l
+[merge]
+	tool = vimdiff

@@ -1,0 +1,26 @@
+/**
+ * Feb, 12, 2010
+ */
+|----Ubuntu mem
+     echo 3 | sudo tee /proc/sys/vm/drop_caches
+|----deb
+     1. 查看deb包含有哪些文件(不安装)
+         $ dpkg -c xxx.deb // 安装前根据deb文件查看
+         $ dpkg -L debname // 安装后根据包名查看
+     2. 安装deb包
+         $ dpkg -i xxx.deb
+         注意，如果提示错误，可以加参数—force-all强制安装，但不推荐这样做
+     3. 查看某个文件属于哪个deb包
+         $ dpkg -S filepath
+     4. 移除deb包
+         $ dpkg -r debname
+     5. 制作deb包有三种方法
+|----pdf viewer
+     sudo apt-get install xpdf
+     sudo apt-get install xpdf-chinese-simplified
+     sudo apt-get install xpdf-chinese-traditional
+/**
+ * Feb, 15, 2010
+ */
+|----OMAPI
+     OMAPI - Object Management Application Programming Interface

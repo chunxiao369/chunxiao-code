@@ -1,0 +1,35 @@
+
+/*
+ * Jun, 27, 2010
+ */
+|----About file share
+     process table----file table----v node table
+     user mode        kernel mode   device driver
+     多个进程打开同一个文件时，
+     会有多个进程表项和多个文件表项，
+     只有一个v结点表项
+/*
+ * Jun, 28, 2010
+ */
+|----阿里巴巴 芝麻开门的意思
+     为天地立心, 为民生立命,
+     为往圣继绝学,为万世开太平.
+     总理引用北宋大儒张载的名言, 可谓用心良苦.
+/*
+ * Jun, 30, 2010
+ */
+|----multisim要学一下这个东西
+     至少了解一下
+     verilog HDL与VHDL不是一个东西
+     verilog HDL与C语言有相似之处
+     cpld 和 fpga 中这两种语言皆可以编程
+     
+/*
+ * Jul 02, 2010
+ */ 
+|----rpm -qpl 
+     rpm2cpio
+     cpio -ivd
+     cat rpmforge-release-0.5.1-1.el5.rf.i386.rpm | rpm2cpio | pax -r
+     
+ 

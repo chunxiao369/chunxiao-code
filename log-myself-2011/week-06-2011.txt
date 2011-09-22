@@ -1,0 +1,18 @@
+/**
+ * Feb, 09, 2010
+ */
+|----SSL/TLS
+     secure socket layer
+
+|----dns response
+     dns响应包中有指针的存在, 实际上就是一个偏移地址,
+     是从udp的数据内容开始往后算的.
+     该指针的存在是为了节省存储域名的空间, 格式要见数据包.
+
+/**
+ * Feb, 10, 2010
+ */
+|----FTP 2 mode
+     FTP支持两种模式, 
+     一种方式叫做Standard (也就是 PORT方式, 主动方式), 
+     一种是Passive (也就是PASV, 被动方式)

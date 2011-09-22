@@ -1,0 +1,53 @@
+/*
+ * Mar, 14, 2010
+ */
+ATX电源接口。
+
+/*
+ * Mar, 14, 2010
+ */  
+1.EIP寄存器里存储的是CPU下次要执行的指令的地址。
+也就是调用完fun函数后，让CPU知道应该执行main函数中的printf（"函数调用结束"）语句了。
+2.EBP寄存器里存储的是是栈的栈底指针，通常叫栈基址，这个是一开始进行fun()函数调用之前，由ESP传递给EBP的。
+（在函数调用前你可以这么理解：ESP存储的是栈顶地址，也是栈底地址。）
+3.ESP寄存器里存储的是在调用函数fun()之后，栈的栈顶。并且始终指向栈顶。
+
+/*
+ * Mar, 14, 2010
+ */
+ posix: portable operating system interface for computing system.
+在源代码一级可以保证在多种操作系统上移植和运行。
+要记得使用#include <unistd.h>
+/*
+ * Mar, 15, 2010
+ */
+ 用特定端口远程cp和登录
+ scp -P 4243 release.sh cxxu@ipaddress:/home/cxxu/
+ ssh cxxu@ipaddress -p 4243
+ wuhan ip 61.183.0.93
+
+/*
+ * Mar, 16, 2010
+ */
+ 函数的返回地址放在4（%ebp）?怎么打印出来？
+ %ebp应该为当前函数的栈基址，%esb应该为栈顶。
+ %eip指向要执行的代码的地址。
+
+ 函数调用之前会将函数的返回地址压栈，然后将调用函数的栈的基址压栈。
+ 然后是形式参数，然后是局部变量。
+
+ struct sk_buff可能是linux网络代码中最重要的数据结构，它表示接收或发送数据包的包头信息，并包含很多成员变量供网络代码中的各子系统使用。
+
+/*
+ * Mar, 17, 2010
+ */
+ 在执行程序时，操作系统为进程分配一块栈空间来存储函数栈帧，esp寄存器总是指向栈顶.
+ 在x86平台上这个栈是从高地址向低地址增长的，我们知道每次调用一个函数都要分配一个栈帧来存储参数和局部变量，
+
+/*
+ * Mar, 19, 2010
+ */
+ The proof of the pudding is in the eating. 布丁好不好吃了才知道
+ Actions speak louder than words. 事实胜于雄辩
+设置网卡混杂模式 ifconfig eth0 promisc up
+

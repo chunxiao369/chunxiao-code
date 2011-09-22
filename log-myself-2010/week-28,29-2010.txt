@@ -1,0 +1,81 @@
+
+/*
+ * Jun, 27, 2010
+ */
+|----bug a house
+     目前算下来，只用住房供给金贷款，我能买85万的房子。
+     可是现在首付不能支付那么多，
+     如果买新房，25.5万是要的
+     如果买二手房，估计只能买80万的房子，首付得26万，如果不交营业税的话。
+
+请教二舅关于买房子的事情
+二舅您好！
+    先祝二舅身体健康；祝二妗子身体健康；孔雀天天向上。
+    二舅，主要想问你一下对现在买房的看法，也是为了自己居住，也是为了投资。
+    最近我一直在外面看房，因为想在年底之前把房子定下来。我目前是这样想的，房价一直在涨，手里的工资放在银行肯定是会贬值，不如狠下心先把房子买下来，即使先买个一室户(40平米左右)的房子。
+    现在我在已经看到一家能够自己承担起的房子，是期房，明年交房。总价七十万左右，43平米。这套房子我能承担起的原因是今年只交一成首付，在明年交房时再交两成。该房的地段在上海松江区新桥镇，相对较偏僻，没有地铁，不过根据官方的消息说，明年十月份将有高铁从该处通车。我现在工作一年，两个人手头上差不多有近六万块，明年这个时候也差不多能再存十万块，觉得买下来应该没有什么问题。所以想听一下二舅的意见。
+    现在政府正在酝酿出台二套房产税，不知真的出台后会有什么结果。我觉得房子价格不太可能会降，以后的形式还是会看涨。因为政府要保持经济增长，开发商要赚更多的钱，不利于官商的政策应该不会出台。所以还是想在这段房价相对平稳的时间买下来。
+    听我妈说，你工作之余还要读博士课程，很辛苦；二妗子正处于创业阶段，也挺不容易。工作之余多注意休息！
+    我妈说你七月底会来上海，那时候再详细问你也行。
+
+
+/*
+ * Jul 17, 2010
+ */
+|----Ubuntu download address
+     http://xiexiejiao.cn/linux/ubuntu-10-04-download.html
+     
+
+/*
+ * Jul, 27, 2010
+ */
+|----I install the XP and shared a file with virtual box
+     In XP, use the following command to get the shared file.
+     net use E: \\vboxsvr\mnt
+     
+     install CentOS5.3 in WIN7 with virtual box
+     in linux
+     mount /dev/cdrom /media/
+     ./VBoxLinuxAdditions.sh
+     mount -t vboxsf E-disk /mnt/E-disk/
+     that's all
+
+/*
+ * Jul, 16, 2010
+ */
+|----显示现在是今年的第几周
+     date +%U Sunday is first day
+     date +%W Monday is first day
+     date 102016082010
+     oct 20, 16:08, 2010
+|----freeBSD, powerPC     
+     
+     
+/*
+ * Jul, 20, 2010
+ */
+|----news
+     RackSpace 宣布开源其云计算技术OpenStack。OpenStack采用Apache 2.0许可证发布源代码。
+
+|----
+     
+     /*
+ * Jul, 16, 2010
+ */
+|----显示现在是今年的第几周
+     date +%U Sunday is first day
+     date +%W Monday is first day
+     date 102016082010
+     oct 20, 16:08, 2010
+|----freeBSD, powerPC     
+     
+     
+/*
+ * Jul, 20, 2010
+ */
+|----news
+     RackSpace 宣布开源其云计算技术OpenStack。OpenStack采用Apache 2.0许可证发布源代码。
+
+|----
+     
+     

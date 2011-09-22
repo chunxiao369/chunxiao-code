@@ -1,0 +1,65 @@
+/*
+ * Mar, 21, 2010
+ */ 
+ git branch -d(主分支已经有了要删除分支的改变)
+ 和
+ git branch -D(强行删除分支) 
+ 
+ (UTP cable)Unshielded Twisted Paired 
+ SERDES mode SERializer/DESerializer的缩写。
+ 
+/*
+ * Mar, 22, 2010
+ */  
+一、
+ PHY是物理接口收发器，它实现物理层。
+ 网卡工作在osi的最后两层，物理层和数据链路层.很多网卡的这两个部分是做到一起的。
+ 
+ 物理层定义了数据传送与接收所需要的电与光信号、线路状态、时钟基准、数据编码和电路等，并向数据链路层设备提供标准接口。
+ 物理层的芯片称之为PHY。
+ 
+ 数据链路层则提供寻址机构、数据帧的构建、数据差错检查、传送控制、向网络层提供标准的数据接口等功能。
+ 以太网卡中数据链路层的芯片称之为MAC控制器。
+ 
+ 他们之间的关系是pci总线接mac总线，mac接phy，phy接网线（当然也不是直接接上的，还有一个变压装置）。
+ PHY和MAC之间是如何传送数据和相互沟通的。
+ 通过IEEE定义的标准的MII/GigaMII(Media Independed Interfade，介质独立界面)界面连接MAC和PHY。
+ 这个界面是IEEE定义的。MII界面传递了网络的所有数据和数据的控制。
+
+ 采用MAC（媒介控制芯片）与 PHY（物理层芯片）相分离的架构。
+二、 
+ 暂时这样理解函数调用，假设函数fun_1要调用func_2，首先将func_2的返回地址放入栈中，然后将func_1的栈的基地址放入栈中
+
+/*
+ * Mar, 24, 2010
+ */
+一、 cat /proc/sys/kernel/printk 6 4 1 7
+ 上面显示的4个数据分别对应控制台日志级别、默认的消息日志级别、最低的控制台日志级别和默认的控制台日志级别。
+
+二、查下802.3
+
+/*
+ * Mar, 25, 2010
+ */
+du -sh 
+
+/*
+ * Mar, 26, 2010
+ */ 
+人物: Jeffrey Scott 
+ "Jeff" Raikes (born May 29, 1958) 
+ is the chief executive officer of the Bill & Melinda Gates Foundation. 
+ Until early 2008 Raikes was the President of the Microsoft Business Division 
+ and oversaw the Information Worker, Server & Tools Business and Microsoft Business Solutions Groups. 
+人物: 陆奇
+ 复旦大学，CMU，博士，雅虎，微软。
+
+苏大的VPN就是用的Juniper公司的。
+ 
+古之成大事者，不唯有超世之才，亦必有坚韧不拔之志也。
+
+微软与谷歌的竞争至少有两方面，outlook与gmail, office与google doc.
+保密性与存储空间大，visio作图与方便快捷。
+
+file -b *类型有ASCII text, ASCII C program text, broken symbolic link, symbolic link
+

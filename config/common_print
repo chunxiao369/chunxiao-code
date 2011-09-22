@@ -1,0 +1,22 @@
+
+
+/mnt/hgfs/D-disk/pa_materials/ame_std/trunk/source/modules
+
+printf("Line: %d, Just for debug...\n", __LINE__);
+
+int i;
+for (i = 0; i < PACKET_SIZE; i++)
+{
+    if (i % 16 == 0)
+        printf("\n");
+    printf("%02x ", ptr[i]);
+}
+printf("\n");
+
+/* Embedway-cxxu start */
+printf("for debug, @func: %s, line: %d.\n", __FUNCTION__, __LINE__); 
+/* Embedway-cxxu end */
+
+/* Embedway-cxxu start */
+printf("for debug, @func: %s, line: %d.ud_mask: %016x, ip_mask: %016x\n", __FUNCTION__, __LINE__, ud_mask, ip_port_mask); 
+/* Embedway-cxxu end */

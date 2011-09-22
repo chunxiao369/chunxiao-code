@@ -1,0 +1,27 @@
+/*
+ * Mar, 10, 2010
+ */
+Steve Paul Jobs, 1955年2月24日 是苹果公司的现任首席运行官兼创办人之一，同时也是前Pixar动画公司的董事长及行政总裁（Pixar已在2006年被迪士尼收购）。乔布斯还是迪士尼公司的董事会成员和最大个人股东。乔布斯被认为是计算机业界与娱乐业界的标志性人物，同时人们也把他视作麦金塔计算机、iPod、iTunes商店、iPhone等知名数字产品的缔造者。2007年，史蒂夫・乔布斯被《财富》杂志评为了年度最伟大商人。
+
+/*
+ * Mar, 11, 2010
+ */
+Lawrence Joseph "Larry" Ellison (born August 17, 1944) 
+is an American entrepreneur and the co-founder and CEO of Oracle Corporation, a major enterprise software company.
+
+Sergey Brin (born August 21, 1973) 
+is a Soviet-born American computer scientist best known as the co-founder of Google, Inc., the world’s largest Internet company, based on its search engine and online advertising technology.
+
+Lawrence "Larry" Page 
+is an American computer scientist best known as co-founder of Google Inc.
+
+/*
+ * Jan, 04, 2011
+ */
+Paul Buchheit
+前Gmail 的设计师
+Google AdSense工程师
+FriendFeed 创始人
+现 Facebook 工程师
+Paul Buchheit
+

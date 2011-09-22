@@ -1,0 +1,112 @@
+/*
+ * Mar, 28, 2010
+ */
+|----学会使用 tar -C 和rpm -d命令
+
+|----君不密则失臣，臣不密则失身，机事不密则害成。
+     Meet new people even if they look different to you.
+
+|----Makefile学习
+ |---Makefile里面的"=" （后面定义的变量前面也能用）与“:=”（变量只能用前面的）,
+ |---执行的shell在终端不显示要加"@"
+
+|----WindowsXP ipconfig /flushdns ipconfig /displaydns
+     /etc/rc.d/init.d/nscd restart
+
+/*
+ * Mar, 29, 2010
+ */
+|----Makefile学习
+ |---特殊变量VPATH, 使用方法: VPATH = src : ../headers, 将到指定的这两个目录下去查找文件
+ |---关键字vpath, 使用方法： vpath %.h ../header vpath %.c src : source
+ |---可以充分利用gcc当中的-D选项，编译出程序的不同版本。     
+/*
+ * Apr, 02, 2010
+ */
+|----chgrp chunxiao *, chown chunxiao *
+ 
+/*
+ * Apr, 03, 2010
+ */
+|----STP(spanning tree protocol), BPDU(bridge protocol data unit), trunk被翻译成为了中继
+ |---STP是一个二层协议，使用一种特殊目的的算法用来发现网络中的物理环路并产生一个逻辑上无环的拓扑。
+     STP创建了一个无环树结构，由覆盖整个二层网络的叶和枝组成。
+     由Digital Equipment Corporration开发，这个公司后来被收购并改名为Compaq公司。
+ |---为什么出现了环？ 有环无STP的后果是什么？
+     是为了提供冗余，
+     将导致广播风暴和桥接表(交换机上的MAC表)损坏，分别是怎样造成的呢？
+     |        ...        |   ...  |
+     | AA-AA-AA-AA-AA-AA | port 1 |
+     | BB-BB-BB-BB-BB-BB | port 2 |
+     |        ...        |   ...  |
+ |---STP术语
+  |--根桥，也可称为根交换机，是桥ID最低的网桥，根桥是STP中的老大，所有的决定（哪一个端口阻塞，哪一个端口转发）都是由根桥的判断来做出选择。
+     根桥是怎样被选举出来的？ 根桥的选出也是通过交换机之间交换BPDU的信息选出来的
+  |--桥ID, 桥ID是由桥的优先级和基本MAC地址的结合决定的, 桥ID最低的网桥就成为根桥, 其他的交换机就叫做非根桥
+     8个字节, 2个字节网桥优先级, 6个字节MAC地址
+     [是STP的第一步，主要是通过BPDU交换信息，确定出最小桥ID的桥]
+  |--根端口, 是指直接连接到根桥的链路所在的端口, 或者到根桥的路径最短的端口
+     根端口的选举: 
+     有多条链路连到根桥时, 看端口的开销哪个更小, (开销的计算方法?)
+     有多个端口的开销相同时, 看哪个桥ID小一些
+     有多条链路, 并且又是来自同一个交换机(即桥ID相同),使用端口号最低的那条链路 
+  |--指定端口, 根端口或者有最低开销的端口就是指定端口, 被标记为转发端口
+  |--收敛, 当网桥上的所有端口都转变到转发或者阻塞状态时, 就产生了收敛. 在收敛完成之前, 交换机不能转发任何数据
+  
+  |--开销的计算方法, 只与链路的带宽相关, 带宽越高, 开销越小. 
+  |--端口的ID, 由端口的优先级和端口号组成
+  |--有个更好的BPDU的概念
+     端口收到BPDU后会记录下来，然后如果收到更好的BPDU，就会替换。
+     
+/*
+ * Mar, 29, 2010
+ */ 
+|----google Gadgets(小工具)
+|----
+     rlogin登录，用的是513端口，需要配置的有一个文件，是/etc/xinetd.d/rlogin。
+　　 然后在iptables里面开放出513端口即可。iptables -I INPUT -p tcp --dport 513 -j ACCEPT
+     Linux: rlogin ipaddress
+     看下telnet 与 rlogin等的区别
+     一个是/etc/xinetd.d/rsh, 一个/etc/xinetd.d/telnet，还一个/etc/xinetd.d/gssftp也看一下。 
+     /etc/service也可以更改某协议的默认端口。
+     
+     相关配置意思如下：
+     service telnet 
+     { 
+       disable　　　　 = no #激活 telnet 服务,no 
+       bind 　　　　　 = 210.45.160.17 #your ip 
+       only_from 　　　= 210.45.0.0/16 #只允许 210.45.0.0 ~ 210.45.255.255 这个网段进入 
+       only_from 　　　= .edu.cn #只有教育网才能进入！ 
+        no_access 　　　= 210.45.160.{115,116} #这两个ip不可登陆 
+       access_times　　= 8:00-12:00 20:00-23:59 # 每天只有这两个时间段开放服务 
+       ...... 
+     } 
+     解决ssh 登录慢的问题的方法?
+
+     /etc/xinetd.d/rlogin /etc/xinetd.d/telent no exist? 
+     How should we do? 
+     yum install telnet-server
+     yum install rsh-server
+     
+     Two files will be fount in /etc/xinetd.d/
+
+     service xinetd restart
+     OK!
+
+|----CUnit测试工具（可以使用进行白盒测试）
+|----/usr/lib/ and /usr/shared is the two bigger directory.
+
+/*
+ * Mar, 29, 2010
+ */ 
+|----系统开启时为什么会发ARP（两个好处）
+      1. 为了让交换机学习到自己的MAC
+      2. 看看有没有IP冲突
+|----再搞一下sed命令，把失效的符号链接都去掉。
+     |----将`(大键盘1键左边)和‘之间的内容取出的sed命令sed -e "s%.*\`\(.*\)'%\1%"
+     |----将最后一个/右边的内容取出sed -e "s%.*\/\(.*\)%\1%"
+
+/*
+ * Apr, 02, 2010
+ */ 
+|----Libxml学习 

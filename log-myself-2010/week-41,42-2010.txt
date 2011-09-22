@@ -1,0 +1,110 @@
+
+/*
+ * Oct, 16, 2010
+ */
+|----html js study
+     常用js示例收集
+     you'll see many examples. 
+/*
+ * Oct, 18, 2010
+ */
+|----Redhat linux上安装gcc编译器
+     http://www.360doc.com/content/05/1024/22/126_23492.shtml
+     库文件路径还没有设置
+     tar xzvf gcc-?.?.?.tar.gz $srcdir
+     另新建一个文件夹
+     在里面执行$srcdir/configure --prefix=
+     这样的话，打包出来的文件没有动，安装又安装到了一个新的地方，类似于windows下面的绿色程序
+/*
+ * Oct, 19, 2010
+ */     
+|----lxr.linux.no
+          
+
+/*
+ * Oct, 11, 2010
+ */
+|----
+     周孝正, 人大教授
+     霍多尔科夫斯基
+     十一在舅家里知道了这个人
+     与黄光裕有所相同
+
+/*
+ * Oct, 15, 2010
+ */
+|----how to get the Machine-digit
+     linux: getconf LONG_BIT
+     windows: systeminfo
+
+/*
+ * Sep, 20, 2010
+ */
+|----symbolic link
+     hard link
+
+     file system: inode
+     user: name
+     我们看到只是name
+     我们去操作一个文件名的时候实际上是去操作实际的文件
+
+     hard link: just one inode have more names
+     symbolic link: 
+     符号链接实际上是一种特殊的文件类型
+     这种文件包含了另一个文件的任意一个路径名
+/*
+ * Sep, 21, 2010
+ */
+|----skbuff study
+     see file: ip数据流走向图解
+|----preempt_disable
+     /*
+      *禁止内核态抢占
+      */
+     preempt_enable
+     rmb, wmb, mb -> barrier();
+     /*
+      *最终是barrier
+      *__asm__ __volatile__("": : :"memory");
+      *即内存屏障
+      *中间的语句禁止了编译器的优化
+      *仅此而已?
+      */
+
+/*
+ * Sep, 22, 2010
+ */
+|----Ingo malnar, from wiki.
+    Ingo Molnár, currently employed by Red Hat, is a Hungarian Linux hacker.
+    He is best-known for his contributions to the operating system in terms of
+    security and performance. Some of his additions to the Linux include an O(1)
+    and CFS scheduler in the 2.6.x kernel series, the in-kernel TUX HTTP / FTP
+    server, as well as his work to enhance thread handling.[1] He also wrote a
+    kernel security feature called "Exec Shield", which prevents stack-based
+    buffer overflow exploits in the x86 architecture by disabling the execute
+    permission for the stack. One of his recent projects is the realtime
+    preemption patch, which aims to bring hard-realtime scheduling latencies
+    (50–60 microseconds worst-case execution time) to Linux.
+    Most recently, he has been working on the Completely Fair Scheduler (CFS), an
+    O(log n) scheduler that is included as of the 2.6.23 Linux.[2]
+ 
+/*
+ * Sep, 22, 2010
+ */
+|----linux driver
+     fasync func
+     fcntl func --> mouse interrupt also call fasync func
+                --> linux kernel get keyboard interrupt
+                --> struct class study
+                -->
+
+     when use func class_create
+     see error: Unknown symbol class_create
+     when use MODULE_LICENSE("GPL"); that's ok!
+     at last, see file class.c
+     EXPORT_SYMBOL_GPL(class_create);
+
+     /dev/hello
+     /sys/class/hello/hello/
+     
+

@@ -1,0 +1,86 @@
+﻿/*
+ * May, 22, 2010
+ */
+|----学习嵌入式软件的一些体会
+  1.自已的一些经历
+     用汇编写过交通灯控制小程序；
+     搞过arm上跑uc/osII和uclinux;
+     最近在搞mips;
+  2.应该怎样学习代码
+     推荐看busybox的代码，每一个命令都可以学习很多东西。
+     ls, cd: 学会如何组织和处理文件
+     iptables: 学习网络接口函数
+     top:      学习linux的进程线程的管理
+  3.怎样入手自己的hello, world
+     推荐使用skyeye模拟器
+  4.一点忠告
+     要想学习不要急于求成，自己深深体会到了欲速则不达的道理，
+     除非你认为自己是天才。
+     找到的资料最好是官方网站上的，哪怕是英文的文档，
+     里面都会有你想要的答案。
+     不要出现问题了，就去问google和baidu，这样的后果会很严重，
+     就是你不会形成一个系统的解决问题的方法。
+|----tony嵌入式论坛发文，结果还要审核。
+希望能从大师的轨迹中体会到些什么。
+
+抄袭加总结之后，先抛砖如下：
+
+     1.只要还有所谓的软件产业在，
+       那么，优秀的开发人员永远是核心竞争力； 
+     2.一个技术优秀的公司，可以成为一个优秀的公司，
+       但很难成为一个卓越的公司，技术能让人升天，也能让人入地；
+     3.MOP面向市场(Money)编程是最牛的编程方法。
+
+玉呢？期待中——
+
+
+/*
+ * May, 17, 2010
+ */
+|----How to use "od" command?
+     od
+|----MIPS CP0 register
+     > Cause : 00000008 ʲôԭ����cpu�쳣���ж�: 008
+     > Status: 1000cce2 Э������3����(Ϊ��֧�ָ�������)
+
+/*
+ * May, 20, 2010
+ */
+|----Advanced RISC Machines
+     microcomputer without interlocked pipeline stages
+     millions of instructions per second
+|----target applications
+     unified threat management appliances,
+     content-aware switches,
+     application-aware gateways,
+     LTE basestation,
+|----����ѧϰ
+     multiply-and-accumulate unit�˷��ۼӵ�Ԫ
+     modular exponentiationģ������
+     cryptographic�����
+     galois field multiplication�������ϵĳ˷�
+     federal information processing standards����������Ϣ������׼
+|----pppoe dial command
+     -I ��������eth, -L ��������IP�� -R �����ṩ��ip
+     cat /proc/sys/net/ipv4/ip_forward
+     pppoe-server -I eth1 -L 11.1.26.128 -R 192.168.0.100/24
+
+     iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -j SNAT --to 10.1.26.128
+     --to ָ��Ҫת���ip
+     /usr/sbin/adsl-startup /usr/sbin/adsl-connect
+
+/*
+ * May, 21, 2010
+ */
+|----service named stop
+|----tcpdump study
+     tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \) 
+     tcpdump ip host 210.27.48.1 and ! 210.27.48.2
+     tcpdump tcp port 23 host 210.27.48.1
+     tcpdump -i eth1 src host 211.167.237.199
+|----tcpreplay study     
+     tcpreplay -i eth1 -M200 *.pcap 2&>1
+|----netstate -i
+|----https://support.broadcom.com/Core/Login.aspx
+|----linux shell ����ע�ͷ���
+

@@ -1,0 +1,555 @@
+#ifndef __USE_FILE_OFFSET64
+#define __USE_FILE_OFFSET64
+#endif
+
+#ifndef __USE_LARGEFILE64
+#define __USE_LARGEFILE64
+#endif
+
+#ifndef _LARGEFILE64_SOURCE
+#define _LARGEFILE64_SOURCE
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdint.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <pcap.h>
+#include <signal.h>
+#include <netinet/if_ether.h>
+
+#define ETH_ALEN		6
+#define ETH_TYPE_IP		0X0800
+#define ETH_TYPE_VLAN		0x8100
+#define IPPRO_UDP		0x11
+#define IPPRO_TCP		0x06
+#define GTPv1_C_PORT		2123
+#define GTPv1_U_PORT		2152
+#define	GTPv0_PORT		3386
+#define	DNS_PORT		53
+#define RADIUS_AUTH_PORT	1812
+#define	RADIUS_ACCO_PORT	1813
+#define RADIUS_AUTH_OLD		1645
+#define	RADIUS_ACCO_OLD		1646
+#define IP_DF             	0x4000   /* Flag: "Don't Fragment" */
+#define IP_MF            	0x2000   /* Flag: "More Fragments" */
+#define IP_OFFSET   		0x1FFF  /* "Fragment Offset" part */
+int breakup=0;	
+FILE *fp;
+void (*original_sig_int)(int num);
+void (*original_sig_term)(int num);
+void cap_term(int signum);
+int process_file(uint64_t cnt, FILE *fp, const u_char * packet, int t_flag);
+void usage();
+
+struct ethhdr_t 
+{
+	uint8_t		ether_dhost[ETH_ALEN];      /* destination eth addr */                                         
+	uint8_t		ether_shost[ETH_ALEN];      /* source ether addr    */                                         
+	uint16_t	ether_type;                 /* packet type ID field */                                         
+};                                         
+struct vlan_t
+{
+	uint16_t	tag_control;
+	uint16_t	tag_protocol;
+};
+
+struct 	iphdr_t 
+{
+	unsigned int   ip_hl:4; /* both fields are 4 bits */
+	unsigned int   ip_v:4;
+	uint8_t        ip_tos;
+	uint16_t       ip_len;
+	uint16_t       ip_id;
+	uint16_t       ip_off;
+	uint8_t        ip_ttl;
+	uint8_t        ip_p;
+	uint16_t       ip_sum;
+	struct in_addr ip_src;
+	struct in_addr ip_dst;
+};
+
+struct udphdr_t 
+{
+	uint16_t	source;
+	uint16_t	dest;
+	uint16_t	len;
+	uint16_t	check;
+};
+typedef u_int32_t tcp_seq;
+struct tcphdr_t
+  {
+    u_int16_t th_sport;         /* source port */
+    u_int16_t th_dport;         /* destination port */
+    tcp_seq th_seq;             /* sequence number */
+    tcp_seq th_ack;             /* acknowledgement number */
+#  if __BYTE_ORDER == __LITTLE_ENDIAN
+    u_int8_t th_x2:4;           /* (unused) */
+    u_int8_t th_off:4;          /* data offset */
+#  endif
+#  if __BYTE_ORDER == __BIG_ENDIAN
+    u_int8_t th_off:4;          /* data offset */
+    u_int8_t th_x2:4;           /* (unused) */
+#  endif
+    u_int8_t th_flags;
+#  define TH_FIN        0x01
+#  define TH_SYN        0x02
+#  define TH_RST        0x04
+#  define TH_PUSH       0x08
+#  define TH_ACK        0x10
+#  define TH_URG        0x20
+    u_int16_t th_win;           /* window */
+    u_int16_t th_sum;           /* checksum */
+    u_int16_t th_urp;           /* urgent pointer */
+};
+struct pdphdr_v1_t {
+	uint8_t		pn:1;
+	uint8_t		s:1;
+	uint8_t		e:1;
+	uint8_t		unused:1;	
+	uint8_t		pt:1;
+	uint8_t		ver:3;
+	uint8_t		type;
+	uint16_t	len;
+	uint32_t	teid;
+};
+
+
+struct pdphdr_v0_t {
+	uint8_t		snn:1;
+	uint8_t		unused:3;	
+	uint8_t		pt:1;
+	uint8_t		ver:3;
+	uint8_t		type;
+	uint16_t	len;
+	uint16_t	seq;
+	uint16_t	flow_label;
+	uint8_t		sndcp_num;
+	uint8_t		unused_1;
+	uint8_t		unused_2;
+	uint8_t		unused_3;
+	uint64_t	tid;
+};
+
+int main(int argc, char **argv)
+{
+	pcap_t *handle = NULL;
+	char errbuf[PCAP_ERRBUF_SIZE];
+	const u_char *packet;
+	struct pcap_pkthdr header;
+	
+	int	result, len;
+	char 	name[128];	/* output file name */
+//	char	type[8];	/* Gn or Gi */
+	int 	i_flag = 0, f_flag = 0, o_flag = 0, t_flag = 0;
+	uint64_t pktcnt = 0;
+	FILE *fp;
+	
+	while((result = getopt(argc, argv, "i:f:o:t:")) != -1)
+	{
+		switch(result)
+		{
+		case 'i':
+			i_flag = 1;
+			if (f_flag == 0)
+				handle = pcap_open_live(optarg, 4096, 1, 3000, errbuf);
+			else 
+			{
+				printf("ERROR: interface and file argment couldnot enable at the same time\n");
+				exit (-1);
+			}
+			break;
+		case 'f':
+			f_flag = 1;
+			if (i_flag == 0)
+				handle = pcap_open_offline(optarg, errbuf);
+			else 
+			{
+				printf("ERROR: interface and file argment couldnot enable at the same time\n");
+				exit (-1);
+			}			
+			break;
+		case 'o':
+			o_flag = 1;
+			len = strlen(optarg);
+			if (len > 128)
+			{
+				printf("output file name too long!\n");
+				exit (-1);
+			}
+			memset(name, '\0', sizeof(name));
+			strncpy(name, optarg, len);				
+			break;
+		case 't':	/* Gn or Gi, default is Gn */
+			if (strncasecmp(optarg, "gi", 2) == 0)
+				t_flag = 1;
+			else if (strncasecmp(optarg, "gn", 2) == 0)
+				t_flag = 0;
+			else
+			{
+				printf("argument 't' only support 'gn' or 'gi'\n");
+				exit (-1);
+			}
+			break;
+		default:
+			usage();
+			break;
+		}
+	}	
+	if (i_flag == f_flag)
+	{
+		printf("ERROR: interface and pcap_file argment couldnot enable at the same time\n");
+		exit (-1);
+	}
+	if ( o_flag == 0 )
+	{	 
+		printf("ERROR: you must specify the output file name!\n");
+		exit (-1);
+	}
+	
+	original_sig_int = signal(SIGINT, cap_term);
+	original_sig_term = signal(SIGTERM, cap_term);		
+	if (handle == NULL) 
+	{
+		fprintf(stderr, "couldn't open device: %s\n", errbuf);
+		exit(1);
+	}
+	
+	fp = fopen(name, "w+");
+	if (fp == NULL)
+	{ 
+		perror("fopen");
+		exit(-1);
+	}
+	do
+	{
+		packet = pcap_next(handle, &header);
+		
+		if (packet != NULL ) {	
+			pktcnt++;
+			process_file(pktcnt, fp, packet, t_flag);
+		} else {
+			sleep(1);
+		}
+	} while(!breakup);
+		
+	fclose(fp);
+	return 0;
+}
+
+int process_file(uint64_t cnt, FILE *fp, const u_char * packet, int t_flag)
+{
+	char line[1024];
+	struct ethhdr_t *ethhdr = NULL;
+	struct vlan_t	*vlanhdr = NULL;
+	struct iphdr_t	*iphdr = NULL;
+	struct iphdr_t	*iphdr_in = NULL;
+	struct udphdr_t	*udphdr = NULL;
+	struct udphdr_t	*udphdr_in = NULL;
+	struct tcphdr_t *tcphdr = NULL;
+	struct tcphdr_t *tcphdr_in = NULL;
+	struct pdphdr_v1_t *pdphdr_v1 = NULL;
+	struct pdphdr_v0_t *pdphdr_v0 = NULL;
+
+	char *tmp, sip[32], dip[32];
+	uint16_t sport, dport, etype, sport_in = 0, dport_in = 0;
+	int svlan = 0, dvlan = 0;
+	int ext_flag = 0;
+	uint8_t *ext;
+	uint16_t pkt_len = 0;
+	uint16_t offset;
+	
+	memset(line, '\0', sizeof(line));
+	memset(sip, '\0', sizeof(sip));
+	memset(dip, '\0', sizeof(dip));
+	ethhdr = (struct ethhdr_t *)packet;
+	pkt_len += sizeof(struct ethhdr_t);
+	etype = htons(ethhdr->ether_type);
+	if (etype != ETH_TYPE_IP) //packet may have other tag
+	{
+		if ( etype == ETH_TYPE_VLAN) //single vlan
+		{
+			
+			etype = 0;
+			svlan = 1;
+			vlanhdr = (struct vlan_t *)(packet + pkt_len);
+			pkt_len += sizeof(struct vlan_t);
+			etype = htons(vlanhdr->tag_protocol);
+			if ( etype == ETH_TYPE_VLAN) // double vlan
+			{					
+				pkt_len = 22;
+				svlan = 0;
+				dvlan = 1;
+				vlanhdr = (struct vlan_t *)(packet + pkt_len);
+				pkt_len += sizeof(struct vlan_t);
+				etype = htons(vlanhdr->tag_protocol);
+				if ( etype != ETH_TYPE_IP) /* double vlan, not ip*/
+				{
+					sprintf(line, "packet %lld\tDOUBLE_VLAN,NOT_IP\tVLAN_TYPE:\t0x%04x\n", cnt, etype);
+					goto end;
+				}
+			} 
+			if ( etype != ETH_TYPE_IP)
+			{
+				/* single vlan, not ip*/
+				sprintf(line, "packet %lld\tSINGLE_VLAN,NOT_IP\tVLAN_TYPE:\t0x%04x\n", cnt, etype);
+				goto end;
+			}
+		}
+		else 
+		{
+			/* not vlan, not ip */
+			sprintf(line, "packet %lld\tNOT_VLAN,NOT_IP\tETH_TYPE:\t0x%04x\n", cnt, etype);
+			goto end;
+		}
+	}
+#if 0	
+	if (svlan == 0 && dvlan == 0)
+		iphdr = (struct iphdr_t *)(packet + sizeof(struct ethhdr_t));
+	else if (svlan == 1)
+		iphdr =(struct iphdr_t *)(packet + sizeof(struct ethhdr_t) + sizeof (struct vlan_t));
+	else 
+		iphdr =(struct iphdr_t *)(packet + sizeof(struct ethhdr_t) + sizeof (struct vlan_t)*2);
+#endif 
+	iphdr = (struct iphdr_t *)(packet + pkt_len);
+	if (iphdr->ip_v == 6)
+	{
+		sprintf(line, "packet %lld\tIPv6\n", cnt);
+		goto end;	
+	}
+	pkt_len  += sizeof(struct iphdr_t);
+	tmp = inet_ntoa(iphdr->ip_src);
+	strcpy(sip, tmp);
+	tmp = inet_ntoa(iphdr->ip_dst);
+	strcpy(dip, tmp);
+	offset = ntohs(iphdr->ip_off);
+	//flags = offset &~ IP_OFFSET;
+	offset &= IP_OFFSET;
+#if 0	
+	if ((((flags & IP_MF) == 1) && (offset > 0))||
+		(((flags & IP_MF) == 0) && (offset > 0))) /* the first IP fragment packet can hash, we ignored. */
+#endif 
+	if (offset > 0)
+	{
+		sprintf(line, "packet %lld\tIP_FRAGMENTS\n", cnt);
+		goto end;
+	}
+	/* 
+	 * if we have an tcp packet on gn/gi interface
+	 * print five truple and return  
+	 */
+	if (iphdr->ip_p == IPPRO_TCP)
+	{
+		tcphdr = (struct tcphdr_t *)(packet + pkt_len);
+		pkt_len += sizeof(struct tcphdr_t);
+		sport = htons(tcphdr->th_sport);
+		dport = htons(tcphdr->th_dport);
+		sprintf(line, "packet %lld\tTCP\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	}
+	/* not tcp or udp */
+	if ((iphdr->ip_p != IPPRO_TCP) && (iphdr->ip_p != IPPRO_UDP)) 
+	{
+		sprintf(line, "packet %lld\tNOT_TCP_OR_UDP\tIPPRO_TYPE:\t0x%02x\n", cnt, iphdr->ip_p);
+		goto end;
+	}	
+	
+	udphdr = (struct udphdr_t *)(packet + pkt_len);
+	pkt_len += sizeof(struct udphdr_t);
+	sport = htons(udphdr->source);
+	dport = htons(udphdr->dest);	/* 
+	 * if we have an udp packet on gi interface,	 * print five truple and return 
+	 */
+	if (t_flag)
+	{
+		sprintf(line, "packet %lld\tUDP\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	}	
+	/* udp packet on Gn interface */
+	if (dport == DNS_PORT || sport == DNS_PORT)
+	{
+		sprintf(line, "packet %lld\tDNS\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	} 
+	else if(dport == RADIUS_AUTH_PORT ||
+		dport == RADIUS_ACCO_PORT ||
+		dport == RADIUS_AUTH_OLD ||
+		dport == RADIUS_ACCO_OLD ||
+		sport == RADIUS_AUTH_PORT ||
+		sport == RADIUS_ACCO_PORT ||
+		sport == RADIUS_AUTH_OLD ||
+		sport == RADIUS_ACCO_OLD )
+	{
+		sprintf(line, "packet %lld\tRADIUS\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	}
+	else if (dport == GTPv1_C_PORT || sport == GTPv1_C_PORT)	{
+		sprintf(line, "packet %lld\tGTPv1-C\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	}
+	else if (dport == GTPv1_U_PORT || sport == GTPv1_U_PORT)
+	{
+		pdphdr_v1 = (struct pdphdr_v1_t *)(packet +pkt_len);
+		pkt_len += sizeof(struct pdphdr_v1_t);
+
+		ext_flag = pdphdr_v1->e;
+		//printf("pkt:%lld, pn=%d, s=%d, e=%d, pt=%d, ver=%d, type=%x, len=%x, teid=%x\n", 
+		//	cnt, pdphdr_v1->pn, pdphdr_v1->s, pdphdr_v1->e,pdphdr_v1->pt, pdphdr_v1->ver, pdphdr_v1->type,pdphdr_v1->len,pdphdr_v1->teid);
+
+		if (ext_flag != 0)
+		{	
+			pkt_len +=12;
+			ext = (uint8_t *)(packet + pkt_len -1);
+			while (ext[0] != 0) 
+			{				
+				pkt_len += ext[1];
+				ext = (uint8_t *)(packet + pkt_len -1);
+			}
+		}
+		
+		/* see 3GPP TS 29.060 V9.4.0 section 6 */
+		if (pdphdr_v1->pn != 0 || pdphdr_v1->e != 0 || pdphdr_v1->s != 0)
+			pkt_len += 4;
+		if (pdphdr_v1->type == 0xFF)	/* T-PDU */
+		{
+			iphdr_in = (struct iphdr_t *)(packet + pkt_len);
+			pkt_len += sizeof(struct iphdr_t);
+			tmp = inet_ntoa(iphdr_in->ip_src);
+			strcpy(sip, tmp);
+			tmp = inet_ntoa(iphdr_in->ip_dst);
+			strcpy(dip, tmp);
+			if (iphdr_in->ip_p == IPPRO_TCP)
+			{
+				tcphdr_in = (struct tcphdr_t *)(packet + pkt_len);
+				pkt_len += sizeof(struct tcphdr_t);
+				sport_in = htons(tcphdr_in->th_sport);
+				dport_in = htons(tcphdr_in->th_dport);
+				//printf("packet %lld\tGTPv1-U inner TCP sip=%s\t dip=%s\t sport=%d\t dport=%d\n",
+				//	cnt, sip, dip, sport_in, dport_in);
+				
+			} else if(iphdr_in->ip_p == IPPRO_UDP)
+			{
+				udphdr_in = (struct udphdr_t *)(packet + pkt_len);
+				pkt_len += sizeof(struct udphdr_t);
+				sport_in = htons(udphdr_in->source);
+				dport_in = htons(udphdr_in->dest);	
+				//printf("packet %lld\tGTPv1-U inner UDP sip=%s\t dip=%s\t sport=%d\t dport=%d\n",
+				//	cnt, sip, dip, sport_in, dport_in);
+			}			else 
+			{
+				//printf("packet %lld\tunrecognise protocol, IP PROTOCOL TYPE IS: 0x%x\n", cnt, iphdr_in->ip_p); 
+				if (ext_flag != 0)
+					sprintf(line, "packet %lld\tGTPv1-U_HAVE_EXT_HEADER\tsip:%16s dip:%16s NOT_TCP_OR_UDP\tIPPRO_TYPE:\t0x%02x\n", 
+						cnt, sip, dip, iphdr_in->ip_p);
+				else
+					sprintf(line, "packet %lld\tGTPv1-U_NO_EXT_HEADER\tsip:%16s dip:%16s NOT_TCP_OR_UDP\tIPPRO_TYPE:\t0x%02x\n", 
+						cnt, sip, dip, iphdr_in->ip_p);
+				goto end;
+				
+			}
+			
+			if (ext_flag != 0)
+				sprintf(line, "packet %lld\tGTPv1-U_HAVE_EXT_HEADER\tsip:%16s dip:%16s sport_in:%8d dport_in:%8d\n", 
+					cnt, sip, dip, sport_in, dport_in);
+			else
+				sprintf(line, "packet %lld\tGTPv1-U_NO_EXT_HEADER\tsip:%16s dip:%16s sport_in:%8d dport_in:%8d\n", 
+					cnt, sip, dip, sport_in, dport_in);
+			goto end;
+		}
+		else
+		{
+			if (ext_flag != 0)
+				sprintf(line, "packet %lld\tGTPv1-U_HAVE_EXT_HEADER\tNOT_T-PDU\t Message-Type: 0x%2x\n", 
+					cnt, pdphdr_v1->type);
+			else
+				sprintf(line, "packet %lld\tGTPv1-U_NO_EXT_HEADER\tNOT_T-PDU\t Message-Type: 0x%2x\n", 
+					cnt, pdphdr_v1->type);
+			goto end;
+		}
+	}
+	else if (dport == GTPv0_PORT || sport == GTPv0_PORT)	/* GTPv0 */
+	{		pdphdr_v0 = (void *)(struct pdphdr_v0_t *)(packet + pkt_len);
+		pkt_len += sizeof(struct pdphdr_v0_t);
+		if (pdphdr_v0->type == 0xFF)	/* GTPv0-U */
+		{
+			iphdr_in = (struct iphdr_t *)(packet + pkt_len);
+			pkt_len += sizeof(struct iphdr_t);
+			tmp = inet_ntoa(iphdr_in->ip_src);
+			strcpy(sip, tmp);
+			tmp = inet_ntoa(iphdr_in->ip_dst);
+			strcpy(dip, tmp);
+			if (iphdr_in->ip_p == IPPRO_TCP)
+			{
+				tcphdr_in = (struct tcphdr_t *)(packet + pkt_len);
+				pkt_len += sizeof(struct tcphdr_t);
+				sport_in = htons(tcphdr_in->th_sport);
+				dport_in = htons(tcphdr_in->th_dport);
+				
+			}
+			if(iphdr_in->ip_p == IPPRO_UDP)
+			{
+				udphdr_in = (struct udphdr_t *)(packet + pkt_len);
+				pkt_len += sizeof(struct udphdr_t);
+				sport_in = htons(udphdr_in->source);
+				dport_in = htons(udphdr_in->dest);	
+			}
+
+			sprintf(line, "packet %lld\tGTPv0-U\tsip:%16s dip:%16s sport_in:%8d dport_in:%8d\n", 
+				cnt, sip, dip, sport_in, dport_in);
+			goto end;
+		}
+		else	/* GTPv0-C */
+		{
+			sprintf(line, "packet %lld\tGTPv0-C\t\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+					cnt, sip, dip, sport, dport);
+			goto end;
+		}			
+	}
+	else 
+	{
+#if 0
+		sprintf(line, "packet %lld\tUNKONWN UDP PROTOCOL\t\tsport:%d\tdport:%d\n", 
+			cnt, sport, dport);
+		goto end;
+#endif
+		/* support Gn/Gi packets */
+		sprintf(line, "packet %lld\tUDP\tsip:%16s dip:%16s sport:%8d dport:%8d\n", 
+			cnt, sip, dip, sport, dport);
+		goto end;
+	}
+end:
+	if (fputs(line, fp) < 0) 
+	{	
+		perror("fputs error");
+		fclose(fp);
+		exit(-1);
+	}
+	fflush(fp);
+	memset(line, '\0', sizeof(line));
+	return 0;		
+}
+
+void cap_term(int signum)
+{
+	breakup=1;
+	if (original_sig_int)
+		signal(SIGINT, original_sig_int);
+	if(original_sig_term)
+		signal(SIGTERM, original_sig_term);
+}
+
+void usage()
+{
+	printf("usage:\n");
+	printf("\t./gtpanalysis -i <interface> -f <pcap_file> -o <output_file>\n");
+	printf("\tinterface and pcap_file argment couldnot enable at the same time\n");
+}

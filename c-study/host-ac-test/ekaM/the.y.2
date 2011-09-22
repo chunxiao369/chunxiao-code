@@ -1,0 +1,94 @@
+%{
+/*******************************************************************/
+//
+//
+//
+/*******************************************************************/
+#include "./octpow/com_octpow_sendpacket.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <netpacket/packet.h>
+#include <netinet/in.h>
+#include <net/ethernet.h>
+#include <net/if.h>
+
+#include "include/api.h"
+#include "include/com_common_defs.h" 
+#include "include/com_opcode_defs.h"
+#define STAP_ETH_P 0x3322
+
+/*******************************************************************/
+//
+//
+//
+/*******************************************************************/
+
+void yyerror(const char *str)
+{
+	fprintf(stderr,"error: %s\n",str);
+}
+
+int yywarp()
+{
+	return 1;
+}
+
+start_cli()
+//main()
+{
+	printf("yacc initialed the octpow.\n");
+	octpow_Initialize();
+	printf("Parse Start ...\n");
+	printf("CLI>");
+	yyparse();
+	printf("\nParse End\n");
+	octpow_Finalize();
+}
+%}
+
+%token NUMBER TOKHEAT STATE TOKTARGET TOKTEMPERATURE TOKSEND TOKPACKET
+%token EXIT
+
+%%
+commands:  /* empty */
+		| commands command
+		;
+command:
+		heat_switch
+		|
+		send_packet
+		|
+		EXIT
+		{
+	    	YYACCEPT;
+		}
+		|
+		target_set
+		;
+
+heat_switch:
+		TOKHEAT STATE
+		{
+			printf("\tHeat turned on or off\n");
+		}
+
+send_packet:
+		TOKSEND TOKPACKET
+		{
+			octpow_one_msg_start();
+			printf("\nCLI>");
+		}
+
+target_set:
+		TOKTARGET TOKTEMPERATURE NUMBER
+		{
+			printf("\tTemperature Set\n");
+		}
+		;

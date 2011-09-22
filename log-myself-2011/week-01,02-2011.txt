@@ -1,0 +1,35 @@
+/**
+ * Jan, 01, 2010
+ */
+|----meego
+     学习一下meego
+     
+/**
+ * Jan, 02, 2010
+ */
+|----www.mobanwang.com
+     一个可以下载网站模板的网站
+     下载的却是*.psd文件, 还要用ps转换格式
+|----http://www.iselong.com/online/ebooks/javascript/
+     学习javascript的地方
+	 http://www.w3school.com.cn/js/js_timing.asp
+	 http://www.hongen.com/pc/homepage/javascript/index1.htm
+|----get the c code to realize crawler
+     methabot
+
+     libev-3.43.tar.gz
+
+     configure CFLAGS="-I/mnt/virtual-disk/program-files/js/include/
+     -I/mnt/virtual-disk/program-files/libev/include/"
+     LDFLAGS='-L/mnt/virtual-disk/program-files/libev/lib/  -L/usr/lib/mysql/'
+     --enable-master --enable-slave --enable-client
+     --prefix=/mnt/virtual-disk/program-files/methanol/
+
+|----How to use methabot?
+     ./mb --examples
+
+/**
+ * Jan, 11, 2010
+ */
+|----www.zeromq.org
+     

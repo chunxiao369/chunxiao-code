@@ -1,0 +1,76 @@
+/*
+ * Jun, 18, 2010
+ */
+|----CentOS 5.2 ipw3945 setup
+     1网站下载相应的
+     http://dag.wieers.com/rpm/packages/rpmforge-release/ 
+     CentoOS 5.2对应的是rpmforge-release-0.3.6-1.el5.rf.i386.rpm
+
+     2yum install dkms-ipw3945
+
+     3Next enable network manager
+
+     /sbin/chkconfig --level 345 NetworkManager on
+     /sbin/chkconfig --level 345 NetworkManagerDispatcher on
+
+     4reboot (seriously) and when you next log in
+     you’ll get a little icon in you system tray where you can manage your WiFi 
+
+     该方法启动的NetworkManager是针对Gnome, not KDE
+
+/*
+ * Jun, 19, 2010
+ */
+|----ARM study
+     *.lds file study
+     arm boot process
+
+/*
+ * Jun, 20, 2010
+ */
+|----readelf command
+/*
+ * Jun, 21, 2010
+ */
+|----内核：
+     1盒子要使用64位内核以支持大内存，
+     由于内核是静态链结所以编译内核使用-mabi=64 -msym32 -mno-abicalls -mplt
+     这些选项强制64位内核使用32位符号，
+     mno-abicalls减小代码尺寸，mplt在需要时使用非PIC代码等，这些措施可以提高性能。
+     具体原因参见[1][2][3]
+     2映射内核，
+     把内核从kseg0映射到kseg2靠近模块，不过会造成中断向量远离内核。
+
+|----userland优化措施：
+     1-mno-shared直接调用，不用读GOT和初始化t9。
+     2使用non-pic[4]，性能提升大概5%，当仅调用库函数反而会降低性能。
+     从gcc-4.4起已经支持(glibc-2.9 binutils-2.19及以上)。
+     在64位时需要指定-msym32,而-mno-shared不用指出，从gcc-4.3起可以自动检测,-mabicalls是默认，也不用指出。
+[1]http://gcc.gnu.org/onlinedocs/gcc/MIPS-Options.html
+[2]http://sourceware.org/ml/binutils/2008-06/msg00280.html
+[3]http://sources.redhat.com/ml/glibc-linux/1999-q4/msg00045.html
+[4]http://archives.free.net.ph/message/20080817.105110.6f1a7051.ja.html
+
+/*
+ * Jun, 21, 2010
+ */
+|----svn command: 
+     svn checkout http://10.0.1.16/svn/pa2008/pa/trunk/modules/fpe/core/share/
+     svn commit -m "support tag del" --usernname xu.chunxiao --password 123456
+     要学一下用svn checkout单个文件的命令
+
+/*
+ * Jul, 06, 2010
+ */    
+     Tony嵌入式论坛-PCB免费申请
+     感谢Tony的无私奉献，物推广之。
+     http://www.cevx.com/bbs/thread-24973-1-1.html
+     
+http://hi.baidu.com/chunxiao369/blog/item/0caeb7fb30f01d2f4e4aea2d.html
+http://blog.ifeng.com/article/6206837.html
+http://topic.csdn.net/u/20100706/13/70b23364-e732-4355-9032-a2bbf22d0481.html?4808
+http://bbs.chinaunix.net/thread-1739258-1-1.html
+http://www.linuxforum.net/forum/showflat.php?Cat=&Board=program&Number=755259&page=0&view=collapsed&sb=5&o=7&fpart=&vc=
+     
+     
+     

@@ -1,0 +1,100 @@
+/**
+ * Nov, 08, 2010
+ */
+|----How to use ntfs in CentOS5.2
+     wget rpmforge-release-0.3.6-1.el5.rf.i386.rpm
+     rpm -Uhv rpmforge-release-0.3.6-1.el5.rf.i386.rpm
+
+     yum install fuse fuse-ntfs-3g dkms dkms-fuse
+     mount -t ntfs-3g /dev/sxx1 /mnt/xxx
+/*
+ * Nov, 09, 2010
+ */
+|----va_start and va_end 原理和使用
+     
+/**
+ * Nov, 10, 2010
+ */
+|----Google protocol buffers
+     Google发布了新版本的protocol buffers
+     一种可扩展的序列化结构化数据的方式，
+     语言中立，平台中立并被用于通信协议，数据存储等许多方面
+
+     protobuf-c 
+     example: http://code.google.com/p/protobuf-c/wiki/Examples
+     是不是这也算是云计算的产物呢?
+     有一定的道理.
+
+|----How to write network card driver?
+     1. define private data area
+     2. alloc net_device
+     3. dev->init = ; dev_uninit = ;
+     4. register_netdev(dev);
+        call register_netdevice
+        call back dev->init
+     5. dev->init function
+        do a lot of thing
+        dev->do_ioctl = ; dev->get_status = ;
+        dev->open =     ; dev->stop =       ;
+        priv->poll =    ;
+     6. netdev_register_sysfs
+
+|----Bootloader process
+     1. board_init_r
+     2. main_loop()
+     3. run_command();
+     4. find_command();
+     5. __u_boot_cmd_start, __u_boot_cmd_end;
+
+/**
+ * Nov, 11, 2010
+ */
+|----ifconfig process
+     1. ifconfig command
+     2. struct ifreq ifr
+     3. sockfd = socket(AF_INET, SOCK_DGRAM, 0)
+     4. parse the command to ifr
+     5. ioctl(sockfd, SIOCGIFFLAGS, &ifr);
+     6. socket_ioctl
+     7. dev_ioctl
+     8. case cmd 
+     that's all!
+
+|----mips dump info
+        [<c000000000079cf0>] cvm_oct_xmit+0x178/0x748 [cavium_ethernet]
+        [<ffffffff8041ad3c>] __qdisc_run+0x114/0x2f8
+        [<ffffffff8040a0d0>] dev_queue_xmit+0x328/0x4c8
+        [<c000000000186a08>] mld_sendpack+0x5b0/0x5c0 [ipv6]
+        [<c0000000001884e0>] mld_ifc_timer_expire+0x358/0x490 [ipv6]
+        [<ffffffff8016e4a0>] run_timer_softirq+0x1b0/0x2b0
+        [<ffffffff8016893c>] __do_softirq+0x194/0x1d8
+        [<ffffffff801689f8>] do_softirq+0x78/0x80
+        [<ffffffff80101c30>] plat_irq_dispatch+0xe0/0x1f0
+        [<ffffffff80130b2c>] ret_from_irq+0x0/0x4
+        [<ffffffff801305a4>] r4k_wait+0xc/0x18
+        [<ffffffff801332f0>] cpu_idle+0x40/0x60
+        [<ffffffff80866944>] start_secondary+0xb4/0xc8
+     dev_queue_xmit -> qdisc_run -> cvx_oct_xmit -> ...
+
+     
+/**
+ * Nov, 11, 2010
+ */
+|----Zuckerberg (born May 14, 1984) is an American
+     entrepreneur who co-founded the social networking site Facebook. 
+     Zuckerberg co-founded Facebook with fellow classmates
+     Dustin Moskovitz, Eduardo Saverin, and Chris Hughes while attending Harvard.
+     As of 2010, he was a 24% shareholder of Facebook.
+     
+
+
+
+
+
+
+
+
+
+
+
+

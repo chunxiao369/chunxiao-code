@@ -1,0 +1,52 @@
+/**
+ * Nov, 18, 2010
+ */
+|----HSDPA: High Speed Downlink Packet Access
+     高速下行链路分组接入技术
+     also known as Evolved High-Speed Packet Access 
+     is a wireless broadband standard defined in 3GPP release 7.
+
+     HSPA+ provides HSPA data rates up to 56 Mbit/s on the downlink and 22
+     Mbit/s on the uplink through the use of a multiple-antenna technique
+     known as MIMO (for “multiple-input and multiple-output”) and higher order
+     modulation (64QAM). 
+
+
+|----3GPP
+     The 3rd Generation Partnership Project (3GPP) is a collaboration between
+     groups of telecommunications associations, to make a globally applicable
+     third-generation (3G) mobile phone system specification within the scope
+     of the International Mobile Telecommunications-2000 project of the
+     International Telecommunication Union (ITU). 3GPP specifications are
+     based on evolved Global System for Mobile Communications (GSM)
+     specifications. 3GPP standardization encompasses Radio, Core Network and
+     Service architecture.
+
+/**
+ * Nov, 23, 2010
+ */
+|----吉米·多纳尔·威尔士(Jimmy DonalWales, 1966年8月7日~)
+     维基百科Wikipedia的创始人之一
+     现为维基媒体基金会理事会荣誉主席
+     同时拥有一家名为Wikia的营利公司和Wikipedia没有直接关系
+     2006年5月, 威尔士被 时代周刊 选为100个最具影响力人物之一
+/**
+ * Nov, 24, 2010
+ */
+|----search engine
+     duckduckgo, Blekko, www.mylife.com
+
+/**
+ * Nov, 24, 2010
+ */
+|----route
+     route add -net 192.168.0.0 netmask 255.255.255.0 gw 10.1.56.23
+
+/**
+ * Nov, 27, 2010
+ */
+|----download a linux kernel that can be used with qemu
+     install/bin/qemu -hda linux-0.2.img
+     install/bin/qemu-system-ppc -hda debian_etch_powerpc_small.qcow2
+     the ppc linux, kernel is 2.6.18
+

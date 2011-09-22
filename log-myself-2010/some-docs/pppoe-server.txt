@@ -1,0 +1,97 @@
+前提：已经安装好linux操作系统（桌面或是工作站）。
+
+　　因为在安装的时候会对安装的软件包进行选择，所以首先要查看原有系统是否已经安装了rp-pppoe。
+
+　　新建终端输入以下命令：
+　　# rpm –q rp-pppoe
+
+　　如果已经安装了该软件，将返回：
+　　ro-pppoe-3.5-2
+
+　　如果返回的不是上面或相关的内容，就需要重新安装了。Red Hat Linux 9系统安装盘上有自带该软件，只要插入相关的光盘，输入以下命令：
+　　# mount –t iso 9660 /dev/hdc/mnt/cdrom（找到光驱这个设备，其中hdb或是hdc视安装的具体情况而定）
+　　# cd /mnt/cdrom/RedHat/RPMS（找到软件包所在的位置）
+　　# rpm –Uvh rp-pppoe*（开始安装）
+　　等待系统安装。
+
+    值得注意的是，网上很多资料指出在安装rp-pppoe之前需要对linux的内核进行编译，
+    除非对linux内核十分熟悉，一般不推荐这种做法。在RH9下，系统已经提供了一个成熟完善的内核。
+配置
+
+　　检查配置文件/etc/ppp/pppoe-server-options内容应该如下(如果不是，则需要修改)：
+　　require-pap 
+　　require-chap 
+　　login 
+　　lcp-echo-interval 10 
+　　lcp-echo-failure 2
+　　下一步就是最关键的，设置用户和密码对：
+　　设置的用户名和密码分别是：用户cpe,密码：cpe；用户user密码：user。注意server和IP addresses分别用*号代替（不能为空）。
+　　在文件/etc/ppp/chap-secrets中写入：
+　　# Secrets for authentication using CHAP 
+　　# client        server          secret                  IP addresses 
+　　"cpe"         *               "cpe"                    *
+　　"user"        *               "user"                   *
+　　修改pppd的访问权限，允许由root启动服务进程，测试表明：每次修改、添加用户名和密码后，都需要重新键入下面的命令。 
+　　# chmod u+s /usr/sbin/pppd
+测试验证
+
+　　1 网络连接
+　　说明：eth0、eth1分别是PPPoE Server的两块网卡，其中：
+　　eth0：连接公司局域网，地址设为自动获取；
+　　eth1：连接DSLAM，地址设为静态：
+　　IP:172.21.161.2
+　　Netmask:255.255.255.0
+　　GW:172.21.161.1
+　　2 开启服务
+　　命令行：
+　　pppoe-server –I eth1 –L 172.21.161.2 –R 172.21.161.3
+　　具体含义：eth1为提供PPPoE服务的网卡，本地地址172.21.161.2，为远程拨号分配的地址从172.21.161.3开始（默认数量：64）。
+　　打开IP转发功能：
+　　echo “1”>/proc/sys/net/ipv4/ip_forward
+　　这样就可以进行拨号了！
+　　3 验证
+　　当PPPoE Server服务开启后，在客户端进行拨号（Win2000下使用EnterNet300，XP用系统自带拨号工具），
+    观察拨号进程，拨号成功后，在Windows下用ipconfig查看是否获得指定IP(从172.21.161.3开始的地址段)。
+　　在服务器端可用命令：sniff-pppoe –I eth1查看PPPoE服务是否启动正常，
+    或者是用less /var/log/messages查看系统启动日志中关于pppoe的进程，连接成功的话，
+    将会看到PPPoE的几个阶段即PADI、PADO、PADR、PADS、PADT几个报文的传输情况。
+　　至此，PPPoE服务器已经配置成功，能够顺利的进行拨号了。但拨号连接正常后，客户端还是不能上网，
+    所以下一步就是对Linux上两块网卡之间的数据转发进行配置。
+　　4 Iptables&路由配置
+　　Linux下两块网卡路由配置的基本原则就是：外网网关为默认网关，在内网中添加一条路由。
+　　具体操作：结合上面的组网环境，eth0为外网网卡，eth1为内网网卡。
+　　首先，查看linux上的路由设置：
+　　在终端敲入命令#route
+　　查看default是不是指向eth0,gw:10.5.3.250，如果不是就要删除现有的default路由，
+    添加：route add –net default netmask 0.0.0.0 gw 10.5.3.250 dev eth0
+　　为内网添加一条路由：
+　　route add –net 171.21.161.0 netmask 255.255.255.0 gw 172.21.161.1 dev eth1
+　　添加完后就可用iptables进行nat配置了。具体操作：
+　　查看是否已经加载iptables模块：
+　　lsmod | grep ip_tables
+　　如果没有则执行：
+　　modprobe ip_tables
+　　然后执行：
+　　iptables –t nat –A POSTROUTING –o eth0 –s 172.21.161.2/24 –j MASQUERADE
+　　这一条命令的大概意思就是：对从源端172.21.161.2发来的数据包进行伪装，并从eth0出口送出。
+　　现在就可以实现两块网卡之间的数据转发了。
+　　如果需要进行ftp服务，还需在服务器端加载ftp模块，具体如下：
+　　modprobe ip_nat_ftp
+　　modprobe ip_conntrack_ftp
+　　至此，整个PPPoE Server就配置完成，可以模拟整个拨号上网的过程！
+　　5 开机自动启用PPPoE Server
+　　以上是整个配置过程，归纳所有步骤，把他们一并写入/etc/rc.local，实现开机后自动打开PPPoE Server的功能，在原有文件中追加以下命令：
+　　route del –net default netmask 0.0.0.0 gw 172.21.161.1 dev eth1
+　　route add –net default netmask 0.0.0.0 gw 10.5.3.250 dev eth0
+　　route del –net 172.21.161.0 netmask 255.255.255.0 gw 172.21.161.1 dev eth1
+　　pppoe-server –I eth1 –L 172.21.161.2 –R172.21.161.3
+　　echo “1”>/proc/sys/net/ipv4/ip_forward
+　　iptables –t nat –A POSTROUTING –o eth0 –s 172.21.161.2/24 –j MASQUERATE
+　　modprobe ip_nat_ftp
+　　modprobe ip_conntrack_ftp
+　　6 浏览网页时IE的设置
+　　由于整个局域网采用代理上网的方式，在客户端通过拨号建立连接后，需要在IE中进行代理设置，确保能正常浏览网页，具体方法如下：
+　　1、 打开IE，选择“工具”→“Internet选项”→“连接”，在“拨号和虚拟专用网络设置”下选择通过modem所建立的当前连接的名称（如“PPPoE”），
+    点击“设置”，填入代理服务器的地址、端口以及拨号的用户名和密码。
+　　2、 打开IE，选择“工具”→“Internet选项”→“连接”，在“局域网（LAN）设置”下点击“局域网设置”
+

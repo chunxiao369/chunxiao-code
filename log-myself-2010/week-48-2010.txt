@@ -1,0 +1,33 @@
+/**
+ * Nov, 28, 2010
+ */
+|----构建Linux系统下的gcc交叉编译器
+     
+/**
+ * Nov, 28, 2010
+ */
+|----Customer relationship management (CRM) 
+     http://www.salesforce.com/
+
+/**
+ * Dec, 01, 2010
+ */
+|----Set up chinese fonts 
+     rpm -ivh fonts-chinese-3.02-12.el5.noarch.rpm
+/**
+ * Dec, 03, 2010
+ */
+|----select func study
+     FD_SET   打开类型fd_set的某一位
+     FD_ZERO  初始化fd_set
+     FD_ISSET 测试结构fd_set中的描述字
+
+/**
+ * Dec, 07, 2010
+ */
+|----QR is quick response
+     A QR Code is a matrix barcode (or two-dimensional code), 
+     readable by QR scanners, mobile phones with a camera, and smartphones. 
+     The code consists of black modules arranged in a square pattern 
+     on white background. 
+     The information encoded can be text, URL or other data.

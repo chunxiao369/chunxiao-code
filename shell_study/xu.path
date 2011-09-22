@@ -1,0 +1,23 @@
+diff -Naur test01/a/a.c test02/a/a.c
+--- test01/a/a.c	2010-11-02 14:24:45.000000000 +0800
++++ test02/a/a.c	2010-11-02 11:27:34.000000000 +0800
+@@ -1 +1 @@
+-/mnt/share_disk/sh_test/test01/a/a.c
++/mnt/share_disk/sh_test/test02/a/a.c
+diff -Naur test01/b/b.c test02/b/b.c
+--- test01/b/b.c	2010-11-02 14:24:46.000000000 +0800
++++ test02/b/b.c	1970-01-01 08:00:00.000000000 +0800
+@@ -1 +0,0 @@
+-/mnt/share_disk/sh_test/test01/b/b.c
+diff -Naur test01/c/c.c test02/c/c.c
+--- test01/c/c.c	1970-01-01 08:00:00.000000000 +0800
++++ test02/c/c.c	2010-11-02 14:26:20.000000000 +0800
+@@ -0,0 +1,2 @@
++/mnt/share_disk/sh_test/test01/b/b.c
++cxxu test haha!
+diff -Naur test01/root.c test02/root.c
+--- test01/root.c	2010-11-02 14:24:47.000000000 +0800
++++ test02/root.c	2010-11-02 11:27:24.000000000 +0800
+@@ -1 +1 @@
+-/mnt/share_disk/sh_test/test01/root.c
++/mnt/share_disk/sh_test/test02/root.c

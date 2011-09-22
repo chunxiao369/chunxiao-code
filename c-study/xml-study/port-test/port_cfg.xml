@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <port_num port_num="16"/>
+   <port1 want_vlan_id="10">0x40000</port1>
+   <port2 want_vlan_id="11">0x20000</port2>
+   <port3 want_vlan_id="12">0x10000</port3>
+   <port4 want_vlan_id="13">0x8000</port4>
+   <port5 want_vlan_id="14">0x4000</port5>
+   <port6 want_vlan_id="15">0x2000</port6>
+   <port7 want_vlan_id="16">0x40</port7>
+   <port8 want_vlan_id="17">0x20</port8>
+   <port9 want_vlan_id="18">0x2000000</port9>
+  <port10 want_vlan_id="19">0x4000000</port10>
+  <port11 want_vlan_id="20">0x8000000</port11>
+  <port12 want_vlan_id="21">0x10000000</port12>
+  <port13 want_vlan_id="22">0x2</port13>
+  <port14 want_vlan_id="23">0x4</port14>
+  <port15 want_vlan_id="24">0x8</port15>
+  <port16 want_vlan_id="25">0x10</port16>
+</root>

@@ -1,0 +1,9 @@
+[user]
+	name = chunxiao
+	email = xu.chunxiao@embedway.com
+[alias]
+	ci = commit
+[color]
+	ui = auto
+	status = auto
+	branch = auto

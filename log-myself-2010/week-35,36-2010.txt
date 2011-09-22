@@ -1,0 +1,19 @@
+/*
+ * Aug, 31, 2010
+ */
+|----How to edit txt file in dos?
+     edit *.txt
+|----config httpd server in linux 
+     1. service iptables stop
+        or 
+        /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+     2. system-config-securitylevel
+        disable the selinux
+     3.
+
+/*
+ * Sep, 08, 2010
+ */
+|----study icore-pci-boot
+|----fsync func in linux
+     seem as flush func 

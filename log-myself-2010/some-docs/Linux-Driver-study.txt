@@ -1,0 +1,22 @@
+/*
+ * Mar, 01, 2010,
+ */
+|----读《linux设备驱动开发详解》一书
+     |----__init __exit
+     |----/sys/modules file and /var/log/messages file
+
+     |----make -C kernel archive M=${PWD} modules
+
+     |----file struct and inode struct
+     |----/proc/devices file
+     |----lanana组织维护主设备号的分配情况
+    
+/* 
+ * Mar, 04, 2010, 
+ * the first char driver program
+ */
+|----分别在模块加载和卸载子函数中创建和撤消设备文件是被普便采用并值得提倡的好方法。
+　   |----mknod 设备名   c 主设备号  次设备号
+　   |----mknod /dev/tty c 4         11 
+　   |----写了第一个字符设备驱动程序。
+

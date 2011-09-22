@@ -1,0 +1,31 @@
+#!/bin/sh
+
+
+modprobe cavium-ethernet pow_send_group=14 pow_receive_group=15
+
+mkdir /usr/local/bin/config/
+
+
+ifconfig pow0 up
+ifconfig pow1 promisc up
+
+ifconfig eth0 promisc up
+ifconfig eth1 promisc up
+ifconfig eth2 promisc up
+ifconfig eth3 promisc up
+ifconfig eth4 promisc up
+ifconfig eth5 promisc up
+ifconfig eth6 promisc up
+ifconfig eth7 promisc up
+
+#sysctl -p
+#device=iodev
+#insmod ./lib/modules/2.6.21.7-Embedway-Infiniway/drivers/net/ioaccess.ko
+#rm -f /dev/${device}
+#major=$(awk "\$2==\"$device\" {print \$1}" /proc/devices)
+#mknod /dev/${device} c $major 0
+sleep 1
+
+
+exit 0
+

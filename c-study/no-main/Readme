@@ -1,0 +1,4 @@
+gcc -c -fno-builtin no_main.c
+-fno-builtin to close the gcc built-in function
+ld -static -e nomain -o xuexe no_main.o
+-e nomain the program start from nomain

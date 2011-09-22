@@ -1,0 +1,25 @@
+
+/*
+ * Aug, 10, 2010
+ */
+|----A good student usually knows how to sum up knowledge in good time.
+     1. win7 set up in Ubuntu by virtualbox; set up audio driver;
+        VBoxGuestAdditions.iso or vBox_NetAuto_Driver.iso
+        is unuseful, 
+        at last, download realtek driver from official website.
+        6305_Vista_Win7_PG537.zip
+     2. resolve the 32 bit show question.
+     3. the ??? question in c-disk.
+        在网上查了很多解决这些问题的方法
+        some people use convm
+        at last, 
+        modified the /etc/fstab file
+        /dev/sda1       /mnt/c-disk     vfat    errors=remount-ro    0       0 
+        /dev/sda1       /mnt/c-disk     vfat    user,iocharset=utf8  0       0 
+        that's ok!
+
+/*
+ * Aug, 14, 2010
+ */
+|----sudo dpkg -i *.deb
+     

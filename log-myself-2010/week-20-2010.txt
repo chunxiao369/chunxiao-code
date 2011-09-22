@@ -1,0 +1,93 @@
+/*
+ * May, 10, 2010
+ */
+|----vim /etc/xinet.d/telnet
+     service xinetd restart
+     netstat -anp | grep LISTEN
+|----resove the centOS problem about failing to mount NTFS disk
+     http://sourceforge.net/projects/linux-ntfs/files/Kernel NTFS Module/
+     download two files corresponding you kernel edition and you'll be ok!
+|----其中主要的是
+     [--shared]                 编译共享库
+     [--prefix=PREFIX]          编译后安装位置，默认使用/usr/local
+     [--exec_prefix=EXPREFIX]   程序型文件的安装位置，默认使用${prefix}
+     [--libdir=LIBDIR]          库文件安装位置，默认使用${exec_prefix}/lib
+     [--includedir=INCLUDEDIR]  头文件安装位置，默认使用${prefix}/include
+
+/*
+ * May, 16, 2010
+ */
+|----袁腾飞
+     无知，爱国，轻生是奋青的表现
+     看到了历史的真实，确实很好玩。1900年，英俄德法，美日意奥(其中意)八国联军
+
+/*
+ * May, 21, 2010
+ */
+|----董卓：洛阳就是豪华，在这里我都乐不思蜀了。
+     刘备：袁绍是个扶不起的阿斗。
+     曹操：司马昭之心，路人皆知。
+     吕布：我家貂蝉是中国古代四大美人之首！
+     曹操：我要亲自去刘备那里，你没听说过三顾茅庐的故事么，要诚心。
+|----拯救大兵瑞恩
+     珍珠港
+     狙击手
+     爱国者
+     中途岛之战
+
+/*
+ * May, 22, 2010
+ */
+|----qemu-img create -f qcow2 winxp.img 3GB
+     qemu -m 256 -hda winxp.img -cdrom winxpsp2.iso[/dev/cdrom] -boot d
+     qemu --kernel vmlinuz* --initrd initrd.* -hda --append "root=/dev/ram/"
+|----dd command
+     dd if=/dev/zero of=roofs.img bs=1M count=100
+     mkfs.ext2 command
+     mkfs.ext2 -N 512 rootfs.img
+
+/*
+ * May, 10, 2010
+ */
+|----与世界接轨与符合中国国情
+|----dfa.c
+     Frag结构中有两个变量, 一个是start, 另外一个是out
+     start指向state结构
+     out指向state结构的out指针
+     that is &(stack[0].start->out) == stack[0].out
+     
+/*
+ * May, 12, 2010
+ */
+|----学习Qemu
+     QEMU is a generic and open source machine emulator and virtualizer. 
+|----飞信设置密码1+9=0xA
+|----l0pht
+     was a hacker collective active between 1992 and 2000 and located in the Boston, Massachusetts area.
+
+/*
+ * May, 12, 2010
+ */
+|----163 blog闪光的星星
+     把正则表达式转nfa的那篇文章翻译了一下。
+
+|----人生的曲线应该是曲折向上的，
+     偶尔会遇到低谷但大趋势总归是曲折向上的，
+     而不是象脉冲波一样每每回到起点。
+     我见过不少面试者，30多岁了，四五份工作经历，
+     每次多则3年，少则1年，
+     30多岁的时候回到起点从一个初级职位开始干起，
+     拿基本初级的薪水，和20多岁的年轻人一起竞争，
+     不觉得有点辛苦么？这种日子好过么？
+     
+|----电影
+     The Pursuit of Happyness
+     Jerry Maguire
+     
+|----linux修改环境变量     
+     export PATH=/sbin/:$PATH 
+
+
+
+
+

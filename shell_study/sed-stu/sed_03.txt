@@ -1,0 +1,8 @@
+
+
+sed 's/[ ]*$//' a.txt > b.txt
+sed 's/\s\+$//' a.txt > b.txt
+
+change the file directly
+sed 's/[ ]*$//' -i a.txt
+sed 's/\s\+$//' -i a.txt

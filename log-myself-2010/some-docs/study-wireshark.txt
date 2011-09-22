@@ -1,0 +1,103 @@
+feb, 23, 2010开始学习wireshark.
+以wireshark根目录开始。
+
+|------
+       |--epan/packet.c文件较为重要。里面有dissect_packet函数，在解析数据包时会被被调用。
+       |--在dissect_packet函数开始加入打印信息，只会调用一次。
+
+       |--函数调用顺序如下：dissect_packet->call_dissector->call_dissector_only->call_dissector_work->
+
+       |--在函数call_dissector_only开始加入打印信息，发现在解析包之前被调用了四次，并且在第二次调用时即将包解析出来了。
+
+|------
+       |--在函数call_dissector_work里面加入打印信息，将赋值后的saved_proto打印出来后，已能将协议全部分析出来。
+       |--Ethernet->IP->SCTP->M3UA->sdp, 很不错。
+
+       |--函数call_dissector_work里，第一次时，在后面又都调用了call_dissector_through_handle();
+       |--函数call_dissector_work里最后返回的地方加入打印信息，发现该函数开始处被调用好多次之后才会调用到最后的地方。
+       |--这是一个奇怪的地方。
+
+|------
+       |--g_hash_table_insert函数将每一个解析器放到一个全局的表里面。可惜源码现在没有看到。
+       |--call_dissector_through_handle函数现在也是没有公开的啊。
+       |--暂时先不关注这些东西，先把sccp之类的协议的解析方法搞懂再说。
+
+|------
+       |--先将简单的协议解析方式看一下。弄明白tvbuff_t, packet_info, proto_tree三个结构。
+       |--分析了一个包，解析时调用了dissect_ip函数。该函数形参有tvb, 
+       |--该tvbuff_t结构中存放着当前整个的数据包，当分析到IP层之后，数据链路层的数据就没有了。
+
+       |--该函数中又有next_tvb, 也是tvbuff_t结构。next_tvb在赋值之后，IP层的数据也没有了。
+|------
+       |--packet_sccp.c文件dissect_sccp函数中，有变量decode_mtp3_standard 赋值后打印了为1，即ITU_STANDARD
+
+|------
+       |--val_to_str(message_type, sccp_message_type_acro_values, "Unknown")函数将messaget_type转换为对应的字符串，1转换为connection request.
+
+       |--proto_tree_add_uint()函数的作用：初步判断，每当分析出包里面的一个内容时，就将该内容添加到协议树里面。
+       |--若某消息信令单元MSU的业务指示语SI = 0011，则表明此消息为SCCP消息。
+
+|------以前的理解记录
+       |--Mtp3中protocol data中的si意思是业务指示语。路由标记包括目的地信令点编码DPC、起源点信令点编码OPC、信令链路选择码SLS等。
+
+       |--目的地，源 局部引用号 destination source  local reference
+
+       |--Sccp当msg type 为1 时，消息中可能会有四个字节的被叫方地址和四个字节的主叫方地址（可选的），这两个地址之间有ranap内容，还有别的东西，现在还不知道是什么。
+       |--（详见3gpp_mc.cap文件中的第三个包）
+
+       |--Wireshark中的_sccp_assoc_info结构:
+          typedef struct _sccp_assoc_info_t {
+              guint32 id;
+              guint32 calling_dpc;
+              guint32 called_dpc;
+              guint8 calling_ssn;            //社会安全号，如同身份证，只八位够了吗？
+              guint8 called_ssn;
+              gboolean has_fw_key;
+              gboolean has_bw_key;
+              sccp_msg_info_t* msgs;
+              sccp_msg_info_t* curr_msg;
+            
+              sccp_payload_t payload;       //该类型的值有四种，SCCP_PLOAD_NONE, SCCP_PLOAD_BSSAP, SCCP_PLOAD_RANAP, SCCP_PLOAD_NUM_PLOADS
+              gchar* calling_party;
+              gchar* called_party;
+              gchar* extra_info;
+          } sccp_assoc_info_t;
+
+|------
+       |--当Sccp当msg type 为1 时，有三个必选参数，这三个必选参数wireshark都进行了解析
+
+|------
+       |--若参数在某个消息中是必须具备的，称作此消息的必备参数（M），
+       |--它包括固定长度的必备参数（F）和可变长度的必备参数（V）两部分。
+
+       |--其中最难的是被叫用户地址/主叫用户地址，是可变长度参数。由地址指示和地址组成。
+       |--地址由DPC + SSN + GT组成（DPC 要参见MTP，SSN是8位，）
+          1. 是否有DPC要看地址指示中相应位是否为1，若为1又分ITU_STANDARD, JAPAN_STANDARD, 和ANSI_PC_LENGTH三个标准
+          2. 先由地址指示相应位是否为1看是否有SSN，再根据不同标准的DPC长度进行偏移找到SSN，SSN的解析还没有看。
+          3. 先由地址指示相应位是否为1看是否有GT
+  
+|------
+       |--今天终于有点弄明白了。参数的排列顺序是，必备不变，必备可变，可选参数三个部分。
+       |--前面的指针把所有的必备可变的参数全部指向，却只会指向第一个可选参数。
+       |--第一个可选参数写完之后，才会写第二个可选参数。格式为（编码+长度+参数内容）
+
+       |--尽管这样，wireshark的代码还要细看。对sccp下面又有sccp的包，还是不知道如何下手。
+
+       |--mc.cap中，第387，393个包是bssap包，并且sccp的类型是CR.
+          第410个包是UDT类型bssap数据包。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,137 @@
+/*
+ * Apr, 17, 2010
+ */
+|----要在半小时之内回复别人的请求
+
+|----学而不用，等于不学
+     要深刻明白学而致用的道理
+     发现自己就是没有把一些道理用于实践。
+/*
+ * Apr, 23, 2010
+ */
+|----linux Grub的学习
+ |---问题
+     问题是在虚拟机里面启动linux时出现了错误。
+     学习这个东西是碰到一个问题而引起的。
+     PXE-E53: No boot filename received   
+     PXE-M0F: Exiting intel PXE ROM   
+     Operating system not found.   
+ |---估计是硬盘的启动扇区出了问题，没有办法来找到GRUB.
+     就拿出光盘来修复。
+     linux resuce进入修复模式
+     chroot /mnt/sysimage/进入坏掉的系统
+     grub-install就可以了。
+     然后，就可以在liux启动时看到grub了。
+     如果不能正常启动的话。建议自己编辑下grub的命令
+     root (hd0,0)
+     kernel (hd0,0)/vmlinuz-xx.xx
+     initrd (hd0,0)/initrd.xx.xx
+     看来用自己编译的内核也可以这样搞一下了。
+ |---linux启动慢看到是sendmail服务启动时较慢
+     网上查了下处理的方法，
+     vim /etc/sysconfig/network
+     把hostname改成xx.xx的形式就可以了
+     为什么这样改后就快了呢？
+     有待进一步学习一下。
+/*
+ * Apr, 12, 2010
+ */
+|----学习vim 
+     装了下vim最新版本, vim7.2里面的tabnew, tabprevious, tabnext非常好用. 
+     
+     ~     -     将光标下的字母改变大小写
+     3~    -     将下3行的字母改变其大小写
+     g~~   -     改变当前行字母的大小写
+     U     -     将可视模式下的字母全改成大写字母
+     gUU   -     将当前行的字母改成大写
+     u     -     将可视模式下的字母全改成小写
+     guu   -     将当前行的字母全改成小写
+     gUaw  -     将光标下的单词改成大写
+     guaw  -     将光标下的单词改成小写
+
+/*
+ * Apr, 13, 2010
+ */
+|----学习SNMP
+     查下资料
+
+|----学习Git
+ |---git config --list
+     git commit -a -m "xxx" 不用add就直接提交
+     git log --stat --summary 看一下每一次提交的简单的改变
+     git log -p 看一下每一次提交的详细的改变
+     
+/*
+ * Apr, 13, 2010
+ */
+|----学习grep --color -H -n "xu.chunxiao"
+     find . -name ".svn" -type d
+     find . | grep -v .svn
+     not find .svn directory
+     find . -path "*.svn*" -prune -o -print
+     not find a and b directory
+     find . \( -path a -o -path b \) -prune -o -print
+
+/*
+ * Apr, 14, 2010
+ */
+|----什么叫GPIO模拟
+ |---GPIO，英文全称为General-Purpose IO ports，也就是通用IO口。
+     嵌入式系统中常常有数量众多，但是结构却比较简单的外部设备/电路，
+     对这些设备/电路有的需要CPU为之提供控制手段，有的则需要被CPU用作输入信号。
+     而且，许多这样的设备/电路只要求一位，即只要有开/关两种状态就够了，比如灯亮与灭。
+     对这些设备/电路的控制，使用传统的串行口或并行口都不合适。
+     
+ |---所以在微控制器芯片(CPU)上一般都会提供一个“通用可编程IO接口”，即GPIO。
+     通用可编程IO接口 至少有两个寄存器，
+     通用IO控制寄存器 与 通用IO数据寄存器
+     
+ |---对于不同的计算机体系结构，GPIO设备可能是端口映射，也可能是内存映射的。
+     内存映射举例: #define A (*(volatile unsigned long *)0x48000000)
+
+|----学习Makefile
+ |---定义变量时多打了一个空格，折腾了我好久。例如dir := module' ', 
+     就是在module后面多打了个空格。
+ 
+/*
+ * Apr, 20, 2010
+ */
+|----学到几个快捷方式
+ |---Alt+空格+N最小化当前窗口 
+     Alt+空格+R恢复最小化窗口 
+     Alt+空格+X最大化当前窗口 
+     Windows+M：最小化所有窗口 
+     Windows+Shift+M：还原最小化的窗口
+     只可惜默认对putty不起作用
+     category->window->Behaviour下，将System menu appears on ALT-Space前面的框选中
+     
+/*
+ * Apr, 21, 2010
+ */
+|----MEPIS Linux是一份Linux桌面系统，它也能被方便地配置成专用的服务器。
+     它被设计为同时适合于个人和商用目的。它拥有最新的特性，
+     例如它是一张自启动运行/安装/修复光盘，
+     以及自动配置硬件，
+     NTFS分区大小调整支持，
+     ACPI电源管理，
+     WiFi支持，
+     反混淆TrueType字体，
+     个人防火墙，
+     KDE桌面等等。
+     
+|----一个变量和一个常数做比较时，一定要将变量写在前面。
+     即if (0x03 == temp_int)
+
+/*
+ * Apr, 21, 2010
+ */     
+|----RMON远端监控协议
+     Remote Monitoring Protocol
+
+/*
+ * Apr, 21, 2010
+ */ 
+|----Panel to question(小组讨论)
+|----snooping(嗅探)
+
+

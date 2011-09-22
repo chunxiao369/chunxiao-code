@@ -1,0 +1,15 @@
+all:
+#mips64-octeon-linux-gnu-gcc -Wall -o ethernet-test com_octpow_sendpacket.c
+	flex the.l
+	bison -d -v the.y
+#lex the.l
+#yacc -d the.y
+	mips64-octeon-linux-gnu-gcc -c lex.yy.c
+	mips64-octeon-linux-gnu-gcc -c the.tab.c
+	mips64-octeon-linux-gnu-ar -rc libyacclex.a lex.yy.o the.tab.o 
+	mips64-octeon-linux-gnu-gcc -o ac_cli ac_cli.c -L . -lyacclex
+clean:
+	rm -f ethernet-test
+	rm -f lex.yy.c y.tab.c y.tab.h ac_cli
+	rm -f *.o *.d *.a
+	rm -f *.tab.* lex.yy.c the.output

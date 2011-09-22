@@ -1,0 +1,65 @@
+
+/*
+ * Oct, 24, 2010
+ */
+|----pipe
+     limitations of pipe
+     1. uni direct
+     2. only used by common ancestor
+/*
+ * Oct, 25, 2010
+ */
+|----32, 64 bit machine
+     cp 32 application program to 64, 
+     running ok!
+     
+     cp 64 application program to 32,
+     -bash: /tmp/xuexe: cannot execute binary file 
+     
+     xuexe: ELF 64-bit LSB executable, AMD x86-64, version 1 (SYSV), for
+     GNU/Linux 2.6.9, dynamically linked (uses shared libs), for GNU/Linux
+     2.6.9, not stripped
+     
+     xuexe: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for
+     GNU/Linux 2.6.9, dynamically linked (uses shared libs), for GNU/Linux
+     2.6.9, not stripped
+
+/*
+ * Oct, 26, 2010
+ */
+|----linux multi-thread
+     线程间无需特别的手段进行通信, 因为线程间可以共享数据结??
+     linux的消息属于IPC, 也就是进程间通信, 线程用不??
+
+     在Linux系统?? 启动一个新的进程必须分配给它独立的地址空间.
+     建立众多的数据表来维护它的代码段, 堆栈段和数据?? 这是一??昂贵"的多任务工作方式.
+
+     运行于一个进程中的多个线?? 它们彼此之间使用相同的地址空间,
+     共享大部分数?? 启动一个线程所花费的空间远远小于启动一个进程所花费的空??
+     而且, 线程间彼此切换所需的时间也远远小于进程间切换所需要的时间.
+
+     Xbox是世界最大的电脑软件公司微软所开发、销售的家用游戏主机??
+     在游戏市场中，Xbox和新力Sony公司的PlayStation
+     2和任天堂公司所发行的Game Cube形成了三国鼎立局面??
+
+
+/*
+ * Oct, 28, 2010
+ */
+|----ccd vs. cmos
+     CCD (charge coupled device)
+     结合装置管理, 用来创造点阵图图像有轻敏感图像单元装置
+     CMOS (complementary metal oxide semiconductor)
+     补充金属氧化半导体
+     The wobble or "jelly" effect seen in video captured by cameras 
+     with CMOS sensors relying upon rolling shutters 
+     instead of the global shutters found in cameras with CCDs. 
+     
+/*
+ * Oct, 30, 2010
+ */
+|----windows free anti-virus software.
+     1. alwile avast
+     2. avira
+     3. 
+     4. 

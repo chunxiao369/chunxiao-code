@@ -1,0 +1,49 @@
+/*
+ * Sep, 20, 2010
+ */
+|----Vim command
+     Del Tab and Space char in end of line
+     :%s/\s\+$//
+     %, the whole file
+     \s, Tab and Space
+     \+, matching one or more
+     $, end of line
+     very good.
+|----Asterisk
+     IP-PBX
+     internet protocol and private branch exchange
+
+     PSTN
+     Public Switched Telephone Network
+
+     FXS and FXO
+     Foreign Exchange Station Foreign Exchange Office
+
+     pbx includes fxs and fxo
+/*
+ * Sep, 21, 2010
+ */
+|----svn list
+     *.d *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej *~
+     #*# .#* .*.swp .DS_Store cscope.* .git .git* *.cmd
+|----classic
+     17日晚间，美丽的幽州城有140条道路发生严重交通拥堵，滞留的车辆超过了450万辆。
+     愚兄对QoS向来敏感。
+     看了大家热热闹闹过中秋的和谐拥挤之后，立刻脑子里想到的是VOQ。
+     在这个场景下，多少个VOQ都是没有用的，Fabric不能线速了。
+     从概率的角度（北京N千万人），
+     17日晚，一定有人要去医院Emergency，例如心脏病突发；
+     或者年轻的母亲要临产。。。
+     估计是叫天天不应。。。
+     是全congestion。
+     在辽国，就没有问题。
+     高速的侧道，一定是一个MPLS的VPN Tunnel。
+     警察，救护车一定能线速过Fabric。。。
+/*
+ * Sep, 25, 2010
+ */
+|----ip frag packet is created by route.
+|----del a file named sort_all
+     which can sort num at liner time.
+     
+|----protocol buffer

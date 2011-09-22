@@ -1,0 +1,8 @@
+#!/bin/sh
+#install
+
+version=09.3
+kernel=2.6
+platform=x86_64
+
+

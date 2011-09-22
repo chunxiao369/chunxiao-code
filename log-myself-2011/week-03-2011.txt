@@ -1,0 +1,30 @@
+/**
+ * Jan, 17, 2010
+ */
+|----ngnix
+     nginx.org
+     实战Nginx: 取代Apache的高性能Web服务器
+     
+/**
+ * Jan, 22, 2010
+ */
+|----mysql
+     shell# /etc/init.d/mysqld start
+     shell# mysql -user root -p123456
+
+     mysql #show databases;
+     mysql #create database xxx;
+     mysql #drop database xxx;
+     mysql #use xxx;
+
+/**
+ * Feb, 04, 2010
+ */
+|----爸爸的世界观
+     别人说: 倘若人永远不死亡有多好?
+     爸爸说: 那样地球放不了了.
+
+     二姑说, 男人要有男人的样子, 要听老婆的话.
+     父母要孝敬, 但老婆才是过一辈子的人.
+     关键问题上要和老婆站在同一战线上面.
+     

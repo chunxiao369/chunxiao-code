@@ -1,0 +1,77 @@
+/*
+ * Jul, 27, 2010
+ */
+|----摩根士丹利（MorganStanley，NYSE：MS），
+     财经界俗称「大摩」，是一家成立于美国纽约的国际金融服务公司，
+     提供包括证券、资产管理、企业合并重组和信用卡等多种金融服务，
+     目前在全球27个国家的600多个城市设有代表处，雇员总数达5万多人。
+     2008年9月，更改公司注册地位为“银行控股公司”。
+/*
+ * Jul, 28, 2010
+ */
+|----Metadata file does not match checksum
+     Trying other mirror
+     yum clean all
+     that's ok!
+
+/*
+ * Aug, 05, 2010
+ */
+|----linu patch diff command
+     diff -r directory-1 directory-2
+     diff -r directory-1 directory-2 --show-c-function -p
+     diff -Nura directory-1 directory-2 > xu.patch
+
+     patch -p0 < xu.patch
+     patch -Np0 < foo.patch force apply patch
+     patch -Rp0 < foo.patch force restore patch
+
+     ls | grep -v "^9$"
+     ls -A -I "9"
+/*
+ * Aug, 05, 2010
+ */
+|----local: ssh-keygen -t rsa -P ''
+            scp chunxiao.pub remote
+     remote: cat chunxiao.pub >> /root/.ssh/authorized_keys
+     local: ssh remote -i chunxiao
+     
+     ??? scp no password
+
+
+/*
+ * Jul, 25, 2010
+ */
+|----process termination
+     * 从main返回
+     * exit /* ISO C always call fclose function for all open stream */
+     * _exit /* POSIX.1 */ _Exit /* ISO C */
+     * last process 从启动例程返回
+     * last process calls pthread_exit
+异常中止有3
+     * abort
+     * receive signal
+     * last process respone to cancel request
+/*
+ * Jul, 26, 2010
+ */
+|----ISO C
+     International Organization for Standardization
+     IEEE POSIX
+     portalbe operating system interface
+
+|----sudo gcc -Wall -std=c99 -o xuexe hello_world.c /* 启用了gcc's 1999 ISO C扩展*/ 
+     sudo gcc -Wall -o xuexe hello_world.c
+|----extern char **environ;
+     里面有不少东西
+|----bss segment
+     block started by symbol
+   
+/*
+ * Jul, 27, 2010
+ */
+|----merits and demerits
+     减少可执行文件长度
+     库文件更新，不需要对使用该库的程序进行编译。
+     use -static 来用无共享的方式
+

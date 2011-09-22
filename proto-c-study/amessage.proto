@@ -1,0 +1,13 @@
+
+message AMessage
+{
+    required sint32 a = 1;
+    optional sint32 b = 2;
+}
+message StructTest {
+  message Nested2 {
+    required int32 a = 1;
+    required int32 b = 2;
+  }
+  repeated Nested2 nested2 = 1;
+}

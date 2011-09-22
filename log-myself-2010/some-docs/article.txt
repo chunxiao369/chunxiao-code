@@ -1,0 +1,37 @@
+/*
+ * 2009
+ * Google will leave china?
+ */
+Google has today revealed that in mid-December, they, along with a number of other large companies in the Internet, finance, technology, media and chemical sectors, were targeted in a sophisticated cyber-attack. This attack on their infrastructure originated in China, and resulted in the theft of intellectual property.
+Google's analysis of this attack suggests that the aim was to access Gmail accounts of a number of Chinese human rights activists, but they believe the attempt failed. Only two accounts were successfully accessed, and the only information viewed included the creation date of the accounts, and subject lines, not the contents, of messages.
+As part of the investigation, Google has uncovered that dozens of US, European and Chinese human rights advocates have also had their accounts accessed routinely by third parties. These accounts appear to have been accessed through phishing scams, rather than a security breach at Google themselves. As always, up to date anti-virus and anti-malware software is the best solution to protect against this.
+Google has already used information from this attack to make security enhancements to their infrastructure to better protect users in the future, and have taken the unusual step of sharing this information both due to the security and human rights aspects, but also as part of a wider debate on China and free speech.
+Due to this attack, and the background behind it, Google is now taking a second look at their operations in China, particularly Google.cn, where they currently offer censored search results as part of an agreement with China's government. Google is now taking a big step by informing the government of China that it is no longer willing to provide censored results, and will be entering into discussions regarding how it can do this without breaking Chinese law. Should Google find themselves unable to reach an agreement, they may shut down Google.cn, and close their offices in China.
+This move has been driven by key executives at Google in the United States, who have been monitoring the human rights and freedom of speech situation in China carefully since they launched Google.cn in 2006.
+At the time of writing Google shares are down 1.9 percent at $579 while Chinese rival Baidu rose 6.8 percent to $413 on the news.
+
+/*
+ * Mar, 09, 2010
+ */
+3月5日上午9时，当北京的温家宝总理在政府工作报告中宣示“创造条件让人民批评政府、监督政府”时，湖北十堰市警方也在紧急开会，决定暂停执行对网民陈永刚的拘留。青年陈永刚因为上网发帖质疑县领导搞形象工程，以涉嫌“诽谤”遭跨地拘捕。
+不少地方官员对互联网依然抱有漠视或敌视的心态，严重挫伤网民“批评政府、监督政府”的积极性。但十堰市警方显然感受到了来自北京全国两会的热浪，知错能改，值得肯定。
+遗憾的是，就在北京全国“两会”现场，3月7日上午湖北省代表团开放团组讨论，却未能体会中央吸纳社情民意、鼓励舆论监督、改进政府工作的良苦用心。
+当《人民日报》旗下《京华时报》女记者刘杰向本届全国人大代表、湖北省省长李鸿忠提问“您对邓玉娇案怎么看”时，发生了令人痛心的一幕：李省长责备记者怎么纠缠这个事情，反问记者是哪儿的，扬言“要给你们社长讲”，而且动手一把夺走刘杰的录音笔，令在场其他记者目瞪口呆。
+这位李省长让两天前温总理政府工作报告的宣示，遭遇了现实的尴尬。如果这样，那“创造条件让人民批评政府、监督政府”，岂不是一句空话吗?
+为什么对于提问发生在本省治下的邓玉娇案如此不高兴呢?邓玉娇案一波三折，在全国范围内不是已经有共识了吗?全国网民对于“烈女”邓玉娇的声援，是2009年网络舆情的第一大热点。连全国政协委员、最高人民检察院副检察长姜建初3月8日也公开赞许邓玉娇案“后来还是做得不错”。
+我不知道李省长听到记者提问时的心理反应是什么，也许他原本对此案结果并不认同，或者对巴东警方处置邓玉娇案前期的胡来并无真正反省，才会如此讳疾忌医?
+既然“两会”期间这场不大不小的风波，起因于邓玉娇案，那么我们不妨盘点下去年湖北的三大舆论热点事件。
+先说邓玉娇案，在老百姓看来，是非如此分明。明明是3个基层无良官员到色情场所寻求“异性洗浴服务”，被邓玉娇拒绝后用强动粗，涉嫌强奸，警方却为什么把邓玉娇关进精神病院，还要以涉嫌“故意杀人罪”起诉?
+当地党组织为什么不立即开除涉案官员的党籍，竟然容忍他们继续留在党内一个多月之久?这对执政党的形象是多大的伤害和侮辱!更不要说本该立刻启动对涉案官员的违法犯罪调查，给予最起码的羁押?邓贵大只是镇招商办一个股级干部，黄德智连股级干部都不是，是企业编制借调在政府机关工作，为什么政府不能与少数无良官员果断切割，却总担心哪怕是处置一个基层小吏也会动摇“维稳”大局?这样的官场政治生态发人深省。
+再看石首事件，一个青年厨师涂远高的非正常死亡，演变为新中国成立以来最严重的街头骚乱。数万民众走上街头，质疑厨师死因。石首市领导人不敢在第一时间到达第一现场，与民众对话。当地新闻媒体在长达80个小时的时间里失语，竟然让新华社发了一个匪夷所思的通稿，说石首街头进行多部门联合消防演习。最后需要省委书记、省长亲自出马，坐镇石首，以强大的警力强行运走尸体，还以一个欺骗死者亲属的善后协议，才勉强收场。
+此前，中央刚刚组织了全国范围的县委书记、县公安局长进京集中培训，还有贵州省处置瓮安事件的成功经验，给地方政府应对突发事件提供了宝贵的借鉴，湖北却在石首事件中依然交出了一份不及格答卷。这反映了地方领导干部处理突发事件的能力没什么长进，有负中央教诲，有负人民期待。
+我赞同中国社会科学院单光鼐研究员的说法：“突发事件不可怕，群体性事件不可怕，群众不可怕。如果领导干部不能守土有责，不能勇于担当，能躲则躲，习惯于把群众的不满说成敌对势力的煽动，把警察推在前面，借以掩盖自己执政能力的低下，强力压制住一时的骚动，却不去努力夯实执政党、政府和国家民族的百年基业、万世太平，那才是最可怕的。”
+去年湖北还发生了长江大学3位大学生英勇救人、壮烈牺牲的事件。在经历了邓玉娇案和石首事件后，本以为可以给湖北形象增加一抹亮色，却没想到，通过网络曝光，抖出皮包公司性质的打捞公司垄断江面、“挟尸要价”，荆州市政府对于危险水域不作为。此事再一次重创湖北基层政府形象，更严重打击了中华民族见义勇为的公共道德。
+从邓玉娇案、石首事件到长江大学救人案，给湖北改进公共治理一再敲响了警钟。大约30年前，中国改革起步时，陈丕显同志主持下的湖北省委，敏感地响应邓小平同志的改革部署，特地从北京请来人民日报理论部主任汪子崧等人宣讲“实践是检验真理的唯一标准”，推进全省真理标准讨论和思想解放。
+今天，地方和基层党政领导干部需要深刻领会中央有关科学发展、和谐社会的治国理念和战略部署，与时俱进，修习现代多种利益群体和多种传播渠道背景下的执政艺术，切实改进执政能力，学会在舆论监督中执政，在“杂音”中执政。
+我注意到从昨天以来，网上对这起事件的议论不少，对于公权力的骄横深为不满，省长如此，更何谈基层领导干部!所以，有网民要求李省长对自己失态损害湖北人民形象，向记者公开道歉。3月9日《南方都市报》报道，李鸿忠省长在回答怎么看待像石首事件、邓玉娇案这样的负面报道时说：“我看只要客观公正就好，事情不怕报道，不怕公开，能够公正、如实，就是最高标准”，并表示欢迎媒体监督。希望这样的表态是对3月7日失言的真诚弥补。
+提问邓玉娇案，只是正常的媒体采访，本来作为全国人大代表和一省之长，在全国两会期间不回避问题是上策，即使采用“外交词汇”、以“太极推手”回避，也不会激起这么多不满。
+媒体报道过，在“大跃进”后的3年饥荒中，1960年3月的一天，红军烈属、四川达县农民何明渊曾以在天安门广场英雄纪念碑前白日点灯的激进方式，到首都鸣冤，提请政府重视老百姓挨饿死人的问题。在那个“阶级斗争”风声鹤唳的年代，北京市委书记彭真非但没有将他投入监狱，而且为了防止他回乡受到迫害，让他到湖北武汉异地安居。国家主席刘少奇听取汇报后，难过得久久说不出话来。党中央根据各地真实灾情，最后果敢地采取措施，纠正“大跃进”的错误。
+刘少奇、彭真等老一辈共产党人在治国理政时尽管也曾由于历史局限犯过这样那样的错误，但他们面对人民疾苦时流露出来的赤子情怀，格外让人感动。
+这是我们党能够战胜一切艰难险阻的宝贵精神财富，希望新一代领导干部铭刻在心，摆正自己和人民的关系，摆正公权力和舆论监督关系，昼乾夕惕，真正做到“情为民所系，利为民所谋，权为民所用”。
+

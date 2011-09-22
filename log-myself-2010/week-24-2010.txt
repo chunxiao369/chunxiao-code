@@ -1,0 +1,37 @@
+/*
+ * Jun, 08, 2010
+ */
+|----Input and Output
+     standard input, output and error
+|----git Auto-Completion
+     there is a shell file in git setup directory.
+     . ~/gitxxxxx
+     ok, I can use git <tab> now.
+|---- 
+/*
+ * Jun, 10, 2010
+ */
+|----vim 里面出现^M
+     即'\r'
+
+/*
+ * Jun, 11, 2010
+ */
+|----CPLD/FPGA并无本质的区别, 都是从PLD上发展来的, 
+     CPLD更适合于真值表解决的问题
+     FPGA则是基于查找表实现功能的
+|----Super Low Latency超低时延 
+     Blu-ray蓝光
+     Tx/Rx dongle for wireless display 软件狗
+/*
+ * Jun, 15, 2010
+ */
+|----RPM
+     rpm -ivh --relocat /=/mnt/
+     rpm -e 
+|----IRQ
+     Interupt Request
+     PCI 驱动如何能找到它的硬件并获得对它的存取.
+     PCI 体系被设计为 ISA 标准的替代品, pci clock frequency, pci 32, 64-bit data bus
+     每个 PCI 外设有一个总线号, 一个设备号, 一个功能号标识.
+     
