@@ -10,3 +10,4 @@
 *.mod
 *.bak
 tags
+!config/cscope.sh
