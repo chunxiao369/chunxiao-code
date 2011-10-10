@@ -14,7 +14,7 @@ CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS = -lpthread
 TARGET = xuexe
-OBJS = print_change.o 
+OBJS = copy_file.o 
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 

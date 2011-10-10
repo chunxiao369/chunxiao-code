@@ -1,0 +1,13 @@
+#/bin/bash
+if [ $# -ne 1 ]
+then
+    echo "$0 FILE"
+    exit 1
+fi
+
+#indent -linux -bad -br -ce -cdw -cli0 -cbi0 -i4 -ts4 -nut -sob -l120 -ss -npsl -blf -brs -bfda -lp -npcs $1
+#indent -linux -br -ce -cdw -cli0 -cbi0 -i4 -ts4 -nut -sob -l120 -ss -npsl -blf -brs -lp -npcs -il 0 $1
+indent -br -ce -cdw -cli0 -cbi0 -i4 -ts4 -nut -sob -l120 -npsl -ss -blf -brs -lp -npcs -ncs -nprs $1
+rm $1~
+sed 's/\s\+$//' -i $1
+

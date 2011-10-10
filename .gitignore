@@ -10,4 +10,5 @@
 *.mod
 *.bak
 tags
+c-study/simple_test/xuexe
 !config/cscope.sh
