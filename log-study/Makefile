@@ -10,6 +10,7 @@
 #
 
 #CC = mips64-octeon-linux-gnu-gcc
+#CC = ppc_82xx-gcc
 CC = gcc
 CFLAGS = -Wall -O2 -I /mnt/share_disk/program-files/log4c/include/
 LDFLAGS = -L /mnt/share_disk/program-files/log4c/lib/
