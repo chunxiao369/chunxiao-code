@@ -29,10 +29,12 @@ dir := tb
 include $(dir)/tb.mk
 
 $(TARGET): $(OBJ_DIR) $(OBJS) $(LIBS_LIST)
-	echo '|----' $(OBJ_DIR)
-	echo '|----' $(OBJS)
-	echo '|----' $(LIBS_LIST)
-	echo '|----' $(CFLAGS_LOCAL)
+	@echo '|----' $(OBJ_DIR)
+	@echo '|----' $(OBJS)
+	@echo '|----' $(LIBS_LIST)
+	@echo '|----' $(CFLAGS_LOCAL)
+	@echo '|----' $(OBJS_module)
+	@echo '|----' $(OBJS_tb)
 	$(CC) $(OBJS) $(LDFLAGS_PATH) $(LIBS_LIST) $(LDFLAGS_GLOBAL) -o $@
 
 clean:

@@ -14,6 +14,7 @@ CLEAN_LIST  :=  $(CLEAN_LIST) $(OBJS_$(d)) $(DEPS_$(d)) $(LIBRARY)
 -include $(DEPS_$(d))
 
 $(LIBRARY): $(OBJS_$(d))
+	@echo aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa $(OBJS_tt/ta) 
 	$(MAKELIB)
 $(OBJ_DIR)/%.o: $(d)/%.c
 	$(COMPILE)
