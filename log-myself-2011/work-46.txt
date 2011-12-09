@@ -1,9 +1,7 @@
 A good programmer is someone who looks both ways before crossing a one-way street. — Doug Linder, systems administrator
-
 好的程序员这样一类人，这类人在横穿一条单行道前都要先看一下路两边。– Doug Linder, 系统管理员
 
 A most important, but also most elusive, aspect of any tool is its influence on the habits of those who train themselves in its use. If the tool is a programming language this influence is, whether we like it or not, an influence on our thinking habits. — Edsger Dijkstra, computer scientist
-
 关于工具，一个最重要的，也是最不易察觉的方面是，工具对使用此工具的人的习惯的潜移默化的影响。如果这个工具是一门程序语言，不管我们是否喜欢它，它都会影响我们的思维惯式。 –Edsger Dijkstra, 著名的计算机科学家。
 
 Being abstract is something profoundly different from being vague… The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise. — Edsger Dijkstra
