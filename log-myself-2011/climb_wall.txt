@@ -1,0 +1,136 @@
+
+近来, 以方滨兴为首的国域网集团势力, 试图阻碍目田(大家明白)的天朝网民的获取消息和知识.
+众所周知, 一些反动的风站不能上(可以理解), twitter, facebook, youtube 不能上(也能勉强接受),
+但是github, google docs, 好多技术性网站不能上, 我们不得不对天朝防火墙嗤之以鼻.
+在此大背景下, 翻墙技术应运而生.以下介绍本人常用的以下技术, 欢迎补充(request for comment).
+
+1, 对于只想上facebook, twitter的用户, 添加hosts是一个最好的办法.
+   对应文件linux: /etc/hosts, windows: C:\WINDOWS\system32\drivers\etc\hosts,
+   将以下内容添加到上面对应文件即可.
+
+   #Twitter update 8.6#
+   199.59.149.208 oauth.twitter.com
+   199.59.149.208 twitter.com
+   199.59.149.208 www.twitter.com
+   199.59.149.208 api.twitter.com
+   199.59.149.208 search.twitter.com
+   199.59.149.208 userstream.twitter.com
+   199.59.149.208 ssl.twitter.com
+   199.59.149.208 status.twitter.com
+   199.59.149.208 assets0.twitter.com
+   199.59.149.208 assets1.twitter.com
+   199.59.149.208 assets2.twitter.com
+   199.59.149.208 assets3.twitter.com
+   199.59.149.208 static.twitter.com
+   184.29.36.124 platform.twitter.com
+   219.76.10.138 platform0.twitter.com
+   199.59.149.208 help.twitter.com
+   199.59.149.208 support.twitter.com
+   202.74.62.53 si0.twimg.com
+   202.74.62.53 si1.twimg.com
+   202.74.62.53 si2.twimg.com
+   202.74.62.53 si3.twimg.com
+   202.74.62.53 si4.twimg.com
+   202.74.62.53 si5.twimg.com
+   199.59.149.208 m.twitter.com
+   208.43.220.251 www.twitpic.com
+   199.59.149.240 mobile.twitter.com
+   184.106.20.99 posterous.com
+   209.17.74.13 twitgoo.com
+   199.59.149.208 tweetphotoapi.com
+   208.43.220.250 api.twitpic.com
+   209.17.70.143 oi40.tinypic.com
+   209.17.70.143 oi41.tinypic.com
+   209.17.70.143 oi42.tinypic.com
+   209.17.70.143 oi43.tinypic.com
+   209.17.70.143 oi44.tinypic.com
+   209.17.70.143 oi45.tinypic.com
+   209.17.70.143 oi46.tinypic.com
+   209.17.70.143 oi47.tinypic.com
+   209.17.70.143 oi48.tinypic.com
+   209.17.70.143 oi49.tinypic.com
+   209.17.70.143 oi50.tinypic.com
+   209.17.70.143 oi51.tinypic.com
+   209.17.70.143 oi52.tinypic.com
+   209.17.70.143 oi53.tinypic.com
+   209.17.70.143 oi54.tinypic.com
+   209.17.70.143 oi55.tinypic.com
+   209.17.70.143 oi56.tinypic.com
+   199.59.149.208 t.co
+
+   #Facebook update 7.29#
+   69.63.189.16 facebook.com
+   69.63.189.16 www.facebook.com
+   69.63.181.20 login.facebook.com
+   69.63.179.70 secure.facebook.com
+   66.220.146.18 apps.facebook.com
+   69.63.181.31 touch.facebook.com
+   69.63.181.16 zh-CN.facebook.com
+   202.157.186.28  static.ak.facebook.com
+   202.157.186.34 b.static.ak.facebook.com
+   69.63.178.57 secure-profile.facebook.com
+   69.63.178.57 secure-media-sf2p.facebook.com
+   69.63.178.15 ssl.facebook.com
+   69.63.190.18 apps.facebook.com
+   118.214.190.105 profile.ak.facebook.com
+   69.63.187.17 fbcdn.net
+   97.65.135.139  external.ak.fbcdn.net
+   124.155.222.50 vthumb.ak.fbcdn.net
+   97.65.135.163 static.ak.fbcdn.net
+   97.65.135.163 b.static.ak.fbcdn.net
+   202.157.186.34 creative.ak.fbcdn.net
+   118.214.190.128 profile.ak.fbcdn.net
+   69.63.176.21 s-hprofile-sf2p.fbcdn.net
+   125.56.199.9 photos-b.ak.fbcdn.net
+   125.56.199.9 photos-c.ak.fbcdn.net
+   125.56.199.9 photos-d.ak.fbcdn.net
+   125.56.199.9 photos-e.ak.fbcdn.net
+   125.56.199.9 photos-f.ak.fbcdn.net
+   125.56.199.9 photos-g.ak.fbcdn.net
+   125.56.199.9 photos-h.ak.fbcdn.net
+   66.220.149.50   api-read.facebook.com
+   69.63.181.48    api.facebook.com
+   66.220.146.53   iphone.facebook.com
+   66.220.151.74   0-34.channel.facebook.com
+   66.220.151.74   34.ctest.facebook.com
+   66.220.151.74   34.channel.facebook.com
+   66.220.149.12   m.facebook.com
+   184.84.114.110  s-static.ak.facebook.com
+   210.0.146.25    photos-a.ak.fbcdn.net
+   69.63.181.105 chat.facebook.com
+   
+   这个方法在linux上要有root权限(注意是linux, android设备也是可以用), 在windows上面要有administator权限,
+   获得权限的方法如果自己搞不定, 再联系xuchunxiao369@gmail.com
+
+2. 对于有上其他网站需求的用户, http://www.cjb.net/上一个不错的选择, 但是可能会有点不稳定.
+   到该网站上申请一个ssh帐号, 然后用此帐号再做一些配置就可以翻墙了.
+   但是, 该网站的dns解析有时候会被墙, 所以推荐用216.194.70.6这个ip. 
+   本人常用环境是ubuntu + chrome + proxyswitchy, 
+   先在shell下运行以下命令,
+   ssh -D 7070 chunxiao369@216.194.70.6
+   再用proxy switchy设置成代理模式, 用起来还不错.
+
+   windows下面推荐用putty做代理, 具体方法可以网上搜一下.
+
+3. 对于经常想稳定翻墙的同学们, 花一定的money也是值得的, 推荐http://www.sshcenter.info
+   该网站上可以申请帐户免费试用一天, 推荐别人的话, 会有奖励的时间.
+   本人推荐该网站的付费服务.
+   SSH服务一天      SSH服务一天（24小时） 不限流量 1.00 元 
+   SSH服务一星期    SSH服务一星期（7天），不限流量 2.00 元 
+   SSH服务一个月    SSH服务一个月（31天） 不限流量 5.00 元 
+   SSH服务半年      SSH服务半年（183天），不限流量 25.00 元
+   SSH服务一年      SSH服务一年（366天），不限流量 45.00 元
+   价格实惠, 已经不错了.
+   用法的话, 网站里应该会有详细介绍的.
+
+4. 另外, windows下面的翻墙工具也不少, 
+   之前一直用freegate + chrome + proxy switchy 三剑客, 比较好用, 但freegate最近的情况不太清楚.
+   听说windows下面最近有个软件叫赛风3, 同学们可以试试看.
+   也有人用GAE方式, 听说配置比较麻烦.
+
+古人云: 防民之口,甚于防川.　当前天朝防互联网上悠悠众生之口,　不说了....
+
+
+
+
+

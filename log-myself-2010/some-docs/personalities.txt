@@ -25,3 +25,7 @@ FriendFeed 创始人
 现 Facebook 工程师
 Paul Buchheit
 
+/*
+ * Dec, 14, 2011
+ */
+李先静 CSDN开源专家，有着十年Linux开发经验、五年手机开发经验。擅长嵌入式程序员培训，软件架构设计和技术写作
