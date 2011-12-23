@@ -14,7 +14,7 @@ CC=gcc
 CFLAGS=-Wall -O2
 LDFLAGS=-lpthread
 TARGET=xuexe
-OBJS=thread04.o
+OBJS=thread07.o
 COMPILE  =  $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
