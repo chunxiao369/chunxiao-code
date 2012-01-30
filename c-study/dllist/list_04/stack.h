@@ -46,9 +46,21 @@ static inline void * stack_pop(stack_ptr, type, member)
 #define stack_pop(stack_ptr, type, member) ({           \
     struct list_head *i_list;                           \
     type *data = NULL;                                  \
+    int ret = 1;                                        \
     list_for_each(i_list, &((stack_ptr)->stack_list)) { \
     data = list_entry(i_list, type, member);            \
     list_del(&(data->member));                          \
+    ret = 0;                                            \
+    break;                                              \
+    }                                                   \
+    ret;
+})
+
+#define stack_top(stack_ptr, type, member) ({           \
+    struct list_head *i_list;                           \
+    type *data = NULL;                                  \
+    list_for_each(i_list, &((stack_ptr)->stack_list)) { \
+    data = list_entry(i_list, type, member);            \
     break;                                              \
     }                                                   \
     data;                                               \

@@ -24,24 +24,34 @@ static void *thread_func(void *arg)
     pthread_cleanup_push(cleanup_handler, p);
     while (1) {
         pthread_mutex_lock(&mtx);   //这个mutex主要是用来保证pthread_cond_wait的并发性
-        while (head == NULL) {  //这个while要特别说明一下，单个pthread_cond_wait功能很完善，为何这里要有一个while (head == NULL)呢？因为pthread_cond_wait里的线程可能会被意外唤醒，如果这个时候head != NULL，则不是我们想要的情况。这个时候，应该让线程继续进入pthread_cond_wait
-            pthread_cond_wait(&cond, &mtx); // pthread_cond_wait会先解除之前的pthread_mutex_lock锁定的mtx，然后阻塞在等待对列里休眠，直到再次被唤醒（大多数情况下是等待的条件成立而被唤醒，唤醒后，该进程会先锁定先pthread_mutex_lock(&mtx);，再读取资源                                          用这个流程是比较清楚的/*block-->unlock-->wait() return-->lock*/
-            p = head;
-            head = head->n_next;
-            printf("Got %d from front of queue\n", p->n_number);
-            free(p);
-            pthread_mutex_unlock(&mtx); //临界区数据操作完毕，释放互斥锁
+        while (head == NULL) {  
+            //这个while要特别说明一下，单个pthread_cond_wait功能很完善，
+            //为何这里要有一个while (head == NULL)呢？
+            //因为pthread_cond_wait里的线程可能会被意外唤醒，
+            //如果这个时候head != NULL，
+            //则不是我们想要的情况。这个时候，应该让线程继续进入pthread_cond_wait
+            pthread_cond_wait(&cond, &mtx);
+            // pthread_cond_wait会先解除之前的pthread_mutex_lock锁定的mtx，
+            //然后阻塞在等待对列里休眠，直到再次被唤醒（大多数情况下是等待的条件成立而被唤醒，
+            //唤醒后，该进程会先锁定先pthread_mutex_lock(&mtx);，再读取资源
+            //用这个流程是比较清楚的
+            /*block-->unlock-->wait() return-->lock*/
         }
-        pthread_cleanup_pop(0);
-        return 0;
-
-/*EC_CLEANUP_BGN
-(void)pthread_mutex_unlock(&mtx);
-EC_FLUSH("thread_func")
-return 1;
-EC_CLEANUP_END*/
+        p = head;
+        head = head->n_next;
+        printf("Got %d from front of queue\n", p->n_number);
+        free(p);
+        pthread_mutex_unlock(&mtx); //临界区数据操作完毕，释放互斥锁
     }
-/*[]*/
+    pthread_cleanup_pop(0);
+    return 0;
+
+    /*EC_CLEANUP_BGN
+    (void)pthread_mutex_unlock(&mtx);
+    EC_FLUSH("thread_func")
+    return 1;
+    EC_CLEANUP_END*/
+}
 
 int main(void) 
 {
@@ -61,7 +71,7 @@ int main(void)
         head = p;
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mtx); //解锁
-        sleep(1);
+        //usleep(2);
     }
     printf("thread 1 wanna end the line.So cancel thread 2.\n");
     pthread_cancel(tid);
