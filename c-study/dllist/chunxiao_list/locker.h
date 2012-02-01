@@ -1,5 +1,30 @@
+/**
+ * locker.h
+ * xuchunxiao369@gmail.com
+ * Copyright (C) <1983-2011>
+ * locker interface 
+
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #ifndef __LOCKER_H__
 #define __LOCKER_H__
+
+#include <stdlib.h>
+#include <strings.h>
+#include <unistd.h>
+#include "ret_value.h"
+#include "ofen_used.h"
 
 struct _locker;
 typedef struct _locker locker_t;
@@ -8,6 +33,7 @@ typedef comm_value_t(*locker_lock_func) (locker_t * thiz);
 typedef comm_value_t(*locker_unlock_func) (locker_t * thiz);
 typedef void (*locker_destroy_func) (locker_t * thiz);
 typedef int (*task_self_func) (void);
+typedef void (*locket_init_func) (locker_t * thiz);
 
 struct _locker {
     int owner;
@@ -19,79 +45,18 @@ struct _locker {
     locker_lock_func real_lock;
     locker_unlock_func real_unlock;
     locker_destroy_func real_destroy;
+    char priv[0];
 };
 
-static comm_value_t locker_loop_lock(locker_t * thiz)
-{
-    comm_value_t ret = RET_OK;
-
-    return_val_if_fail(thiz != NULL && thiz->lock != NULL, RET_INVALID_PARAMS);
-    if (thiz->owner == thiz->task_self()) {
-        thiz->refcount++;
-    } else {
-        if ((ret = thiz->real_lock(thiz)) == RET_OK) {
-            thiz->refcount = 1;
-            thiz->owner = thiz->task_self();
-        }
-    }
-
-    return ret;
-}
-
-static comm_value_t locker_loop_unlock(locker_t * thiz)
-{
-    comm_value_t ret = RET_OK;
-
-    return_val_if_fail(thiz != NULL && thiz->real_unlock != NULL, RET_INVALID_PARAMS);
-    return_val_if_fail(thiz->owner == thiz->task_self(), RET_FAIL);
-
-    thiz->refcount--;
-    if (thiz->refcount == 0) {
-        thiz->owner = 0;
-        ret = thiz->real_unlock(thiz);
-    }
-
-    return ret;
-}
-
-static void locker_loop_destroy(locker_t * thiz)
-{
-    return_if_fail(thiz != NULL && thiz->destroy != NULL);
-
-    thiz->owner = 0;
-    thiz->refcount = 0;
-    thiz->real_destroy(thiz);
-    priv->real_locker = NULL;
-
-    SAFE_FREE(thiz);
-
-    return;
-}
+comm_value_t locker_loop_lock(locker_t * thiz);
+comm_value_t locker_loop_unlock(locker_t * thiz);
+void locker_loop_destroy(locker_t * thiz);
 
 locker_t* locker_loop_create(task_self_func task_self,
-                             locker_lock_func real_lock,
-                             locker_unlock_func real_unlock,
-                             locker_destroy_func real_destroy)
-{
-    locker_t* thiz = NULL;
-    return_val_if_fail(task_self != NULL, NULL);
-    return_val_if_fail(real_lock != NULL, NULL);
-    return_val_if_fail(real_unlock != NULL, NULL);
-    return_val_if_fail(real_destroy != NULL, NULL);
-
-    thiz = (locker_t *)malloc(sizeof(locker_t));
-
-    if(thiz != NULL) {
-        thiz->lock    = real_lock;
-        thiz->unlock  = real_unlock;
-        thiz->destroy = real_destroy;
-
-        thiz->owner = 0;
-        thiz->refcount = 0;
-        thiz->task_self = task_self;
-    }
-
-    return thiz;
-}
+                      locker_lock_func real_lock,
+                      locker_unlock_func real_unlock,
+                      locker_destroy_func real_destroy,
+                      locket_init_func init,
+                      int data_len);
 
 #endif
