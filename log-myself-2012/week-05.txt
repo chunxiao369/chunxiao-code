@@ -1,0 +1,574 @@
+Computer-Related Quotes found within the Weird Wild World
+=========================================================
+
+If it's there, and you can see it, it's real. 
+If it's not there, and you can see it, it's virtual. 
+If it's there, and you can't see it, it's transparent. 
+If it's not there, and you can't see it, you erased it. 
+- IBM, 1978, on virtual memory
+
+Good, fast and cheap. Pick any two.
+
+Pick your favorite: Lousy, Slow, Expensive.
+
+"The only problem with the cloud is that at some point it will
+rain." -- Reinhard Posch, CIO for the Austrian Federal Government at EIC
+
+"If Java had true garbage collection, most programs
+would delete themselves upon execution."
+        -- Robert Sewell
+
+"The most likely way for the world to be destroyed, most experts agree,
+is by accident. That's where we come in; we're computer professionals.
+We cause accidents."        -- Nathaniel Borenstein, co-creator of MIME
+
+
+If universal surveillance were the answer, lots of us would have
+moved to the former East Germany. If surveillance cameras were
+the answer, camera-happy London, with something like 500,000 of
+them at a cost of $700 million, would be the safest city on the
+planet. -- Bruce Schneier
+
+
+"It is not UNIX's job to stop you from shooting your foot. If you so
+choose to do so, then it is UNIX's job to deliver Mr. Bullet to Mr Foot
+in the most efficient way it knows." -- Terry Lambert
+
+
+(In response to another poster's assertion that Windows NT is
+easier to configure than an otherwise-similar Unix system)
+Indeed. With NT, I can usually see in a matter of minutes that
+what I'm trying to do simply can't be done with the available
+software. -- Daniel J. Bernstein
+
+Windows: "Where do you want to go today?"
+Linux: "Where do you want to go tomorrow?"
+FreeBSD: "Are you guys coming, or what?"
+
+---
+Choose Windows. Choose the eXPerience.
+Choose flashy menus on your fucking server.
+Choose Exchange. Choose IIS.
+Choose Code Red, Nimda, the Lovebug, and a sexy Melissa...
+Choose Outlook and end up wondering where your stupid .docs are.
+Choose not to choose. Let Micro$oft do it for you.
+
+But why would I want to do a thing like that?
+
+I choose not to be chosen: I choose something else.
+The reasons? There are too many reasons.
+And who needs reasons when you've got Linux?
+
+(from http://p.ulh.as/, found on http://www.0xdeadbeef.info/) 
+---
+
+Macs are for those who don't want to know why their computer works.
+Linux is for those who want to know why their computer works.
+DOS is for those who want to know why their computer doesn't work.
+Windows is for those who don't want to know why their computer doesn't work.
+
+"Help Microsoft fight software piracy: Give Linux to a friend today!"
+
+"This is LINUX land, in silent nights you can hear the Windows machines 
+ rebooting."
+
+MACINTOSH - Most Applications Crash, If Not The Operating System Hangs
+
+If it doesn't work, plug it in.
+If you're still having trouble, switch it on.
+If you think technology can solve your problems
+you don't understand technology
+and you don't understand your problems.
+
+'Instead of asking why a piece of software is using "1970s technology,"
+start asking why software is ignoring 30 years of accumulated wisdom.'
+
+
+Why use Windows, since there is a door? - Andre Fachat
+
+Those selling solutions, or more accurately, those marketing IT
+solutions often choose to make products sound new and exciting. Quite
+why they do so has often puzzled me since I, as a former IT manager,
+have always been highly skeptical of anything really new as it usually
+means trouble. - Tony Lock, Freeform Dynamics on
+http://www.regdeveloper.co.uk/2007/11/08/virtualization_not_new/
+
+Treat your password like your toothbrush.  Don't let anybody else use it,
+and get a new one every six months.  ~Clifford Stoll
+
+Passwords are like underwear.  You don't share them,
+you don't hang them on your monitor or under your keyboard,
+you don't email them, or put them on a web site,
+and you must change them very often.
+
+
+Give a person a fish and you feed them for a day; teach that person to
+use the Internet and they won't bother you for weeks.
+
+Phish someone, and you inconvenience him for a week.
+Teach a man to be phished, and you screw him for the rest of his life.
+--Perry Metzger
+
+
+On the Internet, nobody can hear you scream.
+
+Jesus saves!  The rest of us better make backups.
+
+Industry executives and analysts often mistakenly talk about strategy
+as if it were some kind of chess match.  But in chess, you have just
+two opponents, each with identical resources, and with luck playing
+a minimal role.  The real world is much more like a poker game, with
+multiple players trying to make the best of whatever hand fortune has
+dealt them.  In our industry, Bill Gates owns the table until someone
+proves otherwise.  ~David Moschella
+
+User, n.  The word computer professionals use when they mean "idiot."
+-- Dave Barry
+
+The only secure computer is one that's unplugged, locked in a safe,
+and buried 20 feet under the ground in a secret location... and i'm
+not even too sure about that one" - Dennis Huges, FBI.
+
+From a security perspective, if you're connected, you're screwed.
+-- Daniel J. Bernstein
+
+There's an engineering term for systems like that: "garbage".
+-- Daniel J. Bernstein
+
+In our world, software has to be small, has to be debugged, 
+has to ship as part of a major initiative, has to avoid 
+compatibility problems, has to avoid end user calls.
+-- Bill Gates
+
+"The most amazing achievement of the computer software industry is its
+continuing cancellation of the steady and staggering gains made by the
+computer hardware industry..."-- Henry Petroski
+
+"What is this talk of 'release'?  We do not make software 'releases'.
+Our software 'escapes', leaving a bloody trail of designers and quality
+assurance people in its wake." --unknown
+
+
+"I invented Ctrl-Alt-Delete, but Bill Gates made it famous."
+        -- David Bradley, original IBM PC design team
+
+"640K should be enough for anybody." - Bill Gates, 1981
+
+"640k is enough for most users. Windows, on the other hand..." 
+- DJ Delorie, Linux Expo 1999.
+
+"...there is no reason anyone would want a computer in their home." 
+Ken Olson, President, Chairman, and Founder of DEC, 1977
+
+"The number of UNIX installations has grown to 10, with more expected..."
+                    - Dennis Ritchie and Ken Thompson, June 1972
+
+"I think there is a world market for about five computers." 
+Thomas J. Watson, chairman of the board of IBM, 1943
+
+A computer without COBOL and Fortran is like a piece of chocolate cake
+without ketchup and mustard.
+
+"Combinatorics -- how to count without counting."
+
+Linux beer: A recipe originally created by a drunken Finn in his 
+basement, it has since become the home-brew of choice for impecunious 
+brewers and Unix beer-lovers worldwide, many of whom change the recipe.
+
+Tell init(8) to lock'n'load! We're going zombie hunting!
+
+Unix *is* user friendly! You just aren't necessarily on the A-list...
+
+"Dijkstra probably hates me"  -- Linus Torvalds, in kernel/sched.c
+
+Life would be much easier if I had the source code.
+
+Running Windows on a Pentium is like having a brand new Porsche 
+- but only be able to drive backwards with the handbrake on.
+
+Intel - still number 0.999873464508
+
+TCP/IP Illustrated... Is that the swimsuit edition?  -- rgh22
+
+System requirements: 986 processor or higher, 340 MHz modem, 6.5TB free
+disk space, 8GB RAM, anti-lock braking system and a partridge in a pear
+tree. Note: This software will not run on your computer.
+
+I haven't lost my mind...it's backed up on tape somewhere.
+
+I'm only a sysadmin. 
+What do you expect me to do - something useful?!?  -- btw21
+
+HTTP is like being married: you have to be able to handle whatever
+you're given, while being very careful what you send back.
+
+Hi! I'm a signature virus! Copy me into your .signature file to help me spread!
+
+The purpose of most computer languages is to lengthen your resume by
+a word and a comma. -- Larry Wall
+
+Programming graphics in X is like finding sqrt(pi) using Roman numerals.
+
+Of course my password is the same as my pet's name. My macaw's name was
+Q47pY!3, but I change it every 90 days.  
+
+Usenet is like a herd of performing elephants with diarrhea: massive,
+difficult to redirect, awe-inspiring, entertaining, and a source of
+mind-boggling amounts of excrement when you least expect it.  -- spaf
+
+Last night I played a blank tape at full blast.
+The mime next door went nuts!
+
+shin (n): A device for finding furniture in the dark.
+
+I tried to categorise my CD collection as well as order by artist, but
+that would have needed a six-dimensional sparse matrix. This is a Hard
+Problem, so I left it alphabetised.  -- jdh28 (paraphrased)
+
+People who love sausages, respect the law, and work with IT standards 
+shouldn't watch any of them being made.  -- Peter Gutmann 
+
+The problem with people whose minds are in the gutter is that they keep 
+blocking my periscope.  -- Peter Gutmann
+
+Given enough eyeballs, all bugs are shallow.  -- esr
+
+What Yoda meant to say:
+Java leads to Shockwave. Shockwave leads to RealAudio. 
+RealAudio leads to suffering.
+
+
+Linux is like living in a teepee.  No Windows, no Gates, Apache in
+house.  (Seen on Usenet)
+
+If the box says ``Windows 95 or better'', it should run on Linux, right?
+(Seen on Usenet)
+
+(On the statement print "42 monkeys" + "1 snake":)  By the
+way, both Perl and Python get this wrong.  Perl gives 43 and
+Python gives "42 monkeys1 snake", when the answer is clearly
+"41 monkeys and 1 fat snake".        -- Jim Fulton
+
+Perl is worse than Python because people wanted it worse.
+        -- Larry Wall
+
+Python is executable pseudocode.  Perl is executable line noise.
+        -- unknown
+
+"Life is short (You need Python)"
+        -- Bruce Eckel, ANSI C++ Comitee member, author
+           of "Thinking in C++" and "Thinking in Java"
+
+I suggested holding a "Python Object Oriented Programming Seminar",
+but the acronym was unpopular.
+        -- Joseph Strout
+
+"Perl will consistently give you what you want,
+unless what you want is consistency." -- Larry Wall
+
+
+Surely the value of C++ is zero, but C's value is now 1?
+  -- map36, commenting on the "No, C++ isn't equal to D. 'C' is undeclared
+  [...] C++ should really be called 1" response to "C++ -- shouldn't it
+  be called D?"
+
+No, C++ isn't equal to D. 'C' is undeclared, so we assume it's an int,
+with a default value of zero.  Hence, C++ should really be called 1.
+-- met24, commenting on the quote "C++ -- shouldn't it be called D?"
+
+"If you think C++ is not overly complicated, just what is a protected
+abstract virtual base pure virtual private destructor, and when was the
+last time you needed one?"
+        -- Tom Cargil, C++ Journal
+
+"I made up the term 'object-oriented', and I can tell you
+I didn't have C++ in mind."
+        -- Alan Kay, OOPSLA '97
+
+"Python tricks" is a tough one, cuz the language is so clean. E.g.,
+C makes an art of confusing pointers with arrays and strings, which
+leads to lotsa neat pointer tricks; APL mistakes everything for an
+array, leading to neat one-liners; and Perl confuses everything
+period, making each line a joyous adventure .
+        -- Tim Peters
+
+
+[3rd party product] does just what it says on the tin.... 
+except that it doesn't work. -- map36
+
+I can remember the exact instant when I realized that a large part of
+my life from then on was going to be spent in finding mistakes in my
+own programs.       -- Maurice Wilkes discovers debugging, 1949 
+
+"Beware of bugs in the above code; I have only proved it correct, not
+tried it." -- Knuth
+
+No one who has been a programmer can escape the conclusion that computers
+highlight our inability to communicate.
+-- Mike Walsh, _Infosystems_, Nov 87
+
+
+How I learnt some basic logic (a true story):
+Teacher:  Does A and B imply B?
+Me:       Errr ... no.
+Teacher:  You're ugly and you're stupid. Does this imply you're stupid?
+          Yes, it does.
+-- Henri Johnston
+
+
+
+"...Then anyone who leaves behind him a written manual, and likewise
+anyone who receives it, in the belief that such writing will be clear
+and certain, must be exceedingly simple-minded..." -- Plato, _Phaedrus_ 
+
+If you lie to the compiler, it will get its revenge. 
+- Henry Spencer 
+
+Call 226682779489712859637199678587902423107 for a good prime!
+
+As far as I know, we have never had an undetected error.
+
+B can be thought of as C without types; more accurately, it is BCPL
+squeezed into 8K bytes of memory and filtered through Thompson's
+brain.  -- Dennis Ritchie 
+
+"C is quirky, flawed, and an enormous success." 
+  -- Dennis Ritchie 
+
+"The last good thing written in C was Franz Schubert's Symphony number 9."
+        -- Erwin Dieterich
+
+
+That's what I love about GUIs:
+They make simple tasks easier, and complex tasks impossible. 
+  -- John William Chambless
+
+The use of COBOL cripples the mind; its teaching should, therefore,
+be regarded as a criminal offence.
+  -- E.W. Dijkstra
+
+"I mean, if 10 years from now, when you are doing something quick and
+dirty, you suddenly visualize that I am looking over your shoulders and
+say to yourself, 'Dijkstra would not have liked this,' well that would
+be enough immortality for me."  -- E.W. Dijkstra
+
+"Computer science is no more about computers than astronomy is about
+telescopes."
+    -- E.W. Dijkstra
+
+
+HTML has followed nature's example... bright, sometimes flashing, colors
+are a sign of indigestiblility.
+  -- Rob Hartill
+
+
+It's important to have good cryptography even on small platforms
+because otherwise someone will hack your nanites to give you a
+really silly hairstyle.
+  -- Bruce Schneier
+
+Air Conditioned Environment - Do not open Windows.
+
+Unable to locate Chocolate! -- Operator Halted!
+
+On a clear disk you can seek forever
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ (Okay, so I can dream.)
+
+Misspeled?  Imposable.  My modem is erorr corecting.
+
+"I presume you created this with xfig?" / "Yes." / "Wuss!"
+-- mdw & wry
+
+(mdw) writes test programs like Nine Inch Nails write music. -- srl
+
+A program designed for inputs from people is usually stressed beyond
+breaking point by computer-generated inputs. -- Dennis Ritchie
+
+I thought it was very clever sending an enormous JPEG to everyone to
+whinge about spam.  Next thing, a talk on virus protection: just run
+this executable for information...   -- [mdw]
+
+December 32, 1999: We're pleased to report no Y2K failures!
+
+recursion (n): See recursion.
+
+ Is there a way to have acronyms/abbrevs in a BibTeX entry work
+          correctly?
+ {Yes.}
+
+Be very glad that your PC is insecure---it means that after you buy it, you
+can break into it and install whatever software you want. What YOU want, not
+what [content providers] want.  -- John Gilmore of the EFF
+
+One supplier of software for bank dealing rooms takes the view that anyone who
+pirates its code is welcome, as using it without skilled technical support
+would be a fast way for a bank to lose millions.  -- Ross Anderson
+
+Echelon appears to work very much like a Web search engine, except that
+instead of searching Web pages it searches through the world's phone and data
+network traffic in real time.  -- Ross Anderson, _Security Engineering_
+
+If I had never thought about computer typesetting, I might have had a happier
+life in some ways.  -- Knuth
+
+Most good crime on this planet involves insiders.  -- Bruce Schneier
+
+It's the undetected attack that is the most threat.  -- Jeff Stapleton
+
+Security should be as intuitive as possible.  -- Bruce Schneier
+
+Mary had a little key (It's all she could export),
+and all the email that she sent was opened at the Fort.
+-- Ron Rivest
+
+Mary had a little key - she kept it in escrow,
+and every thing that Mary said, the feds were sure to know.
+-- Sam Simpson
+
+ We have found a bug! May we burn it?
+ How do you know it's a bug?
+ I dereferenced a pointer and turned into a newt!
+(Seen on IRC)
+
+In bygone years I received several mailshots asking me if it wasn't
+time that I did some redecorating at P.O. Box 293.
+(Seen on Usenet, apropos junk mail)
+
+ Around here a customer question is a bit like a grenade.  It gets lobbed
+into the company, and everyone who notices runs for cover.  Then it explodes
+into little bits that bounce off the walls.
+
+OF the classpath, a single `.' containing, you must beware, hmm?
+-- When Yoda did Java
+
+It seems to work fairly well but composing e-mail on a phone keypad is akin to
+trigonometry in binary.  -- ajtr2
+
+There are only 10 kinds of people in the world:
+Those who understand binary, and those who don't.
+
+ Whoah. What happened to the overnight builds ?
+ Me. I foolishly assumed that if it would compile on AIX it would 
+compile anywhere.
+(Seen on IRC)
+
+in googlis non est, ergo non est.
+
+in googlis veritas
+
+A. Top Posters
+> Q. What's the most annoying thing in the world?
+
+Consistently separating words by spaces became a general custom about the
+tenth century A.D., and lasted until about 1957, when FORTRAN abandoned
+the practice.
+-- (credited to a Sun reference manual)
+
+Any attempt to brew coffee with a teapot should result in the error
+code "418 I'm a teapot". The resulting entity body MAY be short and stout.
+-- RFC 2324
+
+I'm not interrupting you, I'm putting our conversation in full-duplex mode.
+-- Antone Roundy
+
+And don't tell me there isn't one bit of difference between null and space,
+because that's exactly how much difference there is.
+-- Larry Wall
+
+2 strings walk into a bar. The first string says to the bartender,
+"Bartender, I'll have a beer. u.5n$x5t?*&4ru!2[sACC~ErJ" The second string
+says "Pardon my friend, he isn't NULL terminated."
+
+A policeman pulls Werner Heisenberg over on the autobahn for speeding.
+Policeman: Sir, do you know how fast you were going?
+Heisenberg: No, but I know exactly where I am.
+
+Engineers aren't boring people; we just get excited over boring things.
+
+... one of the main causes of the fall of the Roman Empire was that,
+lacking zero, they had no way to indicate successful termination of
+their C programs.
+-- Robert Firth
+
+SNMP = Security Not My Problem
+
+feature, n: a documented bug | bug, n: an undocumented feature 
+- Mario S F Ferreira
+
+------------------------------------------------------------
+
+Microsoft Restaurant
+
+ If restaurants functioned like shrink-wrapped 
+             (Microsoft) software:
+
+
+ Patron: Waiter!
+
+ Waiter: Hi, my name is Bill, and I'll be your Support Waiter.
+     What seems to be the problem?
+
+ Patron: There's a fly in my soup!
+
+ Waiter: Try again, maybe the fly won't be there this time.
+
+ Patron: No, it's still there.
+
+ Waiter: Maybe it's the way you're using the soup; try eating 
+     it with a fork instead.
+
+ Patron: Even when I use the fork, the fly is still there.
+
+ Waiter: Maybe the soup is incompatible with the bowl; what kind 
+     of bowl are  you using?
+
+ Patron: A SOUP bowl!
+
+ Waiter: Hmmm, that should work.  Maybe it's a configuration
+      problem; how was the bowl set up?
+
+ Patron: You brought it to me on a saucer; what has that to do 
+      with the fly in my soup?!
+
+ Waiter: Can you remember everything you did before you noticed 
+     the fly in your soup?
+
+ Patron: I sat down and ordered the Soup of the Day!
+
+ Waiter: Have you considered upgrading to the latest Soup of 
+     the Day?
+
+ Patron: You have more than one Soup of the Day each day??
+
+ Waiter: Yes, the Soup of the Day is changed every hour.
+
+ Patron: Well, what is the Soup of the Day now?
+
+ Waiter: The current Soup of the Day is tomato.
+
+ Patron: Fine.  Bring me the tomato soup, and the check.  
+     I'm running late now.
+
+ Waiter leaves and returns with another bowl of soup and the 
+     check.
+
+ Waiter: Here you are, Sir.  The soup and your check.
+
+ Patron: This is potato soup.
+
+ Waiter: Yes, the tomato soup wasn't ready yet.
+
+ Patron: Well, I'm so hungry now, I'll eat anything.
+
+ Waiter leaves.
+
+ Patron: Waiter!  There's a gnat in my soup!
+
+
+ The check:
+ Soup of the Day . ........... . . .   $5.00
+ Upgrade to newer Soup of the Day. . . $2.50
+ Access to support . . . . . . . . . . $1.00
+
+
