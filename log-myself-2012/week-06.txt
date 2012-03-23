@@ -1,0 +1,51 @@
+Private website
+
+Dennis Ritchie's home page
+http://cm.bell-labs.com/cm/cs/who/dmr/index.html
+
+Brian Kernighan's home page
+http://cm.bell-labs.com/cm/cs/who/bwk/index.html
+
+W. Richard Stevens' Home Page
+http://www.kohala.com/start/
+
+Bjarne Stroustrup's homepage
+http://www.research.att.com/~bs/homepage.html
+http://akpublic.research.att.com/~bs/homepage.html
+
+Stanley Lippman
+http://staff.develop.com/slip/
+
+Edsger W. Dijkstra's home page
+http://www.cs.utexas.edu/users/EWD/welcome.html
+
+Andrew S. Tanenbaum's home page
+http://www.cs.vu.nl/~ast/
+
+Donald E. Knuth's home page
+http://www-cs-faculty.stanford.edu/~knuth/
+
+Linus Torvalds' home page
+http://www.cs.helsinki.fi/u/torvalds/
+
+Bruce Eckel
+http://mindview.net/
+
+Douglas Comer
+http://www.cs.purdue.edu/people/comer
+
+Thomas H. Cormen
+http://www.cs.dartmouth.edu/~thc/
+
+Charles E. Leiserson
+http://supertech.lcs.mit.edu/~cel/
+
+Ronald L. Rivest
+http://theory.lcs.mit.edu/~rivest/
+
+Clifford Stein
+http://www.ieor.columbia.edu/~cs2035/
+
+Nicolai M. Josuttis（《c++标准程序库》作者）
+http://www.josuttis.com/
+
