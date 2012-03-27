@@ -14,10 +14,13 @@
 #include <errno.h>
 #include <err.h>
 
-#define SERVER_PORT 5555
+#define SERVER_PORT 4811
+int connect_counter = 0;
+int finish_counter = 0;
 /** * 这个结构是指定的客户端数据，这个例子中只指定了读事件对象*/
 struct client {
     struct event ev_read;
+    struct sockaddr_in client_addr;
 };     /** * 将一个socket设置成非阻塞模式 */
 int setnonblock(int fd)
 {
@@ -38,11 +41,11 @@ void on_read(int fd, short ev, void *arg)
     struct client *client = (struct client *)arg;
     u_char buf[1024];
     int len, wlen;
-    printf("before read.\n");
     len = read(fd, buf, sizeof(buf));
     if (len == 0) {
         /* 客户端断开连接，在这里移除读事件并且释放客户数据结构 */
-        printf("Client disconnected.\n");
+        finish_counter++;
+        //printf("Client disconnected, finish_counter: %d.\n", finish_counter);
         close(fd);
         event_del(&client->ev_read);
         free(client);
@@ -55,6 +58,11 @@ void on_read(int fd, short ev, void *arg)
         free(client);
         return;
     }
+    if (strncmp((char *)buf, "counter", 7) == 0) {
+        printf("recv counter: %d.\n", connect_counter);
+        printf("send counter: %d.\n", finish_counter);
+    }
+    //printf("before read from %s.\n", inet_ntoa(client->client_addr.sin_addr));
     /* 为了简便，我们直接将数据写回到客户端。通常我们不能在非阻塞的应用程序中这么做，
     * 我们应该将数据放到队列中，等待可写事件的时候再写回客户端。
     */
@@ -73,11 +81,14 @@ void on_read(int fd, short ev, void *arg)
 void on_accept(int fd, short ev, void *arg)
 {
     int client_fd;
-    struct sockaddr_in client_addr;
-    socklen_t client_len = sizeof(client_addr);
+    socklen_t client_len = sizeof(struct sockaddr_in);
     struct client *client;
+    /* 我们接受了一个新的客户，分配一个新的客户数据结构对象来保存这个客户的状态。 */
+    client = calloc(1, sizeof(*client));
+    if (client == NULL)
+        err(1, "malloc failed");
     /* 接受新的连接 */
-    client_fd = accept(fd, (struct sockaddr *)&client_addr, &client_len);
+    client_fd = accept(fd, (struct sockaddr *)&(client->client_addr), &client_len);
     if (client_fd == -1) {
         warn("accept failed");
         return;
@@ -85,17 +96,14 @@ void on_accept(int fd, short ev, void *arg)
     /* 设置客户端socket为非阻塞模式。 */
     if (setnonblock(client_fd) < 0)
         warn("failed to set client socket non-blocking");
-    /* 我们接受了一个新的客户，分配一个新的客户数据结构对象来保存这个客户的状态。 */
-    client = calloc(1, sizeof(*client));
-    if (client == NULL)
-        err(1, "malloc failed");
     /* 设置读事件，libevent将在客户端socket可读时调用on_read函数。
     * 我们也会我们也会不断的响应读事件，所以我们不用在每次读取时再次添加读事件。
     */
     event_set(&client->ev_read, client_fd, EV_READ | EV_PERSIST, on_read, client);
     /* 设置的事件并没有激活，使用添加事件让其激活。 */
     event_add(&client->ev_read, NULL);
-    printf("Accepted connection from %s\n", inet_ntoa(client_addr.sin_addr));
+    connect_counter++;
+    //printf("Accepted connection from %s, counter: %d\n", inet_ntoa(client->client_addr.sin_addr), connect_counter);
 }
 
 int main(int argc, char **argv)

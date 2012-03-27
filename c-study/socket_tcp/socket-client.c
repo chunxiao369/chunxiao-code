@@ -57,6 +57,8 @@ int main(int argc, char ** argv)
         exit(1);
     }
     
+    /*send something*/
+    sendto(fd, "counter", strlen("counter"), 0, (struct sockaddr *)&server, sizeof(server));
     /*Recv welcome message*/
     if((numbytes = recv(fd, buf, MAXDATASIZE, 0)) == -1)
     {

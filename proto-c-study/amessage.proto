@@ -11,3 +11,25 @@ message StructTest {
   }
   repeated Nested2 nested2 = 1;
 }
+enum State {
+    COMM_START = 0;
+    COMM_CONTINUE = 1;
+    COMM_STOP = 2;
+    COMM_NEXT_REQ = 3;
+    COMM_NEXT_RESP = 4;
+    COMM_WAIT = 5;
+    COMM_FAIL = 6;
+}
+
+
+message comm_pkt{
+        required bytes embed=1;
+        required uint32 version = 2;
+        required uint64 seqno = 3;
+        required uint64 opcode = 4;
+        optional State state = 5 [default = COMM_START];
+        optional uint64 last_point = 6;
+        optional bytes data = 10;
+};
+
+
