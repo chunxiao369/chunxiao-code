@@ -1,0 +1,16 @@
+
+我把git安装在非常规目录下, 然后git init --bare生成空库
+自己测试如下: git clone chunxiao@127.0.0.1:/tmp/git-test/时, 出现
+bash: git-upload-pack: command not found
+
+发现机器上git-upload-pack是安装了的, 但为什么clone不了?
+stackoverflow网站上有答案
+Make sure git-upload-pack is on the path from a non-login shell.
+
+ssh原来有这种用法.
+[chunxiao@localhost tmp]$ ssh chunxiao@127.0.0.1 echo \$PATH
+/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin
+
+更加神奇的是, git 竟然早就想到这种情况, 实在是敬佩啊.
+git clone -u /mnt/virtual-disk/program-files/git-1.7.0/bin/git-upload-pack
+chunxiao@127.0.0.1:/tmp/git-test

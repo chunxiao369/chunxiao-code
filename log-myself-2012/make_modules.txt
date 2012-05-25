@@ -1,0 +1,4589 @@
+Script started on Mon 09 Apr 2012 10:20:59 PM CST
+  CHK     include/linux/version.h
+  CHK     include/linux/utsrelease.h
+  CC [M]  arch/i386/kernel/msr.o
+  CC [M]  arch/i386/kernel/cpuid.o
+  CC [M]  arch/i386/kernel/microcode.o
+  CC [M]  arch/i386/kernel/cpu/cpufreq/powernow-k8.o
+  CC [M]  arch/i386/kernel/cpu/cpufreq/speedstep-centrino.o
+  CC [M]  arch/i386/kernel/cpu/cpufreq/acpi-cpufreq.o
+  CC [M]  arch/i386/kernel/cpu/cpufreq/p4-clockmod.o
+  AS [M]  arch/i386/crypto/aes-i586-asm.o
+  CC [M]  arch/i386/crypto/aes.o
+  LD [M]  arch/i386/crypto/aes-i586.o
+  CC [M]  fs/autofs4/init.o
+  CC [M]  fs/autofs4/inode.o
+  CC [M]  fs/autofs4/root.o
+  CC [M]  fs/autofs4/symlink.o
+  CC [M]  fs/autofs4/waitq.o
+  CC [M]  fs/autofs4/expire.o
+  LD [M]  fs/autofs4/autofs4.o
+  CC [M]  fs/cifs/cifsfs.o
+  CC [M]  fs/cifs/cifssmb.o
+  CC [M]  fs/cifs/cifs_debug.o
+  CC [M]  fs/cifs/connect.o
+  CC [M]  fs/cifs/dir.o
+  CC [M]  fs/cifs/file.o
+  CC [M]  fs/cifs/inode.o
+  CC [M]  fs/cifs/link.o
+  CC [M]  fs/cifs/misc.o
+  CC [M]  fs/cifs/netmisc.o
+  CC [M]  fs/cifs/smbdes.o
+  CC [M]  fs/cifs/smbencrypt.o
+  CC [M]  fs/cifs/transport.o
+  CC [M]  fs/cifs/asn1.o
+  CC [M]  fs/cifs/md4.o
+  CC [M]  fs/cifs/md5.o
+  CC [M]  fs/cifs/cifs_unicode.o
+  CC [M]  fs/cifs/nterr.o
+  CC [M]  fs/cifs/xattr.o
+  CC [M]  fs/cifs/cifsencrypt.o
+  CC [M]  fs/cifs/fcntl.o
+  CC [M]  fs/cifs/readdir.o
+  CC [M]  fs/cifs/ioctl.o
+  CC [M]  fs/cifs/sess.o
+  LD [M]  fs/cifs/cifs.o
+  CC [M]  fs/configfs/inode.o
+  CC [M]  fs/configfs/file.o
+  CC [M]  fs/configfs/dir.o
+  CC [M]  fs/configfs/symlink.o
+  CC [M]  fs/configfs/mount.o
+  CC [M]  fs/configfs/item.o
+  LD [M]  fs/configfs/configfs.o
+  CC [M]  fs/cramfs/inode.o
+  CC [M]  fs/cramfs/uncompress.o
+  LD [M]  fs/cramfs/cramfs.o
+  CC [M]  fs/exportfs/expfs.o
+  LD [M]  fs/exportfs/exportfs.o
+  CC [M]  fs/ext3/balloc.o
+  CC [M]  fs/ext3/bitmap.o
+  CC [M]  fs/ext3/dir.o
+  CC [M]  fs/ext3/file.o
+  CC [M]  fs/ext3/fsync.o
+  CC [M]  fs/ext3/ialloc.o
+  CC [M]  fs/ext3/inode.o
+  CC [M]  fs/ext3/ioctl.o
+  CC [M]  fs/ext3/namei.o
+  CC [M]  fs/ext3/super.o
+  CC [M]  fs/ext3/symlink.o
+  CC [M]  fs/ext3/hash.o
+  CC [M]  fs/ext3/resize.o
+  CC [M]  fs/ext3/xattr.o
+  CC [M]  fs/ext3/xattr_user.o
+  CC [M]  fs/ext3/xattr_trusted.o
+  CC [M]  fs/ext3/acl.o
+  CC [M]  fs/ext3/xattr_security.o
+  LD [M]  fs/ext3/ext3.o
+  CC [M]  fs/fat/cache.o
+  CC [M]  fs/fat/dir.o
+  CC [M]  fs/fat/fatent.o
+  CC [M]  fs/fat/file.o
+  CC [M]  fs/fat/inode.o
+  CC [M]  fs/fat/misc.o
+  LD [M]  fs/fat/fat.o
+  CC [M]  fs/freevxfs/vxfs_bmap.o
+  CC [M]  fs/freevxfs/vxfs_fshead.o
+  CC [M]  fs/freevxfs/vxfs_immed.o
+  CC [M]  fs/freevxfs/vxfs_inode.o
+  CC [M]  fs/freevxfs/vxfs_lookup.o
+  CC [M]  fs/freevxfs/vxfs_olt.o
+  CC [M]  fs/freevxfs/vxfs_subr.o
+  CC [M]  fs/freevxfs/vxfs_super.o
+  LD [M]  fs/freevxfs/freevxfs.o
+  CC [M]  fs/hfs/bitmap.o
+  CC [M]  fs/hfs/bfind.o
+  CC [M]  fs/hfs/bnode.o
+  CC [M]  fs/hfs/brec.o
+  CC [M]  fs/hfs/btree.o
+  CC [M]  fs/hfs/catalog.o
+  CC [M]  fs/hfs/dir.o
+  CC [M]  fs/hfs/extent.o
+  CC [M]  fs/hfs/inode.o
+  CC [M]  fs/hfs/attr.o
+  CC [M]  fs/hfs/mdb.o
+  CC [M]  fs/hfs/part_tbl.o
+  CC [M]  fs/hfs/string.o
+  CC [M]  fs/hfs/super.o
+  CC [M]  fs/hfs/sysdep.o
+  CC [M]  fs/hfs/trans.o
+  LD [M]  fs/hfs/hfs.o
+  CC [M]  fs/hfsplus/super.o
+  CC [M]  fs/hfsplus/options.o
+  CC [M]  fs/hfsplus/inode.o
+  CC [M]  fs/hfsplus/ioctl.o
+  CC [M]  fs/hfsplus/extents.o
+  CC [M]  fs/hfsplus/catalog.o
+  CC [M]  fs/hfsplus/dir.o
+  CC [M]  fs/hfsplus/btree.o
+  CC [M]  fs/hfsplus/bnode.o
+  CC [M]  fs/hfsplus/brec.o
+  CC [M]  fs/hfsplus/bfind.o
+  CC [M]  fs/hfsplus/tables.o
+  CC [M]  fs/hfsplus/unicode.o
+  CC [M]  fs/hfsplus/wrapper.o
+  CC [M]  fs/hfsplus/bitmap.o
+  CC [M]  fs/hfsplus/part_tbl.o
+  LD [M]  fs/hfsplus/hfsplus.o
+  CC [M]  fs/jbd/transaction.o
+  CC [M]  fs/jbd/commit.o
+  CC [M]  fs/jbd/recovery.o
+  CC [M]  fs/jbd/checkpoint.o
+  CC [M]  fs/jbd/revoke.o
+  CC [M]  fs/jbd/journal.o
+  LD [M]  fs/jbd/jbd.o
+  CC [M]  fs/jffs2/compr.o
+  CC [M]  fs/jffs2/dir.o
+  CC [M]  fs/jffs2/file.o
+  CC [M]  fs/jffs2/ioctl.o
+  CC [M]  fs/jffs2/nodelist.o
+  CC [M]  fs/jffs2/malloc.o
+  CC [M]  fs/jffs2/read.o
+  CC [M]  fs/jffs2/nodemgmt.o
+  CC [M]  fs/jffs2/readinode.o
+fs/jffs2/readinode.c: In function ‘jffs2_do_read_inode_internal’:
+fs/jffs2/readinode.c:667: warning: ‘latest_mctime’ may be used uninitialized in this function
+fs/jffs2/readinode.c:664: warning: ‘fd_list’ may be used uninitialized in this function
+  CC [M]  fs/jffs2/write.o
+  CC [M]  fs/jffs2/scan.o
+  CC [M]  fs/jffs2/gc.o
+  CC [M]  fs/jffs2/symlink.o
+  CC [M]  fs/jffs2/build.o
+  CC [M]  fs/jffs2/erase.o
+  CC [M]  fs/jffs2/background.o
+  CC [M]  fs/jffs2/fs.o
+  CC [M]  fs/jffs2/writev.o
+  CC [M]  fs/jffs2/super.o
+  CC [M]  fs/jffs2/debug.o
+  CC [M]  fs/jffs2/wbuf.o
+  CC [M]  fs/jffs2/compr_rtime.o
+  CC [M]  fs/jffs2/compr_zlib.o
+  CC [M]  fs/jffs2/summary.o
+  LD [M]  fs/jffs2/jffs2.o
+  CC [M]  fs/lockd/clntlock.o
+  CC [M]  fs/lockd/clntproc.o
+  CC [M]  fs/lockd/host.o
+  CC [M]  fs/lockd/svc.o
+  CC [M]  fs/lockd/svclock.o
+  CC [M]  fs/lockd/svcshare.o
+  CC [M]  fs/lockd/svcproc.o
+  CC [M]  fs/lockd/svcsubs.o
+  CC [M]  fs/lockd/mon.o
+  CC [M]  fs/lockd/xdr.o
+  CC [M]  fs/lockd/xdr4.o
+  CC [M]  fs/lockd/svc4proc.o
+  LD [M]  fs/lockd/lockd.o
+  CC [M]  fs/msdos/namei.o
+  LD [M]  fs/msdos/msdos.o
+  CC [M]  fs/nfs/dir.o
+  CC [M]  fs/nfs/file.o
+  CC [M]  fs/nfs/inode.o
+  CC [M]  fs/nfs/super.o
+  CC [M]  fs/nfs/nfs2xdr.o
+  CC [M]  fs/nfs/pagelist.o
+  CC [M]  fs/nfs/proc.o
+  CC [M]  fs/nfs/read.o
+  CC [M]  fs/nfs/symlink.o
+  CC [M]  fs/nfs/unlink.o
+  CC [M]  fs/nfs/write.o
+  CC [M]  fs/nfs/namespace.o
+  CC [M]  fs/nfs/nfs3proc.o
+  CC [M]  fs/nfs/nfs3xdr.o
+  CC [M]  fs/nfs/nfs3acl.o
+  CC [M]  fs/nfs/nfs4proc.o
+  CC [M]  fs/nfs/nfs4xdr.o
+  CC [M]  fs/nfs/nfs4state.o
+  CC [M]  fs/nfs/nfs4renewd.o
+  CC [M]  fs/nfs/delegation.o
+  CC [M]  fs/nfs/idmap.o
+  CC [M]  fs/nfs/callback.o
+  CC [M]  fs/nfs/callback_xdr.o
+  CC [M]  fs/nfs/callback_proc.o
+  CC [M]  fs/nfs/nfs4namespace.o
+  CC [M]  fs/nfs/direct.o
+  CC [M]  fs/nfs/sysctl.o
+  LD [M]  fs/nfs/nfs.o
+  CC [M]  fs/nfs_common/nfsacl.o
+  LD [M]  fs/nfs_common/nfs_acl.o
+  CC [M]  fs/nfsd/nfssvc.o
+  CC [M]  fs/nfsd/nfsctl.o
+  CC [M]  fs/nfsd/nfsproc.o
+  CC [M]  fs/nfsd/nfsfh.o
+  CC [M]  fs/nfsd/vfs.o
+  CC [M]  fs/nfsd/export.o
+  CC [M]  fs/nfsd/auth.o
+  CC [M]  fs/nfsd/lockd.o
+  CC [M]  fs/nfsd/nfscache.o
+  CC [M]  fs/nfsd/nfsxdr.o
+  CC [M]  fs/nfsd/stats.o
+  CC [M]  fs/nfsd/nfs2acl.o
+  CC [M]  fs/nfsd/nfs3proc.o
+  CC [M]  fs/nfsd/nfs3xdr.o
+  CC [M]  fs/nfsd/nfs3acl.o
+  CC [M]  fs/nfsd/nfs4proc.o
+  CC [M]  fs/nfsd/nfs4xdr.o
+  CC [M]  fs/nfsd/nfs4state.o
+  CC [M]  fs/nfsd/nfs4idmap.o
+  CC [M]  fs/nfsd/nfs4acl.o
+  CC [M]  fs/nfsd/nfs4callback.o
+  CC [M]  fs/nfsd/nfs4recover.o
+  LD [M]  fs/nfsd/nfsd.o
+  CC [M]  fs/nls/nls_cp737.o
+  CC [M]  fs/nls/nls_cp775.o
+  CC [M]  fs/nls/nls_cp850.o
+  CC [M]  fs/nls/nls_cp852.o
+  CC [M]  fs/nls/nls_cp855.o
+  CC [M]  fs/nls/nls_cp857.o
+  CC [M]  fs/nls/nls_cp860.o
+  CC [M]  fs/nls/nls_cp861.o
+  CC [M]  fs/nls/nls_cp862.o
+  CC [M]  fs/nls/nls_cp863.o
+  CC [M]  fs/nls/nls_cp864.o
+  CC [M]  fs/nls/nls_cp865.o
+  CC [M]  fs/nls/nls_cp866.o
+  CC [M]  fs/nls/nls_cp869.o
+  CC [M]  fs/nls/nls_cp874.o
+  CC [M]  fs/nls/nls_cp932.o
+  CC [M]  fs/nls/nls_euc-jp.o
+  CC [M]  fs/nls/nls_cp936.o
+  CC [M]  fs/nls/nls_cp949.o
+  CC [M]  fs/nls/nls_cp950.o
+  CC [M]  fs/nls/nls_cp1250.o
+  CC [M]  fs/nls/nls_cp1251.o
+  CC [M]  fs/nls/nls_iso8859-1.o
+  CC [M]  fs/nls/nls_iso8859-2.o
+  CC [M]  fs/nls/nls_iso8859-3.o
+  CC [M]  fs/nls/nls_iso8859-4.o
+  CC [M]  fs/nls/nls_iso8859-5.o
+  CC [M]  fs/nls/nls_iso8859-6.o
+  CC [M]  fs/nls/nls_iso8859-7.o
+  CC [M]  fs/nls/nls_cp1255.o
+  CC [M]  fs/nls/nls_iso8859-9.o
+  CC [M]  fs/nls/nls_iso8859-13.o
+  CC [M]  fs/nls/nls_iso8859-14.o
+  CC [M]  fs/nls/nls_iso8859-15.o
+  CC [M]  fs/nls/nls_koi8-r.o
+  CC [M]  fs/nls/nls_koi8-u.o
+  CC [M]  fs/nls/nls_koi8-ru.o
+  CC [M]  fs/nls/nls_utf8.o
+  CC [M]  fs/udf/balloc.o
+fs/udf/balloc.c: In function ‘udf_table_new_block’:
+fs/udf/balloc.c:751: warning: ‘goal_eloc.logicalBlockNum’ may be used uninitialized in this function
+  CC [M]  fs/udf/dir.o
+  CC [M]  fs/udf/file.o
+  CC [M]  fs/udf/ialloc.o
+  CC [M]  fs/udf/inode.o
+  CC [M]  fs/udf/lowlevel.o
+  CC [M]  fs/udf/namei.o
+  CC [M]  fs/udf/partition.o
+  CC [M]  fs/udf/super.o
+fs/udf/super.c: In function ‘udf_fill_super’:
+fs/udf/super.c:1364: warning: ‘ino.partitionReferenceNum’ may be used uninitialized in this function
+  CC [M]  fs/udf/truncate.o
+  CC [M]  fs/udf/symlink.o
+  CC [M]  fs/udf/fsync.o
+  CC [M]  fs/udf/crc.o
+  CC [M]  fs/udf/directory.o
+  CC [M]  fs/udf/misc.o
+  CC [M]  fs/udf/udftime.o
+  CC [M]  fs/udf/unicode.o
+  LD [M]  fs/udf/udf.o
+  CC [M]  fs/vfat/namei.o
+  LD [M]  fs/vfat/vfat.o
+  CC [M]  crypto/crypto_null.o
+  CC [M]  crypto/md4.o
+  CC [M]  crypto/md5.o
+  CC [M]  crypto/sha256.o
+  CC [M]  crypto/sha512.o
+  CC [M]  crypto/wp512.o
+  CC [M]  crypto/tgr192.o
+  CC [M]  crypto/des.o
+  CC [M]  crypto/blowfish.o
+  CC [M]  crypto/twofish.o
+  CC [M]  crypto/serpent.o
+  CC [M]  crypto/aes.o
+  CC [M]  crypto/cast5.o
+  CC [M]  crypto/cast6.o
+  CC [M]  crypto/arc4.o
+  CC [M]  crypto/tea.o
+  CC [M]  crypto/khazad.o
+  CC [M]  crypto/anubis.o
+  CC [M]  crypto/deflate.o
+  CC [M]  crypto/michael_mic.o
+  CC [M]  crypto/tcrypt.o
+  CC [M]  drivers/acpi/ac.o
+  CC [M]  drivers/acpi/battery.o
+  CC [M]  drivers/acpi/button.o
+  CC [M]  drivers/acpi/video.o
+  CC [M]  drivers/acpi/asus_acpi.o
+  CC [M]  drivers/acpi/toshiba_acpi.o
+  CC [M]  drivers/acpi/i2c_ec.o
+  CC [M]  drivers/acpi/sbs.o
+  CC [M]  drivers/atm/nicstar.o
+  CC [M]  drivers/atm/ambassador.o
+drivers/atm/ambassador.c: In function ‘amb_open’:
+drivers/atm/ambassador.c:1049: warning: ‘tx_rate_bits’ may be used uninitialized in this function
+  CC [M]  drivers/atm/horizon.o
+  CC [M]  drivers/atm/eni.o
+  CC [M]  drivers/atm/suni.o
+  CC [M]  drivers/atm/idt77252.o
+  CC [M]  drivers/atm/atmtcp.o
+  CC [M]  drivers/atm/firestream.o
+drivers/atm/firestream.c: In function ‘fs_open’:
+drivers/atm/firestream.c:870: warning: ‘tmc0’ may be used uninitialized in this function
+  CC [M]  drivers/atm/lanai.o
+  CC [M]  drivers/atm/he.o
+  CC [M]  drivers/block/floppy.o
+  CC [M]  drivers/block/loop.o
+  CC [M]  drivers/block/cpqarray.o
+  CC [M]  drivers/block/cciss.o
+  CC [M]  drivers/block/DAC960.o
+  CC [M]  drivers/block/pktcdvd.o
+  CC [M]  drivers/block/nbd.o
+  CC [M]  drivers/block/cryptoloop.o
+  CC [M]  drivers/block/sx8.o
+  CC [M]  drivers/block/aoe/aoeblk.o
+  CC [M]  drivers/block/aoe/aoechr.o
+  CC [M]  drivers/block/aoe/aoecmd.o
+  CC [M]  drivers/block/aoe/aoedev.o
+  CC [M]  drivers/block/aoe/aoemain.o
+  CC [M]  drivers/block/aoe/aoenet.o
+  LD [M]  drivers/block/aoe/aoe.o
+  CC [M]  drivers/block/paride/paride.o
+  CC [M]  drivers/block/paride/aten.o
+  CC [M]  drivers/block/paride/bpck.o
+  CC [M]  drivers/block/paride/comm.o
+  CC [M]  drivers/block/paride/dstr.o
+  CC [M]  drivers/block/paride/kbic.o
+  CC [M]  drivers/block/paride/epat.o
+  CC [M]  drivers/block/paride/epia.o
+  CC [M]  drivers/block/paride/frpw.o
+  CC [M]  drivers/block/paride/friq.o
+  CC [M]  drivers/block/paride/fit2.o
+  CC [M]  drivers/block/paride/fit3.o
+  CC [M]  drivers/block/paride/on20.o
+  CC [M]  drivers/block/paride/on26.o
+  CC [M]  drivers/block/paride/ktti.o
+  CC [M]  drivers/block/paride/bpck6.o
+  CC [M]  drivers/block/paride/pd.o
+  CC [M]  drivers/block/paride/pcd.o
+  CC [M]  drivers/block/paride/pf.o
+  CC [M]  drivers/block/paride/pt.o
+  CC [M]  drivers/block/paride/pg.o
+  CC [M]  drivers/bluetooth/hci_usb.o
+  CC [M]  drivers/bluetooth/hci_vhci.o
+  CC [M]  drivers/bluetooth/hci_ldisc.o
+  CC [M]  drivers/bluetooth/hci_h4.o
+  CC [M]  drivers/bluetooth/hci_bcsp.o
+  LD [M]  drivers/bluetooth/hci_uart.o
+  CC [M]  drivers/bluetooth/bcm203x.o
+  CC [M]  drivers/bluetooth/bpa10x.o
+  CC [M]  drivers/bluetooth/bfusb.o
+  CC [M]  drivers/bluetooth/dtl1_cs.o
+  CC [M]  drivers/bluetooth/bt3c_cs.o
+  CC [M]  drivers/bluetooth/bluecard_cs.o
+  CC [M]  drivers/bluetooth/btuart_cs.o
+  CC [M]  drivers/cdrom/cdrom.o
+  CC [M]  drivers/char/cyclades.o
+  CC [M]  drivers/char/synclink.o
+  CC [M]  drivers/char/synclinkmp.o
+  CC [M]  drivers/char/synclink_gt.o
+  CC [M]  drivers/char/n_hdlc.o
+  CC [M]  drivers/char/lp.o
+  CC [M]  drivers/char/dtlk.o
+  CC [M]  drivers/char/sonypi.o
+  CC [M]  drivers/char/toshiba.o
+  CC [M]  drivers/char/i8k.o
+  CC [M]  drivers/char/ppdev.o
+  CC [M]  drivers/char/pc8736x_gpio.o
+drivers/char/pc8736x_gpio.c:192: warning: ‘pc8736x_gpio_set_high’ defined but not used
+drivers/char/pc8736x_gpio.c:197: warning: ‘pc8736x_gpio_set_low’ defined but not used
+  CC [M]  drivers/char/nsc_gpio.o
+  CC [M]  drivers/char/cs5535_gpio.o
+  CC [M]  drivers/char/tlclk.o
+  CC [M]  drivers/char/hangcheck-timer.o
+  CC [M]  drivers/char/drm/drm_auth.o
+  CC [M]  drivers/char/drm/drm_bufs.o
+  CC [M]  drivers/char/drm/drm_context.o
+  CC [M]  drivers/char/drm/drm_dma.o
+  CC [M]  drivers/char/drm/drm_drawable.o
+  CC [M]  drivers/char/drm/drm_drv.o
+  CC [M]  drivers/char/drm/drm_fops.o
+  CC [M]  drivers/char/drm/drm_ioctl.o
+  CC [M]  drivers/char/drm/drm_irq.o
+  CC [M]  drivers/char/drm/drm_lock.o
+  CC [M]  drivers/char/drm/drm_memory.o
+  CC [M]  drivers/char/drm/drm_proc.o
+  CC [M]  drivers/char/drm/drm_stub.o
+  CC [M]  drivers/char/drm/drm_vm.o
+  CC [M]  drivers/char/drm/drm_agpsupport.o
+  CC [M]  drivers/char/drm/drm_scatter.o
+  CC [M]  drivers/char/drm/ati_pcigart.o
+  CC [M]  drivers/char/drm/drm_pci.o
+  CC [M]  drivers/char/drm/drm_sysfs.o
+  CC [M]  drivers/char/drm/i810_drv.o
+  CC [M]  drivers/char/drm/i810_dma.o
+  CC [M]  drivers/char/drm/i830_drv.o
+  CC [M]  drivers/char/drm/i830_dma.o
+  CC [M]  drivers/char/drm/i830_irq.o
+  CC [M]  drivers/char/drm/i915_drv.o
+  CC [M]  drivers/char/drm/i915_dma.o
+  CC [M]  drivers/char/drm/i915_irq.o
+  CC [M]  drivers/char/drm/i915_mem.o
+  CC [M]  drivers/char/drm/mga_drv.o
+  CC [M]  drivers/char/drm/mga_dma.o
+  CC [M]  drivers/char/drm/mga_state.o
+  CC [M]  drivers/char/drm/mga_warp.o
+  CC [M]  drivers/char/drm/mga_irq.o
+  CC [M]  drivers/char/drm/r128_drv.o
+  CC [M]  drivers/char/drm/r128_cce.o
+  CC [M]  drivers/char/drm/r128_state.o
+  CC [M]  drivers/char/drm/r128_irq.o
+  CC [M]  drivers/char/drm/radeon_drv.o
+  CC [M]  drivers/char/drm/radeon_cp.o
+  CC [M]  drivers/char/drm/radeon_state.o
+  CC [M]  drivers/char/drm/radeon_mem.o
+  CC [M]  drivers/char/drm/radeon_irq.o
+  CC [M]  drivers/char/drm/r300_cmdbuf.o
+  CC [M]  drivers/char/drm/savage_drv.o
+  CC [M]  drivers/char/drm/savage_bci.o
+  CC [M]  drivers/char/drm/savage_state.o
+  CC [M]  drivers/char/drm/via_irq.o
+  CC [M]  drivers/char/drm/via_drv.o
+  CC [M]  drivers/char/drm/via_ds.o
+  CC [M]  drivers/char/drm/via_map.o
+  CC [M]  drivers/char/drm/via_mm.o
+  CC [M]  drivers/char/drm/via_dma.o
+  CC [M]  drivers/char/drm/via_verifier.o
+  CC [M]  drivers/char/drm/via_video.o
+  CC [M]  drivers/char/drm/via_dmablit.o
+  LD [M]  drivers/char/drm/drm.o
+  LD [M]  drivers/char/drm/r128.o
+  LD [M]  drivers/char/drm/radeon.o
+  LD [M]  drivers/char/drm/mga.o
+  LD [M]  drivers/char/drm/i810.o
+  LD [M]  drivers/char/drm/i830.o
+  LD [M]  drivers/char/drm/i915.o
+  LD [M]  drivers/char/drm/savage.o
+  LD [M]  drivers/char/drm/via.o
+  CC [M]  drivers/char/hw_random/intel-rng.o
+  CC [M]  drivers/char/hw_random/amd-rng.o
+  CC [M]  drivers/char/hw_random/geode-rng.o
+  CC [M]  drivers/char/hw_random/via-rng.o
+  CC [M]  drivers/char/ipmi/ipmi_msghandler.o
+  CC [M]  drivers/char/ipmi/ipmi_devintf.o
+  CC [M]  drivers/char/ipmi/ipmi_si_intf.o
+drivers/char/ipmi/ipmi_si_intf.c: In function ‘init_ipmi_si’:
+drivers/char/ipmi/ipmi_si_intf.c:1729: warning: ‘data.irq’ may be used uninitialized in this function
+  CC [M]  drivers/char/ipmi/ipmi_kcs_sm.o
+  CC [M]  drivers/char/ipmi/ipmi_smic_sm.o
+  CC [M]  drivers/char/ipmi/ipmi_bt_sm.o
+  LD [M]  drivers/char/ipmi/ipmi_si.o
+  CC [M]  drivers/char/ipmi/ipmi_watchdog.o
+  CC [M]  drivers/char/ipmi/ipmi_poweroff.o
+  CC [M]  drivers/char/pcmcia/cm4000_cs.o
+  CC [M]  drivers/char/pcmcia/cm4040_cs.o
+  CC [M]  drivers/char/tpm/tpm.o
+  CC [M]  drivers/char/tpm/tpm_bios.o
+  CC [M]  drivers/char/tpm/tpm_tis.o
+  CC [M]  drivers/char/tpm/tpm_nsc.o
+  CC [M]  drivers/char/tpm/tpm_atmel.o
+  CC [M]  drivers/char/tpm/tpm_infineon.o
+  CC [M]  drivers/char/watchdog/pcwd_pci.o
+  CC [M]  drivers/char/watchdog/wdt_pci.o
+  CC [M]  drivers/char/watchdog/pcwd_usb.o
+  CC [M]  drivers/char/watchdog/alim1535_wdt.o
+  CC [M]  drivers/char/watchdog/alim7101_wdt.o
+  CC [M]  drivers/char/watchdog/ibmasr.o
+  CC [M]  drivers/char/watchdog/i6300esb.o
+  CC [M]  drivers/char/watchdog/i8xx_tco.o
+  CC [M]  drivers/char/watchdog/w83627hf_wdt.o
+  CC [M]  drivers/char/watchdog/w83877f_wdt.o
+  CC [M]  drivers/char/watchdog/w83977f_wdt.o
+  CC [M]  drivers/char/watchdog/machzwd.o
+  CC [M]  drivers/char/watchdog/softdog.o
+  CC [M]  drivers/cpufreq/cpufreq_stats.o
+  CC [M]  drivers/cpufreq/cpufreq_powersave.o
+  CC [M]  drivers/cpufreq/cpufreq_ondemand.o
+  CC [M]  drivers/cpufreq/cpufreq_conservative.o
+  CC [M]  drivers/crypto/padlock-generic.o
+  CC [M]  drivers/crypto/padlock-aes.o
+  LD [M]  drivers/crypto/padlock.o
+  CC [M]  drivers/dma/ioatdma.o
+  CC [M]  drivers/edac/edac_mc.o
+  CC [M]  drivers/edac/amd76x_edac.o
+  CC [M]  drivers/edac/e7xxx_edac.o
+  CC [M]  drivers/edac/e752x_edac.o
+  CC [M]  drivers/edac/i82875p_edac.o
+  CC [M]  drivers/edac/i82860_edac.o
+  CC [M]  drivers/edac/r82600_edac.o
+  CC [M]  drivers/firmware/edd.o
+  CC [M]  drivers/firmware/dell_rbu.o
+  CC [M]  drivers/firmware/dcdbas.o
+  CC [M]  drivers/hwmon/hwmon.o
+  CC [M]  drivers/hwmon/hwmon-vid.o
+  CC [M]  drivers/hwmon/asb100.o
+  CC [M]  drivers/hwmon/w83627hf.o
+  CC [M]  drivers/hwmon/w83792d.o
+  CC [M]  drivers/hwmon/w83781d.o
+  CC [M]  drivers/hwmon/w83791d.o
+  CC [M]  drivers/hwmon/abituguru.o
+  CC [M]  drivers/hwmon/adm1021.o
+  CC [M]  drivers/hwmon/adm1025.o
+  CC [M]  drivers/hwmon/adm1026.o
+  CC [M]  drivers/hwmon/adm1031.o
+  CC [M]  drivers/hwmon/adm9240.o
+  CC [M]  drivers/hwmon/atxp1.o
+  CC [M]  drivers/hwmon/ds1621.o
+  CC [M]  drivers/hwmon/f71805f.o
+  CC [M]  drivers/hwmon/fscher.o
+  CC [M]  drivers/hwmon/fscpos.o
+  CC [M]  drivers/hwmon/gl518sm.o
+  CC [M]  drivers/hwmon/gl520sm.o
+  CC [M]  drivers/hwmon/hdaps.o
+  CC [M]  drivers/hwmon/it87.o
+  CC [M]  drivers/hwmon/lm63.o
+  CC [M]  drivers/hwmon/lm75.o
+  CC [M]  drivers/hwmon/lm77.o
+  CC [M]  drivers/hwmon/lm78.o
+  CC [M]  drivers/hwmon/lm80.o
+  CC [M]  drivers/hwmon/lm83.o
+  CC [M]  drivers/hwmon/lm85.o
+  CC [M]  drivers/hwmon/lm87.o
+  CC [M]  drivers/hwmon/lm90.o
+  CC [M]  drivers/hwmon/lm92.o
+  CC [M]  drivers/hwmon/max1619.o
+  CC [M]  drivers/hwmon/pc87360.o
+  CC [M]  drivers/hwmon/sis5595.o
+  CC [M]  drivers/hwmon/smsc47b397.o
+  CC [M]  drivers/hwmon/smsc47m1.o
+  CC [M]  drivers/hwmon/smsc47m192.o
+  CC [M]  drivers/hwmon/via686a.o
+  CC [M]  drivers/hwmon/vt8231.o
+  CC [M]  drivers/hwmon/w83627ehf.o
+  CC [M]  drivers/hwmon/w83l785ts.o
+  CC [M]  drivers/i2c/i2c-core.o
+  CC [M]  drivers/i2c/i2c-dev.o
+  CC [M]  drivers/i2c/algos/i2c-algo-bit.o
+  CC [M]  drivers/i2c/algos/i2c-algo-pcf.o
+  CC [M]  drivers/i2c/algos/i2c-algo-pca.o
+  CC [M]  drivers/i2c/busses/i2c-ali1535.o
+  CC [M]  drivers/i2c/busses/i2c-ali1563.o
+  CC [M]  drivers/i2c/busses/i2c-ali15x3.o
+  CC [M]  drivers/i2c/busses/i2c-amd756.o
+  CC [M]  drivers/i2c/busses/i2c-amd756-s4882.o
+  CC [M]  drivers/i2c/busses/i2c-amd8111.o
+  CC [M]  drivers/i2c/busses/i2c-i801.o
+  CC [M]  drivers/i2c/busses/i2c-i810.o
+  CC [M]  drivers/i2c/busses/i2c-isa.o
+  CC [M]  drivers/i2c/busses/i2c-nforce2.o
+  CC [M]  drivers/i2c/busses/i2c-parport.o
+  CC [M]  drivers/i2c/busses/i2c-parport-light.o
+  CC [M]  drivers/i2c/busses/i2c-piix4.o
+  CC [M]  drivers/i2c/busses/i2c-prosavage.o
+  CC [M]  drivers/i2c/busses/i2c-savage4.o
+  CC [M]  drivers/i2c/busses/i2c-sis5595.o
+  CC [M]  drivers/i2c/busses/i2c-sis630.o
+  CC [M]  drivers/i2c/busses/i2c-sis96x.o
+  CC [M]  drivers/i2c/busses/i2c-stub.o
+  CC [M]  drivers/i2c/busses/i2c-via.o
+  CC [M]  drivers/i2c/busses/i2c-viapro.o
+  CC [M]  drivers/i2c/busses/i2c-voodoo3.o
+  CC [M]  drivers/i2c/chips/ds1337.o
+  CC [M]  drivers/i2c/chips/ds1374.o
+  CC [M]  drivers/i2c/chips/eeprom.o
+  CC [M]  drivers/i2c/chips/max6875.o
+  CC [M]  drivers/i2c/chips/pca9539.o
+  CC [M]  drivers/i2c/chips/pcf8574.o
+  CC [M]  drivers/i2c/chips/pcf8591.o
+  CC [M]  drivers/ide/ide-cd.o
+  CC [M]  drivers/ide/legacy/ide-cs.o
+  CC [M]  drivers/infiniband/core/addr.o
+  CC [M]  drivers/infiniband/core/cm.o
+  CC [M]  drivers/infiniband/core/packer.o
+  CC [M]  drivers/infiniband/core/ud_header.o
+  CC [M]  drivers/infiniband/core/verbs.o
+  CC [M]  drivers/infiniband/core/sysfs.o
+  CC [M]  drivers/infiniband/core/device.o
+  CC [M]  drivers/infiniband/core/fmr_pool.o
+  CC [M]  drivers/infiniband/core/cache.o
+  CC [M]  drivers/infiniband/core/mad.o
+  CC [M]  drivers/infiniband/core/smi.o
+  CC [M]  drivers/infiniband/core/agent.o
+  CC [M]  drivers/infiniband/core/mad_rmpp.o
+  CC [M]  drivers/infiniband/core/sa_query.o
+  CC [M]  drivers/infiniband/core/ucm.o
+  CC [M]  drivers/infiniband/core/user_mad.o
+  CC [M]  drivers/infiniband/core/uverbs_main.o
+  CC [M]  drivers/infiniband/core/uverbs_cmd.o
+  CC [M]  drivers/infiniband/core/uverbs_mem.o
+  CC [M]  drivers/infiniband/core/uverbs_marshall.o
+  CC [M]  drivers/infiniband/core/cma.o
+  LD [M]  drivers/infiniband/core/ib_core.o
+  LD [M]  drivers/infiniband/core/ib_mad.o
+  LD [M]  drivers/infiniband/core/ib_sa.o
+  LD [M]  drivers/infiniband/core/ib_cm.o
+  LD [M]  drivers/infiniband/core/ib_addr.o
+  LD [M]  drivers/infiniband/core/rdma_cm.o
+  LD [M]  drivers/infiniband/core/ib_umad.o
+  LD [M]  drivers/infiniband/core/ib_uverbs.o
+  LD [M]  drivers/infiniband/core/ib_ucm.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_main.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_cmd.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_profile.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_reset.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_allocator.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_eq.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_pd.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_cq.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_mr.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_qp.o
+drivers/infiniband/hw/mthca/mthca_qp.c: In function ‘mthca_tavor_post_send’:
+drivers/infiniband/hw/mthca/mthca_qp.c:1527: warning: ‘f0’ may be used uninitialized in this function
+drivers/infiniband/hw/mthca/mthca_qp.c: In function ‘mthca_arbel_post_send’:
+drivers/infiniband/hw/mthca/mthca_qp.c:1870: warning: ‘f0’ may be used uninitialized in this function
+  CC [M]  drivers/infiniband/hw/mthca/mthca_av.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_mcg.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_mad.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_provider.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_memfree.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_uar.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_srq.o
+  CC [M]  drivers/infiniband/hw/mthca/mthca_catas.o
+  LD [M]  drivers/infiniband/hw/mthca/ib_mthca.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_main.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_ib.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_multicast.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_verbs.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_vlan.o
+  CC [M]  drivers/infiniband/ulp/ipoib/ipoib_fs.o
+  LD [M]  drivers/infiniband/ulp/ipoib/ib_ipoib.o
+  CC [M]  drivers/infiniband/ulp/iser/iser_verbs.o
+  CC [M]  drivers/infiniband/ulp/iser/iser_initiator.o
+  CC [M]  drivers/infiniband/ulp/iser/iser_memory.o
+  CC [M]  drivers/infiniband/ulp/iser/iscsi_iser.o
+  LD [M]  drivers/infiniband/ulp/iser/ib_iser.o
+  CC [M]  drivers/infiniband/ulp/srp/ib_srp.o
+  CC [M]  drivers/input/joydev.o
+  CC [M]  drivers/input/joystick/joydump.o
+  CC [M]  drivers/input/joystick/twidjoy.o
+  CC [M]  drivers/input/misc/pcspkr.o
+  CC [M]  drivers/input/misc/uinput.o
+  CC [M]  drivers/input/misc/wistron_btns.o
+  CC [M]  drivers/input/mouse/sermouse.o
+  CC [M]  drivers/input/mouse/vsxxxaa.o
+  CC [M]  drivers/input/touchscreen/gunze.o
+  CC [M]  drivers/input/touchscreen/elo.o
+  CC [M]  drivers/input/touchscreen/mtouch.o
+  CC [M]  drivers/input/touchscreen/mk712.o
+  CC [M]  drivers/input/gameport/gameport.o
+  CC [M]  drivers/input/gameport/emu10k1-gp.o
+  CC [M]  drivers/input/gameport/fm801-gp.o
+  CC [M]  drivers/input/gameport/lightning.o
+  CC [M]  drivers/input/gameport/ns558.o
+  CC [M]  drivers/input/serio/serio_raw.o
+  CC [M]  drivers/isdn/capi/kcapi.o
+  CC [M]  drivers/isdn/capi/capiutil.o
+  CC [M]  drivers/isdn/capi/capilib.o
+  CC [M]  drivers/isdn/capi/kcapi_proc.o
+  LD [M]  drivers/isdn/capi/kernelcapi.o
+  CC [M]  drivers/isdn/capi/capi.o
+  CC [M]  drivers/isdn/capi/capidrv.o
+drivers/isdn/capi/capidrv.c:2108:3: warning: #warning FIXME: maybe a race condition the card should be removed here from global list /kkeil
+  CC [M]  drivers/isdn/capi/capifs.o
+  CC [M]  drivers/isdn/divert/isdn_divert.o
+  CC [M]  drivers/isdn/divert/divert_procfs.o
+  CC [M]  drivers/isdn/divert/divert_init.o
+  LD [M]  drivers/isdn/divert/dss1_divert.o
+  CC [M]  drivers/isdn/gigaset/bas-gigaset.o
+  CC [M]  drivers/isdn/gigaset/isocdata.o
+  CC [M]  drivers/isdn/gigaset/common.o
+  CC [M]  drivers/isdn/gigaset/interface.o
+  CC [M]  drivers/isdn/gigaset/proc.o
+  CC [M]  drivers/isdn/gigaset/ev-layer.o
+  CC [M]  drivers/isdn/gigaset/i4l.o
+  CC [M]  drivers/isdn/gigaset/usb-gigaset.o
+  CC [M]  drivers/isdn/gigaset/asyncdata.o
+  LD [M]  drivers/isdn/gigaset/usb_gigaset.o
+  LD [M]  drivers/isdn/gigaset/gigaset.o
+  LD [M]  drivers/isdn/gigaset/bas_gigaset.o
+  CC [M]  drivers/isdn/hardware/avm/b1pci.o
+  CC [M]  drivers/isdn/hardware/avm/b1.o
+  CC [M]  drivers/isdn/hardware/avm/b1dma.o
+  CC [M]  drivers/isdn/hardware/avm/b1pcmcia.o
+  CC [M]  drivers/isdn/hardware/avm/avm_cs.o
+  CC [M]  drivers/isdn/hardware/avm/t1pci.o
+  CC [M]  drivers/isdn/hardware/avm/c4.o
+  CC [M]  drivers/isdn/hardware/eicon/divasi.o
+  CC [M]  drivers/isdn/hardware/eicon/idifunc.o
+  CC [M]  drivers/isdn/hardware/eicon/um_idi.o
+  CC [M]  drivers/isdn/hardware/eicon/dqueue.o
+  CC [M]  drivers/isdn/hardware/eicon/divamnt.o
+  CC [M]  drivers/isdn/hardware/eicon/mntfunc.o
+  CC [M]  drivers/isdn/hardware/eicon/debug.o
+  CC [M]  drivers/isdn/hardware/eicon/maintidi.o
+  CC [M]  drivers/isdn/hardware/eicon/capimain.o
+  CC [M]  drivers/isdn/hardware/eicon/capifunc.o
+  CC [M]  drivers/isdn/hardware/eicon/message.o
+  CC [M]  drivers/isdn/hardware/eicon/capidtmf.o
+  CC [M]  drivers/isdn/hardware/eicon/diva_didd.o
+  CC [M]  drivers/isdn/hardware/eicon/diddfunc.o
+  CC [M]  drivers/isdn/hardware/eicon/dadapter.o
+  CC [M]  drivers/isdn/hardware/eicon/divasmain.o
+  CC [M]  drivers/isdn/hardware/eicon/divasfunc.o
+  CC [M]  drivers/isdn/hardware/eicon/di.o
+  CC [M]  drivers/isdn/hardware/eicon/io.o
+  CC [M]  drivers/isdn/hardware/eicon/istream.o
+  CC [M]  drivers/isdn/hardware/eicon/diva.o
+  CC [M]  drivers/isdn/hardware/eicon/divasproc.o
+  CC [M]  drivers/isdn/hardware/eicon/diva_dma.o
+  CC [M]  drivers/isdn/hardware/eicon/os_bri.o
+  CC [M]  drivers/isdn/hardware/eicon/s_bri.o
+  CC [M]  drivers/isdn/hardware/eicon/os_4bri.o
+  CC [M]  drivers/isdn/hardware/eicon/s_4bri.o
+  CC [M]  drivers/isdn/hardware/eicon/os_pri.o
+  CC [M]  drivers/isdn/hardware/eicon/s_pri.o
+  LD [M]  drivers/isdn/hardware/eicon/divadidd.o
+  LD [M]  drivers/isdn/hardware/eicon/divas.o
+  LD [M]  drivers/isdn/hardware/eicon/diva_mnt.o
+  LD [M]  drivers/isdn/hardware/eicon/diva_idi.o
+  LD [M]  drivers/isdn/hardware/eicon/divacapi.o
+  CC [M]  drivers/isdn/hisax/config.o
+drivers/isdn/hisax/config.c: In function ‘HiSax_readstatus’:
+drivers/isdn/hisax/config.c:634: warning: ignoring return value of ‘copy_to_user’, declared with attribute warn_unused_result
+drivers/isdn/hisax/config.c:645: warning: ignoring return value of ‘copy_to_user’, declared with attribute warn_unused_result
+  CC [M]  drivers/isdn/hisax/isdnl1.o
+  CC [M]  drivers/isdn/hisax/tei.o
+  CC [M]  drivers/isdn/hisax/isdnl2.o
+  CC [M]  drivers/isdn/hisax/isdnl3.o
+  CC [M]  drivers/isdn/hisax/lmgr.o
+  CC [M]  drivers/isdn/hisax/q931.o
+  CC [M]  drivers/isdn/hisax/callc.o
+  CC [M]  drivers/isdn/hisax/fsm.o
+  CC [M]  drivers/isdn/hisax/l3dss1.o
+  CC [M]  drivers/isdn/hisax/l3ni1.o
+  CC [M]  drivers/isdn/hisax/l3_1tr6.o
+  CC [M]  drivers/isdn/hisax/teles3.o
+  CC [M]  drivers/isdn/hisax/isac.o
+  CC [M]  drivers/isdn/hisax/arcofi.o
+  CC [M]  drivers/isdn/hisax/hscx.o
+  CC [M]  drivers/isdn/hisax/telespci.o
+  CC [M]  drivers/isdn/hisax/s0box.o
+  CC [M]  drivers/isdn/hisax/avm_a1p.o
+  CC [M]  drivers/isdn/hisax/avm_pci.o
+  CC [M]  drivers/isdn/hisax/elsa.o
+  CC [M]  drivers/isdn/hisax/diva.o
+drivers/isdn/hisax/diva.c: In function ‘setup_diva’:
+drivers/isdn/hisax/diva.c:1103: warning: label ‘ready’ defined but not used
+  CC [M]  drivers/isdn/hisax/ipacx.o
+  CC [M]  drivers/isdn/hisax/sedlbauer.o
+drivers/isdn/hisax/sedlbauer.c: In function ‘setup_sedlbauer’:
+drivers/isdn/hisax/sedlbauer.c:680: warning: label ‘ready’ defined but not used
+  CC [M]  drivers/isdn/hisax/isar.o
+  CC [M]  drivers/isdn/hisax/nj_s.o
+  CC [M]  drivers/isdn/hisax/netjet.o
+  CC [M]  drivers/isdn/hisax/nj_u.o
+  CC [M]  drivers/isdn/hisax/icc.o
+  CC [M]  drivers/isdn/hisax/hfc_pci.o
+  CC [M]  drivers/isdn/hisax/hfc_sx.o
+  CC [M]  drivers/isdn/hisax/niccy.o
+  CC [M]  drivers/isdn/hisax/bkm_a4t.o
+  CC [M]  drivers/isdn/hisax/jade.o
+  CC [M]  drivers/isdn/hisax/bkm_a8.o
+  CC [M]  drivers/isdn/hisax/gazel.o
+  CC [M]  drivers/isdn/hisax/w6692.o
+  CC [M]  drivers/isdn/hisax/enternow_pci.o
+  CC [M]  drivers/isdn/hisax/amd7930_fn.o
+  CC [M]  drivers/isdn/hisax/st5481_init.o
+  CC [M]  drivers/isdn/hisax/st5481_usb.o
+  CC [M]  drivers/isdn/hisax/st5481_d.o
+  CC [M]  drivers/isdn/hisax/st5481_b.o
+  LD [M]  drivers/isdn/hisax/hisax.o
+  CC [M]  drivers/isdn/hisax/sedlbauer_cs.o
+  CC [M]  drivers/isdn/hisax/elsa_cs.o
+  CC [M]  drivers/isdn/hisax/avma1_cs.o
+  CC [M]  drivers/isdn/hisax/teles_cs.o
+  LD [M]  drivers/isdn/hisax/hisax_st5481.o
+  CC [M]  drivers/isdn/hisax/hfc4s8s_l1.o
+  CC [M]  drivers/isdn/hisax/hisax_isac.o
+  CC [M]  drivers/isdn/hisax/hisax_fcpcipnp.o
+drivers/isdn/hisax/hisax_fcpcipnp.c: In function ‘hisax_fcpcipnp_init’:
+drivers/isdn/hisax/hisax_fcpcipnp.c:1009: warning: label ‘out_unregister_pci’ defined but not used
+  CC [M]  drivers/isdn/hisax/isdnhdlc.o
+  CC [M]  drivers/isdn/i4l/isdn_net.o
+  CC [M]  drivers/isdn/i4l/isdn_tty.o
+  CC [M]  drivers/isdn/i4l/isdn_v110.o
+  CC [M]  drivers/isdn/i4l/isdn_common.o
+  CC [M]  drivers/isdn/i4l/isdn_ppp.o
+  CC [M]  drivers/isdn/i4l/isdn_audio.o
+  CC [M]  drivers/isdn/i4l/isdn_ttyfax.o
+  LD [M]  drivers/isdn/i4l/isdn.o
+  CC [M]  drivers/leds/ledtrig-timer.o
+  CC [M]  drivers/leds/ledtrig-heartbeat.o
+  CC [M]  drivers/md/linear.o
+  CC [M]  drivers/md/raid0.o
+  CC [M]  drivers/md/raid1.o
+  CC [M]  drivers/md/raid10.o
+  CC [M]  drivers/md/dm-log.o
+  CC [M]  drivers/md/dm-raid1.o
+  CC [M]  drivers/md/dm.o
+  CC [M]  drivers/md/dm-table.o
+  CC [M]  drivers/md/dm-target.o
+  CC [M]  drivers/md/dm-linear.o
+  CC [M]  drivers/md/dm-stripe.o
+  CC [M]  drivers/md/dm-ioctl.o
+  CC [M]  drivers/md/dm-io.o
+  CC [M]  drivers/md/kcopyd.o
+  CC [M]  drivers/md/dm-hw-handler.o
+  CC [M]  drivers/md/dm-path-selector.o
+  CC [M]  drivers/md/dm-mpath.o
+  CC [M]  drivers/md/dm-snap.o
+  CC [M]  drivers/md/dm-exception-store.o
+  CC [M]  drivers/md/raid5.o
+  CC [M]  drivers/md/raid6algos.o
+  CC [M]  drivers/md/raid6recov.o
+  HOSTCC  drivers/md/mktables
+  TABLE   drivers/md/raid6tables.c
+  CC [M]  drivers/md/raid6tables.o
+  UNROLL  drivers/md/raid6int1.c
+  CC [M]  drivers/md/raid6int1.o
+  UNROLL  drivers/md/raid6int2.c
+  CC [M]  drivers/md/raid6int2.o
+  UNROLL  drivers/md/raid6int4.c
+  CC [M]  drivers/md/raid6int4.o
+  UNROLL  drivers/md/raid6int8.c
+  CC [M]  drivers/md/raid6int8.o
+  UNROLL  drivers/md/raid6int16.c
+  CC [M]  drivers/md/raid6int16.o
+  UNROLL  drivers/md/raid6int32.c
+  CC [M]  drivers/md/raid6int32.o
+  UNROLL  drivers/md/raid6altivec1.c
+  CC [M]  drivers/md/raid6altivec1.o
+  UNROLL  drivers/md/raid6altivec2.c
+  CC [M]  drivers/md/raid6altivec2.o
+  UNROLL  drivers/md/raid6altivec4.c
+  CC [M]  drivers/md/raid6altivec4.o
+  UNROLL  drivers/md/raid6altivec8.c
+  CC [M]  drivers/md/raid6altivec8.o
+  CC [M]  drivers/md/raid6mmx.o
+  CC [M]  drivers/md/raid6sse1.o
+  CC [M]  drivers/md/raid6sse2.o
+  LD [M]  drivers/md/raid456.o
+  CC [M]  drivers/md/xor.o
+  CC [M]  drivers/md/multipath.o
+  CC [M]  drivers/md/faulty.o
+  LD [M]  drivers/md/dm-mod.o
+  CC [M]  drivers/md/dm-crypt.o
+  LD [M]  drivers/md/dm-multipath.o
+  CC [M]  drivers/md/dm-round-robin.o
+  CC [M]  drivers/md/dm-emc.o
+  LD [M]  drivers/md/dm-snapshot.o
+  LD [M]  drivers/md/dm-mirror.o
+  CC [M]  drivers/md/dm-zero.o
+  CC [M]  drivers/media/common/ir-functions.o
+  CC [M]  drivers/media/common/ir-keymaps.o
+  LD [M]  drivers/media/common/ir-common.o
+  CC [M]  drivers/media/radio/dsbr100.o
+  CC [M]  drivers/media/video/videodev.o
+  CC [M]  drivers/media/video/v4l2-common.o
+  CC [M]  drivers/media/video/compat_ioctl32.o
+  CC [M]  drivers/media/video/v4l1-compat.o
+  CC [M]  drivers/media/video/tvaudio.o
+  CC [M]  drivers/media/video/tda7432.o
+  CC [M]  drivers/media/video/tda9875.o
+  CC [M]  drivers/media/video/ir-kbd-i2c.o
+  CC [M]  drivers/media/video/saa6588.o
+  CC [M]  drivers/media/video/tvp5150.o
+  CC [M]  drivers/media/video/msp3400-driver.o
+  CC [M]  drivers/media/video/msp3400-kthreads.o
+  CC [M]  drivers/media/video/tuner-core.o
+  CC [M]  drivers/media/video/tuner-types.o
+  CC [M]  drivers/media/video/tuner-simple.o
+  CC [M]  drivers/media/video/mt20xx.o
+  CC [M]  drivers/media/video/tda8290.o
+  CC [M]  drivers/media/video/tea5767.o
+  CC [M]  drivers/media/video/tda9887.o
+  LD [M]  drivers/media/video/msp3400.o
+  CC [M]  drivers/media/video/cs53l32a.o
+  CC [M]  drivers/media/video/tlv320aic23b.o
+  CC [M]  drivers/media/video/wm8775.o
+  CC [M]  drivers/media/video/wm8739.o
+  LD [M]  drivers/media/video/tuner.o
+  CC [M]  drivers/media/video/video-buf.o
+  CC [M]  drivers/media/video/btcx-risc.o
+  CC [M]  drivers/media/video/tveeprom.o
+  CC [M]  drivers/media/video/saa7115.o
+  CC [M]  drivers/media/video/saa7127.o
+  CC [M]  drivers/media/video/upd64031a.o
+  CC [M]  drivers/media/video/upd64083.o
+  CC [M]  drivers/media/video/cx2341x.o
+  CC [M]  drivers/media/video/dabusb.o
+  CC [M]  drivers/media/video/ov511.o
+  CC [M]  drivers/media/video/se401.o
+  CC [M]  drivers/media/video/stv680.o
+  CC [M]  drivers/media/video/w9968cf.o
+  CC [M]  drivers/media/video/bt8xx/bttv-driver.o
+  CC [M]  drivers/media/video/bt8xx/bttv-cards.o
+  CC [M]  drivers/media/video/bt8xx/bttv-if.o
+  CC [M]  drivers/media/video/bt8xx/bttv-risc.o
+  CC [M]  drivers/media/video/bt8xx/bttv-vbi.o
+  CC [M]  drivers/media/video/bt8xx/bttv-i2c.o
+  CC [M]  drivers/media/video/bt8xx/bttv-gpio.o
+  CC [M]  drivers/media/video/bt8xx/bttv-input.o
+  LD [M]  drivers/media/video/bt8xx/bttv.o
+  CC [M]  drivers/media/video/cpia2/cpia2_v4l.o
+  CC [M]  drivers/media/video/cpia2/cpia2_usb.o
+  CC [M]  drivers/media/video/cpia2/cpia2_core.o
+  LD [M]  drivers/media/video/cpia2/cpia2.o
+  CC [M]  drivers/media/video/cx25840/cx25840-core.o
+  CC [M]  drivers/media/video/cx25840/cx25840-audio.o
+  CC [M]  drivers/media/video/cx25840/cx25840-firmware.o
+  CC [M]  drivers/media/video/cx25840/cx25840-vbi.o
+  LD [M]  drivers/media/video/cx25840/cx25840.o
+  CC [M]  drivers/media/video/em28xx/em28xx-video.o
+  CC [M]  drivers/media/video/em28xx/em28xx-i2c.o
+  CC [M]  drivers/media/video/em28xx/em28xx-cards.o
+  CC [M]  drivers/media/video/em28xx/em28xx-core.o
+  CC [M]  drivers/media/video/em28xx/em28xx-input.o
+  LD [M]  drivers/media/video/em28xx/em28xx.o
+  CC [M]  drivers/media/video/et61x251/et61x251_core.o
+  CC [M]  drivers/media/video/et61x251/et61x251_tas5130d1b.o
+  LD [M]  drivers/media/video/et61x251/et61x251.o
+  CC [M]  drivers/media/video/ovcamchip/ovcamchip_core.o
+  CC [M]  drivers/media/video/ovcamchip/ov6x20.o
+  CC [M]  drivers/media/video/ovcamchip/ov6x30.o
+  CC [M]  drivers/media/video/ovcamchip/ov7x10.o
+  CC [M]  drivers/media/video/ovcamchip/ov7x20.o
+  CC [M]  drivers/media/video/ovcamchip/ov76be.o
+  LD [M]  drivers/media/video/ovcamchip/ovcamchip.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-i2c-core.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-i2c-cmd-v4l2.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-audio.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-i2c-chips-v4l2.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-encoder.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-video-v4l.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-eeprom.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-tuner.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-main.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-hdw.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-v4l2.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-ctrl.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-std.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-context.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-io.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-ioread.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-cx2584x-v4l.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-wm8775.o
+  CC [M]  drivers/media/video/pvrusb2/pvrusb2-sysfs.o
+  LD [M]  drivers/media/video/pvrusb2/pvrusb2.o
+  CC [M]  drivers/media/video/pwc/pwc-if.o
+  CC [M]  drivers/media/video/pwc/pwc-misc.o
+  CC [M]  drivers/media/video/pwc/pwc-ctrl.o
+  CC [M]  drivers/media/video/pwc/pwc-v4l.o
+  CC [M]  drivers/media/video/pwc/pwc-uncompress.o
+  CC [M]  drivers/media/video/pwc/pwc-dec1.o
+  CC [M]  drivers/media/video/pwc/pwc-dec23.o
+  CC [M]  drivers/media/video/pwc/pwc-kiara.o
+  CC [M]  drivers/media/video/pwc/pwc-timon.o
+  LD [M]  drivers/media/video/pwc/pwc.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_core.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_hv7131d.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_mi0343.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_ov7630.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_pas106b.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_pas202bca.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_pas202bcb.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_tas5110c1b.o
+  CC [M]  drivers/media/video/sn9c102/sn9c102_tas5130d1b.o
+  LD [M]  drivers/media/video/sn9c102/sn9c102.o
+  CC [M]  drivers/media/video/usbvideo/usbvideo.o
+  CC [M]  drivers/media/video/usbvideo/ibmcam.o
+  CC [M]  drivers/media/video/usbvideo/ultracam.o
+  CC [M]  drivers/media/video/usbvideo/konicawc.o
+  CC [M]  drivers/media/video/usbvideo/vicam.o
+  CC [M]  drivers/media/video/usbvideo/quickcam_messenger.o
+  CC [M]  drivers/media/video/zc0301/zc0301_core.o
+  CC [M]  drivers/media/video/zc0301/zc0301_pb0330.o
+  CC [M]  drivers/media/video/zc0301/zc0301_pas202bcb.o
+  LD [M]  drivers/media/video/zc0301/zc0301.o
+  CC [M]  drivers/message/fusion/mptbase.o
+  CC [M]  drivers/message/fusion/mptscsih.o
+  CC [M]  drivers/message/fusion/mptspi.o
+  CC [M]  drivers/message/fusion/mptfc.o
+  CC [M]  drivers/message/fusion/mptsas.o
+  CC [M]  drivers/message/fusion/mptctl.o
+  CC [M]  drivers/message/fusion/mptlan.o
+  CC [M]  drivers/message/i2o/bus-osm.o
+  CC [M]  drivers/message/i2o/config-osm.o
+  CC [M]  drivers/message/i2o/iop.o
+  CC [M]  drivers/message/i2o/driver.o
+  CC [M]  drivers/message/i2o/device.o
+  CC [M]  drivers/message/i2o/debug.o
+  CC [M]  drivers/message/i2o/pci.o
+  CC [M]  drivers/message/i2o/exec-osm.o
+drivers/message/i2o/exec-osm.c:519: warning: ‘i2o_exec_lct_notify’ defined but not used
+  LD [M]  drivers/message/i2o/i2o_core.o
+  LD [M]  drivers/message/i2o/i2o_config.o
+  LD [M]  drivers/message/i2o/i2o_bus.o
+  CC [M]  drivers/message/i2o/i2o_block.o
+  CC [M]  drivers/message/i2o/i2o_scsi.o
+  CC [M]  drivers/message/i2o/i2o_proc.o
+  CC [M]  drivers/misc/ibmasm/module.o
+  CC [M]  drivers/misc/ibmasm/ibmasmfs.o
+  CC [M]  drivers/misc/ibmasm/event.o
+  CC [M]  drivers/misc/ibmasm/command.o
+  CC [M]  drivers/misc/ibmasm/remote.o
+  CC [M]  drivers/misc/ibmasm/heartbeat.o
+  CC [M]  drivers/misc/ibmasm/r_heartbeat.o
+  CC [M]  drivers/misc/ibmasm/dot_command.o
+  CC [M]  drivers/misc/ibmasm/lowlevel.o
+  CC [M]  drivers/misc/ibmasm/uart.o
+  LD [M]  drivers/misc/ibmasm/ibmasm.o
+  CC [M]  drivers/mmc/mmc.o
+  CC [M]  drivers/mmc/mmc_queue.o
+  CC [M]  drivers/mmc/mmc_sysfs.o
+  LD [M]  drivers/mmc/mmc_core.o
+  CC [M]  drivers/mmc/mmc_block.o
+  CC [M]  drivers/mmc/sdhci.o
+  CC [M]  drivers/mmc/wbsd.o
+  CC [M]  drivers/mtd/mtdcore.o
+  CC [M]  drivers/mtd/mtdpart.o
+  CC [M]  drivers/mtd/mtdconcat.o
+  CC [M]  drivers/mtd/redboot.o
+  CC [M]  drivers/mtd/mtdchar.o
+  CC [M]  drivers/mtd/mtdblock.o
+  CC [M]  drivers/mtd/mtd_blkdevs.o
+  CC [M]  drivers/mtd/mtdblock_ro.o
+  CC [M]  drivers/mtd/ftl.o
+  CC [M]  drivers/mtd/nftlcore.o
+  CC [M]  drivers/mtd/nftlmount.o
+  LD [M]  drivers/mtd/nftl.o
+  CC [M]  drivers/mtd/rfd_ftl.o
+  CC [M]  drivers/mtd/chips/chipreg.o
+  CC [M]  drivers/mtd/chips/cfi_probe.o
+  CC [M]  drivers/mtd/chips/cfi_util.o
+  CC [M]  drivers/mtd/chips/cfi_cmdset_0020.o
+  CC [M]  drivers/mtd/chips/cfi_cmdset_0002.o
+  CC [M]  drivers/mtd/chips/cfi_cmdset_0001.o
+  CC [M]  drivers/mtd/chips/gen_probe.o
+  CC [M]  drivers/mtd/chips/jedec_probe.o
+  CC [M]  drivers/mtd/chips/map_ram.o
+  CC [M]  drivers/mtd/chips/map_rom.o
+  CC [M]  drivers/mtd/chips/map_absent.o
+  CC [M]  drivers/mtd/devices/mtdram.o
+  CC [M]  drivers/mtd/devices/block2mtd.o
+  CC [M]  drivers/mtd/maps/sc520cdp.o
+  CC [M]  drivers/mtd/maps/netsc520.o
+  CC [M]  drivers/mtd/maps/ts5500_flash.o
+  CC [M]  drivers/mtd/maps/scb2_flash.o
+  CC [M]  drivers/mtd/nand/nand_base.o
+  CC [M]  drivers/mtd/nand/nand_bbt.o
+  LD [M]  drivers/mtd/nand/nand.o
+  CC [M]  drivers/mtd/nand/nand_ecc.o
+  CC [M]  drivers/mtd/nand/nand_ids.o
+  CC [M]  drivers/mtd/nand/diskonchip.o
+  CC [M]  drivers/mtd/nand/nandsim.o
+  CC [M]  drivers/mtd/nand/cs553x_nand.o
+  CC [M]  drivers/net/slhc.o
+  CC [M]  drivers/net/sunhme.o
+  CC [M]  drivers/net/sungem.o
+  CC [M]  drivers/net/sungem_phy.o
+  CC [M]  drivers/net/cassini.o
+  CC [M]  drivers/net/3c59x.o
+  CC [M]  drivers/net/typhoon.o
+  CC [M]  drivers/net/ne2k-pci.o
+  CC [M]  drivers/net/8390.o
+  CC [M]  drivers/net/pcnet32.o
+  CC [M]  drivers/net/e100.o
+  CC [M]  drivers/net/tlan.o
+  CC [M]  drivers/net/epic100.o
+  CC [M]  drivers/net/sis190.o
+  CC [M]  drivers/net/sis900.o
+  CC [M]  drivers/net/acenic.o
+  CC [M]  drivers/net/natsemi.o
+  CC [M]  drivers/net/ns83820.o
+  CC [M]  drivers/net/fealnx.o
+  CC [M]  drivers/net/tg3.o
+  CC [M]  drivers/net/bnx2.o
+  CC [M]  drivers/net/skge.o
+  CC [M]  drivers/net/sky2.o
+  CC [M]  drivers/net/via-rhine.o
+  CC [M]  drivers/net/via-velocity.o
+  CC [M]  drivers/net/starfire.o
+  CC [M]  drivers/net/mii.o
+  CC [M]  drivers/net/sundance.o
+  CC [M]  drivers/net/b44.o
+  CC [M]  drivers/net/forcedeth.o
+  CC [M]  drivers/net/ppp_generic.o
+  CC [M]  drivers/net/ppp_async.o
+  CC [M]  drivers/net/ppp_synctty.o
+  CC [M]  drivers/net/ppp_deflate.o
+  CC [M]  drivers/net/ppp_mppe.o
+  CC [M]  drivers/net/pppox.o
+  CC [M]  drivers/net/pppoe.o
+  CC [M]  drivers/net/slip.o
+  CC [M]  drivers/net/dummy.o
+  CC [M]  drivers/net/ifb.o
+  CC [M]  drivers/net/8139cp.o
+  CC [M]  drivers/net/8139too.o
+  CC [M]  drivers/net/tun.o
+  CC [M]  drivers/net/dl2k.o
+  CC [M]  drivers/net/r8169.o
+drivers/net/r8169.c: In function ‘rtl8169_start_xmit’:
+drivers/net/r8169.c:2131: warning: ‘txd’ may be used uninitialized in this function
+  CC [M]  drivers/net/amd8111e.o
+  CC [M]  drivers/net/s2io.o
+  CC [M]  drivers/net/netconsole.o
+  CC [M]  drivers/net/bonding/bond_main.o
+  CC [M]  drivers/net/bonding/bond_3ad.o
+  CC [M]  drivers/net/bonding/bond_alb.o
+  CC [M]  drivers/net/bonding/bond_sysfs.o
+  LD [M]  drivers/net/bonding/bonding.o
+  CC [M]  drivers/net/chelsio/cxgb2.o
+  CC [M]  drivers/net/chelsio/espi.o
+  CC [M]  drivers/net/chelsio/pm3393.o
+  CC [M]  drivers/net/chelsio/sge.o
+  CC [M]  drivers/net/chelsio/subr.o
+  CC [M]  drivers/net/chelsio/mv88x201x.o
+  LD [M]  drivers/net/chelsio/cxgb.o
+  CC [M]  drivers/net/e1000/e1000_main.o
+  CC [M]  drivers/net/e1000/e1000_hw.o
+  CC [M]  drivers/net/e1000/e1000_ethtool.o
+  CC [M]  drivers/net/e1000/e1000_param.o
+  LD [M]  drivers/net/e1000/e1000.o
+  CC [M]  drivers/net/ixgb/ixgb_main.o
+  CC [M]  drivers/net/ixgb/ixgb_hw.o
+  CC [M]  drivers/net/ixgb/ixgb_ee.o
+  CC [M]  drivers/net/ixgb/ixgb_ethtool.o
+  CC [M]  drivers/net/ixgb/ixgb_param.o
+  LD [M]  drivers/net/ixgb/ixgb.o
+  CC [M]  drivers/net/myri10ge/myri10ge.o
+  CC [M]  drivers/net/pcmcia/3c589_cs.o
+  CC [M]  drivers/net/pcmcia/3c574_cs.o
+  CC [M]  drivers/net/pcmcia/fmvj18x_cs.o
+  CC [M]  drivers/net/pcmcia/nmclan_cs.o
+  CC [M]  drivers/net/pcmcia/pcnet_cs.o
+  CC [M]  drivers/net/pcmcia/smc91c92_cs.o
+  CC [M]  drivers/net/pcmcia/xirc2ps_cs.o
+  CC [M]  drivers/net/pcmcia/axnet_cs.o
+  CC [M]  drivers/net/pcmcia/ibmtr_cs.o
+  CC [M]  drivers/net/phy/phy.o
+  CC [M]  drivers/net/phy/phy_device.o
+  CC [M]  drivers/net/phy/mdio_bus.o
+  LD [M]  drivers/net/phy/libphy.o
+  CC [M]  drivers/net/phy/marvell.o
+  CC [M]  drivers/net/phy/davicom.o
+  CC [M]  drivers/net/phy/cicada.o
+  CC [M]  drivers/net/phy/lxt.o
+  CC [M]  drivers/net/phy/qsemi.o
+  CC [M]  drivers/net/phy/smsc.o
+  CC [M]  drivers/net/phy/vitesse.o
+  CC [M]  drivers/net/phy/fixed.o
+drivers/net/phy/fixed.c: In function ‘fixed_init’:
+drivers/net/phy/fixed.c:317: warning: unused variable ‘duplex’
+drivers/net/phy/fixed.c:316: warning: unused variable ‘ret’
+  CC [M]  drivers/net/tokenring/olympic.o
+  CC [M]  drivers/net/tokenring/lanstreamer.o
+  CC [M]  drivers/net/tokenring/3c359.o
+  CC [M]  drivers/net/tulip/xircom_cb.o
+  CC [M]  drivers/net/tulip/dmfe.o
+  CC [M]  drivers/net/tulip/winbond-840.o
+  CC [M]  drivers/net/tulip/de2104x.o
+  CC [M]  drivers/net/tulip/eeprom.o
+  CC [M]  drivers/net/tulip/interrupt.o
+  CC [M]  drivers/net/tulip/media.o
+  CC [M]  drivers/net/tulip/timer.o
+  CC [M]  drivers/net/tulip/tulip_core.o
+  CC [M]  drivers/net/tulip/21142.o
+  CC [M]  drivers/net/tulip/pnic.o
+  CC [M]  drivers/net/tulip/pnic2.o
+  LD [M]  drivers/net/tulip/tulip.o
+  CC [M]  drivers/net/tulip/de4x5.o
+  CC [M]  drivers/net/tulip/uli526x.o
+  CC [M]  drivers/net/wireless/ipw2100.o
+  CC [M]  drivers/net/wireless/ipw2200.o
+  CC [M]  drivers/net/wireless/netwave_cs.o
+  CC [M]  drivers/net/wireless/wavelan_cs.o
+  CC [M]  drivers/net/wireless/orinoco.o
+  CC [M]  drivers/net/wireless/hermes.o
+  CC [M]  drivers/net/wireless/orinoco_cs.o
+  CC [M]  drivers/net/wireless/orinoco_plx.o
+  CC [M]  drivers/net/wireless/orinoco_pci.o
+  CC [M]  drivers/net/wireless/orinoco_tmd.o
+  CC [M]  drivers/net/wireless/orinoco_nortel.o
+  CC [M]  drivers/net/wireless/spectrum_cs.o
+  CC [M]  drivers/net/wireless/airo.o
+  CC [M]  drivers/net/wireless/airo_cs.o
+  CC [M]  drivers/net/wireless/atmel.o
+  CC [M]  drivers/net/wireless/atmel_pci.o
+  CC [M]  drivers/net/wireless/atmel_cs.o
+  CC [M]  drivers/net/wireless/wl3501_cs.o
+  CC [M]  drivers/net/wireless/zd1201.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_main.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_ilt.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_radio.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_phy.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_power.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_wx.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_leds.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_ethtool.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_xmit.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_sysfs.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_debugfs.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_dma.o
+  CC [M]  drivers/net/wireless/bcm43xx/bcm43xx_pio.o
+  LD [M]  drivers/net/wireless/bcm43xx/bcm43xx.o
+  CC [M]  drivers/net/wireless/hostap/hostap_80211_rx.o
+  CC [M]  drivers/net/wireless/hostap/hostap_80211_tx.o
+  CC [M]  drivers/net/wireless/hostap/hostap_ap.o
+  CC [M]  drivers/net/wireless/hostap/hostap_info.o
+  CC [M]  drivers/net/wireless/hostap/hostap_ioctl.o
+  CC [M]  drivers/net/wireless/hostap/hostap_main.o
+  CC [M]  drivers/net/wireless/hostap/hostap_proc.o
+  LD [M]  drivers/net/wireless/hostap/hostap.o
+  CC [M]  drivers/net/wireless/hostap/hostap_cs.o
+  CC [M]  drivers/net/wireless/hostap/hostap_plx.o
+  CC [M]  drivers/net/wireless/hostap/hostap_pci.o
+  CC [M]  drivers/net/wireless/prism54/islpci_eth.o
+  CC [M]  drivers/net/wireless/prism54/islpci_mgt.o
+  CC [M]  drivers/net/wireless/prism54/isl_38xx.o
+  CC [M]  drivers/net/wireless/prism54/isl_ioctl.o
+  CC [M]  drivers/net/wireless/prism54/islpci_dev.o
+  CC [M]  drivers/net/wireless/prism54/islpci_hotplug.o
+  CC [M]  drivers/net/wireless/prism54/oid_mgt.o
+  LD [M]  drivers/net/wireless/prism54/prism54.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_chip.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_ieee80211.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_mac.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_netdev.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_rf_al2230.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_rf_rf2959.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_rf.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_usb.o
+  CC [M]  drivers/net/wireless/zd1211rw/zd_util.o
+  LD [M]  drivers/net/wireless/zd1211rw/zd1211rw.o
+  CC [M]  drivers/parport/share.o
+  CC [M]  drivers/parport/ieee1284.o
+  CC [M]  drivers/parport/ieee1284_ops.o
+  CC [M]  drivers/parport/procfs.o
+  CC [M]  drivers/parport/daisy.o
+  CC [M]  drivers/parport/probe.o
+  LD [M]  drivers/parport/parport.o
+  CC [M]  drivers/parport/parport_pc.o
+  CC [M]  drivers/parport/parport_serial.o
+  CC [M]  drivers/parport/parport_cs.o
+  CC [M]  drivers/pci/hotplug/fakephp.o
+  CC [M]  drivers/pci/hotplug/acpiphp_core.o
+  CC [M]  drivers/pci/hotplug/acpiphp_glue.o
+  CC [M]  drivers/pci/hotplug/cpqphp_core.o
+  CC [M]  drivers/pci/hotplug/cpqphp_ctrl.o
+  CC [M]  drivers/pci/hotplug/cpqphp_sysfs.o
+  CC [M]  drivers/pci/hotplug/cpqphp_pci.o
+  CC [M]  drivers/pci/hotplug/ibmphp_core.o
+  CC [M]  drivers/pci/hotplug/ibmphp_ebda.o
+  CC [M]  drivers/pci/hotplug/ibmphp_pci.o
+  CC [M]  drivers/pci/hotplug/ibmphp_res.o
+  CC [M]  drivers/pci/hotplug/ibmphp_hpc.o
+  CC [M]  drivers/pci/hotplug/pciehp_core.o
+  CC [M]  drivers/pci/hotplug/pciehp_ctrl.o
+  CC [M]  drivers/pci/hotplug/pciehp_pci.o
+  CC [M]  drivers/pci/hotplug/pciehp_hpc.o
+  LD [M]  drivers/pci/hotplug/cpqphp.o
+  LD [M]  drivers/pci/hotplug/ibmphp.o
+  LD [M]  drivers/pci/hotplug/acpiphp.o
+  CC [M]  drivers/pci/hotplug/acpiphp_ibm.o
+  LD [M]  drivers/pci/hotplug/pciehp.o
+  CC [M]  drivers/pcmcia/pd6729.o
+  CC [M]  drivers/rtc/rtc-lib.o
+  CC [M]  drivers/rtc/class.o
+  CC [M]  drivers/rtc/interface.o
+  LD [M]  drivers/rtc/rtc-core.o
+  CC [M]  drivers/rtc/rtc-sysfs.o
+  CC [M]  drivers/rtc/rtc-proc.o
+  CC [M]  drivers/rtc/rtc-dev.o
+  CC [M]  drivers/rtc/rtc-x1205.o
+  CC [M]  drivers/rtc/rtc-isl1208.o
+  CC [M]  drivers/rtc/rtc-ds1307.o
+  CC [M]  drivers/rtc/rtc-ds1672.o
+  CC [M]  drivers/rtc/rtc-ds1742.o
+  CC [M]  drivers/rtc/rtc-pcf8563.o
+  CC [M]  drivers/rtc/rtc-pcf8583.o
+  CC [M]  drivers/rtc/rtc-rs5c372.o
+  CC [M]  drivers/rtc/rtc-ds1553.o
+  CC [M]  drivers/rtc/rtc-v3020.o
+drivers/rtc/rtc-v3020.c: In function ‘rtc_probe’:
+drivers/rtc/rtc-v3020.c:201: warning: cast to pointer from integer of different size
+  CC [M]  drivers/scsi/scsi.o
+  CC [M]  drivers/scsi/hosts.o
+  CC [M]  drivers/scsi/scsi_ioctl.o
+  CC [M]  drivers/scsi/constants.o
+  CC [M]  drivers/scsi/scsicam.o
+  CC [M]  drivers/scsi/scsi_error.o
+  CC [M]  drivers/scsi/scsi_lib.o
+  CC [M]  drivers/scsi/scsi_scan.o
+  CC [M]  drivers/scsi/scsi_sysfs.o
+  CC [M]  drivers/scsi/scsi_devinfo.o
+  CC [M]  drivers/scsi/scsi_sysctl.o
+  CC [M]  drivers/scsi/scsi_proc.o
+  CC [M]  drivers/scsi/sd.o
+  CC [M]  drivers/scsi/sr.o
+  CC [M]  drivers/scsi/sr_ioctl.o
+  CC [M]  drivers/scsi/sr_vendor.o
+  LD [M]  drivers/scsi/scsi_mod.o
+  CC [M]  drivers/scsi/raid_class.o
+  CC [M]  drivers/scsi/scsi_transport_spi.o
+  CC [M]  drivers/scsi/scsi_transport_fc.o
+  CC [M]  drivers/scsi/scsi_transport_iscsi.o
+  CC [M]  drivers/scsi/scsi_transport_sas.o
+  CC [M]  drivers/scsi/libiscsi.o
+  CC [M]  drivers/scsi/iscsi_tcp.o
+  CC [M]  drivers/scsi/aic7xxx_old.o
+  CC [M]  drivers/scsi/ips.o
+drivers/scsi/ips.c: In function ‘ips_register_scsi’:
+drivers/scsi/ips.c:7042: warning: ignoring return value of ‘scsi_add_host’, declared with attribute warn_unused_result
+drivers/scsi/ips.c: In function ‘ips_insert_device’:
+drivers/scsi/ips.c:7123: warning: ‘index’ may be used uninitialized in this function
+  CC [M]  drivers/scsi/qla1280.o
+  CC [M]  drivers/scsi/dc395x.o
+  CC [M]  drivers/scsi/megaraid.o
+drivers/scsi/megaraid.c: In function ‘issue_scb’:
+drivers/scsi/megaraid.c:1153: warning: passing argument 2 of ‘writel’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c: In function ‘issue_scb_block’:
+drivers/scsi/megaraid.c:1216: warning: passing argument 2 of ‘writel’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c:1229: warning: passing argument 2 of ‘writel’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c:1231: warning: passing argument 1 of ‘readl’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c: In function ‘megaraid_isr_memmapped’:
+drivers/scsi/megaraid.c:1361: warning: passing argument 1 of ‘readl’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c:1368: warning: passing argument 2 of ‘writel’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c:1387: warning: passing argument 2 of ‘writel’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c:1391: warning: passing argument 1 of ‘readl’ makes pointer from integer without a cast
+drivers/scsi/megaraid.c: In function ‘megadev_ioctl’:
+drivers/scsi/megaraid.c:3661: warning: ignoring return value of ‘copy_to_user’, declared with attribute warn_unused_result
+  CC [M]  drivers/scsi/atp870u.o
+  CC [M]  drivers/scsi/gdth.o
+  CC [M]  drivers/scsi/initio.o
+  CC [M]  drivers/scsi/ide-scsi.o
+  CC [M]  drivers/scsi/3w-xxxx.o
+  CC [M]  drivers/scsi/3w-9xxx.o
+  CC [M]  drivers/scsi/ppa.o
+  CC [M]  drivers/scsi/imm.o
+  CC [M]  drivers/scsi/hptiop.o
+  CC [M]  drivers/scsi/st.o
+  CC [M]  drivers/scsi/osst.o
+  LD [M]  drivers/scsi/sd_mod.o
+  LD [M]  drivers/scsi/sr_mod.o
+  CC [M]  drivers/scsi/sg.o
+  CC [M]  drivers/scsi/ch.o
+  CC [M]  drivers/scsi/aacraid/linit.o
+  CC [M]  drivers/scsi/aacraid/aachba.o
+  CC [M]  drivers/scsi/aacraid/commctrl.o
+  CC [M]  drivers/scsi/aacraid/comminit.o
+  CC [M]  drivers/scsi/aacraid/commsup.o
+  CC [M]  drivers/scsi/aacraid/dpcsup.o
+  CC [M]  drivers/scsi/aacraid/rx.o
+  CC [M]  drivers/scsi/aacraid/sa.o
+  CC [M]  drivers/scsi/aacraid/rkt.o
+  LD [M]  drivers/scsi/aacraid/aacraid.o
+  SHIPPED drivers/scsi/aic7xxx/aic79xx_seq.h
+  SHIPPED drivers/scsi/aic7xxx/aic79xx_reg.h
+  CC [M]  drivers/scsi/aic7xxx/aic79xx_core.o
+  CC [M]  drivers/scsi/aic7xxx/aic79xx_pci.o
+  CC [M]  drivers/scsi/aic7xxx/aic79xx_osm.o
+  CC [M]  drivers/scsi/aic7xxx/aic79xx_proc.o
+  CC [M]  drivers/scsi/aic7xxx/aic79xx_osm_pci.o
+  SHIPPED drivers/scsi/aic7xxx/aic7xxx_seq.h
+  SHIPPED drivers/scsi/aic7xxx/aic7xxx_reg.h
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_core.o
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_93cx6.o
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_pci.o
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_osm.o
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_proc.o
+  CC [M]  drivers/scsi/aic7xxx/aic7xxx_osm_pci.o
+  LD [M]  drivers/scsi/aic7xxx/aic7xxx.o
+  LD [M]  drivers/scsi/aic7xxx/aic79xx.o
+  CC [M]  drivers/scsi/lpfc/lpfc_mem.o
+  CC [M]  drivers/scsi/lpfc/lpfc_sli.o
+  CC [M]  drivers/scsi/lpfc/lpfc_ct.o
+  CC [M]  drivers/scsi/lpfc/lpfc_els.o
+  CC [M]  drivers/scsi/lpfc/lpfc_hbadisc.o
+  CC [M]  drivers/scsi/lpfc/lpfc_init.o
+  CC [M]  drivers/scsi/lpfc/lpfc_mbox.o
+  CC [M]  drivers/scsi/lpfc/lpfc_nportdisc.o
+  CC [M]  drivers/scsi/lpfc/lpfc_scsi.o
+  CC [M]  drivers/scsi/lpfc/lpfc_attr.o
+  LD [M]  drivers/scsi/lpfc/lpfc.o
+  CC [M]  drivers/scsi/megaraid/megaraid_mm.o
+  CC [M]  drivers/scsi/megaraid/megaraid_mbox.o
+  CC [M]  drivers/scsi/megaraid/megaraid_sas.o
+  CC [M]  drivers/scsi/pcmcia/fdomain_stub.o
+  CC [M]  drivers/scsi/pcmcia/fdomain_core.o
+drivers/scsi/fdomain.c:424: warning: ‘ports’ defined but not used
+drivers/scsi/fdomain.c:468: warning: ‘signatures’ defined but not used
+drivers/scsi/fdomain.c:651: warning: ‘fdomain_get_irq’ defined but not used
+  LD [M]  drivers/scsi/pcmcia/fdomain_cs.o
+  CC [M]  drivers/scsi/qla2xxx/qla_os.o
+  CC [M]  drivers/scsi/qla2xxx/qla_init.o
+  CC [M]  drivers/scsi/qla2xxx/qla_mbx.o
+  CC [M]  drivers/scsi/qla2xxx/qla_iocb.o
+  CC [M]  drivers/scsi/qla2xxx/qla_isr.o
+  CC [M]  drivers/scsi/qla2xxx/qla_gs.o
+  CC [M]  drivers/scsi/qla2xxx/qla_dbg.o
+  CC [M]  drivers/scsi/qla2xxx/qla_sup.o
+  CC [M]  drivers/scsi/qla2xxx/qla_attr.o
+  LD [M]  drivers/scsi/qla2xxx/qla2xxx.o
+  CC [M]  drivers/scsi/sym53c8xx_2/sym_fw.o
+  CC [M]  drivers/scsi/sym53c8xx_2/sym_glue.o
+  CC [M]  drivers/scsi/sym53c8xx_2/sym_hipd.o
+  CC [M]  drivers/scsi/sym53c8xx_2/sym_malloc.o
+  CC [M]  drivers/scsi/sym53c8xx_2/sym_nvram.o
+  LD [M]  drivers/scsi/sym53c8xx_2/sym53c8xx.o
+  CC [M]  drivers/serial/serial_cs.o
+  CC [M]  drivers/serial/jsm/jsm_driver.o
+  CC [M]  drivers/serial/jsm/jsm_neo.o
+  CC [M]  drivers/serial/jsm/jsm_tty.o
+  LD [M]  drivers/serial/jsm/jsm.o
+  CC [M]  drivers/usb/atm/cxacru.o
+  CC [M]  drivers/usb/atm/speedtch.o
+  CC [M]  drivers/usb/atm/ueagle-atm.o
+  CC [M]  drivers/usb/atm/usbatm.o
+  CC [M]  drivers/usb/atm/xusbatm.o
+  CC [M]  drivers/usb/class/cdc-acm.o
+  CC [M]  drivers/usb/class/usblp.o
+  CC [M]  drivers/usb/host/ehci-hcd.o
+  CC [M]  drivers/usb/host/isp116x-hcd.o
+  CC [M]  drivers/usb/host/ohci-hcd.o
+  CC [M]  drivers/usb/host/uhci-hcd.o
+  CC [M]  drivers/usb/host/sl811-hcd.o
+  CC [M]  drivers/usb/host/sl811_cs.o
+  CC [M]  drivers/usb/image/mdc800.o
+  CC [M]  drivers/usb/image/microtek.o
+  CC [M]  drivers/usb/input/aiptek.o
+  CC [M]  drivers/usb/input/ati_remote.o
+  CC [M]  drivers/usb/input/ati_remote2.o
+  CC [M]  drivers/usb/input/kbtab.o
+  CC [M]  drivers/usb/input/keyspan_remote.o
+  CC [M]  drivers/usb/input/usbtouchscreen.o
+  CC [M]  drivers/usb/input/powermate.o
+  CC [M]  drivers/usb/input/wacom.o
+  CC [M]  drivers/usb/input/acecad.o
+  CC [M]  drivers/usb/input/xpad.o
+  CC [M]  drivers/usb/input/appletouch.o
+  CC [M]  drivers/usb/misc/auerswald.o
+drivers/usb/misc/auerswald.c: In function ‘auerchain_control_msg’:
+drivers/usb/misc/auerswald.c:667: warning: ‘length’ may be used uninitialized in this function
+  CC [M]  drivers/usb/misc/emi26.o
+  CC [M]  drivers/usb/misc/emi62.o
+  CC [M]  drivers/usb/misc/idmouse.o
+  CC [M]  drivers/usb/misc/usblcd.o
+  CC [M]  drivers/usb/misc/ldusb.o
+  CC [M]  drivers/usb/misc/usbled.o
+  CC [M]  drivers/usb/misc/legousbtower.o
+  CC [M]  drivers/usb/misc/phidgetkit.o
+  CC [M]  drivers/usb/misc/phidgetservo.o
+  CC [M]  drivers/usb/misc/rio500.o
+  CC [M]  drivers/usb/misc/usbtest.o
+  CC [M]  drivers/usb/misc/uss720.o
+  CC [M]  drivers/usb/misc/appledisplay.o
+  CC [M]  drivers/usb/misc/sisusbvga/sisusb.o
+  CC [M]  drivers/usb/misc/sisusbvga/sisusb_init.o
+  CC [M]  drivers/usb/misc/sisusbvga/sisusb_con.o
+  LD [M]  drivers/usb/misc/sisusbvga/sisusbvga.o
+  CC [M]  drivers/usb/net/catc.o
+  CC [M]  drivers/usb/net/kaweth.o
+drivers/usb/net/kaweth.c: In function ‘kaweth_control’:
+drivers/usb/net/kaweth.c:1212: warning: ‘length’ may be used uninitialized in this function
+  CC [M]  drivers/usb/net/pegasus.o
+  CC [M]  drivers/usb/net/rtl8150.o
+  CC [M]  drivers/usb/net/asix.o
+  CC [M]  drivers/usb/net/cdc_ether.o
+  CC [M]  drivers/usb/net/gl620a.o
+  CC [M]  drivers/usb/net/net1080.o
+  CC [M]  drivers/usb/net/plusb.o
+  CC [M]  drivers/usb/net/rndis_host.o
+  CC [M]  drivers/usb/net/cdc_subset.o
+  CC [M]  drivers/usb/net/zaurus.o
+  CC [M]  drivers/usb/net/usbnet.o
+  CC [M]  drivers/usb/serial/usb-serial.o
+  CC [M]  drivers/usb/serial/generic.o
+  CC [M]  drivers/usb/serial/bus.o
+  CC [M]  drivers/usb/serial/ezusb.o
+  LD [M]  drivers/usb/serial/usbserial.o
+  CC [M]  drivers/usb/serial/airprime.o
+  CC [M]  drivers/usb/serial/ark3116.o
+  CC [M]  drivers/usb/serial/belkin_sa.o
+  CC [M]  drivers/usb/serial/cp2101.o
+  CC [M]  drivers/usb/serial/cyberjack.o
+  CC [M]  drivers/usb/serial/cypress_m8.o
+  CC [M]  drivers/usb/serial/digi_acceleport.o
+  CC [M]  drivers/usb/serial/io_edgeport.o
+  CC [M]  drivers/usb/serial/io_ti.o
+  CC [M]  drivers/usb/serial/empeg.o
+  CC [M]  drivers/usb/serial/ftdi_sio.o
+  CC [M]  drivers/usb/serial/funsoft.o
+  CC [M]  drivers/usb/serial/garmin_gps.o
+  CC [M]  drivers/usb/serial/hp4x.o
+  CC [M]  drivers/usb/serial/ipaq.o
+  CC [M]  drivers/usb/serial/ipw.o
+  CC [M]  drivers/usb/serial/ir-usb.o
+  CC [M]  drivers/usb/serial/keyspan.o
+  CC [M]  drivers/usb/serial/keyspan_pda.o
+  CC [M]  drivers/usb/serial/kl5kusb105.o
+  CC [M]  drivers/usb/serial/kobil_sct.o
+  CC [M]  drivers/usb/serial/mct_u232.o
+  CC [M]  drivers/usb/serial/navman.o
+  CC [M]  drivers/usb/serial/omninet.o
+  CC [M]  drivers/usb/serial/option.o
+  CC [M]  drivers/usb/serial/pl2303.o
+  CC [M]  drivers/usb/serial/safe_serial.o
+  CC [M]  drivers/usb/serial/sierra.o
+  CC [M]  drivers/usb/serial/ti_usb_3410_5052.o
+  CC [M]  drivers/usb/serial/visor.o
+  CC [M]  drivers/usb/serial/whiteheat.o
+  CC [M]  drivers/usb/storage/scsiglue.o
+  CC [M]  drivers/usb/storage/protocol.o
+  CC [M]  drivers/usb/storage/transport.o
+  CC [M]  drivers/usb/storage/usb.o
+  CC [M]  drivers/usb/storage/initializers.o
+  CC [M]  drivers/usb/storage/shuttle_usbat.o
+  CC [M]  drivers/usb/storage/sddr09.o
+  CC [M]  drivers/usb/storage/sddr55.o
+  CC [M]  drivers/usb/storage/freecom.o
+  CC [M]  drivers/usb/storage/dpcm.o
+  CC [M]  drivers/usb/storage/isd200.o
+  CC [M]  drivers/usb/storage/datafab.o
+  CC [M]  drivers/usb/storage/jumpshot.o
+  CC [M]  drivers/usb/storage/alauda.o
+  LD [M]  drivers/usb/storage/usb-storage.o
+  CC [M]  drivers/video/vgastate.o
+  CC [M]  drivers/video/cyblafb.o
+  CC [M]  drivers/video/cirrusfb.o
+  CC [M]  drivers/video/vga16fb.o
+  CC [M]  drivers/video/backlight/lcd.o
+  CC [M]  drivers/video/backlight/backlight.o
+  CC [M]  drivers/video/kyro/STG4000Ramdac.o
+  CC [M]  drivers/video/kyro/STG4000VTG.o
+  CC [M]  drivers/video/kyro/STG4000OverlayDevice.o
+  CC [M]  drivers/video/kyro/STG4000InitDevice.o
+  CC [M]  drivers/video/kyro/fbdev.o
+  LD [M]  drivers/video/kyro/kyrofb.o
+  CC [M]  drivers/video/nvidia/nvidia.o
+  CC [M]  drivers/video/nvidia/nv_hw.o
+  CC [M]  drivers/video/nvidia/nv_setup.o
+  CC [M]  drivers/video/nvidia/nv_accel.o
+  CC [M]  drivers/video/nvidia/nv_i2c.o
+  LD [M]  drivers/video/nvidia/nvidiafb.o
+  CC [M]  drivers/video/riva/fbdev.o
+  CC [M]  drivers/video/riva/riva_hw.o
+drivers/video/riva/riva_hw.c: In function ‘CalcStateExt’:
+drivers/video/riva/riva_hw.c:1241: warning: ‘p’ may be used uninitialized in this function
+drivers/video/riva/riva_hw.c:1241: warning: ‘n’ may be used uninitialized in this function
+drivers/video/riva/riva_hw.c:1241: warning: ‘m’ may be used uninitialized in this function
+drivers/video/riva/riva_hw.c:1241: warning: ‘VClk’ may be used uninitialized in this function
+  CC [M]  drivers/video/riva/nv_driver.o
+  LD [M]  drivers/video/riva/rivafb.o
+  CC [M]  drivers/video/savage/savagefb_driver.o
+  CC [M]  drivers/video/savage/savagefb-i2c.o
+  CC [M]  drivers/video/savage/savagefb_accel.o
+  LD [M]  drivers/video/savage/savagefb.o
+  CC [M]  drivers/video/i810/i810_main.o
+  CC [M]  drivers/video/i810/i810_accel.o
+  CC [M]  drivers/video/i810/i810_gtf.o
+  CC [M]  drivers/video/i810/i810-i2c.o
+  LD [M]  drivers/video/i810/i810fb.o
+  CC [M]  drivers/video/intelfb/intelfbdrv.o
+  CC [M]  drivers/video/intelfb/intelfbhw.o
+drivers/video/intelfb/intelfbhw.c:618: warning: ‘intelfbhw_get_p1p2’ defined but not used
+  LD [M]  drivers/video/intelfb/intelfb.o
+  CC [M]  sound/sound_core.o
+  CC [M]  sound/sound_firmware.o
+  LD [M]  sound/soundcore.o
+  CC [M]  sound/core/hwdep.o
+  CC [M]  sound/core/memalloc.o
+  CC [M]  sound/core/sgbuf.o
+  CC [M]  sound/core/pcm.o
+  CC [M]  sound/core/pcm_native.o
+  CC [M]  sound/core/pcm_lib.o
+  CC [M]  sound/core/pcm_timer.o
+  CC [M]  sound/core/pcm_misc.o
+  CC [M]  sound/core/pcm_memory.o
+  CC [M]  sound/core/rawmidi.o
+  CC [M]  sound/core/rtctimer.o
+  CC [M]  sound/core/timer.o
+  CC [M]  sound/core/sound.o
+  CC [M]  sound/core/init.o
+  CC [M]  sound/core/memory.o
+  CC [M]  sound/core/info.o
+  CC [M]  sound/core/control.o
+  CC [M]  sound/core/misc.o
+  CC [M]  sound/core/device.o
+  CC [M]  sound/core/isadma.o
+  CC [M]  sound/core/sound_oss.o
+  CC [M]  sound/core/info_oss.o
+  LD [M]  sound/core/snd.o
+  LD [M]  sound/core/snd-hwdep.o
+  LD [M]  sound/core/snd-timer.o
+  LD [M]  sound/core/snd-rtctimer.o
+  LD [M]  sound/core/snd-pcm.o
+  LD [M]  sound/core/snd-page-alloc.o
+  LD [M]  sound/core/snd-rawmidi.o
+  CC [M]  sound/core/oss/mixer_oss.o
+  CC [M]  sound/core/oss/pcm_oss.o
+  CC [M]  sound/core/oss/pcm_plugin.o
+  CC [M]  sound/core/oss/io.o
+  CC [M]  sound/core/oss/copy.o
+  CC [M]  sound/core/oss/linear.o
+  CC [M]  sound/core/oss/mulaw.o
+  CC [M]  sound/core/oss/route.o
+  CC [M]  sound/core/oss/rate.o
+  LD [M]  sound/core/oss/snd-mixer-oss.o
+  LD [M]  sound/core/oss/snd-pcm-oss.o
+  CC [M]  sound/core/seq/seq_device.o
+  CC [M]  sound/core/seq/seq_dummy.o
+  CC [M]  sound/core/seq/seq_instr.o
+  CC [M]  sound/core/seq/seq_midi_emul.o
+  CC [M]  sound/core/seq/seq_midi_event.o
+  CC [M]  sound/core/seq/seq_midi.o
+  CC [M]  sound/core/seq/seq_virmidi.o
+  CC [M]  sound/core/seq/seq.o
+  CC [M]  sound/core/seq/seq_lock.o
+  CC [M]  sound/core/seq/seq_clientmgr.o
+  CC [M]  sound/core/seq/seq_memory.o
+  CC [M]  sound/core/seq/seq_queue.o
+  CC [M]  sound/core/seq/seq_fifo.o
+  CC [M]  sound/core/seq/seq_prioq.o
+  CC [M]  sound/core/seq/seq_timer.o
+  CC [M]  sound/core/seq/seq_system.o
+  CC [M]  sound/core/seq/seq_ports.o
+  CC [M]  sound/core/seq/seq_info.o
+  LD [M]  sound/core/seq/snd-seq.o
+  LD [M]  sound/core/seq/snd-seq-device.o
+  LD [M]  sound/core/seq/snd-seq-midi-event.o
+  LD [M]  sound/core/seq/snd-seq-dummy.o
+  LD [M]  sound/core/seq/snd-seq-virmidi.o
+  LD [M]  sound/core/seq/snd-seq-midi.o
+  LD [M]  sound/core/seq/snd-seq-midi-emul.o
+  LD [M]  sound/core/seq/snd-seq-instr.o
+  CC [M]  sound/core/seq/instr/ainstr_fm.o
+  CC [M]  sound/core/seq/instr/ainstr_simple.o
+  LD [M]  sound/core/seq/instr/snd-ainstr-fm.o
+  LD [M]  sound/core/seq/instr/snd-ainstr-simple.o
+  CC [M]  sound/core/seq/oss/seq_oss.o
+  CC [M]  sound/core/seq/oss/seq_oss_init.o
+  CC [M]  sound/core/seq/oss/seq_oss_timer.o
+  CC [M]  sound/core/seq/oss/seq_oss_ioctl.o
+  CC [M]  sound/core/seq/oss/seq_oss_event.o
+  CC [M]  sound/core/seq/oss/seq_oss_rw.o
+  CC [M]  sound/core/seq/oss/seq_oss_synth.o
+  CC [M]  sound/core/seq/oss/seq_oss_midi.o
+  CC [M]  sound/core/seq/oss/seq_oss_readq.o
+  CC [M]  sound/core/seq/oss/seq_oss_writeq.o
+  LD [M]  sound/core/seq/oss/snd-seq-oss.o
+  CC [M]  sound/drivers/dummy.o
+  CC [M]  sound/drivers/mtpav.o
+  CC [M]  sound/drivers/virmidi.o
+  LD [M]  sound/drivers/snd-dummy.o
+  LD [M]  sound/drivers/snd-virmidi.o
+  LD [M]  sound/drivers/snd-mtpav.o
+  CC [M]  sound/drivers/mpu401/mpu401_uart.o
+  CC [M]  sound/drivers/mpu401/mpu401.o
+  LD [M]  sound/drivers/mpu401/snd-mpu401-uart.o
+  LD [M]  sound/drivers/mpu401/snd-mpu401.o
+  CC [M]  sound/drivers/opl3/opl3_lib.o
+  CC [M]  sound/drivers/opl3/opl3_synth.o
+  CC [M]  sound/drivers/opl3/opl3_seq.o
+  CC [M]  sound/drivers/opl3/opl3_midi.o
+  CC [M]  sound/drivers/opl3/opl3_drums.o
+  CC [M]  sound/drivers/opl3/opl3_oss.o
+  LD [M]  sound/drivers/opl3/snd-opl3-lib.o
+  LD [M]  sound/drivers/opl3/snd-opl3-synth.o
+  CC [M]  sound/drivers/vx/vx_core.o
+  CC [M]  sound/drivers/vx/vx_hwdep.o
+  CC [M]  sound/drivers/vx/vx_pcm.o
+  CC [M]  sound/drivers/vx/vx_mixer.o
+  CC [M]  sound/drivers/vx/vx_cmd.o
+  CC [M]  sound/drivers/vx/vx_uer.o
+  LD [M]  sound/drivers/vx/snd-vx-lib.o
+  CC [M]  sound/i2c/cs8427.o
+  CC [M]  sound/i2c/i2c.o
+  LD [M]  sound/i2c/snd-cs8427.o
+  LD [M]  sound/i2c/snd-i2c.o
+  CC [M]  sound/i2c/other/ak4114.o
+  CC [M]  sound/i2c/other/ak4xxx-adda.o
+  CC [M]  sound/i2c/other/tea575x-tuner.o
+  LD [M]  sound/i2c/other/snd-ak4xxx-adda.o
+  LD [M]  sound/i2c/other/snd-ak4114.o
+  LD [M]  sound/i2c/other/snd-tea575x-tuner.o
+  CC [M]  sound/isa/sb/sb_common.o
+  CC [M]  sound/isa/sb/sb_mixer.o
+  LD [M]  sound/isa/sb/snd-sb-common.o
+  CC [M]  sound/pci/ad1889.o
+  CC [M]  sound/pci/als300.o
+  CC [M]  sound/pci/als4000.o
+  CC [M]  sound/pci/atiixp_modem.o
+  CC [M]  sound/pci/atiixp.o
+  CC [M]  sound/pci/azt3328.o
+  CC [M]  sound/pci/bt87x.o
+  CC [M]  sound/pci/cmipci.o
+  CC [M]  sound/pci/cs4281.o
+  CC [M]  sound/pci/ens1370.o
+  CC [M]  sound/pci/ens1371.o
+  CC [M]  sound/pci/es1938.o
+  CC [M]  sound/pci/es1968.o
+  CC [M]  sound/pci/fm801.o
+  CC [M]  sound/pci/intel8x0.o
+  CC [M]  sound/pci/intel8x0m.o
+  CC [M]  sound/pci/maestro3.o
+  CC [M]  sound/pci/rme32.o
+  CC [M]  sound/pci/rme96.o
+  CC [M]  sound/pci/sonicvibes.o
+  CC [M]  sound/pci/via82xx_modem.o
+  CC [M]  sound/pci/via82xx.o
+  LD [M]  sound/pci/snd-ad1889.o
+  LD [M]  sound/pci/snd-als300.o
+  LD [M]  sound/pci/snd-als4000.o
+  LD [M]  sound/pci/snd-atiixp.o
+  LD [M]  sound/pci/snd-atiixp-modem.o
+  LD [M]  sound/pci/snd-azt3328.o
+  LD [M]  sound/pci/snd-bt87x.o
+  LD [M]  sound/pci/snd-cmipci.o
+  LD [M]  sound/pci/snd-cs4281.o
+  LD [M]  sound/pci/snd-ens1370.o
+  LD [M]  sound/pci/snd-ens1371.o
+  LD [M]  sound/pci/snd-es1938.o
+  LD [M]  sound/pci/snd-es1968.o
+  LD [M]  sound/pci/snd-fm801.o
+  LD [M]  sound/pci/snd-intel8x0.o
+  LD [M]  sound/pci/snd-intel8x0m.o
+  LD [M]  sound/pci/snd-maestro3.o
+  LD [M]  sound/pci/snd-rme32.o
+  LD [M]  sound/pci/snd-rme96.o
+  LD [M]  sound/pci/snd-sonicvibes.o
+  LD [M]  sound/pci/snd-via82xx.o
+  LD [M]  sound/pci/snd-via82xx-modem.o
+  CC [M]  sound/pci/ac97/ac97_bus.o
+  CC [M]  sound/pci/ac97/ac97_codec.o
+  CC [M]  sound/pci/ac97/ac97_pcm.o
+  CC [M]  sound/pci/ac97/ac97_patch.o
+  CC [M]  sound/pci/ac97/ac97_proc.o
+  CC [M]  sound/pci/ac97/ak4531_codec.o
+  LD [M]  sound/pci/ac97/snd-ac97-bus.o
+  LD [M]  sound/pci/ac97/snd-ac97-codec.o
+  LD [M]  sound/pci/ac97/snd-ak4531-codec.o
+  CC [M]  sound/pci/ali5451/ali5451.o
+  LD [M]  sound/pci/ali5451/snd-ali5451.o
+  CC [M]  sound/pci/au88x0/au8810.o
+  CC [M]  sound/pci/au88x0/au8820.o
+  CC [M]  sound/pci/au88x0/au8830.o
+  LD [M]  sound/pci/au88x0/snd-au8810.o
+  LD [M]  sound/pci/au88x0/snd-au8820.o
+  LD [M]  sound/pci/au88x0/snd-au8830.o
+  CC [M]  sound/pci/ca0106/ca0106_main.o
+  CC [M]  sound/pci/ca0106/ca0106_proc.o
+  CC [M]  sound/pci/ca0106/ca0106_mixer.o
+  CC [M]  sound/pci/ca0106/ca_midi.o
+  LD [M]  sound/pci/ca0106/snd-ca0106.o
+  CC [M]  sound/pci/cs46xx/cs46xx.o
+  CC [M]  sound/pci/cs46xx/cs46xx_lib.o
+  CC [M]  sound/pci/cs46xx/dsp_spos.o
+  CC [M]  sound/pci/cs46xx/dsp_spos_scb_lib.o
+  LD [M]  sound/pci/cs46xx/snd-cs46xx.o
+  CC [M]  sound/pci/cs5535audio/cs5535audio.o
+  CC [M]  sound/pci/cs5535audio/cs5535audio_pcm.o
+  CC [M]  sound/pci/cs5535audio/cs5535audio_pm.o
+  LD [M]  sound/pci/cs5535audio/snd-cs5535audio.o
+  CC [M]  sound/pci/echoaudio/darla20.o
+  CC [M]  sound/pci/echoaudio/darla24.o
+  CC [M]  sound/pci/echoaudio/echo3g.o
+  CC [M]  sound/pci/echoaudio/gina20.o
+  CC [M]  sound/pci/echoaudio/gina24.o
+  CC [M]  sound/pci/echoaudio/indigo.o
+  CC [M]  sound/pci/echoaudio/indigodj.o
+  CC [M]  sound/pci/echoaudio/indigoio.o
+  CC [M]  sound/pci/echoaudio/layla20.o
+  CC [M]  sound/pci/echoaudio/layla24.o
+  CC [M]  sound/pci/echoaudio/mia.o
+  CC [M]  sound/pci/echoaudio/mona.o
+  LD [M]  sound/pci/echoaudio/snd-darla20.o
+  LD [M]  sound/pci/echoaudio/snd-gina20.o
+  LD [M]  sound/pci/echoaudio/snd-layla20.o
+  LD [M]  sound/pci/echoaudio/snd-darla24.o
+  LD [M]  sound/pci/echoaudio/snd-gina24.o
+  LD [M]  sound/pci/echoaudio/snd-layla24.o
+  LD [M]  sound/pci/echoaudio/snd-mona.o
+  LD [M]  sound/pci/echoaudio/snd-mia.o
+  LD [M]  sound/pci/echoaudio/snd-echo3g.o
+  LD [M]  sound/pci/echoaudio/snd-indigo.o
+  LD [M]  sound/pci/echoaudio/snd-indigoio.o
+  LD [M]  sound/pci/echoaudio/snd-indigodj.o
+  CC [M]  sound/pci/emu10k1/emu10k1_synth.o
+  CC [M]  sound/pci/emu10k1/emu10k1_callback.o
+  CC [M]  sound/pci/emu10k1/emu10k1_patch.o
+  CC [M]  sound/pci/emu10k1/emu10k1.o
+  CC [M]  sound/pci/emu10k1/emu10k1_main.o
+  CC [M]  sound/pci/emu10k1/irq.o
+  CC [M]  sound/pci/emu10k1/memory.o
+  CC [M]  sound/pci/emu10k1/voice.o
+  CC [M]  sound/pci/emu10k1/emumpu401.o
+  CC [M]  sound/pci/emu10k1/emupcm.o
+  CC [M]  sound/pci/emu10k1/io.o
+  CC [M]  sound/pci/emu10k1/emuproc.o
+  CC [M]  sound/pci/emu10k1/emumixer.o
+  CC [M]  sound/pci/emu10k1/emufx.o
+  CC [M]  sound/pci/emu10k1/timer.o
+  CC [M]  sound/pci/emu10k1/p16v.o
+  CC [M]  sound/pci/emu10k1/emu10k1x.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1-synth.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1x.o
+  CC [M]  sound/pci/hda/hda_codec.o
+  CC [M]  sound/pci/hda/hda_generic.o
+  CC [M]  sound/pci/hda/patch_realtek.o
+  CC [M]  sound/pci/hda/patch_cmedia.o
+  CC [M]  sound/pci/hda/patch_analog.o
+  CC [M]  sound/pci/hda/patch_sigmatel.o
+  CC [M]  sound/pci/hda/patch_si3054.o
+  CC [M]  sound/pci/hda/patch_atihdmi.o
+  CC [M]  sound/pci/hda/hda_proc.o
+  CC [M]  sound/pci/hda/hda_intel.o
+  LD [M]  sound/pci/hda/snd-hda-intel.o
+  LD [M]  sound/pci/hda/snd-hda-codec.o
+  CC [M]  sound/pci/ice1712/ice1712.o
+  CC [M]  sound/pci/ice1712/delta.o
+  CC [M]  sound/pci/ice1712/hoontech.o
+  CC [M]  sound/pci/ice1712/ews.o
+  CC [M]  sound/pci/ice1712/ice1724.o
+  CC [M]  sound/pci/ice1712/amp.o
+  CC [M]  sound/pci/ice1712/revo.o
+  CC [M]  sound/pci/ice1712/aureon.o
+  CC [M]  sound/pci/ice1712/vt1720_mobo.o
+  CC [M]  sound/pci/ice1712/pontis.o
+  CC [M]  sound/pci/ice1712/prodigy192.o
+  CC [M]  sound/pci/ice1712/juli.o
+  CC [M]  sound/pci/ice1712/phase.o
+  CC [M]  sound/pci/ice1712/ak4xxx.o
+  LD [M]  sound/pci/ice1712/snd-ice1712.o
+  LD [M]  sound/pci/ice1712/snd-ice17xx-ak4xxx.o
+  LD [M]  sound/pci/ice1712/snd-ice1724.o
+  CC [M]  sound/pci/korg1212/korg1212.o
+  LD [M]  sound/pci/korg1212/snd-korg1212.o
+  CC [M]  sound/pci/mixart/mixart.o
+  CC [M]  sound/pci/mixart/mixart_core.o
+  CC [M]  sound/pci/mixart/mixart_hwdep.o
+  CC [M]  sound/pci/mixart/mixart_mixer.o
+  LD [M]  sound/pci/mixart/snd-mixart.o
+  CC [M]  sound/pci/nm256/nm256.o
+  LD [M]  sound/pci/nm256/snd-nm256.o
+  CC [M]  sound/pci/pcxhr/pcxhr.o
+sound/pci/pcxhr/pcxhr.c: In function ‘pcxhr_trigger’:
+sound/pci/pcxhr/pcxhr.c:640: warning: ‘stream’ may be used uninitialized in this function
+  CC [M]  sound/pci/pcxhr/pcxhr_hwdep.o
+  CC [M]  sound/pci/pcxhr/pcxhr_mixer.o
+  CC [M]  sound/pci/pcxhr/pcxhr_core.o
+  LD [M]  sound/pci/pcxhr/snd-pcxhr.o
+  CC [M]  sound/pci/riptide/riptide.o
+  LD [M]  sound/pci/riptide/snd-riptide.o
+  CC [M]  sound/pci/rme9652/hdsp.o
+  CC [M]  sound/pci/rme9652/hdspm.o
+  CC [M]  sound/pci/rme9652/rme9652.o
+  LD [M]  sound/pci/rme9652/snd-rme9652.o
+  LD [M]  sound/pci/rme9652/snd-hdsp.o
+  LD [M]  sound/pci/rme9652/snd-hdspm.o
+  CC [M]  sound/pci/trident/trident_synth.o
+  CC [M]  sound/pci/trident/trident.o
+  CC [M]  sound/pci/trident/trident_main.o
+  CC [M]  sound/pci/trident/trident_memory.o
+  LD [M]  sound/pci/trident/snd-trident.o
+  LD [M]  sound/pci/trident/snd-trident-synth.o
+  CC [M]  sound/pci/vx222/vx222.o
+  CC [M]  sound/pci/vx222/vx222_ops.o
+  LD [M]  sound/pci/vx222/snd-vx222.o
+  CC [M]  sound/pci/ymfpci/ymfpci.o
+  CC [M]  sound/pci/ymfpci/ymfpci_main.o
+  LD [M]  sound/pci/ymfpci/snd-ymfpci.o
+  CC [M]  sound/synth/util_mem.o
+  LD [M]  sound/synth/snd-util-mem.o
+  CC [M]  sound/synth/emux/emux.o
+  CC [M]  sound/synth/emux/emux_synth.o
+  CC [M]  sound/synth/emux/emux_seq.o
+  CC [M]  sound/synth/emux/emux_nrpn.o
+  CC [M]  sound/synth/emux/emux_effect.o
+  CC [M]  sound/synth/emux/emux_proc.o
+  CC [M]  sound/synth/emux/emux_hwdep.o
+  CC [M]  sound/synth/emux/soundfont.o
+  CC [M]  sound/synth/emux/emux_oss.o
+  LD [M]  sound/synth/emux/snd-emux-synth.o
+  CC [M]  sound/usb/usbaudio.o
+  CC [M]  sound/usb/usbmixer.o
+  CC [M]  sound/usb/usbmidi.o
+  LD [M]  sound/usb/snd-usb-audio.o
+  LD [M]  sound/usb/snd-usb-lib.o
+  CC [M]  sound/usb/usx2y/usbusx2y.o
+  CC [M]  sound/usb/usx2y/usX2Yhwdep.o
+  CC [M]  sound/usb/usx2y/usx2yhwdeppcm.o
+  LD [M]  sound/usb/usx2y/snd-usb-usx2y.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/oprof.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/cpu_buffer.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/buffer_sync.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/event_buffer.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/oprofile_files.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/oprofilefs.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/oprofile_stats.o
+  CC [M]  arch/i386/oprofile/../../../drivers/oprofile/timer_int.o
+  CC [M]  arch/i386/oprofile/init.o
+  CC [M]  arch/i386/oprofile/backtrace.o
+  CC [M]  arch/i386/oprofile/nmi_int.o
+  CC [M]  arch/i386/oprofile/op_model_athlon.o
+  CC [M]  arch/i386/oprofile/op_model_ppro.o
+  CC [M]  arch/i386/oprofile/op_model_p4.o
+  CC [M]  arch/i386/oprofile/nmi_timer_int.o
+  LD [M]  arch/i386/oprofile/oprofile.o
+  CC [M]  net/8021q/vlan.o
+  CC [M]  net/8021q/vlan_dev.o
+  CC [M]  net/8021q/vlanproc.o
+  LD [M]  net/8021q/8021q.o
+  CC [M]  net/atm/addr.o
+  CC [M]  net/atm/pvc.o
+  CC [M]  net/atm/signaling.o
+  CC [M]  net/atm/svc.o
+  CC [M]  net/atm/ioctl.o
+  CC [M]  net/atm/common.o
+  CC [M]  net/atm/atm_misc.o
+  CC [M]  net/atm/raw.o
+  CC [M]  net/atm/resources.o
+  CC [M]  net/atm/atm_sysfs.o
+  CC [M]  net/atm/ipcommon.o
+  CC [M]  net/atm/proc.o
+  LD [M]  net/atm/atm.o
+  CC [M]  net/atm/clip.o
+  CC [M]  net/atm/br2684.o
+  CC [M]  net/atm/lec.o
+  CC [M]  net/atm/pppoatm.o
+  CC [M]  net/bluetooth/af_bluetooth.o
+  CC [M]  net/bluetooth/hci_core.o
+  CC [M]  net/bluetooth/hci_conn.o
+  CC [M]  net/bluetooth/hci_event.o
+  CC [M]  net/bluetooth/hci_sock.o
+  CC [M]  net/bluetooth/hci_sysfs.o
+  CC [M]  net/bluetooth/lib.o
+  LD [M]  net/bluetooth/bluetooth.o
+  CC [M]  net/bluetooth/l2cap.o
+  CC [M]  net/bluetooth/sco.o
+  CC [M]  net/bluetooth/bnep/core.o
+  CC [M]  net/bluetooth/bnep/sock.o
+  CC [M]  net/bluetooth/bnep/netdev.o
+  LD [M]  net/bluetooth/bnep/bnep.o
+  CC [M]  net/bluetooth/cmtp/core.o
+  CC [M]  net/bluetooth/cmtp/sock.o
+  CC [M]  net/bluetooth/cmtp/capi.o
+  LD [M]  net/bluetooth/cmtp/cmtp.o
+  CC [M]  net/bluetooth/hidp/core.o
+  CC [M]  net/bluetooth/hidp/sock.o
+  LD [M]  net/bluetooth/hidp/hidp.o
+  CC [M]  net/bluetooth/rfcomm/core.o
+  CC [M]  net/bluetooth/rfcomm/sock.o
+  CC [M]  net/bluetooth/rfcomm/tty.o
+  LD [M]  net/bluetooth/rfcomm/rfcomm.o
+  CC [M]  net/bridge/br.o
+  CC [M]  net/bridge/br_device.o
+  CC [M]  net/bridge/br_fdb.o
+  CC [M]  net/bridge/br_forward.o
+  CC [M]  net/bridge/br_if.o
+  CC [M]  net/bridge/br_input.o
+  CC [M]  net/bridge/br_ioctl.o
+  CC [M]  net/bridge/br_notify.o
+  CC [M]  net/bridge/br_stp.o
+  CC [M]  net/bridge/br_stp_bpdu.o
+  CC [M]  net/bridge/br_stp_if.o
+  CC [M]  net/bridge/br_stp_timer.o
+  CC [M]  net/bridge/br_netlink.o
+  CC [M]  net/bridge/br_sysfs_if.o
+  CC [M]  net/bridge/br_sysfs_br.o
+  CC [M]  net/bridge/br_netfilter.o
+  LD [M]  net/bridge/bridge.o
+  CC [M]  net/bridge/netfilter/ebtables.o
+net/bridge/netfilter/ebtables.c: In function ‘ebt_dev_check’:
+net/bridge/netfilter/ebtables.c:115: warning: initialization discards qualifiers from pointer target type
+  CC [M]  net/bridge/netfilter/ebtable_broute.o
+  CC [M]  net/bridge/netfilter/ebtable_filter.o
+  CC [M]  net/bridge/netfilter/ebtable_nat.o
+  CC [M]  net/bridge/netfilter/ebt_802_3.o
+  CC [M]  net/bridge/netfilter/ebt_among.o
+  CC [M]  net/bridge/netfilter/ebt_arp.o
+  CC [M]  net/bridge/netfilter/ebt_ip.o
+  CC [M]  net/bridge/netfilter/ebt_limit.o
+  CC [M]  net/bridge/netfilter/ebt_mark_m.o
+  CC [M]  net/bridge/netfilter/ebt_pkttype.o
+  CC [M]  net/bridge/netfilter/ebt_stp.o
+  CC [M]  net/bridge/netfilter/ebt_vlan.o
+  CC [M]  net/bridge/netfilter/ebt_arpreply.o
+  CC [M]  net/bridge/netfilter/ebt_mark.o
+  CC [M]  net/bridge/netfilter/ebt_dnat.o
+  CC [M]  net/bridge/netfilter/ebt_redirect.o
+  CC [M]  net/bridge/netfilter/ebt_snat.o
+  CC [M]  net/bridge/netfilter/ebt_log.o
+  CC [M]  net/bridge/netfilter/ebt_ulog.o
+  CC [M]  net/core/pktgen.o
+  CC [M]  net/dccp/ccid.o
+  CC [M]  net/dccp/feat.o
+  CC [M]  net/dccp/input.o
+  CC [M]  net/dccp/minisocks.o
+  CC [M]  net/dccp/options.o
+  CC [M]  net/dccp/output.o
+  CC [M]  net/dccp/proto.o
+  CC [M]  net/dccp/timer.o
+  CC [M]  net/dccp/ackvec.o
+  CC [M]  net/dccp/sysctl.o
+  CC [M]  net/dccp/diag.o
+  CC [M]  net/dccp/ipv4.o
+  CC [M]  net/dccp/ipv6.o
+  LD [M]  net/dccp/dccp_ipv6.o
+  LD [M]  net/dccp/dccp.o
+  LD [M]  net/dccp/dccp_ipv4.o
+  LD [M]  net/dccp/dccp_diag.o
+  CC [M]  net/dccp/ccids/ccid2.o
+  CC [M]  net/dccp/ccids/ccid3.o
+  LD [M]  net/dccp/ccids/dccp_ccid3.o
+  LD [M]  net/dccp/ccids/dccp_ccid2.o
+  CC [M]  net/dccp/ccids/lib/loss_interval.o
+  CC [M]  net/dccp/ccids/lib/packet_history.o
+  CC [M]  net/dccp/ccids/lib/tfrc_equation.o
+  LD [M]  net/dccp/ccids/lib/dccp_tfrc_lib.o
+  CC [M]  net/ieee80211/ieee80211_module.o
+  CC [M]  net/ieee80211/ieee80211_tx.o
+  CC [M]  net/ieee80211/ieee80211_rx.o
+  CC [M]  net/ieee80211/ieee80211_wx.o
+  CC [M]  net/ieee80211/ieee80211_geo.o
+  LD [M]  net/ieee80211/ieee80211.o
+  CC [M]  net/ieee80211/ieee80211_crypt.o
+  CC [M]  net/ieee80211/ieee80211_crypt_wep.o
+  CC [M]  net/ieee80211/ieee80211_crypt_ccmp.o
+  CC [M]  net/ieee80211/ieee80211_crypt_tkip.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_io.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_auth.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_module.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_scan.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_wx.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_assoc.o
+  CC [M]  net/ieee80211/softmac/ieee80211softmac_event.o
+  LD [M]  net/ieee80211/softmac/ieee80211softmac.o
+  CC [M]  net/ipv4/ipip.o
+  CC [M]  net/ipv4/ip_gre.o
+  CC [M]  net/ipv4/ah4.o
+  CC [M]  net/ipv4/esp4.o
+  CC [M]  net/ipv4/ipcomp.o
+  CC [M]  net/ipv4/xfrm4_tunnel.o
+  CC [M]  net/ipv4/tunnel4.o
+  CC [M]  net/ipv4/xfrm4_mode_transport.o
+  CC [M]  net/ipv4/xfrm4_mode_tunnel.o
+  CC [M]  net/ipv4/inet_diag.o
+  CC [M]  net/ipv4/tcp_diag.o
+  CC [M]  net/ipv4/tcp_cubic.o
+  CC [M]  net/ipv4/tcp_westwood.o
+  CC [M]  net/ipv4/tcp_highspeed.o
+  CC [M]  net/ipv4/tcp_hybla.o
+  CC [M]  net/ipv4/tcp_htcp.o
+  CC [M]  net/ipv4/tcp_vegas.o
+  CC [M]  net/ipv4/tcp_veno.o
+  CC [M]  net/ipv4/tcp_scalable.o
+  CC [M]  net/ipv4/tcp_lp.o
+  CC [M]  net/ipv4/ipvs/ip_vs_conn.o
+  CC [M]  net/ipv4/ipvs/ip_vs_core.o
+  CC [M]  net/ipv4/ipvs/ip_vs_ctl.o
+  CC [M]  net/ipv4/ipvs/ip_vs_sched.o
+  CC [M]  net/ipv4/ipvs/ip_vs_xmit.o
+  CC [M]  net/ipv4/ipvs/ip_vs_app.o
+  CC [M]  net/ipv4/ipvs/ip_vs_sync.o
+  CC [M]  net/ipv4/ipvs/ip_vs_est.o
+  CC [M]  net/ipv4/ipvs/ip_vs_proto.o
+  CC [M]  net/ipv4/ipvs/ip_vs_proto_tcp.o
+  CC [M]  net/ipv4/ipvs/ip_vs_proto_udp.o
+  CC [M]  net/ipv4/ipvs/ip_vs_proto_esp.o
+  CC [M]  net/ipv4/ipvs/ip_vs_proto_ah.o
+  LD [M]  net/ipv4/ipvs/ip_vs.o
+  CC [M]  net/ipv4/ipvs/ip_vs_rr.o
+  CC [M]  net/ipv4/ipvs/ip_vs_wrr.o
+  CC [M]  net/ipv4/ipvs/ip_vs_lc.o
+  CC [M]  net/ipv4/ipvs/ip_vs_wlc.o
+  CC [M]  net/ipv4/ipvs/ip_vs_lblc.o
+  CC [M]  net/ipv4/ipvs/ip_vs_lblcr.o
+  CC [M]  net/ipv4/ipvs/ip_vs_dh.o
+  CC [M]  net/ipv4/ipvs/ip_vs_sh.o
+  CC [M]  net/ipv4/ipvs/ip_vs_sed.o
+  CC [M]  net/ipv4/ipvs/ip_vs_nq.o
+  CC [M]  net/ipv4/ipvs/ip_vs_ftp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_standalone.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_core.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_generic.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_tcp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_udp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_icmp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_helper_h323.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_helper_h323_asn1.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_helper_pptp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_gre.o
+  CC [M]  net/ipv4/netfilter/ip_nat_core.o
+  CC [M]  net/ipv4/netfilter/ip_nat_helper.o
+  CC [M]  net/ipv4/netfilter/ip_nat_proto_unknown.o
+  CC [M]  net/ipv4/netfilter/ip_nat_proto_tcp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_proto_udp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_proto_icmp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_helper_h323.o
+  CC [M]  net/ipv4/netfilter/ip_nat_helper_pptp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_proto_gre.o
+  CC [M]  net/ipv4/netfilter/ip_nat_rule.o
+  CC [M]  net/ipv4/netfilter/ip_nat_standalone.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack.o
+  LD [M]  net/ipv4/netfilter/ip_nat.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_netlink.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_proto_sctp.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_h323.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_pptp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_amanda.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_tftp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_ftp.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_irc.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_sip.o
+  CC [M]  net/ipv4/netfilter/ip_conntrack_netbios_ns.o
+  LD [M]  net/ipv4/netfilter/ip_nat_h323.o
+  LD [M]  net/ipv4/netfilter/ip_nat_pptp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_amanda.o
+  CC [M]  net/ipv4/netfilter/ip_nat_tftp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_ftp.o
+  CC [M]  net/ipv4/netfilter/ip_nat_irc.o
+  CC [M]  net/ipv4/netfilter/ip_nat_sip.o
+  CC [M]  net/ipv4/netfilter/ip_tables.o
+  CC [M]  net/ipv4/netfilter/iptable_filter.o
+  CC [M]  net/ipv4/netfilter/iptable_mangle.o
+  LD [M]  net/ipv4/netfilter/iptable_nat.o
+  CC [M]  net/ipv4/netfilter/iptable_raw.o
+  CC [M]  net/ipv4/netfilter/ipt_hashlimit.o
+  CC [M]  net/ipv4/netfilter/ipt_iprange.o
+  CC [M]  net/ipv4/netfilter/ipt_owner.o
+  CC [M]  net/ipv4/netfilter/ipt_tos.o
+  CC [M]  net/ipv4/netfilter/ipt_recent.o
+  CC [M]  net/ipv4/netfilter/ipt_ecn.o
+  CC [M]  net/ipv4/netfilter/ipt_dscp.o
+  CC [M]  net/ipv4/netfilter/ipt_ah.o
+  CC [M]  net/ipv4/netfilter/ipt_ttl.o
+  CC [M]  net/ipv4/netfilter/ipt_addrtype.o
+  CC [M]  net/ipv4/netfilter/ipt_REJECT.o
+  CC [M]  net/ipv4/netfilter/ipt_TOS.o
+  CC [M]  net/ipv4/netfilter/ipt_ECN.o
+  CC [M]  net/ipv4/netfilter/ipt_DSCP.o
+  CC [M]  net/ipv4/netfilter/ipt_MASQUERADE.o
+  CC [M]  net/ipv4/netfilter/ipt_REDIRECT.o
+  CC [M]  net/ipv4/netfilter/ipt_NETMAP.o
+  CC [M]  net/ipv4/netfilter/ipt_SAME.o
+  CC [M]  net/ipv4/netfilter/ip_nat_snmp_basic.o
+  CC [M]  net/ipv4/netfilter/ipt_LOG.o
+  CC [M]  net/ipv4/netfilter/ipt_ULOG.o
+  CC [M]  net/ipv4/netfilter/ipt_TCPMSS.o
+  CC [M]  net/ipv4/netfilter/ipt_CLUSTERIP.o
+  CC [M]  net/ipv4/netfilter/ipt_TTL.o
+  CC [M]  net/ipv4/netfilter/arp_tables.o
+  CC [M]  net/ipv4/netfilter/arpt_mangle.o
+  CC [M]  net/ipv4/netfilter/arptable_filter.o
+  CC [M]  net/ipv4/netfilter/ip_queue.o
+  CC [M]  net/ipv6/af_inet6.o
+  CC [M]  net/ipv6/anycast.o
+  CC [M]  net/ipv6/ip6_output.o
+  CC [M]  net/ipv6/ip6_input.o
+  CC [M]  net/ipv6/addrconf.o
+  CC [M]  net/ipv6/sit.o
+  CC [M]  net/ipv6/route.o
+  CC [M]  net/ipv6/ip6_fib.o
+  CC [M]  net/ipv6/ipv6_sockglue.o
+  CC [M]  net/ipv6/ndisc.o
+  CC [M]  net/ipv6/udp.o
+  CC [M]  net/ipv6/raw.o
+  CC [M]  net/ipv6/protocol.o
+  CC [M]  net/ipv6/icmp.o
+  CC [M]  net/ipv6/mcast.o
+  CC [M]  net/ipv6/reassembly.o
+  CC [M]  net/ipv6/tcp_ipv6.o
+  CC [M]  net/ipv6/exthdrs.o
+  CC [M]  net/ipv6/sysctl_net_ipv6.o
+  CC [M]  net/ipv6/datagram.o
+  CC [M]  net/ipv6/proc.o
+  CC [M]  net/ipv6/ip6_flowlabel.o
+  CC [M]  net/ipv6/ipv6_syms.o
+  CC [M]  net/ipv6/inet6_connection_sock.o
+  CC [M]  net/ipv6/xfrm6_policy.o
+  CC [M]  net/ipv6/xfrm6_state.o
+  CC [M]  net/ipv6/xfrm6_input.o
+  CC [M]  net/ipv6/xfrm6_output.o
+  CC [M]  net/ipv6/netfilter.o
+  LD [M]  net/ipv6/ipv6.o
+  CC [M]  net/ipv6/ah6.o
+  CC [M]  net/ipv6/esp6.o
+  CC [M]  net/ipv6/ipcomp6.o
+  CC [M]  net/ipv6/xfrm6_tunnel.o
+  CC [M]  net/ipv6/tunnel6.o
+  CC [M]  net/ipv6/xfrm6_mode_transport.o
+  CC [M]  net/ipv6/xfrm6_mode_tunnel.o
+  CC [M]  net/ipv6/ip6_tunnel.o
+  CC [M]  net/ipv6/netfilter/ip6_tables.o
+  CC [M]  net/ipv6/netfilter/ip6t_rt.o
+  CC [M]  net/ipv6/netfilter/ip6t_hbh.o
+  CC [M]  net/ipv6/netfilter/ip6t_dst.o
+  CC [M]  net/ipv6/netfilter/ip6t_ipv6header.o
+  CC [M]  net/ipv6/netfilter/ip6t_frag.o
+  CC [M]  net/ipv6/netfilter/ip6t_ah.o
+  CC [M]  net/ipv6/netfilter/ip6t_eui64.o
+  CC [M]  net/ipv6/netfilter/ip6t_owner.o
+  CC [M]  net/ipv6/netfilter/ip6table_filter.o
+  CC [M]  net/ipv6/netfilter/ip6table_mangle.o
+  CC [M]  net/ipv6/netfilter/ip6t_HL.o
+  CC [M]  net/ipv6/netfilter/ip6_queue.o
+  CC [M]  net/ipv6/netfilter/ip6t_LOG.o
+  CC [M]  net/ipv6/netfilter/ip6table_raw.o
+  CC [M]  net/ipv6/netfilter/ip6t_hl.o
+  CC [M]  net/ipv6/netfilter/ip6t_REJECT.o
+  CC [M]  net/key/af_key.o
+  CC [M]  net/netfilter/nfnetlink.o
+  CC [M]  net/netfilter/nfnetlink_queue.o
+  CC [M]  net/netfilter/nfnetlink_log.o
+  CC [M]  net/netfilter/x_tables.o
+  CC [M]  net/netfilter/xt_tcpudp.o
+  CC [M]  net/netfilter/xt_CLASSIFY.o
+  CC [M]  net/netfilter/xt_CONNMARK.o
+  CC [M]  net/netfilter/xt_MARK.o
+  CC [M]  net/netfilter/xt_NFQUEUE.o
+  CC [M]  net/netfilter/xt_NOTRACK.o
+  CC [M]  net/netfilter/xt_SECMARK.o
+  CC [M]  net/netfilter/xt_CONNSECMARK.o
+  CC [M]  net/netfilter/xt_comment.o
+  CC [M]  net/netfilter/xt_connbytes.o
+  CC [M]  net/netfilter/xt_connmark.o
+  CC [M]  net/netfilter/xt_conntrack.o
+  CC [M]  net/netfilter/xt_dccp.o
+  CC [M]  net/netfilter/xt_esp.o
+  CC [M]  net/netfilter/xt_helper.o
+  CC [M]  net/netfilter/xt_length.o
+  CC [M]  net/netfilter/xt_limit.o
+  CC [M]  net/netfilter/xt_mac.o
+  CC [M]  net/netfilter/xt_mark.o
+  CC [M]  net/netfilter/xt_multiport.o
+  CC [M]  net/netfilter/xt_policy.o
+  CC [M]  net/netfilter/xt_pkttype.o
+  CC [M]  net/netfilter/xt_quota.o
+  CC [M]  net/netfilter/xt_realm.o
+  CC [M]  net/netfilter/xt_sctp.o
+  CC [M]  net/netfilter/xt_state.o
+  CC [M]  net/netfilter/xt_statistic.o
+  CC [M]  net/netfilter/xt_string.o
+  CC [M]  net/netfilter/xt_tcpmss.o
+  CC [M]  net/netfilter/xt_physdev.o
+  CC [M]  net/sched/act_police.o
+  CC [M]  net/sched/act_gact.o
+  CC [M]  net/sched/act_mirred.o
+  CC [M]  net/sched/act_ipt.o
+  CC [M]  net/sched/act_pedit.o
+  CC [M]  net/sched/act_simple.o
+  CC [M]  net/sched/sch_cbq.o
+  CC [M]  net/sched/sch_htb.o
+  CC [M]  net/sched/sch_hfsc.o
+  CC [M]  net/sched/sch_red.o
+  CC [M]  net/sched/sch_gred.o
+  CC [M]  net/sched/sch_ingress.o
+  CC [M]  net/sched/sch_dsmark.o
+  CC [M]  net/sched/sch_sfq.o
+  CC [M]  net/sched/sch_tbf.o
+  CC [M]  net/sched/sch_teql.o
+  CC [M]  net/sched/sch_prio.o
+  CC [M]  net/sched/sch_atm.o
+  CC [M]  net/sched/sch_netem.o
+  CC [M]  net/sched/cls_u32.o
+  CC [M]  net/sched/cls_route.o
+  CC [M]  net/sched/cls_fw.o
+  CC [M]  net/sched/cls_rsvp.o
+  CC [M]  net/sched/cls_tcindex.o
+  CC [M]  net/sched/cls_rsvp6.o
+  CC [M]  net/sched/cls_basic.o
+  CC [M]  net/sched/em_cmp.o
+  CC [M]  net/sched/em_nbyte.o
+  CC [M]  net/sched/em_u32.o
+  CC [M]  net/sched/em_meta.o
+  CC [M]  net/sched/em_text.o
+  CC [M]  net/sctp/sm_statetable.o
+  CC [M]  net/sctp/sm_statefuns.o
+  CC [M]  net/sctp/sm_sideeffect.o
+  CC [M]  net/sctp/protocol.o
+  CC [M]  net/sctp/endpointola.o
+  CC [M]  net/sctp/associola.o
+  CC [M]  net/sctp/transport.o
+  CC [M]  net/sctp/chunk.o
+  CC [M]  net/sctp/sm_make_chunk.o
+net/sctp/sm_make_chunk.c: In function ‘sctp_unpack_cookie’:
+net/sctp/sm_make_chunk.c:1350: warning: initialization discards qualifiers from pointer target type
+  CC [M]  net/sctp/ulpevent.o
+  CC [M]  net/sctp/inqueue.o
+  CC [M]  net/sctp/outqueue.o
+  CC [M]  net/sctp/ulpqueue.o
+  CC [M]  net/sctp/command.o
+  CC [M]  net/sctp/tsnmap.o
+  CC [M]  net/sctp/bind_addr.o
+  CC [M]  net/sctp/socket.o
+  CC [M]  net/sctp/primitive.o
+  CC [M]  net/sctp/output.o
+  CC [M]  net/sctp/input.o
+  CC [M]  net/sctp/debug.o
+  CC [M]  net/sctp/ssnmap.o
+  CC [M]  net/sctp/proc.o
+  CC [M]  net/sctp/crc32c.o
+  CC [M]  net/sctp/sysctl.o
+  CC [M]  net/sctp/ipv6.o
+  LD [M]  net/sctp/sctp.o
+  CC [M]  net/sunrpc/clnt.o
+  CC [M]  net/sunrpc/xprt.o
+  CC [M]  net/sunrpc/socklib.o
+  CC [M]  net/sunrpc/xprtsock.o
+  CC [M]  net/sunrpc/sched.o
+  CC [M]  net/sunrpc/auth.o
+  CC [M]  net/sunrpc/auth_null.o
+  CC [M]  net/sunrpc/auth_unix.o
+  CC [M]  net/sunrpc/svc.o
+  CC [M]  net/sunrpc/svcsock.o
+  CC [M]  net/sunrpc/svcauth.o
+  CC [M]  net/sunrpc/svcauth_unix.o
+  CC [M]  net/sunrpc/pmap_clnt.o
+  CC [M]  net/sunrpc/timer.o
+  CC [M]  net/sunrpc/xdr.o
+  CC [M]  net/sunrpc/sunrpc_syms.o
+  CC [M]  net/sunrpc/cache.o
+  CC [M]  net/sunrpc/rpc_pipe.o
+  CC [M]  net/sunrpc/stats.o
+  CC [M]  net/sunrpc/sysctl.o
+  LD [M]  net/sunrpc/sunrpc.o
+  CC [M]  net/sunrpc/auth_gss/auth_gss.o
+  CC [M]  net/sunrpc/auth_gss/gss_generic_token.o
+  CC [M]  net/sunrpc/auth_gss/gss_mech_switch.o
+  CC [M]  net/sunrpc/auth_gss/svcauth_gss.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_crypto.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_mech.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_seal.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_unseal.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_seqnum.o
+  CC [M]  net/sunrpc/auth_gss/gss_krb5_wrap.o
+  CC [M]  net/sunrpc/auth_gss/gss_spkm3_mech.o
+  CC [M]  net/sunrpc/auth_gss/gss_spkm3_seal.o
+  CC [M]  net/sunrpc/auth_gss/gss_spkm3_unseal.o
+  CC [M]  net/sunrpc/auth_gss/gss_spkm3_token.o
+  LD [M]  net/sunrpc/auth_gss/auth_rpcgss.o
+  LD [M]  net/sunrpc/auth_gss/rpcsec_gss_krb5.o
+  LD [M]  net/sunrpc/auth_gss/rpcsec_gss_spkm3.o
+  CC [M]  net/tipc/addr.o
+  CC [M]  net/tipc/bcast.o
+  CC [M]  net/tipc/bearer.o
+  CC [M]  net/tipc/config.o
+  CC [M]  net/tipc/cluster.o
+  CC [M]  net/tipc/core.o
+  CC [M]  net/tipc/handler.o
+  CC [M]  net/tipc/link.o
+  CC [M]  net/tipc/discover.o
+  CC [M]  net/tipc/msg.o
+  CC [M]  net/tipc/name_distr.o
+  CC [M]  net/tipc/subscr.o
+  CC [M]  net/tipc/name_table.o
+  CC [M]  net/tipc/net.o
+  CC [M]  net/tipc/netlink.o
+  CC [M]  net/tipc/node.o
+  CC [M]  net/tipc/node_subscr.o
+  CC [M]  net/tipc/port.o
+  CC [M]  net/tipc/ref.o
+  CC [M]  net/tipc/socket.o
+  CC [M]  net/tipc/user_reg.o
+  CC [M]  net/tipc/zone.o
+  CC [M]  net/tipc/dbg.o
+  CC [M]  net/tipc/eth_media.o
+  LD [M]  net/tipc/tipc.o
+  CC [M]  lib/crc-ccitt.o
+  CC [M]  lib/crc16.o
+  CC [M]  lib/ts_kmp.o
+  CC [M]  lib/ts_bm.o
+  CC [M]  lib/ts_fsm.o
+  CC [M]  lib/reed_solomon/reed_solomon.o
+  CC [M]  lib/zlib_deflate/deflate.o
+  CC [M]  lib/zlib_deflate/deftree.o
+  CC [M]  lib/zlib_deflate/deflate_syms.o
+  LD [M]  lib/zlib_deflate/zlib_deflate.o
+  Building modules, stage 2.
+  MODPOST
+WARNING: drivers/atm/he.o - Section mismatch: reference to .init.text: from .text between 'he_start' (at offset 0x1f47) and 'he_service_tbrq'
+  CC      arch/i386/crypto/aes-i586.mod.o
+  LD [M]  arch/i386/crypto/aes-i586.ko
+  CC      arch/i386/kernel/cpu/cpufreq/acpi-cpufreq.mod.o
+  LD [M]  arch/i386/kernel/cpu/cpufreq/acpi-cpufreq.ko
+  CC      arch/i386/kernel/cpu/cpufreq/p4-clockmod.mod.o
+  LD [M]  arch/i386/kernel/cpu/cpufreq/p4-clockmod.ko
+  CC      arch/i386/kernel/cpu/cpufreq/powernow-k8.mod.o
+  LD [M]  arch/i386/kernel/cpu/cpufreq/powernow-k8.ko
+  CC      arch/i386/kernel/cpu/cpufreq/speedstep-centrino.mod.o
+  LD [M]  arch/i386/kernel/cpu/cpufreq/speedstep-centrino.ko
+  CC      arch/i386/kernel/cpuid.mod.o
+  LD [M]  arch/i386/kernel/cpuid.ko
+  CC      arch/i386/kernel/microcode.mod.o
+  LD [M]  arch/i386/kernel/microcode.ko
+  CC      arch/i386/kernel/msr.mod.o
+  LD [M]  arch/i386/kernel/msr.ko
+  CC      arch/i386/oprofile/oprofile.mod.o
+  LD [M]  arch/i386/oprofile/oprofile.ko
+  CC      crypto/aes.mod.o
+  LD [M]  crypto/aes.ko
+  CC      crypto/anubis.mod.o
+  LD [M]  crypto/anubis.ko
+  CC      crypto/arc4.mod.o
+  LD [M]  crypto/arc4.ko
+  CC      crypto/blowfish.mod.o
+  LD [M]  crypto/blowfish.ko
+  CC      crypto/cast5.mod.o
+  LD [M]  crypto/cast5.ko
+  CC      crypto/cast6.mod.o
+  LD [M]  crypto/cast6.ko
+  CC      crypto/crypto_null.mod.o
+  LD [M]  crypto/crypto_null.ko
+  CC      crypto/deflate.mod.o
+  LD [M]  crypto/deflate.ko
+  CC      crypto/des.mod.o
+  LD [M]  crypto/des.ko
+  CC      crypto/khazad.mod.o
+  LD [M]  crypto/khazad.ko
+  CC      crypto/md4.mod.o
+  LD [M]  crypto/md4.ko
+  CC      crypto/md5.mod.o
+  LD [M]  crypto/md5.ko
+  CC      crypto/michael_mic.mod.o
+  LD [M]  crypto/michael_mic.ko
+  CC      crypto/serpent.mod.o
+  LD [M]  crypto/serpent.ko
+  CC      crypto/sha256.mod.o
+  LD [M]  crypto/sha256.ko
+  CC      crypto/sha512.mod.o
+  LD [M]  crypto/sha512.ko
+  CC      crypto/tcrypt.mod.o
+  LD [M]  crypto/tcrypt.ko
+  CC      crypto/tea.mod.o
+  LD [M]  crypto/tea.ko
+  CC      crypto/tgr192.mod.o
+  LD [M]  crypto/tgr192.ko
+  CC      crypto/twofish.mod.o
+  LD [M]  crypto/twofish.ko
+  CC      crypto/wp512.mod.o
+  LD [M]  crypto/wp512.ko
+  CC      drivers/acpi/ac.mod.o
+  LD [M]  drivers/acpi/ac.ko
+  CC      drivers/acpi/asus_acpi.mod.o
+  LD [M]  drivers/acpi/asus_acpi.ko
+  CC      drivers/acpi/battery.mod.o
+  LD [M]  drivers/acpi/battery.ko
+  CC      drivers/acpi/button.mod.o
+  LD [M]  drivers/acpi/button.ko
+  CC      drivers/acpi/i2c_ec.mod.o
+  LD [M]  drivers/acpi/i2c_ec.ko
+  CC      drivers/acpi/sbs.mod.o
+  LD [M]  drivers/acpi/sbs.ko
+  CC      drivers/acpi/toshiba_acpi.mod.o
+  LD [M]  drivers/acpi/toshiba_acpi.ko
+  CC      drivers/acpi/video.mod.o
+  LD [M]  drivers/acpi/video.ko
+  CC      drivers/atm/ambassador.mod.o
+  LD [M]  drivers/atm/ambassador.ko
+  CC      drivers/atm/atmtcp.mod.o
+  LD [M]  drivers/atm/atmtcp.ko
+  CC      drivers/atm/eni.mod.o
+  LD [M]  drivers/atm/eni.ko
+  CC      drivers/atm/firestream.mod.o
+  LD [M]  drivers/atm/firestream.ko
+  CC      drivers/atm/he.mod.o
+  LD [M]  drivers/atm/he.ko
+  CC      drivers/atm/horizon.mod.o
+  LD [M]  drivers/atm/horizon.ko
+  CC      drivers/atm/idt77252.mod.o
+  LD [M]  drivers/atm/idt77252.ko
+  CC      drivers/atm/lanai.mod.o
+  LD [M]  drivers/atm/lanai.ko
+  CC      drivers/atm/nicstar.mod.o
+  LD [M]  drivers/atm/nicstar.ko
+  CC      drivers/atm/suni.mod.o
+  LD [M]  drivers/atm/suni.ko
+  CC      drivers/block/DAC960.mod.o
+  LD [M]  drivers/block/DAC960.ko
+  CC      drivers/block/aoe/aoe.mod.o
+  LD [M]  drivers/block/aoe/aoe.ko
+  CC      drivers/block/cciss.mod.o
+  LD [M]  drivers/block/cciss.ko
+  CC      drivers/block/cpqarray.mod.o
+  LD [M]  drivers/block/cpqarray.ko
+  CC      drivers/block/cryptoloop.mod.o
+  LD [M]  drivers/block/cryptoloop.ko
+  CC      drivers/block/floppy.mod.o
+  LD [M]  drivers/block/floppy.ko
+  CC      drivers/block/loop.mod.o
+  LD [M]  drivers/block/loop.ko
+  CC      drivers/block/nbd.mod.o
+  LD [M]  drivers/block/nbd.ko
+  CC      drivers/block/paride/aten.mod.o
+  LD [M]  drivers/block/paride/aten.ko
+  CC      drivers/block/paride/bpck.mod.o
+  LD [M]  drivers/block/paride/bpck.ko
+  CC      drivers/block/paride/bpck6.mod.o
+  LD [M]  drivers/block/paride/bpck6.ko
+  CC      drivers/block/paride/comm.mod.o
+  LD [M]  drivers/block/paride/comm.ko
+  CC      drivers/block/paride/dstr.mod.o
+  LD [M]  drivers/block/paride/dstr.ko
+  CC      drivers/block/paride/epat.mod.o
+  LD [M]  drivers/block/paride/epat.ko
+  CC      drivers/block/paride/epia.mod.o
+  LD [M]  drivers/block/paride/epia.ko
+  CC      drivers/block/paride/fit2.mod.o
+  LD [M]  drivers/block/paride/fit2.ko
+  CC      drivers/block/paride/fit3.mod.o
+  LD [M]  drivers/block/paride/fit3.ko
+  CC      drivers/block/paride/friq.mod.o
+  LD [M]  drivers/block/paride/friq.ko
+  CC      drivers/block/paride/frpw.mod.o
+  LD [M]  drivers/block/paride/frpw.ko
+  CC      drivers/block/paride/kbic.mod.o
+  LD [M]  drivers/block/paride/kbic.ko
+  CC      drivers/block/paride/ktti.mod.o
+  LD [M]  drivers/block/paride/ktti.ko
+  CC      drivers/block/paride/on20.mod.o
+  LD [M]  drivers/block/paride/on20.ko
+  CC      drivers/block/paride/on26.mod.o
+  LD [M]  drivers/block/paride/on26.ko
+  CC      drivers/block/paride/paride.mod.o
+  LD [M]  drivers/block/paride/paride.ko
+  CC      drivers/block/paride/pcd.mod.o
+  LD [M]  drivers/block/paride/pcd.ko
+  CC      drivers/block/paride/pd.mod.o
+  LD [M]  drivers/block/paride/pd.ko
+  CC      drivers/block/paride/pf.mod.o
+  LD [M]  drivers/block/paride/pf.ko
+  CC      drivers/block/paride/pg.mod.o
+  LD [M]  drivers/block/paride/pg.ko
+  CC      drivers/block/paride/pt.mod.o
+  LD [M]  drivers/block/paride/pt.ko
+  CC      drivers/block/pktcdvd.mod.o
+  LD [M]  drivers/block/pktcdvd.ko
+  CC      drivers/block/sx8.mod.o
+  LD [M]  drivers/block/sx8.ko
+  CC      drivers/bluetooth/bcm203x.mod.o
+  LD [M]  drivers/bluetooth/bcm203x.ko
+  CC      drivers/bluetooth/bfusb.mod.o
+  LD [M]  drivers/bluetooth/bfusb.ko
+  CC      drivers/bluetooth/bluecard_cs.mod.o
+  LD [M]  drivers/bluetooth/bluecard_cs.ko
+  CC      drivers/bluetooth/bpa10x.mod.o
+  LD [M]  drivers/bluetooth/bpa10x.ko
+  CC      drivers/bluetooth/bt3c_cs.mod.o
+  LD [M]  drivers/bluetooth/bt3c_cs.ko
+  CC      drivers/bluetooth/btuart_cs.mod.o
+  LD [M]  drivers/bluetooth/btuart_cs.ko
+  CC      drivers/bluetooth/dtl1_cs.mod.o
+  LD [M]  drivers/bluetooth/dtl1_cs.ko
+  CC      drivers/bluetooth/hci_uart.mod.o
+  LD [M]  drivers/bluetooth/hci_uart.ko
+  CC      drivers/bluetooth/hci_usb.mod.o
+  LD [M]  drivers/bluetooth/hci_usb.ko
+  CC      drivers/bluetooth/hci_vhci.mod.o
+  LD [M]  drivers/bluetooth/hci_vhci.ko
+  CC      drivers/cdrom/cdrom.mod.o
+  LD [M]  drivers/cdrom/cdrom.ko
+  CC      drivers/char/cs5535_gpio.mod.o
+  LD [M]  drivers/char/cs5535_gpio.ko
+  CC      drivers/char/cyclades.mod.o
+  LD [M]  drivers/char/cyclades.ko
+  CC      drivers/char/drm/drm.mod.o
+  LD [M]  drivers/char/drm/drm.ko
+  CC      drivers/char/drm/i810.mod.o
+  LD [M]  drivers/char/drm/i810.ko
+  CC      drivers/char/drm/i830.mod.o
+  LD [M]  drivers/char/drm/i830.ko
+  CC      drivers/char/drm/i915.mod.o
+  LD [M]  drivers/char/drm/i915.ko
+  CC      drivers/char/drm/mga.mod.o
+  LD [M]  drivers/char/drm/mga.ko
+  CC      drivers/char/drm/r128.mod.o
+  LD [M]  drivers/char/drm/r128.ko
+  CC      drivers/char/drm/radeon.mod.o
+  LD [M]  drivers/char/drm/radeon.ko
+  CC      drivers/char/drm/savage.mod.o
+  LD [M]  drivers/char/drm/savage.ko
+  CC      drivers/char/drm/via.mod.o
+  LD [M]  drivers/char/drm/via.ko
+  CC      drivers/char/dtlk.mod.o
+  LD [M]  drivers/char/dtlk.ko
+  CC      drivers/char/hangcheck-timer.mod.o
+  LD [M]  drivers/char/hangcheck-timer.ko
+  CC      drivers/char/hw_random/amd-rng.mod.o
+  LD [M]  drivers/char/hw_random/amd-rng.ko
+  CC      drivers/char/hw_random/geode-rng.mod.o
+  LD [M]  drivers/char/hw_random/geode-rng.ko
+  CC      drivers/char/hw_random/intel-rng.mod.o
+  LD [M]  drivers/char/hw_random/intel-rng.ko
+  CC      drivers/char/hw_random/via-rng.mod.o
+  LD [M]  drivers/char/hw_random/via-rng.ko
+  CC      drivers/char/i8k.mod.o
+  LD [M]  drivers/char/i8k.ko
+  CC      drivers/char/ipmi/ipmi_devintf.mod.o
+  LD [M]  drivers/char/ipmi/ipmi_devintf.ko
+  CC      drivers/char/ipmi/ipmi_msghandler.mod.o
+  LD [M]  drivers/char/ipmi/ipmi_msghandler.ko
+  CC      drivers/char/ipmi/ipmi_poweroff.mod.o
+  LD [M]  drivers/char/ipmi/ipmi_poweroff.ko
+  CC      drivers/char/ipmi/ipmi_si.mod.o
+  LD [M]  drivers/char/ipmi/ipmi_si.ko
+  CC      drivers/char/ipmi/ipmi_watchdog.mod.o
+  LD [M]  drivers/char/ipmi/ipmi_watchdog.ko
+  CC      drivers/char/lp.mod.o
+  LD [M]  drivers/char/lp.ko
+  CC      drivers/char/n_hdlc.mod.o
+  LD [M]  drivers/char/n_hdlc.ko
+  CC      drivers/char/nsc_gpio.mod.o
+  LD [M]  drivers/char/nsc_gpio.ko
+  CC      drivers/char/pc8736x_gpio.mod.o
+  LD [M]  drivers/char/pc8736x_gpio.ko
+  CC      drivers/char/pcmcia/cm4000_cs.mod.o
+  LD [M]  drivers/char/pcmcia/cm4000_cs.ko
+  CC      drivers/char/pcmcia/cm4040_cs.mod.o
+  LD [M]  drivers/char/pcmcia/cm4040_cs.ko
+  CC      drivers/char/ppdev.mod.o
+  LD [M]  drivers/char/ppdev.ko
+  CC      drivers/char/sonypi.mod.o
+  LD [M]  drivers/char/sonypi.ko
+  CC      drivers/char/synclink.mod.o
+  LD [M]  drivers/char/synclink.ko
+  CC      drivers/char/synclink_gt.mod.o
+  LD [M]  drivers/char/synclink_gt.ko
+  CC      drivers/char/synclinkmp.mod.o
+  LD [M]  drivers/char/synclinkmp.ko
+  CC      drivers/char/tlclk.mod.o
+  LD [M]  drivers/char/tlclk.ko
+  CC      drivers/char/toshiba.mod.o
+  LD [M]  drivers/char/toshiba.ko
+  CC      drivers/char/tpm/tpm.mod.o
+  LD [M]  drivers/char/tpm/tpm.ko
+  CC      drivers/char/tpm/tpm_atmel.mod.o
+  LD [M]  drivers/char/tpm/tpm_atmel.ko
+  CC      drivers/char/tpm/tpm_bios.mod.o
+  LD [M]  drivers/char/tpm/tpm_bios.ko
+  CC      drivers/char/tpm/tpm_infineon.mod.o
+  LD [M]  drivers/char/tpm/tpm_infineon.ko
+  CC      drivers/char/tpm/tpm_nsc.mod.o
+  LD [M]  drivers/char/tpm/tpm_nsc.ko
+  CC      drivers/char/tpm/tpm_tis.mod.o
+  LD [M]  drivers/char/tpm/tpm_tis.ko
+  CC      drivers/char/watchdog/alim1535_wdt.mod.o
+  LD [M]  drivers/char/watchdog/alim1535_wdt.ko
+  CC      drivers/char/watchdog/alim7101_wdt.mod.o
+  LD [M]  drivers/char/watchdog/alim7101_wdt.ko
+  CC      drivers/char/watchdog/i6300esb.mod.o
+  LD [M]  drivers/char/watchdog/i6300esb.ko
+  CC      drivers/char/watchdog/i8xx_tco.mod.o
+  LD [M]  drivers/char/watchdog/i8xx_tco.ko
+  CC      drivers/char/watchdog/ibmasr.mod.o
+  LD [M]  drivers/char/watchdog/ibmasr.ko
+  CC      drivers/char/watchdog/machzwd.mod.o
+  LD [M]  drivers/char/watchdog/machzwd.ko
+  CC      drivers/char/watchdog/pcwd_pci.mod.o
+  LD [M]  drivers/char/watchdog/pcwd_pci.ko
+  CC      drivers/char/watchdog/pcwd_usb.mod.o
+  LD [M]  drivers/char/watchdog/pcwd_usb.ko
+  CC      drivers/char/watchdog/softdog.mod.o
+  LD [M]  drivers/char/watchdog/softdog.ko
+  CC      drivers/char/watchdog/w83627hf_wdt.mod.o
+  LD [M]  drivers/char/watchdog/w83627hf_wdt.ko
+  CC      drivers/char/watchdog/w83877f_wdt.mod.o
+  LD [M]  drivers/char/watchdog/w83877f_wdt.ko
+  CC      drivers/char/watchdog/w83977f_wdt.mod.o
+  LD [M]  drivers/char/watchdog/w83977f_wdt.ko
+  CC      drivers/char/watchdog/wdt_pci.mod.o
+  LD [M]  drivers/char/watchdog/wdt_pci.ko
+  CC      drivers/cpufreq/cpufreq_conservative.mod.o
+  LD [M]  drivers/cpufreq/cpufreq_conservative.ko
+  CC      drivers/cpufreq/cpufreq_ondemand.mod.o
+  LD [M]  drivers/cpufreq/cpufreq_ondemand.ko
+  CC      drivers/cpufreq/cpufreq_powersave.mod.o
+  LD [M]  drivers/cpufreq/cpufreq_powersave.ko
+  CC      drivers/cpufreq/cpufreq_stats.mod.o
+  LD [M]  drivers/cpufreq/cpufreq_stats.ko
+  CC      drivers/crypto/padlock.mod.o
+  LD [M]  drivers/crypto/padlock.ko
+  CC      drivers/dma/ioatdma.mod.o
+  LD [M]  drivers/dma/ioatdma.ko
+  CC      drivers/edac/amd76x_edac.mod.o
+  LD [M]  drivers/edac/amd76x_edac.ko
+  CC      drivers/edac/e752x_edac.mod.o
+  LD [M]  drivers/edac/e752x_edac.ko
+  CC      drivers/edac/e7xxx_edac.mod.o
+  LD [M]  drivers/edac/e7xxx_edac.ko
+  CC      drivers/edac/edac_mc.mod.o
+  LD [M]  drivers/edac/edac_mc.ko
+  CC      drivers/edac/i82860_edac.mod.o
+  LD [M]  drivers/edac/i82860_edac.ko
+  CC      drivers/edac/i82875p_edac.mod.o
+  LD [M]  drivers/edac/i82875p_edac.ko
+  CC      drivers/edac/r82600_edac.mod.o
+  LD [M]  drivers/edac/r82600_edac.ko
+  CC      drivers/firmware/dcdbas.mod.o
+  LD [M]  drivers/firmware/dcdbas.ko
+  CC      drivers/firmware/dell_rbu.mod.o
+  LD [M]  drivers/firmware/dell_rbu.ko
+  CC      drivers/firmware/edd.mod.o
+  LD [M]  drivers/firmware/edd.ko
+  CC      drivers/hwmon/abituguru.mod.o
+  LD [M]  drivers/hwmon/abituguru.ko
+  CC      drivers/hwmon/adm1021.mod.o
+  LD [M]  drivers/hwmon/adm1021.ko
+  CC      drivers/hwmon/adm1025.mod.o
+  LD [M]  drivers/hwmon/adm1025.ko
+  CC      drivers/hwmon/adm1026.mod.o
+  LD [M]  drivers/hwmon/adm1026.ko
+  CC      drivers/hwmon/adm1031.mod.o
+  LD [M]  drivers/hwmon/adm1031.ko
+  CC      drivers/hwmon/adm9240.mod.o
+  LD [M]  drivers/hwmon/adm9240.ko
+  CC      drivers/hwmon/asb100.mod.o
+  LD [M]  drivers/hwmon/asb100.ko
+  CC      drivers/hwmon/atxp1.mod.o
+  LD [M]  drivers/hwmon/atxp1.ko
+  CC      drivers/hwmon/ds1621.mod.o
+  LD [M]  drivers/hwmon/ds1621.ko
+  CC      drivers/hwmon/f71805f.mod.o
+  LD [M]  drivers/hwmon/f71805f.ko
+  CC      drivers/hwmon/fscher.mod.o
+  LD [M]  drivers/hwmon/fscher.ko
+  CC      drivers/hwmon/fscpos.mod.o
+  LD [M]  drivers/hwmon/fscpos.ko
+  CC      drivers/hwmon/gl518sm.mod.o
+  LD [M]  drivers/hwmon/gl518sm.ko
+  CC      drivers/hwmon/gl520sm.mod.o
+  LD [M]  drivers/hwmon/gl520sm.ko
+  CC      drivers/hwmon/hdaps.mod.o
+  LD [M]  drivers/hwmon/hdaps.ko
+  CC      drivers/hwmon/hwmon-vid.mod.o
+  LD [M]  drivers/hwmon/hwmon-vid.ko
+  CC      drivers/hwmon/hwmon.mod.o
+  LD [M]  drivers/hwmon/hwmon.ko
+  CC      drivers/hwmon/it87.mod.o
+  LD [M]  drivers/hwmon/it87.ko
+  CC      drivers/hwmon/lm63.mod.o
+  LD [M]  drivers/hwmon/lm63.ko
+  CC      drivers/hwmon/lm75.mod.o
+  LD [M]  drivers/hwmon/lm75.ko
+  CC      drivers/hwmon/lm77.mod.o
+  LD [M]  drivers/hwmon/lm77.ko
+  CC      drivers/hwmon/lm78.mod.o
+  LD [M]  drivers/hwmon/lm78.ko
+  CC      drivers/hwmon/lm80.mod.o
+  LD [M]  drivers/hwmon/lm80.ko
+  CC      drivers/hwmon/lm83.mod.o
+  LD [M]  drivers/hwmon/lm83.ko
+  CC      drivers/hwmon/lm85.mod.o
+  LD [M]  drivers/hwmon/lm85.ko
+  CC      drivers/hwmon/lm87.mod.o
+  LD [M]  drivers/hwmon/lm87.ko
+  CC      drivers/hwmon/lm90.mod.o
+  LD [M]  drivers/hwmon/lm90.ko
+  CC      drivers/hwmon/lm92.mod.o
+  LD [M]  drivers/hwmon/lm92.ko
+  CC      drivers/hwmon/max1619.mod.o
+  LD [M]  drivers/hwmon/max1619.ko
+  CC      drivers/hwmon/pc87360.mod.o
+  LD [M]  drivers/hwmon/pc87360.ko
+  CC      drivers/hwmon/sis5595.mod.o
+  LD [M]  drivers/hwmon/sis5595.ko
+  CC      drivers/hwmon/smsc47b397.mod.o
+  LD [M]  drivers/hwmon/smsc47b397.ko
+  CC      drivers/hwmon/smsc47m1.mod.o
+  LD [M]  drivers/hwmon/smsc47m1.ko
+  CC      drivers/hwmon/smsc47m192.mod.o
+  LD [M]  drivers/hwmon/smsc47m192.ko
+  CC      drivers/hwmon/via686a.mod.o
+  LD [M]  drivers/hwmon/via686a.ko
+  CC      drivers/hwmon/vt8231.mod.o
+  LD [M]  drivers/hwmon/vt8231.ko
+  CC      drivers/hwmon/w83627ehf.mod.o
+  LD [M]  drivers/hwmon/w83627ehf.ko
+  CC      drivers/hwmon/w83627hf.mod.o
+  LD [M]  drivers/hwmon/w83627hf.ko
+  CC      drivers/hwmon/w83781d.mod.o
+  LD [M]  drivers/hwmon/w83781d.ko
+  CC      drivers/hwmon/w83791d.mod.o
+  LD [M]  drivers/hwmon/w83791d.ko
+  CC      drivers/hwmon/w83792d.mod.o
+  LD [M]  drivers/hwmon/w83792d.ko
+  CC      drivers/hwmon/w83l785ts.mod.o
+  LD [M]  drivers/hwmon/w83l785ts.ko
+  CC      drivers/i2c/algos/i2c-algo-bit.mod.o
+  LD [M]  drivers/i2c/algos/i2c-algo-bit.ko
+  CC      drivers/i2c/algos/i2c-algo-pca.mod.o
+  LD [M]  drivers/i2c/algos/i2c-algo-pca.ko
+  CC      drivers/i2c/algos/i2c-algo-pcf.mod.o
+  LD [M]  drivers/i2c/algos/i2c-algo-pcf.ko
+  CC      drivers/i2c/busses/i2c-ali1535.mod.o
+  LD [M]  drivers/i2c/busses/i2c-ali1535.ko
+  CC      drivers/i2c/busses/i2c-ali1563.mod.o
+  LD [M]  drivers/i2c/busses/i2c-ali1563.ko
+  CC      drivers/i2c/busses/i2c-ali15x3.mod.o
+  LD [M]  drivers/i2c/busses/i2c-ali15x3.ko
+  CC      drivers/i2c/busses/i2c-amd756-s4882.mod.o
+  LD [M]  drivers/i2c/busses/i2c-amd756-s4882.ko
+  CC      drivers/i2c/busses/i2c-amd756.mod.o
+  LD [M]  drivers/i2c/busses/i2c-amd756.ko
+  CC      drivers/i2c/busses/i2c-amd8111.mod.o
+  LD [M]  drivers/i2c/busses/i2c-amd8111.ko
+  CC      drivers/i2c/busses/i2c-i801.mod.o
+  LD [M]  drivers/i2c/busses/i2c-i801.ko
+  CC      drivers/i2c/busses/i2c-i810.mod.o
+  LD [M]  drivers/i2c/busses/i2c-i810.ko
+  CC      drivers/i2c/busses/i2c-isa.mod.o
+  LD [M]  drivers/i2c/busses/i2c-isa.ko
+  CC      drivers/i2c/busses/i2c-nforce2.mod.o
+  LD [M]  drivers/i2c/busses/i2c-nforce2.ko
+  CC      drivers/i2c/busses/i2c-parport-light.mod.o
+  LD [M]  drivers/i2c/busses/i2c-parport-light.ko
+  CC      drivers/i2c/busses/i2c-parport.mod.o
+  LD [M]  drivers/i2c/busses/i2c-parport.ko
+  CC      drivers/i2c/busses/i2c-piix4.mod.o
+  LD [M]  drivers/i2c/busses/i2c-piix4.ko
+  CC      drivers/i2c/busses/i2c-prosavage.mod.o
+  LD [M]  drivers/i2c/busses/i2c-prosavage.ko
+  CC      drivers/i2c/busses/i2c-savage4.mod.o
+  LD [M]  drivers/i2c/busses/i2c-savage4.ko
+  CC      drivers/i2c/busses/i2c-sis5595.mod.o
+  LD [M]  drivers/i2c/busses/i2c-sis5595.ko
+  CC      drivers/i2c/busses/i2c-sis630.mod.o
+  LD [M]  drivers/i2c/busses/i2c-sis630.ko
+  CC      drivers/i2c/busses/i2c-sis96x.mod.o
+  LD [M]  drivers/i2c/busses/i2c-sis96x.ko
+  CC      drivers/i2c/busses/i2c-stub.mod.o
+  LD [M]  drivers/i2c/busses/i2c-stub.ko
+  CC      drivers/i2c/busses/i2c-via.mod.o
+  LD [M]  drivers/i2c/busses/i2c-via.ko
+  CC      drivers/i2c/busses/i2c-viapro.mod.o
+  LD [M]  drivers/i2c/busses/i2c-viapro.ko
+  CC      drivers/i2c/busses/i2c-voodoo3.mod.o
+  LD [M]  drivers/i2c/busses/i2c-voodoo3.ko
+  CC      drivers/i2c/chips/ds1337.mod.o
+  LD [M]  drivers/i2c/chips/ds1337.ko
+  CC      drivers/i2c/chips/ds1374.mod.o
+  LD [M]  drivers/i2c/chips/ds1374.ko
+  CC      drivers/i2c/chips/eeprom.mod.o
+  LD [M]  drivers/i2c/chips/eeprom.ko
+  CC      drivers/i2c/chips/max6875.mod.o
+  LD [M]  drivers/i2c/chips/max6875.ko
+  CC      drivers/i2c/chips/pca9539.mod.o
+  LD [M]  drivers/i2c/chips/pca9539.ko
+  CC      drivers/i2c/chips/pcf8574.mod.o
+  LD [M]  drivers/i2c/chips/pcf8574.ko
+  CC      drivers/i2c/chips/pcf8591.mod.o
+  LD [M]  drivers/i2c/chips/pcf8591.ko
+  CC      drivers/i2c/i2c-core.mod.o
+  LD [M]  drivers/i2c/i2c-core.ko
+  CC      drivers/i2c/i2c-dev.mod.o
+  LD [M]  drivers/i2c/i2c-dev.ko
+  CC      drivers/ide/ide-cd.mod.o
+  LD [M]  drivers/ide/ide-cd.ko
+  CC      drivers/ide/legacy/ide-cs.mod.o
+  LD [M]  drivers/ide/legacy/ide-cs.ko
+  CC      drivers/infiniband/core/ib_addr.mod.o
+  LD [M]  drivers/infiniband/core/ib_addr.ko
+  CC      drivers/infiniband/core/ib_cm.mod.o
+  LD [M]  drivers/infiniband/core/ib_cm.ko
+  CC      drivers/infiniband/core/ib_core.mod.o
+  LD [M]  drivers/infiniband/core/ib_core.ko
+  CC      drivers/infiniband/core/ib_mad.mod.o
+  LD [M]  drivers/infiniband/core/ib_mad.ko
+  CC      drivers/infiniband/core/ib_sa.mod.o
+  LD [M]  drivers/infiniband/core/ib_sa.ko
+  CC      drivers/infiniband/core/ib_ucm.mod.o
+  LD [M]  drivers/infiniband/core/ib_ucm.ko
+  CC      drivers/infiniband/core/ib_umad.mod.o
+  LD [M]  drivers/infiniband/core/ib_umad.ko
+  CC      drivers/infiniband/core/ib_uverbs.mod.o
+  LD [M]  drivers/infiniband/core/ib_uverbs.ko
+  CC      drivers/infiniband/core/rdma_cm.mod.o
+  LD [M]  drivers/infiniband/core/rdma_cm.ko
+  CC      drivers/infiniband/hw/mthca/ib_mthca.mod.o
+  LD [M]  drivers/infiniband/hw/mthca/ib_mthca.ko
+  CC      drivers/infiniband/ulp/ipoib/ib_ipoib.mod.o
+  LD [M]  drivers/infiniband/ulp/ipoib/ib_ipoib.ko
+  CC      drivers/infiniband/ulp/iser/ib_iser.mod.o
+  LD [M]  drivers/infiniband/ulp/iser/ib_iser.ko
+  CC      drivers/infiniband/ulp/srp/ib_srp.mod.o
+  LD [M]  drivers/infiniband/ulp/srp/ib_srp.ko
+  CC      drivers/input/gameport/emu10k1-gp.mod.o
+  LD [M]  drivers/input/gameport/emu10k1-gp.ko
+  CC      drivers/input/gameport/fm801-gp.mod.o
+  LD [M]  drivers/input/gameport/fm801-gp.ko
+  CC      drivers/input/gameport/gameport.mod.o
+  LD [M]  drivers/input/gameport/gameport.ko
+  CC      drivers/input/gameport/lightning.mod.o
+  LD [M]  drivers/input/gameport/lightning.ko
+  CC      drivers/input/gameport/ns558.mod.o
+  LD [M]  drivers/input/gameport/ns558.ko
+  CC      drivers/input/joydev.mod.o
+  LD [M]  drivers/input/joydev.ko
+  CC      drivers/input/joystick/joydump.mod.o
+  LD [M]  drivers/input/joystick/joydump.ko
+  CC      drivers/input/joystick/twidjoy.mod.o
+  LD [M]  drivers/input/joystick/twidjoy.ko
+  CC      drivers/input/misc/pcspkr.mod.o
+  LD [M]  drivers/input/misc/pcspkr.ko
+  CC      drivers/input/misc/uinput.mod.o
+  LD [M]  drivers/input/misc/uinput.ko
+  CC      drivers/input/misc/wistron_btns.mod.o
+  LD [M]  drivers/input/misc/wistron_btns.ko
+  CC      drivers/input/mouse/sermouse.mod.o
+  LD [M]  drivers/input/mouse/sermouse.ko
+  CC      drivers/input/mouse/vsxxxaa.mod.o
+  LD [M]  drivers/input/mouse/vsxxxaa.ko
+  CC      drivers/input/serio/serio_raw.mod.o
+  LD [M]  drivers/input/serio/serio_raw.ko
+  CC      drivers/input/touchscreen/elo.mod.o
+  LD [M]  drivers/input/touchscreen/elo.ko
+  CC      drivers/input/touchscreen/gunze.mod.o
+  LD [M]  drivers/input/touchscreen/gunze.ko
+  CC      drivers/input/touchscreen/mk712.mod.o
+  LD [M]  drivers/input/touchscreen/mk712.ko
+  CC      drivers/input/touchscreen/mtouch.mod.o
+  LD [M]  drivers/input/touchscreen/mtouch.ko
+  CC      drivers/isdn/capi/capi.mod.o
+  LD [M]  drivers/isdn/capi/capi.ko
+  CC      drivers/isdn/capi/capidrv.mod.o
+  LD [M]  drivers/isdn/capi/capidrv.ko
+  CC      drivers/isdn/capi/capifs.mod.o
+  LD [M]  drivers/isdn/capi/capifs.ko
+  CC      drivers/isdn/capi/kernelcapi.mod.o
+  LD [M]  drivers/isdn/capi/kernelcapi.ko
+  CC      drivers/isdn/divert/dss1_divert.mod.o
+  LD [M]  drivers/isdn/divert/dss1_divert.ko
+  CC      drivers/isdn/gigaset/bas_gigaset.mod.o
+  LD [M]  drivers/isdn/gigaset/bas_gigaset.ko
+  CC      drivers/isdn/gigaset/gigaset.mod.o
+  LD [M]  drivers/isdn/gigaset/gigaset.ko
+  CC      drivers/isdn/gigaset/usb_gigaset.mod.o
+  LD [M]  drivers/isdn/gigaset/usb_gigaset.ko
+  CC      drivers/isdn/hardware/avm/avm_cs.mod.o
+  LD [M]  drivers/isdn/hardware/avm/avm_cs.ko
+  CC      drivers/isdn/hardware/avm/b1.mod.o
+  LD [M]  drivers/isdn/hardware/avm/b1.ko
+  CC      drivers/isdn/hardware/avm/b1dma.mod.o
+  LD [M]  drivers/isdn/hardware/avm/b1dma.ko
+  CC      drivers/isdn/hardware/avm/b1pci.mod.o
+  LD [M]  drivers/isdn/hardware/avm/b1pci.ko
+  CC      drivers/isdn/hardware/avm/b1pcmcia.mod.o
+  LD [M]  drivers/isdn/hardware/avm/b1pcmcia.ko
+  CC      drivers/isdn/hardware/avm/c4.mod.o
+  LD [M]  drivers/isdn/hardware/avm/c4.ko
+  CC      drivers/isdn/hardware/avm/t1pci.mod.o
+  LD [M]  drivers/isdn/hardware/avm/t1pci.ko
+  CC      drivers/isdn/hardware/eicon/diva_idi.mod.o
+  LD [M]  drivers/isdn/hardware/eicon/diva_idi.ko
+  CC      drivers/isdn/hardware/eicon/diva_mnt.mod.o
+  LD [M]  drivers/isdn/hardware/eicon/diva_mnt.ko
+  CC      drivers/isdn/hardware/eicon/divacapi.mod.o
+  LD [M]  drivers/isdn/hardware/eicon/divacapi.ko
+  CC      drivers/isdn/hardware/eicon/divadidd.mod.o
+  LD [M]  drivers/isdn/hardware/eicon/divadidd.ko
+  CC      drivers/isdn/hardware/eicon/divas.mod.o
+  LD [M]  drivers/isdn/hardware/eicon/divas.ko
+  CC      drivers/isdn/hisax/avma1_cs.mod.o
+  LD [M]  drivers/isdn/hisax/avma1_cs.ko
+  CC      drivers/isdn/hisax/elsa_cs.mod.o
+  LD [M]  drivers/isdn/hisax/elsa_cs.ko
+  CC      drivers/isdn/hisax/hfc4s8s_l1.mod.o
+  LD [M]  drivers/isdn/hisax/hfc4s8s_l1.ko
+  CC      drivers/isdn/hisax/hisax.mod.o
+  LD [M]  drivers/isdn/hisax/hisax.ko
+  CC      drivers/isdn/hisax/hisax_fcpcipnp.mod.o
+  LD [M]  drivers/isdn/hisax/hisax_fcpcipnp.ko
+  CC      drivers/isdn/hisax/hisax_isac.mod.o
+  LD [M]  drivers/isdn/hisax/hisax_isac.ko
+  CC      drivers/isdn/hisax/hisax_st5481.mod.o
+  LD [M]  drivers/isdn/hisax/hisax_st5481.ko
+  CC      drivers/isdn/hisax/isdnhdlc.mod.o
+  LD [M]  drivers/isdn/hisax/isdnhdlc.ko
+  CC      drivers/isdn/hisax/sedlbauer_cs.mod.o
+  LD [M]  drivers/isdn/hisax/sedlbauer_cs.ko
+  CC      drivers/isdn/hisax/teles_cs.mod.o
+  LD [M]  drivers/isdn/hisax/teles_cs.ko
+  CC      drivers/isdn/i4l/isdn.mod.o
+  LD [M]  drivers/isdn/i4l/isdn.ko
+  CC      drivers/leds/ledtrig-heartbeat.mod.o
+  LD [M]  drivers/leds/ledtrig-heartbeat.ko
+  CC      drivers/leds/ledtrig-timer.mod.o
+  LD [M]  drivers/leds/ledtrig-timer.ko
+  CC      drivers/md/dm-crypt.mod.o
+  LD [M]  drivers/md/dm-crypt.ko
+  CC      drivers/md/dm-emc.mod.o
+  LD [M]  drivers/md/dm-emc.ko
+  CC      drivers/md/dm-mirror.mod.o
+  LD [M]  drivers/md/dm-mirror.ko
+  CC      drivers/md/dm-mod.mod.o
+  LD [M]  drivers/md/dm-mod.ko
+  CC      drivers/md/dm-multipath.mod.o
+  LD [M]  drivers/md/dm-multipath.ko
+  CC      drivers/md/dm-round-robin.mod.o
+  LD [M]  drivers/md/dm-round-robin.ko
+  CC      drivers/md/dm-snapshot.mod.o
+  LD [M]  drivers/md/dm-snapshot.ko
+  CC      drivers/md/dm-zero.mod.o
+  LD [M]  drivers/md/dm-zero.ko
+  CC      drivers/md/faulty.mod.o
+  LD [M]  drivers/md/faulty.ko
+  CC      drivers/md/linear.mod.o
+  LD [M]  drivers/md/linear.ko
+  CC      drivers/md/multipath.mod.o
+  LD [M]  drivers/md/multipath.ko
+  CC      drivers/md/raid0.mod.o
+  LD [M]  drivers/md/raid0.ko
+  CC      drivers/md/raid1.mod.o
+  LD [M]  drivers/md/raid1.ko
+  CC      drivers/md/raid10.mod.o
+  LD [M]  drivers/md/raid10.ko
+  CC      drivers/md/raid456.mod.o
+  LD [M]  drivers/md/raid456.ko
+  CC      drivers/md/xor.mod.o
+  LD [M]  drivers/md/xor.ko
+  CC      drivers/media/common/ir-common.mod.o
+  LD [M]  drivers/media/common/ir-common.ko
+  CC      drivers/media/radio/dsbr100.mod.o
+  LD [M]  drivers/media/radio/dsbr100.ko
+  CC      drivers/media/video/bt8xx/bttv.mod.o
+  LD [M]  drivers/media/video/bt8xx/bttv.ko
+  CC      drivers/media/video/btcx-risc.mod.o
+  LD [M]  drivers/media/video/btcx-risc.ko
+  CC      drivers/media/video/compat_ioctl32.mod.o
+  LD [M]  drivers/media/video/compat_ioctl32.ko
+  CC      drivers/media/video/cpia2/cpia2.mod.o
+  LD [M]  drivers/media/video/cpia2/cpia2.ko
+  CC      drivers/media/video/cs53l32a.mod.o
+  LD [M]  drivers/media/video/cs53l32a.ko
+  CC      drivers/media/video/cx2341x.mod.o
+  LD [M]  drivers/media/video/cx2341x.ko
+  CC      drivers/media/video/cx25840/cx25840.mod.o
+  LD [M]  drivers/media/video/cx25840/cx25840.ko
+  CC      drivers/media/video/dabusb.mod.o
+  LD [M]  drivers/media/video/dabusb.ko
+  CC      drivers/media/video/em28xx/em28xx.mod.o
+  LD [M]  drivers/media/video/em28xx/em28xx.ko
+  CC      drivers/media/video/et61x251/et61x251.mod.o
+  LD [M]  drivers/media/video/et61x251/et61x251.ko
+  CC      drivers/media/video/ir-kbd-i2c.mod.o
+  LD [M]  drivers/media/video/ir-kbd-i2c.ko
+  CC      drivers/media/video/msp3400.mod.o
+  LD [M]  drivers/media/video/msp3400.ko
+  CC      drivers/media/video/ov511.mod.o
+  LD [M]  drivers/media/video/ov511.ko
+  CC      drivers/media/video/ovcamchip/ovcamchip.mod.o
+  LD [M]  drivers/media/video/ovcamchip/ovcamchip.ko
+  CC      drivers/media/video/pvrusb2/pvrusb2.mod.o
+  LD [M]  drivers/media/video/pvrusb2/pvrusb2.ko
+  CC      drivers/media/video/pwc/pwc.mod.o
+  LD [M]  drivers/media/video/pwc/pwc.ko
+  CC      drivers/media/video/saa6588.mod.o
+  LD [M]  drivers/media/video/saa6588.ko
+  CC      drivers/media/video/saa7115.mod.o
+  LD [M]  drivers/media/video/saa7115.ko
+  CC      drivers/media/video/saa7127.mod.o
+  LD [M]  drivers/media/video/saa7127.ko
+  CC      drivers/media/video/se401.mod.o
+  LD [M]  drivers/media/video/se401.ko
+  CC      drivers/media/video/sn9c102/sn9c102.mod.o
+  LD [M]  drivers/media/video/sn9c102/sn9c102.ko
+  CC      drivers/media/video/stv680.mod.o
+  LD [M]  drivers/media/video/stv680.ko
+  CC      drivers/media/video/tda7432.mod.o
+  LD [M]  drivers/media/video/tda7432.ko
+  CC      drivers/media/video/tda9875.mod.o
+  LD [M]  drivers/media/video/tda9875.ko
+  CC      drivers/media/video/tlv320aic23b.mod.o
+  LD [M]  drivers/media/video/tlv320aic23b.ko
+  CC      drivers/media/video/tuner.mod.o
+  LD [M]  drivers/media/video/tuner.ko
+  CC      drivers/media/video/tvaudio.mod.o
+  LD [M]  drivers/media/video/tvaudio.ko
+  CC      drivers/media/video/tveeprom.mod.o
+  LD [M]  drivers/media/video/tveeprom.ko
+  CC      drivers/media/video/tvp5150.mod.o
+  LD [M]  drivers/media/video/tvp5150.ko
+  CC      drivers/media/video/upd64031a.mod.o
+  LD [M]  drivers/media/video/upd64031a.ko
+  CC      drivers/media/video/upd64083.mod.o
+  LD [M]  drivers/media/video/upd64083.ko
+  CC      drivers/media/video/usbvideo/ibmcam.mod.o
+  LD [M]  drivers/media/video/usbvideo/ibmcam.ko
+  CC      drivers/media/video/usbvideo/konicawc.mod.o
+  LD [M]  drivers/media/video/usbvideo/konicawc.ko
+  CC      drivers/media/video/usbvideo/quickcam_messenger.mod.o
+  LD [M]  drivers/media/video/usbvideo/quickcam_messenger.ko
+  CC      drivers/media/video/usbvideo/ultracam.mod.o
+  LD [M]  drivers/media/video/usbvideo/ultracam.ko
+  CC      drivers/media/video/usbvideo/usbvideo.mod.o
+  LD [M]  drivers/media/video/usbvideo/usbvideo.ko
+  CC      drivers/media/video/usbvideo/vicam.mod.o
+  LD [M]  drivers/media/video/usbvideo/vicam.ko
+  CC      drivers/media/video/v4l1-compat.mod.o
+  LD [M]  drivers/media/video/v4l1-compat.ko
+  CC      drivers/media/video/v4l2-common.mod.o
+  LD [M]  drivers/media/video/v4l2-common.ko
+  CC      drivers/media/video/video-buf.mod.o
+  LD [M]  drivers/media/video/video-buf.ko
+  CC      drivers/media/video/videodev.mod.o
+  LD [M]  drivers/media/video/videodev.ko
+  CC      drivers/media/video/w9968cf.mod.o
+  LD [M]  drivers/media/video/w9968cf.ko
+  CC      drivers/media/video/wm8739.mod.o
+  LD [M]  drivers/media/video/wm8739.ko
+  CC      drivers/media/video/wm8775.mod.o
+  LD [M]  drivers/media/video/wm8775.ko
+  CC      drivers/media/video/zc0301/zc0301.mod.o
+  LD [M]  drivers/media/video/zc0301/zc0301.ko
+  CC      drivers/message/fusion/mptbase.mod.o
+  LD [M]  drivers/message/fusion/mptbase.ko
+  CC      drivers/message/fusion/mptctl.mod.o
+  LD [M]  drivers/message/fusion/mptctl.ko
+  CC      drivers/message/fusion/mptfc.mod.o
+  LD [M]  drivers/message/fusion/mptfc.ko
+  CC      drivers/message/fusion/mptlan.mod.o
+  LD [M]  drivers/message/fusion/mptlan.ko
+  CC      drivers/message/fusion/mptsas.mod.o
+  LD [M]  drivers/message/fusion/mptsas.ko
+  CC      drivers/message/fusion/mptscsih.mod.o
+  LD [M]  drivers/message/fusion/mptscsih.ko
+  CC      drivers/message/fusion/mptspi.mod.o
+  LD [M]  drivers/message/fusion/mptspi.ko
+  CC      drivers/message/i2o/i2o_block.mod.o
+  LD [M]  drivers/message/i2o/i2o_block.ko
+  CC      drivers/message/i2o/i2o_bus.mod.o
+  LD [M]  drivers/message/i2o/i2o_bus.ko
+  CC      drivers/message/i2o/i2o_config.mod.o
+  LD [M]  drivers/message/i2o/i2o_config.ko
+  CC      drivers/message/i2o/i2o_core.mod.o
+  LD [M]  drivers/message/i2o/i2o_core.ko
+  CC      drivers/message/i2o/i2o_proc.mod.o
+  LD [M]  drivers/message/i2o/i2o_proc.ko
+  CC      drivers/message/i2o/i2o_scsi.mod.o
+  LD [M]  drivers/message/i2o/i2o_scsi.ko
+  CC      drivers/misc/ibmasm/ibmasm.mod.o
+  LD [M]  drivers/misc/ibmasm/ibmasm.ko
+  CC      drivers/mmc/mmc_block.mod.o
+  LD [M]  drivers/mmc/mmc_block.ko
+  CC      drivers/mmc/mmc_core.mod.o
+  LD [M]  drivers/mmc/mmc_core.ko
+  CC      drivers/mmc/sdhci.mod.o
+  LD [M]  drivers/mmc/sdhci.ko
+  CC      drivers/mmc/wbsd.mod.o
+  LD [M]  drivers/mmc/wbsd.ko
+  CC      drivers/mtd/chips/cfi_cmdset_0001.mod.o
+  LD [M]  drivers/mtd/chips/cfi_cmdset_0001.ko
+  CC      drivers/mtd/chips/cfi_cmdset_0002.mod.o
+  LD [M]  drivers/mtd/chips/cfi_cmdset_0002.ko
+  CC      drivers/mtd/chips/cfi_cmdset_0020.mod.o
+  LD [M]  drivers/mtd/chips/cfi_cmdset_0020.ko
+  CC      drivers/mtd/chips/cfi_probe.mod.o
+  LD [M]  drivers/mtd/chips/cfi_probe.ko
+  CC      drivers/mtd/chips/cfi_util.mod.o
+  LD [M]  drivers/mtd/chips/cfi_util.ko
+  CC      drivers/mtd/chips/chipreg.mod.o
+  LD [M]  drivers/mtd/chips/chipreg.ko
+  CC      drivers/mtd/chips/gen_probe.mod.o
+  LD [M]  drivers/mtd/chips/gen_probe.ko
+  CC      drivers/mtd/chips/jedec_probe.mod.o
+  LD [M]  drivers/mtd/chips/jedec_probe.ko
+  CC      drivers/mtd/chips/map_absent.mod.o
+  LD [M]  drivers/mtd/chips/map_absent.ko
+  CC      drivers/mtd/chips/map_ram.mod.o
+  LD [M]  drivers/mtd/chips/map_ram.ko
+  CC      drivers/mtd/chips/map_rom.mod.o
+  LD [M]  drivers/mtd/chips/map_rom.ko
+  CC      drivers/mtd/devices/block2mtd.mod.o
+  LD [M]  drivers/mtd/devices/block2mtd.ko
+  CC      drivers/mtd/devices/mtdram.mod.o
+  LD [M]  drivers/mtd/devices/mtdram.ko
+  CC      drivers/mtd/ftl.mod.o
+  LD [M]  drivers/mtd/ftl.ko
+  CC      drivers/mtd/maps/netsc520.mod.o
+  LD [M]  drivers/mtd/maps/netsc520.ko
+  CC      drivers/mtd/maps/sc520cdp.mod.o
+  LD [M]  drivers/mtd/maps/sc520cdp.ko
+  CC      drivers/mtd/maps/scb2_flash.mod.o
+  LD [M]  drivers/mtd/maps/scb2_flash.ko
+  CC      drivers/mtd/maps/ts5500_flash.mod.o
+  LD [M]  drivers/mtd/maps/ts5500_flash.ko
+  CC      drivers/mtd/mtd_blkdevs.mod.o
+  LD [M]  drivers/mtd/mtd_blkdevs.ko
+  CC      drivers/mtd/mtdblock.mod.o
+  LD [M]  drivers/mtd/mtdblock.ko
+  CC      drivers/mtd/mtdblock_ro.mod.o
+  LD [M]  drivers/mtd/mtdblock_ro.ko
+  CC      drivers/mtd/mtdchar.mod.o
+  LD [M]  drivers/mtd/mtdchar.ko
+  CC      drivers/mtd/mtdconcat.mod.o
+  LD [M]  drivers/mtd/mtdconcat.ko
+  CC      drivers/mtd/mtdcore.mod.o
+  LD [M]  drivers/mtd/mtdcore.ko
+  CC      drivers/mtd/mtdpart.mod.o
+  LD [M]  drivers/mtd/mtdpart.ko
+  CC      drivers/mtd/nand/cs553x_nand.mod.o
+  LD [M]  drivers/mtd/nand/cs553x_nand.ko
+  CC      drivers/mtd/nand/diskonchip.mod.o
+  LD [M]  drivers/mtd/nand/diskonchip.ko
+  CC      drivers/mtd/nand/nand.mod.o
+  LD [M]  drivers/mtd/nand/nand.ko
+  CC      drivers/mtd/nand/nand_ecc.mod.o
+  LD [M]  drivers/mtd/nand/nand_ecc.ko
+  CC      drivers/mtd/nand/nand_ids.mod.o
+  LD [M]  drivers/mtd/nand/nand_ids.ko
+  CC      drivers/mtd/nand/nandsim.mod.o
+  LD [M]  drivers/mtd/nand/nandsim.ko
+  CC      drivers/mtd/nftl.mod.o
+  LD [M]  drivers/mtd/nftl.ko
+  CC      drivers/mtd/redboot.mod.o
+  LD [M]  drivers/mtd/redboot.ko
+  CC      drivers/mtd/rfd_ftl.mod.o
+  LD [M]  drivers/mtd/rfd_ftl.ko
+  CC      drivers/net/3c59x.mod.o
+  LD [M]  drivers/net/3c59x.ko
+  CC      drivers/net/8139cp.mod.o
+  LD [M]  drivers/net/8139cp.ko
+  CC      drivers/net/8139too.mod.o
+  LD [M]  drivers/net/8139too.ko
+  CC      drivers/net/8390.mod.o
+  LD [M]  drivers/net/8390.ko
+  CC      drivers/net/acenic.mod.o
+  LD [M]  drivers/net/acenic.ko
+  CC      drivers/net/amd8111e.mod.o
+  LD [M]  drivers/net/amd8111e.ko
+  CC      drivers/net/b44.mod.o
+  LD [M]  drivers/net/b44.ko
+  CC      drivers/net/bnx2.mod.o
+  LD [M]  drivers/net/bnx2.ko
+  CC      drivers/net/bonding/bonding.mod.o
+  LD [M]  drivers/net/bonding/bonding.ko
+  CC      drivers/net/cassini.mod.o
+  LD [M]  drivers/net/cassini.ko
+  CC      drivers/net/chelsio/cxgb.mod.o
+  LD [M]  drivers/net/chelsio/cxgb.ko
+  CC      drivers/net/dl2k.mod.o
+  LD [M]  drivers/net/dl2k.ko
+  CC      drivers/net/dummy.mod.o
+  LD [M]  drivers/net/dummy.ko
+  CC      drivers/net/e100.mod.o
+  LD [M]  drivers/net/e100.ko
+  CC      drivers/net/e1000/e1000.mod.o
+  LD [M]  drivers/net/e1000/e1000.ko
+  CC      drivers/net/epic100.mod.o
+  LD [M]  drivers/net/epic100.ko
+  CC      drivers/net/fealnx.mod.o
+  LD [M]  drivers/net/fealnx.ko
+  CC      drivers/net/forcedeth.mod.o
+  LD [M]  drivers/net/forcedeth.ko
+  CC      drivers/net/ifb.mod.o
+  LD [M]  drivers/net/ifb.ko
+  CC      drivers/net/ixgb/ixgb.mod.o
+  LD [M]  drivers/net/ixgb/ixgb.ko
+  CC      drivers/net/mii.mod.o
+  LD [M]  drivers/net/mii.ko
+  CC      drivers/net/myri10ge/myri10ge.mod.o
+  LD [M]  drivers/net/myri10ge/myri10ge.ko
+  CC      drivers/net/natsemi.mod.o
+  LD [M]  drivers/net/natsemi.ko
+  CC      drivers/net/ne2k-pci.mod.o
+  LD [M]  drivers/net/ne2k-pci.ko
+  CC      drivers/net/netconsole.mod.o
+  LD [M]  drivers/net/netconsole.ko
+  CC      drivers/net/ns83820.mod.o
+  LD [M]  drivers/net/ns83820.ko
+  CC      drivers/net/pcmcia/3c574_cs.mod.o
+  LD [M]  drivers/net/pcmcia/3c574_cs.ko
+  CC      drivers/net/pcmcia/3c589_cs.mod.o
+  LD [M]  drivers/net/pcmcia/3c589_cs.ko
+  CC      drivers/net/pcmcia/axnet_cs.mod.o
+  LD [M]  drivers/net/pcmcia/axnet_cs.ko
+  CC      drivers/net/pcmcia/fmvj18x_cs.mod.o
+  LD [M]  drivers/net/pcmcia/fmvj18x_cs.ko
+  CC      drivers/net/pcmcia/ibmtr_cs.mod.o
+  LD [M]  drivers/net/pcmcia/ibmtr_cs.ko
+  CC      drivers/net/pcmcia/nmclan_cs.mod.o
+  LD [M]  drivers/net/pcmcia/nmclan_cs.ko
+  CC      drivers/net/pcmcia/pcnet_cs.mod.o
+  LD [M]  drivers/net/pcmcia/pcnet_cs.ko
+  CC      drivers/net/pcmcia/smc91c92_cs.mod.o
+  LD [M]  drivers/net/pcmcia/smc91c92_cs.ko
+  CC      drivers/net/pcmcia/xirc2ps_cs.mod.o
+  LD [M]  drivers/net/pcmcia/xirc2ps_cs.ko
+  CC      drivers/net/pcnet32.mod.o
+  LD [M]  drivers/net/pcnet32.ko
+  CC      drivers/net/phy/cicada.mod.o
+  LD [M]  drivers/net/phy/cicada.ko
+  CC      drivers/net/phy/davicom.mod.o
+  LD [M]  drivers/net/phy/davicom.ko
+  CC      drivers/net/phy/fixed.mod.o
+  LD [M]  drivers/net/phy/fixed.ko
+  CC      drivers/net/phy/libphy.mod.o
+  LD [M]  drivers/net/phy/libphy.ko
+  CC      drivers/net/phy/lxt.mod.o
+  LD [M]  drivers/net/phy/lxt.ko
+  CC      drivers/net/phy/marvell.mod.o
+  LD [M]  drivers/net/phy/marvell.ko
+  CC      drivers/net/phy/qsemi.mod.o
+  LD [M]  drivers/net/phy/qsemi.ko
+  CC      drivers/net/phy/smsc.mod.o
+  LD [M]  drivers/net/phy/smsc.ko
+  CC      drivers/net/phy/vitesse.mod.o
+  LD [M]  drivers/net/phy/vitesse.ko
+  CC      drivers/net/ppp_async.mod.o
+  LD [M]  drivers/net/ppp_async.ko
+  CC      drivers/net/ppp_deflate.mod.o
+  LD [M]  drivers/net/ppp_deflate.ko
+  CC      drivers/net/ppp_generic.mod.o
+  LD [M]  drivers/net/ppp_generic.ko
+  CC      drivers/net/ppp_mppe.mod.o
+  LD [M]  drivers/net/ppp_mppe.ko
+  CC      drivers/net/ppp_synctty.mod.o
+  LD [M]  drivers/net/ppp_synctty.ko
+  CC      drivers/net/pppoe.mod.o
+  LD [M]  drivers/net/pppoe.ko
+  CC      drivers/net/pppox.mod.o
+  LD [M]  drivers/net/pppox.ko
+  CC      drivers/net/r8169.mod.o
+  LD [M]  drivers/net/r8169.ko
+  CC      drivers/net/s2io.mod.o
+  LD [M]  drivers/net/s2io.ko
+  CC      drivers/net/sis190.mod.o
+  LD [M]  drivers/net/sis190.ko
+  CC      drivers/net/sis900.mod.o
+  LD [M]  drivers/net/sis900.ko
+  CC      drivers/net/skge.mod.o
+  LD [M]  drivers/net/skge.ko
+  CC      drivers/net/sky2.mod.o
+  LD [M]  drivers/net/sky2.ko
+  CC      drivers/net/slhc.mod.o
+  LD [M]  drivers/net/slhc.ko
+  CC      drivers/net/slip.mod.o
+  LD [M]  drivers/net/slip.ko
+  CC      drivers/net/starfire.mod.o
+  LD [M]  drivers/net/starfire.ko
+  CC      drivers/net/sundance.mod.o
+  LD [M]  drivers/net/sundance.ko
+  CC      drivers/net/sungem.mod.o
+  LD [M]  drivers/net/sungem.ko
+  CC      drivers/net/sungem_phy.mod.o
+  LD [M]  drivers/net/sungem_phy.ko
+  CC      drivers/net/sunhme.mod.o
+  LD [M]  drivers/net/sunhme.ko
+  CC      drivers/net/tg3.mod.o
+  LD [M]  drivers/net/tg3.ko
+  CC      drivers/net/tlan.mod.o
+  LD [M]  drivers/net/tlan.ko
+  CC      drivers/net/tokenring/3c359.mod.o
+  LD [M]  drivers/net/tokenring/3c359.ko
+  CC      drivers/net/tokenring/lanstreamer.mod.o
+  LD [M]  drivers/net/tokenring/lanstreamer.ko
+  CC      drivers/net/tokenring/olympic.mod.o
+  LD [M]  drivers/net/tokenring/olympic.ko
+  CC      drivers/net/tulip/de2104x.mod.o
+  LD [M]  drivers/net/tulip/de2104x.ko
+  CC      drivers/net/tulip/de4x5.mod.o
+  LD [M]  drivers/net/tulip/de4x5.ko
+  CC      drivers/net/tulip/dmfe.mod.o
+  LD [M]  drivers/net/tulip/dmfe.ko
+  CC      drivers/net/tulip/tulip.mod.o
+  LD [M]  drivers/net/tulip/tulip.ko
+  CC      drivers/net/tulip/uli526x.mod.o
+  LD [M]  drivers/net/tulip/uli526x.ko
+  CC      drivers/net/tulip/winbond-840.mod.o
+  LD [M]  drivers/net/tulip/winbond-840.ko
+  CC      drivers/net/tulip/xircom_cb.mod.o
+  LD [M]  drivers/net/tulip/xircom_cb.ko
+  CC      drivers/net/tun.mod.o
+  LD [M]  drivers/net/tun.ko
+  CC      drivers/net/typhoon.mod.o
+  LD [M]  drivers/net/typhoon.ko
+  CC      drivers/net/via-rhine.mod.o
+  LD [M]  drivers/net/via-rhine.ko
+  CC      drivers/net/via-velocity.mod.o
+  LD [M]  drivers/net/via-velocity.ko
+  CC      drivers/net/wireless/airo.mod.o
+  LD [M]  drivers/net/wireless/airo.ko
+  CC      drivers/net/wireless/airo_cs.mod.o
+  LD [M]  drivers/net/wireless/airo_cs.ko
+  CC      drivers/net/wireless/atmel.mod.o
+  LD [M]  drivers/net/wireless/atmel.ko
+  CC      drivers/net/wireless/atmel_cs.mod.o
+  LD [M]  drivers/net/wireless/atmel_cs.ko
+  CC      drivers/net/wireless/atmel_pci.mod.o
+  LD [M]  drivers/net/wireless/atmel_pci.ko
+  CC      drivers/net/wireless/bcm43xx/bcm43xx.mod.o
+  LD [M]  drivers/net/wireless/bcm43xx/bcm43xx.ko
+  CC      drivers/net/wireless/hermes.mod.o
+  LD [M]  drivers/net/wireless/hermes.ko
+  CC      drivers/net/wireless/hostap/hostap.mod.o
+  LD [M]  drivers/net/wireless/hostap/hostap.ko
+  CC      drivers/net/wireless/hostap/hostap_cs.mod.o
+  LD [M]  drivers/net/wireless/hostap/hostap_cs.ko
+  CC      drivers/net/wireless/hostap/hostap_pci.mod.o
+  LD [M]  drivers/net/wireless/hostap/hostap_pci.ko
+  CC      drivers/net/wireless/hostap/hostap_plx.mod.o
+  LD [M]  drivers/net/wireless/hostap/hostap_plx.ko
+  CC      drivers/net/wireless/ipw2100.mod.o
+  LD [M]  drivers/net/wireless/ipw2100.ko
+  CC      drivers/net/wireless/ipw2200.mod.o
+  LD [M]  drivers/net/wireless/ipw2200.ko
+  CC      drivers/net/wireless/netwave_cs.mod.o
+  LD [M]  drivers/net/wireless/netwave_cs.ko
+  CC      drivers/net/wireless/orinoco.mod.o
+  LD [M]  drivers/net/wireless/orinoco.ko
+  CC      drivers/net/wireless/orinoco_cs.mod.o
+  LD [M]  drivers/net/wireless/orinoco_cs.ko
+  CC      drivers/net/wireless/orinoco_nortel.mod.o
+  LD [M]  drivers/net/wireless/orinoco_nortel.ko
+  CC      drivers/net/wireless/orinoco_pci.mod.o
+  LD [M]  drivers/net/wireless/orinoco_pci.ko
+  CC      drivers/net/wireless/orinoco_plx.mod.o
+  LD [M]  drivers/net/wireless/orinoco_plx.ko
+  CC      drivers/net/wireless/orinoco_tmd.mod.o
+  LD [M]  drivers/net/wireless/orinoco_tmd.ko
+  CC      drivers/net/wireless/prism54/prism54.mod.o
+  LD [M]  drivers/net/wireless/prism54/prism54.ko
+  CC      drivers/net/wireless/spectrum_cs.mod.o
+  LD [M]  drivers/net/wireless/spectrum_cs.ko
+  CC      drivers/net/wireless/wavelan_cs.mod.o
+  LD [M]  drivers/net/wireless/wavelan_cs.ko
+  CC      drivers/net/wireless/wl3501_cs.mod.o
+  LD [M]  drivers/net/wireless/wl3501_cs.ko
+  CC      drivers/net/wireless/zd1201.mod.o
+  LD [M]  drivers/net/wireless/zd1201.ko
+  CC      drivers/net/wireless/zd1211rw/zd1211rw.mod.o
+  LD [M]  drivers/net/wireless/zd1211rw/zd1211rw.ko
+  CC      drivers/parport/parport.mod.o
+  LD [M]  drivers/parport/parport.ko
+  CC      drivers/parport/parport_cs.mod.o
+  LD [M]  drivers/parport/parport_cs.ko
+  CC      drivers/parport/parport_pc.mod.o
+  LD [M]  drivers/parport/parport_pc.ko
+  CC      drivers/parport/parport_serial.mod.o
+  LD [M]  drivers/parport/parport_serial.ko
+  CC      drivers/pci/hotplug/acpiphp.mod.o
+  LD [M]  drivers/pci/hotplug/acpiphp.ko
+  CC      drivers/pci/hotplug/acpiphp_ibm.mod.o
+  LD [M]  drivers/pci/hotplug/acpiphp_ibm.ko
+  CC      drivers/pci/hotplug/cpqphp.mod.o
+  LD [M]  drivers/pci/hotplug/cpqphp.ko
+  CC      drivers/pci/hotplug/fakephp.mod.o
+  LD [M]  drivers/pci/hotplug/fakephp.ko
+  CC      drivers/pci/hotplug/ibmphp.mod.o
+  LD [M]  drivers/pci/hotplug/ibmphp.ko
+  CC      drivers/pci/hotplug/pciehp.mod.o
+  LD [M]  drivers/pci/hotplug/pciehp.ko
+  CC      drivers/pcmcia/pd6729.mod.o
+  LD [M]  drivers/pcmcia/pd6729.ko
+  CC      drivers/rtc/rtc-core.mod.o
+  LD [M]  drivers/rtc/rtc-core.ko
+  CC      drivers/rtc/rtc-dev.mod.o
+  LD [M]  drivers/rtc/rtc-dev.ko
+  CC      drivers/rtc/rtc-ds1307.mod.o
+  LD [M]  drivers/rtc/rtc-ds1307.ko
+  CC      drivers/rtc/rtc-ds1553.mod.o
+  LD [M]  drivers/rtc/rtc-ds1553.ko
+  CC      drivers/rtc/rtc-ds1672.mod.o
+  LD [M]  drivers/rtc/rtc-ds1672.ko
+  CC      drivers/rtc/rtc-ds1742.mod.o
+  LD [M]  drivers/rtc/rtc-ds1742.ko
+  CC      drivers/rtc/rtc-isl1208.mod.o
+  LD [M]  drivers/rtc/rtc-isl1208.ko
+  CC      drivers/rtc/rtc-lib.mod.o
+  LD [M]  drivers/rtc/rtc-lib.ko
+  CC      drivers/rtc/rtc-pcf8563.mod.o
+  LD [M]  drivers/rtc/rtc-pcf8563.ko
+  CC      drivers/rtc/rtc-pcf8583.mod.o
+  LD [M]  drivers/rtc/rtc-pcf8583.ko
+  CC      drivers/rtc/rtc-proc.mod.o
+  LD [M]  drivers/rtc/rtc-proc.ko
+  CC      drivers/rtc/rtc-rs5c372.mod.o
+  LD [M]  drivers/rtc/rtc-rs5c372.ko
+  CC      drivers/rtc/rtc-sysfs.mod.o
+  LD [M]  drivers/rtc/rtc-sysfs.ko
+  CC      drivers/rtc/rtc-v3020.mod.o
+  LD [M]  drivers/rtc/rtc-v3020.ko
+  CC      drivers/rtc/rtc-x1205.mod.o
+  LD [M]  drivers/rtc/rtc-x1205.ko
+  CC      drivers/scsi/3w-9xxx.mod.o
+  LD [M]  drivers/scsi/3w-9xxx.ko
+  CC      drivers/scsi/3w-xxxx.mod.o
+  LD [M]  drivers/scsi/3w-xxxx.ko
+  CC      drivers/scsi/aacraid/aacraid.mod.o
+  LD [M]  drivers/scsi/aacraid/aacraid.ko
+  CC      drivers/scsi/aic7xxx/aic79xx.mod.o
+  LD [M]  drivers/scsi/aic7xxx/aic79xx.ko
+  CC      drivers/scsi/aic7xxx/aic7xxx.mod.o
+  LD [M]  drivers/scsi/aic7xxx/aic7xxx.ko
+  CC      drivers/scsi/aic7xxx_old.mod.o
+  LD [M]  drivers/scsi/aic7xxx_old.ko
+  CC      drivers/scsi/atp870u.mod.o
+  LD [M]  drivers/scsi/atp870u.ko
+  CC      drivers/scsi/ch.mod.o
+  LD [M]  drivers/scsi/ch.ko
+  CC      drivers/scsi/dc395x.mod.o
+  LD [M]  drivers/scsi/dc395x.ko
+  CC      drivers/scsi/gdth.mod.o
+  LD [M]  drivers/scsi/gdth.ko
+  CC      drivers/scsi/hptiop.mod.o
+  LD [M]  drivers/scsi/hptiop.ko
+  CC      drivers/scsi/ide-scsi.mod.o
+  LD [M]  drivers/scsi/ide-scsi.ko
+  CC      drivers/scsi/imm.mod.o
+  LD [M]  drivers/scsi/imm.ko
+  CC      drivers/scsi/initio.mod.o
+  LD [M]  drivers/scsi/initio.ko
+  CC      drivers/scsi/ips.mod.o
+  LD [M]  drivers/scsi/ips.ko
+  CC      drivers/scsi/iscsi_tcp.mod.o
+  LD [M]  drivers/scsi/iscsi_tcp.ko
+  CC      drivers/scsi/libiscsi.mod.o
+  LD [M]  drivers/scsi/libiscsi.ko
+  CC      drivers/scsi/lpfc/lpfc.mod.o
+  LD [M]  drivers/scsi/lpfc/lpfc.ko
+  CC      drivers/scsi/megaraid.mod.o
+  LD [M]  drivers/scsi/megaraid.ko
+  CC      drivers/scsi/megaraid/megaraid_mbox.mod.o
+  LD [M]  drivers/scsi/megaraid/megaraid_mbox.ko
+  CC      drivers/scsi/megaraid/megaraid_mm.mod.o
+  LD [M]  drivers/scsi/megaraid/megaraid_mm.ko
+  CC      drivers/scsi/megaraid/megaraid_sas.mod.o
+  LD [M]  drivers/scsi/megaraid/megaraid_sas.ko
+  CC      drivers/scsi/osst.mod.o
+  LD [M]  drivers/scsi/osst.ko
+  CC      drivers/scsi/pcmcia/fdomain_cs.mod.o
+  LD [M]  drivers/scsi/pcmcia/fdomain_cs.ko
+  CC      drivers/scsi/ppa.mod.o
+  LD [M]  drivers/scsi/ppa.ko
+  CC      drivers/scsi/qla1280.mod.o
+  LD [M]  drivers/scsi/qla1280.ko
+  CC      drivers/scsi/qla2xxx/qla2xxx.mod.o
+  LD [M]  drivers/scsi/qla2xxx/qla2xxx.ko
+  CC      drivers/scsi/raid_class.mod.o
+  LD [M]  drivers/scsi/raid_class.ko
+  CC      drivers/scsi/scsi_mod.mod.o
+  LD [M]  drivers/scsi/scsi_mod.ko
+  CC      drivers/scsi/scsi_transport_fc.mod.o
+  LD [M]  drivers/scsi/scsi_transport_fc.ko
+  CC      drivers/scsi/scsi_transport_iscsi.mod.o
+  LD [M]  drivers/scsi/scsi_transport_iscsi.ko
+  CC      drivers/scsi/scsi_transport_sas.mod.o
+  LD [M]  drivers/scsi/scsi_transport_sas.ko
+  CC      drivers/scsi/scsi_transport_spi.mod.o
+  LD [M]  drivers/scsi/scsi_transport_spi.ko
+  CC      drivers/scsi/sd_mod.mod.o
+  LD [M]  drivers/scsi/sd_mod.ko
+  CC      drivers/scsi/sg.mod.o
+  LD [M]  drivers/scsi/sg.ko
+  CC      drivers/scsi/sr_mod.mod.o
+  LD [M]  drivers/scsi/sr_mod.ko
+  CC      drivers/scsi/st.mod.o
+  LD [M]  drivers/scsi/st.ko
+  CC      drivers/scsi/sym53c8xx_2/sym53c8xx.mod.o
+  LD [M]  drivers/scsi/sym53c8xx_2/sym53c8xx.ko
+  CC      drivers/serial/jsm/jsm.mod.o
+  LD [M]  drivers/serial/jsm/jsm.ko
+  CC      drivers/serial/serial_cs.mod.o
+  LD [M]  drivers/serial/serial_cs.ko
+  CC      drivers/usb/atm/cxacru.mod.o
+  LD [M]  drivers/usb/atm/cxacru.ko
+  CC      drivers/usb/atm/speedtch.mod.o
+  LD [M]  drivers/usb/atm/speedtch.ko
+  CC      drivers/usb/atm/ueagle-atm.mod.o
+  LD [M]  drivers/usb/atm/ueagle-atm.ko
+  CC      drivers/usb/atm/usbatm.mod.o
+  LD [M]  drivers/usb/atm/usbatm.ko
+  CC      drivers/usb/atm/xusbatm.mod.o
+  LD [M]  drivers/usb/atm/xusbatm.ko
+  CC      drivers/usb/class/cdc-acm.mod.o
+  LD [M]  drivers/usb/class/cdc-acm.ko
+  CC      drivers/usb/class/usblp.mod.o
+  LD [M]  drivers/usb/class/usblp.ko
+  CC      drivers/usb/host/ehci-hcd.mod.o
+  LD [M]  drivers/usb/host/ehci-hcd.ko
+  CC      drivers/usb/host/isp116x-hcd.mod.o
+  LD [M]  drivers/usb/host/isp116x-hcd.ko
+  CC      drivers/usb/host/ohci-hcd.mod.o
+  LD [M]  drivers/usb/host/ohci-hcd.ko
+  CC      drivers/usb/host/sl811-hcd.mod.o
+  LD [M]  drivers/usb/host/sl811-hcd.ko
+  CC      drivers/usb/host/sl811_cs.mod.o
+  LD [M]  drivers/usb/host/sl811_cs.ko
+  CC      drivers/usb/host/uhci-hcd.mod.o
+  LD [M]  drivers/usb/host/uhci-hcd.ko
+  CC      drivers/usb/image/mdc800.mod.o
+  LD [M]  drivers/usb/image/mdc800.ko
+  CC      drivers/usb/image/microtek.mod.o
+  LD [M]  drivers/usb/image/microtek.ko
+  CC      drivers/usb/input/acecad.mod.o
+  LD [M]  drivers/usb/input/acecad.ko
+  CC      drivers/usb/input/aiptek.mod.o
+  LD [M]  drivers/usb/input/aiptek.ko
+  CC      drivers/usb/input/appletouch.mod.o
+  LD [M]  drivers/usb/input/appletouch.ko
+  CC      drivers/usb/input/ati_remote.mod.o
+  LD [M]  drivers/usb/input/ati_remote.ko
+  CC      drivers/usb/input/ati_remote2.mod.o
+  LD [M]  drivers/usb/input/ati_remote2.ko
+  CC      drivers/usb/input/kbtab.mod.o
+  LD [M]  drivers/usb/input/kbtab.ko
+  CC      drivers/usb/input/keyspan_remote.mod.o
+  LD [M]  drivers/usb/input/keyspan_remote.ko
+  CC      drivers/usb/input/powermate.mod.o
+  LD [M]  drivers/usb/input/powermate.ko
+  CC      drivers/usb/input/usbtouchscreen.mod.o
+  LD [M]  drivers/usb/input/usbtouchscreen.ko
+  CC      drivers/usb/input/wacom.mod.o
+  LD [M]  drivers/usb/input/wacom.ko
+  CC      drivers/usb/input/xpad.mod.o
+  LD [M]  drivers/usb/input/xpad.ko
+  CC      drivers/usb/misc/appledisplay.mod.o
+  LD [M]  drivers/usb/misc/appledisplay.ko
+  CC      drivers/usb/misc/auerswald.mod.o
+  LD [M]  drivers/usb/misc/auerswald.ko
+  CC      drivers/usb/misc/emi26.mod.o
+  LD [M]  drivers/usb/misc/emi26.ko
+  CC      drivers/usb/misc/emi62.mod.o
+  LD [M]  drivers/usb/misc/emi62.ko
+  CC      drivers/usb/misc/idmouse.mod.o
+  LD [M]  drivers/usb/misc/idmouse.ko
+  CC      drivers/usb/misc/ldusb.mod.o
+  LD [M]  drivers/usb/misc/ldusb.ko
+  CC      drivers/usb/misc/legousbtower.mod.o
+  LD [M]  drivers/usb/misc/legousbtower.ko
+  CC      drivers/usb/misc/phidgetkit.mod.o
+  LD [M]  drivers/usb/misc/phidgetkit.ko
+  CC      drivers/usb/misc/phidgetservo.mod.o
+  LD [M]  drivers/usb/misc/phidgetservo.ko
+  CC      drivers/usb/misc/rio500.mod.o
+  LD [M]  drivers/usb/misc/rio500.ko
+  CC      drivers/usb/misc/sisusbvga/sisusbvga.mod.o
+  LD [M]  drivers/usb/misc/sisusbvga/sisusbvga.ko
+  CC      drivers/usb/misc/usblcd.mod.o
+  LD [M]  drivers/usb/misc/usblcd.ko
+  CC      drivers/usb/misc/usbled.mod.o
+  LD [M]  drivers/usb/misc/usbled.ko
+  CC      drivers/usb/misc/usbtest.mod.o
+  LD [M]  drivers/usb/misc/usbtest.ko
+  CC      drivers/usb/misc/uss720.mod.o
+  LD [M]  drivers/usb/misc/uss720.ko
+  CC      drivers/usb/net/asix.mod.o
+  LD [M]  drivers/usb/net/asix.ko
+  CC      drivers/usb/net/catc.mod.o
+  LD [M]  drivers/usb/net/catc.ko
+  CC      drivers/usb/net/cdc_ether.mod.o
+  LD [M]  drivers/usb/net/cdc_ether.ko
+  CC      drivers/usb/net/cdc_subset.mod.o
+  LD [M]  drivers/usb/net/cdc_subset.ko
+  CC      drivers/usb/net/gl620a.mod.o
+  LD [M]  drivers/usb/net/gl620a.ko
+  CC      drivers/usb/net/kaweth.mod.o
+  LD [M]  drivers/usb/net/kaweth.ko
+  CC      drivers/usb/net/net1080.mod.o
+  LD [M]  drivers/usb/net/net1080.ko
+  CC      drivers/usb/net/pegasus.mod.o
+  LD [M]  drivers/usb/net/pegasus.ko
+  CC      drivers/usb/net/plusb.mod.o
+  LD [M]  drivers/usb/net/plusb.ko
+  CC      drivers/usb/net/rndis_host.mod.o
+  LD [M]  drivers/usb/net/rndis_host.ko
+  CC      drivers/usb/net/rtl8150.mod.o
+  LD [M]  drivers/usb/net/rtl8150.ko
+  CC      drivers/usb/net/usbnet.mod.o
+  LD [M]  drivers/usb/net/usbnet.ko
+  CC      drivers/usb/net/zaurus.mod.o
+  LD [M]  drivers/usb/net/zaurus.ko
+  CC      drivers/usb/serial/airprime.mod.o
+  LD [M]  drivers/usb/serial/airprime.ko
+  CC      drivers/usb/serial/ark3116.mod.o
+  LD [M]  drivers/usb/serial/ark3116.ko
+  CC      drivers/usb/serial/belkin_sa.mod.o
+  LD [M]  drivers/usb/serial/belkin_sa.ko
+  CC      drivers/usb/serial/cp2101.mod.o
+  LD [M]  drivers/usb/serial/cp2101.ko
+  CC      drivers/usb/serial/cyberjack.mod.o
+  LD [M]  drivers/usb/serial/cyberjack.ko
+  CC      drivers/usb/serial/cypress_m8.mod.o
+  LD [M]  drivers/usb/serial/cypress_m8.ko
+  CC      drivers/usb/serial/digi_acceleport.mod.o
+  LD [M]  drivers/usb/serial/digi_acceleport.ko
+  CC      drivers/usb/serial/empeg.mod.o
+  LD [M]  drivers/usb/serial/empeg.ko
+  CC      drivers/usb/serial/ftdi_sio.mod.o
+  LD [M]  drivers/usb/serial/ftdi_sio.ko
+  CC      drivers/usb/serial/funsoft.mod.o
+  LD [M]  drivers/usb/serial/funsoft.ko
+  CC      drivers/usb/serial/garmin_gps.mod.o
+  LD [M]  drivers/usb/serial/garmin_gps.ko
+  CC      drivers/usb/serial/hp4x.mod.o
+  LD [M]  drivers/usb/serial/hp4x.ko
+  CC      drivers/usb/serial/io_edgeport.mod.o
+  LD [M]  drivers/usb/serial/io_edgeport.ko
+  CC      drivers/usb/serial/io_ti.mod.o
+  LD [M]  drivers/usb/serial/io_ti.ko
+  CC      drivers/usb/serial/ipaq.mod.o
+  LD [M]  drivers/usb/serial/ipaq.ko
+  CC      drivers/usb/serial/ipw.mod.o
+  LD [M]  drivers/usb/serial/ipw.ko
+  CC      drivers/usb/serial/ir-usb.mod.o
+  LD [M]  drivers/usb/serial/ir-usb.ko
+  CC      drivers/usb/serial/keyspan.mod.o
+  LD [M]  drivers/usb/serial/keyspan.ko
+  CC      drivers/usb/serial/keyspan_pda.mod.o
+  LD [M]  drivers/usb/serial/keyspan_pda.ko
+  CC      drivers/usb/serial/kl5kusb105.mod.o
+  LD [M]  drivers/usb/serial/kl5kusb105.ko
+  CC      drivers/usb/serial/kobil_sct.mod.o
+  LD [M]  drivers/usb/serial/kobil_sct.ko
+  CC      drivers/usb/serial/mct_u232.mod.o
+  LD [M]  drivers/usb/serial/mct_u232.ko
+  CC      drivers/usb/serial/navman.mod.o
+  LD [M]  drivers/usb/serial/navman.ko
+  CC      drivers/usb/serial/omninet.mod.o
+  LD [M]  drivers/usb/serial/omninet.ko
+  CC      drivers/usb/serial/option.mod.o
+  LD [M]  drivers/usb/serial/option.ko
+  CC      drivers/usb/serial/pl2303.mod.o
+  LD [M]  drivers/usb/serial/pl2303.ko
+  CC      drivers/usb/serial/safe_serial.mod.o
+  LD [M]  drivers/usb/serial/safe_serial.ko
+  CC      drivers/usb/serial/sierra.mod.o
+  LD [M]  drivers/usb/serial/sierra.ko
+  CC      drivers/usb/serial/ti_usb_3410_5052.mod.o
+  LD [M]  drivers/usb/serial/ti_usb_3410_5052.ko
+  CC      drivers/usb/serial/usbserial.mod.o
+  LD [M]  drivers/usb/serial/usbserial.ko
+  CC      drivers/usb/serial/visor.mod.o
+  LD [M]  drivers/usb/serial/visor.ko
+  CC      drivers/usb/serial/whiteheat.mod.o
+  LD [M]  drivers/usb/serial/whiteheat.ko
+  CC      drivers/usb/storage/usb-storage.mod.o
+  LD [M]  drivers/usb/storage/usb-storage.ko
+  CC      drivers/video/backlight/backlight.mod.o
+  LD [M]  drivers/video/backlight/backlight.ko
+  CC      drivers/video/backlight/lcd.mod.o
+  LD [M]  drivers/video/backlight/lcd.ko
+  CC      drivers/video/cirrusfb.mod.o
+  LD [M]  drivers/video/cirrusfb.ko
+  CC      drivers/video/cyblafb.mod.o
+  LD [M]  drivers/video/cyblafb.ko
+  CC      drivers/video/i810/i810fb.mod.o
+  LD [M]  drivers/video/i810/i810fb.ko
+  CC      drivers/video/intelfb/intelfb.mod.o
+  LD [M]  drivers/video/intelfb/intelfb.ko
+  CC      drivers/video/kyro/kyrofb.mod.o
+  LD [M]  drivers/video/kyro/kyrofb.ko
+  CC      drivers/video/nvidia/nvidiafb.mod.o
+  LD [M]  drivers/video/nvidia/nvidiafb.ko
+  CC      drivers/video/riva/rivafb.mod.o
+  LD [M]  drivers/video/riva/rivafb.ko
+  CC      drivers/video/savage/savagefb.mod.o
+  LD [M]  drivers/video/savage/savagefb.ko
+  CC      drivers/video/vga16fb.mod.o
+  LD [M]  drivers/video/vga16fb.ko
+  CC      drivers/video/vgastate.mod.o
+  LD [M]  drivers/video/vgastate.ko
+  CC      fs/autofs4/autofs4.mod.o
+  LD [M]  fs/autofs4/autofs4.ko
+  CC      fs/cifs/cifs.mod.o
+  LD [M]  fs/cifs/cifs.ko
+  CC      fs/configfs/configfs.mod.o
+  LD [M]  fs/configfs/configfs.ko
+  CC      fs/cramfs/cramfs.mod.o
+  LD [M]  fs/cramfs/cramfs.ko
+  CC      fs/exportfs/exportfs.mod.o
+  LD [M]  fs/exportfs/exportfs.ko
+  CC      fs/ext3/ext3.mod.o
+  LD [M]  fs/ext3/ext3.ko
+  CC      fs/fat/fat.mod.o
+  LD [M]  fs/fat/fat.ko
+  CC      fs/freevxfs/freevxfs.mod.o
+  LD [M]  fs/freevxfs/freevxfs.ko
+  CC      fs/hfs/hfs.mod.o
+  LD [M]  fs/hfs/hfs.ko
+  CC      fs/hfsplus/hfsplus.mod.o
+  LD [M]  fs/hfsplus/hfsplus.ko
+  CC      fs/jbd/jbd.mod.o
+  LD [M]  fs/jbd/jbd.ko
+  CC      fs/jffs2/jffs2.mod.o
+  LD [M]  fs/jffs2/jffs2.ko
+  CC      fs/lockd/lockd.mod.o
+  LD [M]  fs/lockd/lockd.ko
+  CC      fs/msdos/msdos.mod.o
+  LD [M]  fs/msdos/msdos.ko
+  CC      fs/nfs/nfs.mod.o
+  LD [M]  fs/nfs/nfs.ko
+  CC      fs/nfs_common/nfs_acl.mod.o
+  LD [M]  fs/nfs_common/nfs_acl.ko
+  CC      fs/nfsd/nfsd.mod.o
+  LD [M]  fs/nfsd/nfsd.ko
+  CC      fs/nls/nls_cp1250.mod.o
+  LD [M]  fs/nls/nls_cp1250.ko
+  CC      fs/nls/nls_cp1251.mod.o
+  LD [M]  fs/nls/nls_cp1251.ko
+  CC      fs/nls/nls_cp1255.mod.o
+  LD [M]  fs/nls/nls_cp1255.ko
+  CC      fs/nls/nls_cp737.mod.o
+  LD [M]  fs/nls/nls_cp737.ko
+  CC      fs/nls/nls_cp775.mod.o
+  LD [M]  fs/nls/nls_cp775.ko
+  CC      fs/nls/nls_cp850.mod.o
+  LD [M]  fs/nls/nls_cp850.ko
+  CC      fs/nls/nls_cp852.mod.o
+  LD [M]  fs/nls/nls_cp852.ko
+  CC      fs/nls/nls_cp855.mod.o
+  LD [M]  fs/nls/nls_cp855.ko
+  CC      fs/nls/nls_cp857.mod.o
+  LD [M]  fs/nls/nls_cp857.ko
+  CC      fs/nls/nls_cp860.mod.o
+  LD [M]  fs/nls/nls_cp860.ko
+  CC      fs/nls/nls_cp861.mod.o
+  LD [M]  fs/nls/nls_cp861.ko
+  CC      fs/nls/nls_cp862.mod.o
+  LD [M]  fs/nls/nls_cp862.ko
+  CC      fs/nls/nls_cp863.mod.o
+  LD [M]  fs/nls/nls_cp863.ko
+  CC      fs/nls/nls_cp864.mod.o
+  LD [M]  fs/nls/nls_cp864.ko
+  CC      fs/nls/nls_cp865.mod.o
+  LD [M]  fs/nls/nls_cp865.ko
+  CC      fs/nls/nls_cp866.mod.o
+  LD [M]  fs/nls/nls_cp866.ko
+  CC      fs/nls/nls_cp869.mod.o
+  LD [M]  fs/nls/nls_cp869.ko
+  CC      fs/nls/nls_cp874.mod.o
+  LD [M]  fs/nls/nls_cp874.ko
+  CC      fs/nls/nls_cp932.mod.o
+  LD [M]  fs/nls/nls_cp932.ko
+  CC      fs/nls/nls_cp936.mod.o
+  LD [M]  fs/nls/nls_cp936.ko
+  CC      fs/nls/nls_cp949.mod.o
+  LD [M]  fs/nls/nls_cp949.ko
+  CC      fs/nls/nls_cp950.mod.o
+  LD [M]  fs/nls/nls_cp950.ko
+  CC      fs/nls/nls_euc-jp.mod.o
+  LD [M]  fs/nls/nls_euc-jp.ko
+  CC      fs/nls/nls_iso8859-1.mod.o
+  LD [M]  fs/nls/nls_iso8859-1.ko
+  CC      fs/nls/nls_iso8859-13.mod.o
+  LD [M]  fs/nls/nls_iso8859-13.ko
+  CC      fs/nls/nls_iso8859-14.mod.o
+  LD [M]  fs/nls/nls_iso8859-14.ko
+  CC      fs/nls/nls_iso8859-15.mod.o
+  LD [M]  fs/nls/nls_iso8859-15.ko
+  CC      fs/nls/nls_iso8859-2.mod.o
+  LD [M]  fs/nls/nls_iso8859-2.ko
+  CC      fs/nls/nls_iso8859-3.mod.o
+  LD [M]  fs/nls/nls_iso8859-3.ko
+  CC      fs/nls/nls_iso8859-4.mod.o
+  LD [M]  fs/nls/nls_iso8859-4.ko
+  CC      fs/nls/nls_iso8859-5.mod.o
+  LD [M]  fs/nls/nls_iso8859-5.ko
+  CC      fs/nls/nls_iso8859-6.mod.o
+  LD [M]  fs/nls/nls_iso8859-6.ko
+  CC      fs/nls/nls_iso8859-7.mod.o
+  LD [M]  fs/nls/nls_iso8859-7.ko
+  CC      fs/nls/nls_iso8859-9.mod.o
+  LD [M]  fs/nls/nls_iso8859-9.ko
+  CC      fs/nls/nls_koi8-r.mod.o
+  LD [M]  fs/nls/nls_koi8-r.ko
+  CC      fs/nls/nls_koi8-ru.mod.o
+  LD [M]  fs/nls/nls_koi8-ru.ko
+  CC      fs/nls/nls_koi8-u.mod.o
+  LD [M]  fs/nls/nls_koi8-u.ko
+  CC      fs/nls/nls_utf8.mod.o
+  LD [M]  fs/nls/nls_utf8.ko
+  CC      fs/udf/udf.mod.o
+  LD [M]  fs/udf/udf.ko
+  CC      fs/vfat/vfat.mod.o
+  LD [M]  fs/vfat/vfat.ko
+  CC      lib/crc-ccitt.mod.o
+  LD [M]  lib/crc-ccitt.ko
+  CC      lib/crc16.mod.o
+  LD [M]  lib/crc16.ko
+  CC      lib/reed_solomon/reed_solomon.mod.o
+  LD [M]  lib/reed_solomon/reed_solomon.ko
+  CC      lib/ts_bm.mod.o
+  LD [M]  lib/ts_bm.ko
+  CC      lib/ts_fsm.mod.o
+  LD [M]  lib/ts_fsm.ko
+  CC      lib/ts_kmp.mod.o
+  LD [M]  lib/ts_kmp.ko
+  CC      lib/zlib_deflate/zlib_deflate.mod.o
+  LD [M]  lib/zlib_deflate/zlib_deflate.ko
+  CC      net/8021q/8021q.mod.o
+  LD [M]  net/8021q/8021q.ko
+  CC      net/atm/atm.mod.o
+  LD [M]  net/atm/atm.ko
+  CC      net/atm/br2684.mod.o
+  LD [M]  net/atm/br2684.ko
+  CC      net/atm/clip.mod.o
+  LD [M]  net/atm/clip.ko
+  CC      net/atm/lec.mod.o
+  LD [M]  net/atm/lec.ko
+  CC      net/atm/pppoatm.mod.o
+  LD [M]  net/atm/pppoatm.ko
+  CC      net/bluetooth/bluetooth.mod.o
+  LD [M]  net/bluetooth/bluetooth.ko
+  CC      net/bluetooth/bnep/bnep.mod.o
+  LD [M]  net/bluetooth/bnep/bnep.ko
+  CC      net/bluetooth/cmtp/cmtp.mod.o
+  LD [M]  net/bluetooth/cmtp/cmtp.ko
+  CC      net/bluetooth/hidp/hidp.mod.o
+  LD [M]  net/bluetooth/hidp/hidp.ko
+  CC      net/bluetooth/l2cap.mod.o
+  LD [M]  net/bluetooth/l2cap.ko
+  CC      net/bluetooth/rfcomm/rfcomm.mod.o
+  LD [M]  net/bluetooth/rfcomm/rfcomm.ko
+  CC      net/bluetooth/sco.mod.o
+  LD [M]  net/bluetooth/sco.ko
+  CC      net/bridge/bridge.mod.o
+  LD [M]  net/bridge/bridge.ko
+  CC      net/bridge/netfilter/ebt_802_3.mod.o
+  LD [M]  net/bridge/netfilter/ebt_802_3.ko
+  CC      net/bridge/netfilter/ebt_among.mod.o
+  LD [M]  net/bridge/netfilter/ebt_among.ko
+  CC      net/bridge/netfilter/ebt_arp.mod.o
+  LD [M]  net/bridge/netfilter/ebt_arp.ko
+  CC      net/bridge/netfilter/ebt_arpreply.mod.o
+  LD [M]  net/bridge/netfilter/ebt_arpreply.ko
+  CC      net/bridge/netfilter/ebt_dnat.mod.o
+  LD [M]  net/bridge/netfilter/ebt_dnat.ko
+  CC      net/bridge/netfilter/ebt_ip.mod.o
+  LD [M]  net/bridge/netfilter/ebt_ip.ko
+  CC      net/bridge/netfilter/ebt_limit.mod.o
+  LD [M]  net/bridge/netfilter/ebt_limit.ko
+  CC      net/bridge/netfilter/ebt_log.mod.o
+  LD [M]  net/bridge/netfilter/ebt_log.ko
+  CC      net/bridge/netfilter/ebt_mark.mod.o
+  LD [M]  net/bridge/netfilter/ebt_mark.ko
+  CC      net/bridge/netfilter/ebt_mark_m.mod.o
+  LD [M]  net/bridge/netfilter/ebt_mark_m.ko
+  CC      net/bridge/netfilter/ebt_pkttype.mod.o
+  LD [M]  net/bridge/netfilter/ebt_pkttype.ko
+  CC      net/bridge/netfilter/ebt_redirect.mod.o
+  LD [M]  net/bridge/netfilter/ebt_redirect.ko
+  CC      net/bridge/netfilter/ebt_snat.mod.o
+  LD [M]  net/bridge/netfilter/ebt_snat.ko
+  CC      net/bridge/netfilter/ebt_stp.mod.o
+  LD [M]  net/bridge/netfilter/ebt_stp.ko
+  CC      net/bridge/netfilter/ebt_ulog.mod.o
+  LD [M]  net/bridge/netfilter/ebt_ulog.ko
+  CC      net/bridge/netfilter/ebt_vlan.mod.o
+  LD [M]  net/bridge/netfilter/ebt_vlan.ko
+  CC      net/bridge/netfilter/ebtable_broute.mod.o
+  LD [M]  net/bridge/netfilter/ebtable_broute.ko
+  CC      net/bridge/netfilter/ebtable_filter.mod.o
+  LD [M]  net/bridge/netfilter/ebtable_filter.ko
+  CC      net/bridge/netfilter/ebtable_nat.mod.o
+  LD [M]  net/bridge/netfilter/ebtable_nat.ko
+  CC      net/bridge/netfilter/ebtables.mod.o
+  LD [M]  net/bridge/netfilter/ebtables.ko
+  CC      net/core/pktgen.mod.o
+  LD [M]  net/core/pktgen.ko
+  CC      net/dccp/ccids/dccp_ccid2.mod.o
+  LD [M]  net/dccp/ccids/dccp_ccid2.ko
+  CC      net/dccp/ccids/dccp_ccid3.mod.o
+  LD [M]  net/dccp/ccids/dccp_ccid3.ko
+  CC      net/dccp/ccids/lib/dccp_tfrc_lib.mod.o
+  LD [M]  net/dccp/ccids/lib/dccp_tfrc_lib.ko
+  CC      net/dccp/dccp.mod.o
+  LD [M]  net/dccp/dccp.ko
+  CC      net/dccp/dccp_diag.mod.o
+  LD [M]  net/dccp/dccp_diag.ko
+  CC      net/dccp/dccp_ipv4.mod.o
+  LD [M]  net/dccp/dccp_ipv4.ko
+  CC      net/dccp/dccp_ipv6.mod.o
+  LD [M]  net/dccp/dccp_ipv6.ko
+  CC      net/ieee80211/ieee80211.mod.o
+  LD [M]  net/ieee80211/ieee80211.ko
+  CC      net/ieee80211/ieee80211_crypt.mod.o
+  LD [M]  net/ieee80211/ieee80211_crypt.ko
+  CC      net/ieee80211/ieee80211_crypt_ccmp.mod.o
+  LD [M]  net/ieee80211/ieee80211_crypt_ccmp.ko
+  CC      net/ieee80211/ieee80211_crypt_tkip.mod.o
+  LD [M]  net/ieee80211/ieee80211_crypt_tkip.ko
+  CC      net/ieee80211/ieee80211_crypt_wep.mod.o
+  LD [M]  net/ieee80211/ieee80211_crypt_wep.ko
+  CC      net/ieee80211/softmac/ieee80211softmac.mod.o
+  LD [M]  net/ieee80211/softmac/ieee80211softmac.ko
+  CC      net/ipv4/ah4.mod.o
+  LD [M]  net/ipv4/ah4.ko
+  CC      net/ipv4/esp4.mod.o
+  LD [M]  net/ipv4/esp4.ko
+  CC      net/ipv4/inet_diag.mod.o
+  LD [M]  net/ipv4/inet_diag.ko
+  CC      net/ipv4/ip_gre.mod.o
+  LD [M]  net/ipv4/ip_gre.ko
+  CC      net/ipv4/ipcomp.mod.o
+  LD [M]  net/ipv4/ipcomp.ko
+  CC      net/ipv4/ipip.mod.o
+  LD [M]  net/ipv4/ipip.ko
+  CC      net/ipv4/ipvs/ip_vs.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs.ko
+  CC      net/ipv4/ipvs/ip_vs_dh.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_dh.ko
+  CC      net/ipv4/ipvs/ip_vs_ftp.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_ftp.ko
+  CC      net/ipv4/ipvs/ip_vs_lblc.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_lblc.ko
+  CC      net/ipv4/ipvs/ip_vs_lblcr.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_lblcr.ko
+  CC      net/ipv4/ipvs/ip_vs_lc.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_lc.ko
+  CC      net/ipv4/ipvs/ip_vs_nq.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_nq.ko
+  CC      net/ipv4/ipvs/ip_vs_rr.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_rr.ko
+  CC      net/ipv4/ipvs/ip_vs_sed.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_sed.ko
+  CC      net/ipv4/ipvs/ip_vs_sh.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_sh.ko
+  CC      net/ipv4/ipvs/ip_vs_wlc.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_wlc.ko
+  CC      net/ipv4/ipvs/ip_vs_wrr.mod.o
+  LD [M]  net/ipv4/ipvs/ip_vs_wrr.ko
+  CC      net/ipv4/netfilter/arp_tables.mod.o
+  LD [M]  net/ipv4/netfilter/arp_tables.ko
+  CC      net/ipv4/netfilter/arpt_mangle.mod.o
+  LD [M]  net/ipv4/netfilter/arpt_mangle.ko
+  CC      net/ipv4/netfilter/arptable_filter.mod.o
+  LD [M]  net/ipv4/netfilter/arptable_filter.ko
+  CC      net/ipv4/netfilter/ip_conntrack.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack.ko
+  CC      net/ipv4/netfilter/ip_conntrack_amanda.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_amanda.ko
+  CC      net/ipv4/netfilter/ip_conntrack_ftp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_ftp.ko
+  CC      net/ipv4/netfilter/ip_conntrack_h323.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_h323.ko
+  CC      net/ipv4/netfilter/ip_conntrack_irc.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_irc.ko
+  CC      net/ipv4/netfilter/ip_conntrack_netbios_ns.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_netbios_ns.ko
+  CC      net/ipv4/netfilter/ip_conntrack_netlink.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_netlink.ko
+  CC      net/ipv4/netfilter/ip_conntrack_pptp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_pptp.ko
+  CC      net/ipv4/netfilter/ip_conntrack_proto_sctp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_proto_sctp.ko
+  CC      net/ipv4/netfilter/ip_conntrack_sip.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_sip.ko
+  CC      net/ipv4/netfilter/ip_conntrack_tftp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_conntrack_tftp.ko
+  CC      net/ipv4/netfilter/ip_nat.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat.ko
+  CC      net/ipv4/netfilter/ip_nat_amanda.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_amanda.ko
+  CC      net/ipv4/netfilter/ip_nat_ftp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_ftp.ko
+  CC      net/ipv4/netfilter/ip_nat_h323.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_h323.ko
+  CC      net/ipv4/netfilter/ip_nat_irc.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_irc.ko
+  CC      net/ipv4/netfilter/ip_nat_pptp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_pptp.ko
+  CC      net/ipv4/netfilter/ip_nat_sip.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_sip.ko
+  CC      net/ipv4/netfilter/ip_nat_snmp_basic.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_snmp_basic.ko
+  CC      net/ipv4/netfilter/ip_nat_tftp.mod.o
+  LD [M]  net/ipv4/netfilter/ip_nat_tftp.ko
+  CC      net/ipv4/netfilter/ip_queue.mod.o
+  LD [M]  net/ipv4/netfilter/ip_queue.ko
+  CC      net/ipv4/netfilter/ip_tables.mod.o
+  LD [M]  net/ipv4/netfilter/ip_tables.ko
+  CC      net/ipv4/netfilter/ipt_CLUSTERIP.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_CLUSTERIP.ko
+  CC      net/ipv4/netfilter/ipt_DSCP.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_DSCP.ko
+  CC      net/ipv4/netfilter/ipt_ECN.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_ECN.ko
+  CC      net/ipv4/netfilter/ipt_LOG.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_LOG.ko
+  CC      net/ipv4/netfilter/ipt_MASQUERADE.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_MASQUERADE.ko
+  CC      net/ipv4/netfilter/ipt_NETMAP.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_NETMAP.ko
+  CC      net/ipv4/netfilter/ipt_REDIRECT.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_REDIRECT.ko
+  CC      net/ipv4/netfilter/ipt_REJECT.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_REJECT.ko
+  CC      net/ipv4/netfilter/ipt_SAME.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_SAME.ko
+  CC      net/ipv4/netfilter/ipt_TCPMSS.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_TCPMSS.ko
+  CC      net/ipv4/netfilter/ipt_TOS.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_TOS.ko
+  CC      net/ipv4/netfilter/ipt_TTL.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_TTL.ko
+  CC      net/ipv4/netfilter/ipt_ULOG.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_ULOG.ko
+  CC      net/ipv4/netfilter/ipt_addrtype.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_addrtype.ko
+  CC      net/ipv4/netfilter/ipt_ah.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_ah.ko
+  CC      net/ipv4/netfilter/ipt_dscp.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_dscp.ko
+  CC      net/ipv4/netfilter/ipt_ecn.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_ecn.ko
+  CC      net/ipv4/netfilter/ipt_hashlimit.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_hashlimit.ko
+  CC      net/ipv4/netfilter/ipt_iprange.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_iprange.ko
+  CC      net/ipv4/netfilter/ipt_owner.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_owner.ko
+  CC      net/ipv4/netfilter/ipt_recent.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_recent.ko
+  CC      net/ipv4/netfilter/ipt_tos.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_tos.ko
+  CC      net/ipv4/netfilter/ipt_ttl.mod.o
+  LD [M]  net/ipv4/netfilter/ipt_ttl.ko
+  CC      net/ipv4/netfilter/iptable_filter.mod.o
+  LD [M]  net/ipv4/netfilter/iptable_filter.ko
+  CC      net/ipv4/netfilter/iptable_mangle.mod.o
+  LD [M]  net/ipv4/netfilter/iptable_mangle.ko
+  CC      net/ipv4/netfilter/iptable_nat.mod.o
+  LD [M]  net/ipv4/netfilter/iptable_nat.ko
+  CC      net/ipv4/netfilter/iptable_raw.mod.o
+  LD [M]  net/ipv4/netfilter/iptable_raw.ko
+  CC      net/ipv4/tcp_cubic.mod.o
+  LD [M]  net/ipv4/tcp_cubic.ko
+  CC      net/ipv4/tcp_diag.mod.o
+  LD [M]  net/ipv4/tcp_diag.ko
+  CC      net/ipv4/tcp_highspeed.mod.o
+  LD [M]  net/ipv4/tcp_highspeed.ko
+  CC      net/ipv4/tcp_htcp.mod.o
+  LD [M]  net/ipv4/tcp_htcp.ko
+  CC      net/ipv4/tcp_hybla.mod.o
+  LD [M]  net/ipv4/tcp_hybla.ko
+  CC      net/ipv4/tcp_lp.mod.o
+  LD [M]  net/ipv4/tcp_lp.ko
+  CC      net/ipv4/tcp_scalable.mod.o
+  LD [M]  net/ipv4/tcp_scalable.ko
+  CC      net/ipv4/tcp_vegas.mod.o
+  LD [M]  net/ipv4/tcp_vegas.ko
+  CC      net/ipv4/tcp_veno.mod.o
+  LD [M]  net/ipv4/tcp_veno.ko
+  CC      net/ipv4/tcp_westwood.mod.o
+  LD [M]  net/ipv4/tcp_westwood.ko
+  CC      net/ipv4/tunnel4.mod.o
+  LD [M]  net/ipv4/tunnel4.ko
+  CC      net/ipv4/xfrm4_mode_transport.mod.o
+  LD [M]  net/ipv4/xfrm4_mode_transport.ko
+  CC      net/ipv4/xfrm4_mode_tunnel.mod.o
+  LD [M]  net/ipv4/xfrm4_mode_tunnel.ko
+  CC      net/ipv4/xfrm4_tunnel.mod.o
+  LD [M]  net/ipv4/xfrm4_tunnel.ko
+  CC      net/ipv6/ah6.mod.o
+  LD [M]  net/ipv6/ah6.ko
+  CC      net/ipv6/esp6.mod.o
+  LD [M]  net/ipv6/esp6.ko
+  CC      net/ipv6/ip6_tunnel.mod.o
+  LD [M]  net/ipv6/ip6_tunnel.ko
+  CC      net/ipv6/ipcomp6.mod.o
+  LD [M]  net/ipv6/ipcomp6.ko
+  CC      net/ipv6/ipv6.mod.o
+  LD [M]  net/ipv6/ipv6.ko
+  CC      net/ipv6/netfilter/ip6_queue.mod.o
+  LD [M]  net/ipv6/netfilter/ip6_queue.ko
+  CC      net/ipv6/netfilter/ip6_tables.mod.o
+  LD [M]  net/ipv6/netfilter/ip6_tables.ko
+  CC      net/ipv6/netfilter/ip6t_HL.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_HL.ko
+  CC      net/ipv6/netfilter/ip6t_LOG.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_LOG.ko
+  CC      net/ipv6/netfilter/ip6t_REJECT.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_REJECT.ko
+  CC      net/ipv6/netfilter/ip6t_ah.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_ah.ko
+  CC      net/ipv6/netfilter/ip6t_dst.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_dst.ko
+  CC      net/ipv6/netfilter/ip6t_eui64.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_eui64.ko
+  CC      net/ipv6/netfilter/ip6t_frag.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_frag.ko
+  CC      net/ipv6/netfilter/ip6t_hbh.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_hbh.ko
+  CC      net/ipv6/netfilter/ip6t_hl.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_hl.ko
+  CC      net/ipv6/netfilter/ip6t_ipv6header.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_ipv6header.ko
+  CC      net/ipv6/netfilter/ip6t_owner.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_owner.ko
+  CC      net/ipv6/netfilter/ip6t_rt.mod.o
+  LD [M]  net/ipv6/netfilter/ip6t_rt.ko
+  CC      net/ipv6/netfilter/ip6table_filter.mod.o
+  LD [M]  net/ipv6/netfilter/ip6table_filter.ko
+  CC      net/ipv6/netfilter/ip6table_mangle.mod.o
+  LD [M]  net/ipv6/netfilter/ip6table_mangle.ko
+  CC      net/ipv6/netfilter/ip6table_raw.mod.o
+  LD [M]  net/ipv6/netfilter/ip6table_raw.ko
+  CC      net/ipv6/tunnel6.mod.o
+  LD [M]  net/ipv6/tunnel6.ko
+  CC      net/ipv6/xfrm6_mode_transport.mod.o
+  LD [M]  net/ipv6/xfrm6_mode_transport.ko
+  CC      net/ipv6/xfrm6_mode_tunnel.mod.o
+  LD [M]  net/ipv6/xfrm6_mode_tunnel.ko
+  CC      net/ipv6/xfrm6_tunnel.mod.o
+  LD [M]  net/ipv6/xfrm6_tunnel.ko
+  CC      net/key/af_key.mod.o
+  LD [M]  net/key/af_key.ko
+  CC      net/netfilter/nfnetlink.mod.o
+  LD [M]  net/netfilter/nfnetlink.ko
+  CC      net/netfilter/nfnetlink_log.mod.o
+  LD [M]  net/netfilter/nfnetlink_log.ko
+  CC      net/netfilter/nfnetlink_queue.mod.o
+  LD [M]  net/netfilter/nfnetlink_queue.ko
+  CC      net/netfilter/x_tables.mod.o
+  LD [M]  net/netfilter/x_tables.ko
+  CC      net/netfilter/xt_CLASSIFY.mod.o
+  LD [M]  net/netfilter/xt_CLASSIFY.ko
+  CC      net/netfilter/xt_CONNMARK.mod.o
+  LD [M]  net/netfilter/xt_CONNMARK.ko
+  CC      net/netfilter/xt_CONNSECMARK.mod.o
+  LD [M]  net/netfilter/xt_CONNSECMARK.ko
+  CC      net/netfilter/xt_MARK.mod.o
+  LD [M]  net/netfilter/xt_MARK.ko
+  CC      net/netfilter/xt_NFQUEUE.mod.o
+  LD [M]  net/netfilter/xt_NFQUEUE.ko
+  CC      net/netfilter/xt_NOTRACK.mod.o
+  LD [M]  net/netfilter/xt_NOTRACK.ko
+  CC      net/netfilter/xt_SECMARK.mod.o
+  LD [M]  net/netfilter/xt_SECMARK.ko
+  CC      net/netfilter/xt_comment.mod.o
+  LD [M]  net/netfilter/xt_comment.ko
+  CC      net/netfilter/xt_connbytes.mod.o
+  LD [M]  net/netfilter/xt_connbytes.ko
+  CC      net/netfilter/xt_connmark.mod.o
+  LD [M]  net/netfilter/xt_connmark.ko
+  CC      net/netfilter/xt_conntrack.mod.o
+  LD [M]  net/netfilter/xt_conntrack.ko
+  CC      net/netfilter/xt_dccp.mod.o
+  LD [M]  net/netfilter/xt_dccp.ko
+  CC      net/netfilter/xt_esp.mod.o
+  LD [M]  net/netfilter/xt_esp.ko
+  CC      net/netfilter/xt_helper.mod.o
+  LD [M]  net/netfilter/xt_helper.ko
+  CC      net/netfilter/xt_length.mod.o
+  LD [M]  net/netfilter/xt_length.ko
+  CC      net/netfilter/xt_limit.mod.o
+  LD [M]  net/netfilter/xt_limit.ko
+  CC      net/netfilter/xt_mac.mod.o
+  LD [M]  net/netfilter/xt_mac.ko
+  CC      net/netfilter/xt_mark.mod.o
+  LD [M]  net/netfilter/xt_mark.ko
+  CC      net/netfilter/xt_multiport.mod.o
+  LD [M]  net/netfilter/xt_multiport.ko
+  CC      net/netfilter/xt_physdev.mod.o
+  LD [M]  net/netfilter/xt_physdev.ko
+  CC      net/netfilter/xt_pkttype.mod.o
+  LD [M]  net/netfilter/xt_pkttype.ko
+  CC      net/netfilter/xt_policy.mod.o
+  LD [M]  net/netfilter/xt_policy.ko
+  CC      net/netfilter/xt_quota.mod.o
+  LD [M]  net/netfilter/xt_quota.ko
+  CC      net/netfilter/xt_realm.mod.o
+  LD [M]  net/netfilter/xt_realm.ko
+  CC      net/netfilter/xt_sctp.mod.o
+  LD [M]  net/netfilter/xt_sctp.ko
+  CC      net/netfilter/xt_state.mod.o
+  LD [M]  net/netfilter/xt_state.ko
+  CC      net/netfilter/xt_statistic.mod.o
+  LD [M]  net/netfilter/xt_statistic.ko
+  CC      net/netfilter/xt_string.mod.o
+  LD [M]  net/netfilter/xt_string.ko
+  CC      net/netfilter/xt_tcpmss.mod.o
+  LD [M]  net/netfilter/xt_tcpmss.ko
+  CC      net/netfilter/xt_tcpudp.mod.o
+  LD [M]  net/netfilter/xt_tcpudp.ko
+  CC      net/sched/act_gact.mod.o
+  LD [M]  net/sched/act_gact.ko
+  CC      net/sched/act_ipt.mod.o
+  LD [M]  net/sched/act_ipt.ko
+  CC      net/sched/act_mirred.mod.o
+  LD [M]  net/sched/act_mirred.ko
+  CC      net/sched/act_pedit.mod.o
+  LD [M]  net/sched/act_pedit.ko
+  CC      net/sched/act_police.mod.o
+  LD [M]  net/sched/act_police.ko
+  CC      net/sched/act_simple.mod.o
+  LD [M]  net/sched/act_simple.ko
+  CC      net/sched/cls_basic.mod.o
+  LD [M]  net/sched/cls_basic.ko
+  CC      net/sched/cls_fw.mod.o
+  LD [M]  net/sched/cls_fw.ko
+  CC      net/sched/cls_route.mod.o
+  LD [M]  net/sched/cls_route.ko
+  CC      net/sched/cls_rsvp.mod.o
+  LD [M]  net/sched/cls_rsvp.ko
+  CC      net/sched/cls_rsvp6.mod.o
+  LD [M]  net/sched/cls_rsvp6.ko
+  CC      net/sched/cls_tcindex.mod.o
+  LD [M]  net/sched/cls_tcindex.ko
+  CC      net/sched/cls_u32.mod.o
+  LD [M]  net/sched/cls_u32.ko
+  CC      net/sched/em_cmp.mod.o
+  LD [M]  net/sched/em_cmp.ko
+  CC      net/sched/em_meta.mod.o
+  LD [M]  net/sched/em_meta.ko
+  CC      net/sched/em_nbyte.mod.o
+  LD [M]  net/sched/em_nbyte.ko
+  CC      net/sched/em_text.mod.o
+  LD [M]  net/sched/em_text.ko
+  CC      net/sched/em_u32.mod.o
+  LD [M]  net/sched/em_u32.ko
+  CC      net/sched/sch_atm.mod.o
+  LD [M]  net/sched/sch_atm.ko
+  CC      net/sched/sch_cbq.mod.o
+  LD [M]  net/sched/sch_cbq.ko
+  CC      net/sched/sch_dsmark.mod.o
+  LD [M]  net/sched/sch_dsmark.ko
+  CC      net/sched/sch_gred.mod.o
+  LD [M]  net/sched/sch_gred.ko
+  CC      net/sched/sch_hfsc.mod.o
+  LD [M]  net/sched/sch_hfsc.ko
+  CC      net/sched/sch_htb.mod.o
+  LD [M]  net/sched/sch_htb.ko
+  CC      net/sched/sch_ingress.mod.o
+  LD [M]  net/sched/sch_ingress.ko
+  CC      net/sched/sch_netem.mod.o
+  LD [M]  net/sched/sch_netem.ko
+  CC      net/sched/sch_prio.mod.o
+  LD [M]  net/sched/sch_prio.ko
+  CC      net/sched/sch_red.mod.o
+  LD [M]  net/sched/sch_red.ko
+  CC      net/sched/sch_sfq.mod.o
+  LD [M]  net/sched/sch_sfq.ko
+  CC      net/sched/sch_tbf.mod.o
+  LD [M]  net/sched/sch_tbf.ko
+  CC      net/sched/sch_teql.mod.o
+  LD [M]  net/sched/sch_teql.ko
+  CC      net/sctp/sctp.mod.o
+  LD [M]  net/sctp/sctp.ko
+  CC      net/sunrpc/auth_gss/auth_rpcgss.mod.o
+  LD [M]  net/sunrpc/auth_gss/auth_rpcgss.ko
+  CC      net/sunrpc/auth_gss/rpcsec_gss_krb5.mod.o
+  LD [M]  net/sunrpc/auth_gss/rpcsec_gss_krb5.ko
+  CC      net/sunrpc/auth_gss/rpcsec_gss_spkm3.mod.o
+  LD [M]  net/sunrpc/auth_gss/rpcsec_gss_spkm3.ko
+  CC      net/sunrpc/sunrpc.mod.o
+  LD [M]  net/sunrpc/sunrpc.ko
+  CC      net/tipc/tipc.mod.o
+  LD [M]  net/tipc/tipc.ko
+  CC      sound/core/oss/snd-mixer-oss.mod.o
+  LD [M]  sound/core/oss/snd-mixer-oss.ko
+  CC      sound/core/oss/snd-pcm-oss.mod.o
+  LD [M]  sound/core/oss/snd-pcm-oss.ko
+  CC      sound/core/seq/instr/snd-ainstr-fm.mod.o
+  LD [M]  sound/core/seq/instr/snd-ainstr-fm.ko
+  CC      sound/core/seq/instr/snd-ainstr-simple.mod.o
+  LD [M]  sound/core/seq/instr/snd-ainstr-simple.ko
+  CC      sound/core/seq/oss/snd-seq-oss.mod.o
+  LD [M]  sound/core/seq/oss/snd-seq-oss.ko
+  CC      sound/core/seq/snd-seq-device.mod.o
+  LD [M]  sound/core/seq/snd-seq-device.ko
+  CC      sound/core/seq/snd-seq-dummy.mod.o
+  LD [M]  sound/core/seq/snd-seq-dummy.ko
+  CC      sound/core/seq/snd-seq-instr.mod.o
+  LD [M]  sound/core/seq/snd-seq-instr.ko
+  CC      sound/core/seq/snd-seq-midi-emul.mod.o
+  LD [M]  sound/core/seq/snd-seq-midi-emul.ko
+  CC      sound/core/seq/snd-seq-midi-event.mod.o
+  LD [M]  sound/core/seq/snd-seq-midi-event.ko
+  CC      sound/core/seq/snd-seq-midi.mod.o
+  LD [M]  sound/core/seq/snd-seq-midi.ko
+  CC      sound/core/seq/snd-seq-virmidi.mod.o
+  LD [M]  sound/core/seq/snd-seq-virmidi.ko
+  CC      sound/core/seq/snd-seq.mod.o
+  LD [M]  sound/core/seq/snd-seq.ko
+  CC      sound/core/snd-hwdep.mod.o
+  LD [M]  sound/core/snd-hwdep.ko
+  CC      sound/core/snd-page-alloc.mod.o
+  LD [M]  sound/core/snd-page-alloc.ko
+  CC      sound/core/snd-pcm.mod.o
+  LD [M]  sound/core/snd-pcm.ko
+  CC      sound/core/snd-rawmidi.mod.o
+  LD [M]  sound/core/snd-rawmidi.ko
+  CC      sound/core/snd-rtctimer.mod.o
+  LD [M]  sound/core/snd-rtctimer.ko
+  CC      sound/core/snd-timer.mod.o
+  LD [M]  sound/core/snd-timer.ko
+  CC      sound/core/snd.mod.o
+  LD [M]  sound/core/snd.ko
+  CC      sound/drivers/mpu401/snd-mpu401-uart.mod.o
+  LD [M]  sound/drivers/mpu401/snd-mpu401-uart.ko
+  CC      sound/drivers/mpu401/snd-mpu401.mod.o
+  LD [M]  sound/drivers/mpu401/snd-mpu401.ko
+  CC      sound/drivers/opl3/snd-opl3-lib.mod.o
+  LD [M]  sound/drivers/opl3/snd-opl3-lib.ko
+  CC      sound/drivers/opl3/snd-opl3-synth.mod.o
+  LD [M]  sound/drivers/opl3/snd-opl3-synth.ko
+  CC      sound/drivers/snd-dummy.mod.o
+  LD [M]  sound/drivers/snd-dummy.ko
+  CC      sound/drivers/snd-mtpav.mod.o
+  LD [M]  sound/drivers/snd-mtpav.ko
+  CC      sound/drivers/snd-virmidi.mod.o
+  LD [M]  sound/drivers/snd-virmidi.ko
+  CC      sound/drivers/vx/snd-vx-lib.mod.o
+  LD [M]  sound/drivers/vx/snd-vx-lib.ko
+  CC      sound/i2c/other/snd-ak4114.mod.o
+  LD [M]  sound/i2c/other/snd-ak4114.ko
+  CC      sound/i2c/other/snd-ak4xxx-adda.mod.o
+  LD [M]  sound/i2c/other/snd-ak4xxx-adda.ko
+  CC      sound/i2c/other/snd-tea575x-tuner.mod.o
+  LD [M]  sound/i2c/other/snd-tea575x-tuner.ko
+  CC      sound/i2c/snd-cs8427.mod.o
+  LD [M]  sound/i2c/snd-cs8427.ko
+  CC      sound/i2c/snd-i2c.mod.o
+  LD [M]  sound/i2c/snd-i2c.ko
+  CC      sound/isa/sb/snd-sb-common.mod.o
+  LD [M]  sound/isa/sb/snd-sb-common.ko
+  CC      sound/pci/ac97/snd-ac97-bus.mod.o
+  LD [M]  sound/pci/ac97/snd-ac97-bus.ko
+  CC      sound/pci/ac97/snd-ac97-codec.mod.o
+  LD [M]  sound/pci/ac97/snd-ac97-codec.ko
+  CC      sound/pci/ac97/snd-ak4531-codec.mod.o
+  LD [M]  sound/pci/ac97/snd-ak4531-codec.ko
+  CC      sound/pci/ali5451/snd-ali5451.mod.o
+  LD [M]  sound/pci/ali5451/snd-ali5451.ko
+  CC      sound/pci/au88x0/snd-au8810.mod.o
+  LD [M]  sound/pci/au88x0/snd-au8810.ko
+  CC      sound/pci/au88x0/snd-au8820.mod.o
+  LD [M]  sound/pci/au88x0/snd-au8820.ko
+  CC      sound/pci/au88x0/snd-au8830.mod.o
+  LD [M]  sound/pci/au88x0/snd-au8830.ko
+  CC      sound/pci/ca0106/snd-ca0106.mod.o
+  LD [M]  sound/pci/ca0106/snd-ca0106.ko
+  CC      sound/pci/cs46xx/snd-cs46xx.mod.o
+  LD [M]  sound/pci/cs46xx/snd-cs46xx.ko
+  CC      sound/pci/cs5535audio/snd-cs5535audio.mod.o
+  LD [M]  sound/pci/cs5535audio/snd-cs5535audio.ko
+  CC      sound/pci/echoaudio/snd-darla20.mod.o
+  LD [M]  sound/pci/echoaudio/snd-darla20.ko
+  CC      sound/pci/echoaudio/snd-darla24.mod.o
+  LD [M]  sound/pci/echoaudio/snd-darla24.ko
+  CC      sound/pci/echoaudio/snd-echo3g.mod.o
+  LD [M]  sound/pci/echoaudio/snd-echo3g.ko
+  CC      sound/pci/echoaudio/snd-gina20.mod.o
+  LD [M]  sound/pci/echoaudio/snd-gina20.ko
+  CC      sound/pci/echoaudio/snd-gina24.mod.o
+  LD [M]  sound/pci/echoaudio/snd-gina24.ko
+  CC      sound/pci/echoaudio/snd-indigo.mod.o
+  LD [M]  sound/pci/echoaudio/snd-indigo.ko
+  CC      sound/pci/echoaudio/snd-indigodj.mod.o
+  LD [M]  sound/pci/echoaudio/snd-indigodj.ko
+  CC      sound/pci/echoaudio/snd-indigoio.mod.o
+  LD [M]  sound/pci/echoaudio/snd-indigoio.ko
+  CC      sound/pci/echoaudio/snd-layla20.mod.o
+  LD [M]  sound/pci/echoaudio/snd-layla20.ko
+  CC      sound/pci/echoaudio/snd-layla24.mod.o
+  LD [M]  sound/pci/echoaudio/snd-layla24.ko
+  CC      sound/pci/echoaudio/snd-mia.mod.o
+  LD [M]  sound/pci/echoaudio/snd-mia.ko
+  CC      sound/pci/echoaudio/snd-mona.mod.o
+  LD [M]  sound/pci/echoaudio/snd-mona.ko
+  CC      sound/pci/emu10k1/snd-emu10k1-synth.mod.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1-synth.ko
+  CC      sound/pci/emu10k1/snd-emu10k1.mod.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1.ko
+  CC      sound/pci/emu10k1/snd-emu10k1x.mod.o
+  LD [M]  sound/pci/emu10k1/snd-emu10k1x.ko
+  CC      sound/pci/hda/snd-hda-codec.mod.o
+  LD [M]  sound/pci/hda/snd-hda-codec.ko
+  CC      sound/pci/hda/snd-hda-intel.mod.o
+  LD [M]  sound/pci/hda/snd-hda-intel.ko
+  CC      sound/pci/ice1712/snd-ice1712.mod.o
+  LD [M]  sound/pci/ice1712/snd-ice1712.ko
+  CC      sound/pci/ice1712/snd-ice1724.mod.o
+  LD [M]  sound/pci/ice1712/snd-ice1724.ko
+  CC      sound/pci/ice1712/snd-ice17xx-ak4xxx.mod.o
+  LD [M]  sound/pci/ice1712/snd-ice17xx-ak4xxx.ko
+  CC      sound/pci/korg1212/snd-korg1212.mod.o
+  LD [M]  sound/pci/korg1212/snd-korg1212.ko
+  CC      sound/pci/mixart/snd-mixart.mod.o
+  LD [M]  sound/pci/mixart/snd-mixart.ko
+  CC      sound/pci/nm256/snd-nm256.mod.o
+  LD [M]  sound/pci/nm256/snd-nm256.ko
+  CC      sound/pci/pcxhr/snd-pcxhr.mod.o
+  LD [M]  sound/pci/pcxhr/snd-pcxhr.ko
+  CC      sound/pci/riptide/snd-riptide.mod.o
+  LD [M]  sound/pci/riptide/snd-riptide.ko
+  CC      sound/pci/rme9652/snd-hdsp.mod.o
+  LD [M]  sound/pci/rme9652/snd-hdsp.ko
+  CC      sound/pci/rme9652/snd-hdspm.mod.o
+  LD [M]  sound/pci/rme9652/snd-hdspm.ko
+  CC      sound/pci/rme9652/snd-rme9652.mod.o
+  LD [M]  sound/pci/rme9652/snd-rme9652.ko
+  CC      sound/pci/snd-ad1889.mod.o
+  LD [M]  sound/pci/snd-ad1889.ko
+  CC      sound/pci/snd-als300.mod.o
+  LD [M]  sound/pci/snd-als300.ko
+  CC      sound/pci/snd-als4000.mod.o
+  LD [M]  sound/pci/snd-als4000.ko
+  CC      sound/pci/snd-atiixp-modem.mod.o
+  LD [M]  sound/pci/snd-atiixp-modem.ko
+  CC      sound/pci/snd-atiixp.mod.o
+  LD [M]  sound/pci/snd-atiixp.ko
+  CC      sound/pci/snd-azt3328.mod.o
+  LD [M]  sound/pci/snd-azt3328.ko
+  CC      sound/pci/snd-bt87x.mod.o
+  LD [M]  sound/pci/snd-bt87x.ko
+  CC      sound/pci/snd-cmipci.mod.o
+  LD [M]  sound/pci/snd-cmipci.ko
+  CC      sound/pci/snd-cs4281.mod.o
+  LD [M]  sound/pci/snd-cs4281.ko
+  CC      sound/pci/snd-ens1370.mod.o
+  LD [M]  sound/pci/snd-ens1370.ko
+  CC      sound/pci/snd-ens1371.mod.o
+  LD [M]  sound/pci/snd-ens1371.ko
+  CC      sound/pci/snd-es1938.mod.o
+  LD [M]  sound/pci/snd-es1938.ko
+  CC      sound/pci/snd-es1968.mod.o
+  LD [M]  sound/pci/snd-es1968.ko
+  CC      sound/pci/snd-fm801.mod.o
+  LD [M]  sound/pci/snd-fm801.ko
+  CC      sound/pci/snd-intel8x0.mod.o
+  LD [M]  sound/pci/snd-intel8x0.ko
+  CC      sound/pci/snd-intel8x0m.mod.o
+  LD [M]  sound/pci/snd-intel8x0m.ko
+  CC      sound/pci/snd-maestro3.mod.o
+  LD [M]  sound/pci/snd-maestro3.ko
+  CC      sound/pci/snd-rme32.mod.o
+  LD [M]  sound/pci/snd-rme32.ko
+  CC      sound/pci/snd-rme96.mod.o
+  LD [M]  sound/pci/snd-rme96.ko
+  CC      sound/pci/snd-sonicvibes.mod.o
+  LD [M]  sound/pci/snd-sonicvibes.ko
+  CC      sound/pci/snd-via82xx-modem.mod.o
+  LD [M]  sound/pci/snd-via82xx-modem.ko
+  CC      sound/pci/snd-via82xx.mod.o
+  LD [M]  sound/pci/snd-via82xx.ko
+  CC      sound/pci/trident/snd-trident-synth.mod.o
+  LD [M]  sound/pci/trident/snd-trident-synth.ko
+  CC      sound/pci/trident/snd-trident.mod.o
+  LD [M]  sound/pci/trident/snd-trident.ko
+  CC      sound/pci/vx222/snd-vx222.mod.o
+  LD [M]  sound/pci/vx222/snd-vx222.ko
+  CC      sound/pci/ymfpci/snd-ymfpci.mod.o
+  LD [M]  sound/pci/ymfpci/snd-ymfpci.ko
+  CC      sound/soundcore.mod.o
+  LD [M]  sound/soundcore.ko
+  CC      sound/synth/emux/snd-emux-synth.mod.o
+  LD [M]  sound/synth/emux/snd-emux-synth.ko
+  CC      sound/synth/snd-util-mem.mod.o
+  LD [M]  sound/synth/snd-util-mem.ko
+  CC      sound/usb/snd-usb-audio.mod.o
+  LD [M]  sound/usb/snd-usb-audio.ko
+  CC      sound/usb/snd-usb-lib.mod.o
+  LD [M]  sound/usb/snd-usb-lib.ko
+  CC      sound/usb/usx2y/snd-usb-usx2y.mod.o
+  LD [M]  sound/usb/usx2y/snd-usb-usx2y.ko
+
+Script done on Tue 10 Apr 2012 12:17:10 AM CST
