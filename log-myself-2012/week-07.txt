@@ -1,0 +1,6 @@
+centos linux kernel source
+http://ftp.redhat.com/pub/redhat/linux/enterprise/5Server/en/os/SRPMS/
+# rpm -ivh kernel-2.6.18-128.el5.src.rpm
+# cd /usr/src/RedHat/SPECS
+# rpmbuild -bp --target=i686 kernel-2.6.spec
+

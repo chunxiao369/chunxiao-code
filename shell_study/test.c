@@ -49,3 +49,5 @@
     required int64 ppp_vj_error = 72
     required int64 ppp_other_error = 73
 :1,11s/required\sint64\s\(.*\)\s=\s[0-9]\{1,2\}/rt->u.gre.\1 = gre->\1/g
+inbuf.ptr[?] -> inbuf.ptr[?]->addr
+%s/inbuf.ptr\[\([0-9,A-z]\{1\}\)\]/inbuf.ptr[\1].addr/g
