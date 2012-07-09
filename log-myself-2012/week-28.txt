@@ -1,0 +1,6 @@
+
+chrome 32bit support flash player by default,
+but 64bit failed to support it.
+To install it in 64bit system,
+sudo apt-get install flashplugin-installer
+
