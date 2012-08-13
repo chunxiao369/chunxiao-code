@@ -14,6 +14,8 @@
 CC = gcc
 CFLAGS = -Wall -O2 -I /mnt/share_disk/program-files/log4c/include/
 LDFLAGS = -L /mnt/share_disk/program-files/log4c/lib/
+CFLAGS = -Wall -O2 -I/mnt/virtual-disk/program-files/log4c-1.2.1/include/
+LDFLAGS = -L/mnt/virtual-disk/program-files/log4c-1.2.1/lib/ -lpthread
 TARGET = xuexe
 OBJS = a.o 
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
