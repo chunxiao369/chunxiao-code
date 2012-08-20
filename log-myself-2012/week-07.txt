@@ -4,3 +4,13 @@ http://ftp.redhat.com/pub/redhat/linux/enterprise/5Server/en/os/SRPMS/
 # cd /usr/src/RedHat/SPECS
 # rpmbuild -bp --target=i686 kernel-2.6.spec
 
+we can only compile one kernel module;
+goto the corresponding directory;
+
+make -C /usr/src/redhat/BUILD/kernel-2.6.18/linux-2.6.18.i686 M=$PWD modules
+Maybe you'll see some error
+you can goto kernel main directory, and then make;
+That's OK!
+make -C /usr/src/redhat/BUILD/kernel-2.6.18/linux-2.6.18.i686 M=$PWD clean
+This command will remove the *.o file and *.ko files.
+

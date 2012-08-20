@@ -1,0 +1,10 @@
+   16  git svn clone http://10.0.1.16/svn/software/sdk-xgs-robo-5.9.3/branches/fetap/source/
+   27  git remote add fetap /mnt/E-disk/SmartTAP/sdk-xgs-robo-5.9.3
+   28  git fetch fetap 
+   31  git checkout fetap/fe-tap  -b tmp
+   32  git rebase master 
+   33  git rebase master --skip 
+   34  git rebase  --skip 
+   36  git checkout master 
+   37  git merge tmp 
+   38  git svn dcommit 
