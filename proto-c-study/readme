@@ -1,0 +1,1 @@
+/mnt/share_disk/program-source/protobuf-c-0.14/configure --prefix=/mnt/share_disk/program-files/proto-buffc/ CXXFLAGS=-I/mnt/share_disk/program-files/proto-buff/include LDFLAGS=-L/mnt/share_disk/program-files/proto-buff/lib/ PROTOC=/mnt/share_disk/program-files/proto-buff/bin/protoc

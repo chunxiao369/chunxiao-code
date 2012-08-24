@@ -10,13 +10,11 @@
 #
 
 #CC = mips64-octeon-linux-gnu-gcc
-
 #CC = mipsisa64-octeon-elf-gcc
+PROTOC_DIR=/mnt/share_disk/program-files/proto-buffc/
 CC = gcc
-CFLAGS = -Wall -O2 -I/home/chunxiao/proto-buffc/include/
-#LDFLAGS = libprotobuf-c.a 
-#LDFLAGS = /mnt/share_disk/program-files/protobuf-c-0.14/src/google/protobuf-c/libprotoc.a
-LDFLAGS = /home/chunxiao/proto-buffc/lib-i386/libprotobuf-c.a
+CFLAGS = -Wall -O2 -I${PROTOC_DIR}include/
+LDFLAGS = ${PROTOC_DIR}lib-x86_64/libprotobuf-c.a
 TARGET = xuexe
 OBJS = amessage.pb-c.o test3.o 
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
@@ -30,7 +28,7 @@ $(TARGET):$(OBJS)
 %.o:%.c
 	$(COMPILE)
 %.pb-c.c:%.proto
-	/home/chunxiao/proto-buffc/bin/protoc-c amessage.proto --c_out=./
+	${PROTOC_DIR}bin/protoc-c amessage.proto --c_out=./
 
 -include $(OBJS:.o=.d)
 
