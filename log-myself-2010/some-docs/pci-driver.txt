@@ -147,3 +147,14 @@ pcie mode config
 rc mode: root complex
 ep mode: endpoint
 
+
+1. Host program configures DRAM controller on OCTEON
+2. Host program copies bootloader to DRAM
+3. Host program configures MIO local memory block to be at reset vector,
+   and copies instructions to branch to the bootloader image in DRAM to the local memory.
+4. Host program takes core 0 out of reset.
+   Core 0 fetches instructions from the reset vector - these are supplied from the MIO local memory block,
+   no memory is required on the boot bus.
+5. The instructions in this local memory jump to the bootloader image already present in OCTEON DRAM,
+   and the bootloader boots from that location.
+
