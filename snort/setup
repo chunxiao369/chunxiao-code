@@ -1,1 +1,5 @@
+#default start command
 /usr/sbin/snort -m 027 -D -d -l /var/log/snort -u snort -g snort -c /etc/snort/snort.conf -S HOME_NET=[192.168.0.0/16] -i eth0
+
+#ignore  the checksum error
+./snort -k none -c test3.conf  -i eth2
