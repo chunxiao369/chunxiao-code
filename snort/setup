@@ -3,3 +3,11 @@
 
 #ignore  the checksum error
 ./snort -k none -c test3.conf  -i eth2
+./snort -r /var/log/snort/snort.log.*
+
+#if the packet match the following 2 rules, if both sid is equal, last alert will work
+alert udp any any -> 10.17.0.99 any (msg:"found chun";pcre:"/ch(.*)un/";sid:1)
+alert udp any any -> 10.17.0.99 any (msg:"found xiao";pcre:"/xi(.*)ao/";sid:1)
+#if the packet match the following 2 rules, if both sid is not equal, both alert will work
+alert udp any any -> 10.17.0.99 any (msg:"found chun";pcre:"/ch(.*)un/";sid:1)
+alert udp any any -> 10.17.0.99 any (msg:"found xiao";pcre:"/xi(.*)ao/";sid:w)
