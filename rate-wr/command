@@ -1,0 +1,8 @@
+dd of=data.in bs=10240m count=1 if=/dev/zero
+
+chunxiao:rate-wr$ time ./xuexe 
+ok!/n
+real    0m 24.784s
+user    0m 1.636s
+sys     0m 2.516s
+
