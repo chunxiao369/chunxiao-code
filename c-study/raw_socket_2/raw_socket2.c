@@ -32,7 +32,7 @@ BOOL InitEtherNetIf(void)
         return FALSE;
     }
 
-    strcpy(req.ifr_name, "xaui0");
+    strcpy(req.ifr_name, "oct0");
     if (ioctl(fd, SIOCGIFFLAGS, &req) < 0) {
         printf("failed to do ioctl!");
         return FALSE;
@@ -118,11 +118,16 @@ int main(void)
     if (InitEtherNetIf()) {
         printf("send:\n");
         DispalyBuf(gTxBuf, 64);
-        SendPacket(gTxBuf, 64);
+        while (1) {
+            sleep(1);
+            SendPacket(gTxBuf, 64);
+        }
+        /*
         while (1) {
             if (GetPacket(gBuf, &gLen))
                 DispalyBuf(gBuf, gLen);
         }
+        */
     }
     return 0;
 }

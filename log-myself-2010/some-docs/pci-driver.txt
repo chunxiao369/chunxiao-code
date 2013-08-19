@@ -157,4 +157,90 @@ ep mode: endpoint
    no memory is required on the boot bus.
 5. The instructions in this local memory jump to the bootloader image already present in OCTEON DRAM,
    and the bootloader boots from that location.
+[root@capserver ~]# lspci -vvxxx -d 177d:0050
+08:00.0 MIPS: Cavium Networks Octeon CN57XX Network Processor (CN54XX/CN55XX/CN56XX) (rev 09)
+    Subsystem: Cavium Networks Unknown device 0001
+    Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B-
+    Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+    Latency: 0, Cache Line Size: 64 bytes
+    Interrupt: pin A routed to IRQ 52
+    Region 0: Memory at dfffc000 (64-bit, prefetchable) [size=16K]
+    Region 2: Memory at d8000000 (64-bit, prefetchable) [size=64M]
+    Region 4: Memory at <unassigned> (64-bit, prefetchable)
+    Expansion ROM at fe8f0000 [disabled] [size=64K]
+    Capabilities: [40] Power Management version 3
+        Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+        Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+    Capabilities: [50] Message Signalled Interrupts: 64bit+ Queue=0/0 Enable+
+        Address: 00000000fee00000  Data: 4034
+    Capabilities: [70] Express Endpoint IRQ 0
+        Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+        Device: Latency L0s <1us, L1 <8us
+        Device: AtnBtn- AtnInd- PwrInd-
+        Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+        Device: RlxdOrd- ExtTag- PhantFunc- AuxPwr- NoSnoop+
+        Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+        Link: Supported Speed 2.5Gb/s, Width x8, ASPM L0s L1, Port 0
+        Link: Latency L0s <4us, L1 <64us
+        Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+        Link: Speed 2.5Gb/s, Width x4
+00: 7d 17 50 00 07 05 10 00 09 00 30 0b 10 00 00 00
+10: 0c c0 ff df 00 00 00 00 0c 00 00 d8 00 00 00 00
+20: 0c 00 00 00 00 00 00 00 00 00 00 00 7d 17 01 00
+30: 00 00 8f fe 40 00 00 00 00 00 00 00 0b 01 00 00
+40: 01 50 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+50: 05 70 81 00 00 00 e0 fe 00 00 00 00 34 40 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 10 00 02 00 01 87 64 00 0f 28 00 00 81 6c 03 00
+80: 00 00 41 10 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+[root@capserver ~]# lspci -vvxxx -d 177d:0092
+09:00.0 MIPS: Cavium Networks Unknown device 0092 (rev 02)
+    Subsystem: Cavium Networks Unknown device 0001
+    Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B-
+    Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+    Latency: 0, Cache Line Size: 64 bytes
+    Interrupt: pin A routed to IRQ 51
+    Region 0: Memory at fbffc000 (64-bit, prefetchable) [size=16K]
+    Region 2: Memory at f4000000 (64-bit, prefetchable) [size=64M]
+    Expansion ROM at fe9f0000 [disabled] [size=64K]
+    Capabilities: [40] Power Management version 3
+        Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+        Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+    Capabilities: [50] Message Signalled Interrupts: 64bit+ Queue=0/0 Enable+
+        Address: 00000000fee00000  Data: 4033
+    Capabilities: [70] Express Endpoint IRQ 0
+        Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+        Device: Latency L0s <1us, L1 <8us
+        Device: AtnBtn- AtnInd- PwrInd-
+        Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+        Device: RlxdOrd- ExtTag- PhantFunc- AuxPwr- NoSnoop+
+        Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+        Link: Supported Speed unknown, Width x4, ASPM L0s L1, Port 0
+        Link: Latency L0s <4us, L1 <64us
+        Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+        Link: Speed unknown, Width x4
+00: 7d 17 92 00 06 05 10 00 02 00 30 0b 10 00 00 00
+10: 0c c0 ff fb 00 00 00 00 0c 00 00 f4 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 7d 17 01 00
+30: 00 00 9f fe 40 00 00 00 00 00 00 00 0a 01 00 00
+40: 01 50 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+50: 05 70 81 00 00 00 e0 fe 00 00 00 00 33 40 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 10 00 02 00 01 87 64 00 0f 28 00 00 42 6c 43 00
+80: 00 00 42 10 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 1f 00 00 00 00 00 00 00 06 00 00 00
+a0: 02 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
