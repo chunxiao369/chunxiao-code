@@ -12,9 +12,9 @@
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
 CFLAGS = -Wall -O2
-LDFLAGS = -laio
+LDFLAGS = -laio -lpthread
 TARGET = xuexe
-OBJS = test1.o
+OBJS = test_write.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 

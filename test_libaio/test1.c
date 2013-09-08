@@ -8,7 +8,7 @@
 int main(void)
 {
     int output_fd;
-    const char *content = "hello world!";
+    char *content = "hello world!";
     const char *outputfile = "hello.txt";
     io_context_t ctx;
     struct iocb io, *p = &io;
