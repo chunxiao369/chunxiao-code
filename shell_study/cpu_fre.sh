@@ -8,7 +8,7 @@ case "$2" in
 
 0)
         echo "Change to normal performance.."
-        echo "conservative" > /sys/devices/system/cpu/cpu0$1/cpufreq/scaling_governor
+        echo "conservative" > /sys/devices/system/cpu/cpu$1/cpufreq/scaling_governor
         ;;
 
 *)

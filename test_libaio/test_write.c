@@ -8,26 +8,25 @@
 #include<libaio.h>
 #include<pthread.h>
 #include<errno.h>
-#define MAXEVENTS 100
+#define MAXEVENTS 1024 
 #define PATH "Testfilenew.txt"
-#define BUFFERSIZE 4096
+#define BUFFERSIZE 1024
 
 io_context_t context = 0;
 int filedes, dummy;
 
-char *buffer;
 int num[MAXEVENTS];
 
 void errorvals();
-void SubmitWrite(int counter);
+void SubmitWrite(int offset, void *buffer);
 void *Reap(void *p);
 
 int main()
 {
-    int i, j;
+    int i, j, k;
+    char *buffer = NULL;
     pthread_t reaperThread;
     /*** Memory alignment of buffer ***/
-    posix_memalign((void **)&buffer, BUFFERSIZE, BUFFERSIZE);
     /* Open the file for writing */
     filedes = open(PATH, O_WRONLY | O_CREAT | O_DIRECT, 0644);
     if (filedes <= 0) {
@@ -40,12 +39,24 @@ int main()
     pthread_create(&reaperThread, NULL, Reap, (void *)&i);
 
     for (i = 0; i < MAXEVENTS; i++) {
-        num[i] = i;
-        for (j = 0; j < BUFFERSIZE; j++) {
-            //Generate random alphabets to write to file*/
-            buffer[j] = (char)(rand() % 26 + 65);
+        k = i;
+        if ((char)('A' + k) == '\n') {
+            k++;
         }
-        SubmitWrite(i);
+        buffer = NULL;
+        posix_memalign((void **)&buffer, BUFFERSIZE, BUFFERSIZE);
+        if (buffer == NULL) {
+            printf("alloc failed.\n");
+            break;
+        }
+        //printf("buffer: %p\n", buffer);
+        for (j = 0; j < BUFFERSIZE - 1; j++) {
+            //Generate random alphabets to write to file*/
+            //buffer[j] = (char)(rand() % 26 + 65);
+            buffer[j] = (char)('A' + k);
+        }
+        buffer[j] = '\n';
+        SubmitWrite(i, buffer);
     }
     /* Waiting for Reaping to Complete */
     pthread_join(reaperThread, NULL);
@@ -57,7 +68,7 @@ int main()
 }
 
 /* Submit request for write with offset */
-void SubmitWrite(int offset)
+void SubmitWrite(int offset, void *buffer)
 {
     int x;
     struct iocb iocbw;
@@ -75,7 +86,8 @@ void SubmitWrite(int offset)
 void *Reap(void *p)
 {
     struct io_event eventsReaped[MAXEVENTS];
-    int event_completed, i, k = 0, data;
+    int event_completed, i, k = 0;
+    void *data;
     /* Timeout after 1 second */
     struct timespec timeout;
     timeout.tv_sec = 1;
@@ -88,9 +100,11 @@ void *Reap(void *p)
         event_completed = io_getevents(context, 1, 5, eventsReaped, &timeout);
         k += event_completed;
         for (i = 0; i < event_completed; i++) {
-            data = *((int *)eventsReaped[i].data);
+            data = eventsReaped[i].data;
             /* Print the outcome of IO" */
-            printf("WriteCompleted %d  res=%ld\n", data, eventsReaped[i].obj->data, eventsReaped[i].res);
+            //printf("WriteCompleted %d  res=%ld\n", data, eventsReaped[i].obj->data, eventsReaped[i].res);
+            //printf("WriteCompleted data: %p\n", data);
+            free(data);
         }
     }
 
