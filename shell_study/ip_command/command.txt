@@ -1,3 +1,6 @@
 ip addr show
 ip -s link ls eth0
 ip addr add 192.168.2.193/24 dev eth0
+
+ip tuntap add mod tap vport1
+ip tuntap add mod tap vport2
