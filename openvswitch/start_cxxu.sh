@@ -20,3 +20,22 @@ sleep 1;
 sleep 1;
 ./sbin/ovs-vswitchd --pidfile --detach
 sleep 1;
+
+example1:
+make vm connect external
+1. br0 add eth0;
+2. br0 add vport1(ip tuntap add mod tap vport1);
+3. vm bridge to vport1;
+4. ifconfig eth0 0;
+5. set br0 ip addr;
+6. set vm addr;
+
+example2:
+vlan tag set in openvswitch:
+./bin/ovs-vsctl set port tap0 tag=80
+./bin/ovs-vsctl list port tap0
+./bin/ovs-vsctl set port tap1 tag=80
+
+example3:
+gre
+how to understand network namespace?
