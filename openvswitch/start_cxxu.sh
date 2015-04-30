@@ -21,11 +21,21 @@ sleep 1;
 ./sbin/ovs-vswitchd --pidfile --detach
 sleep 1;
 
+./bin/ovsdb-client dump > db.dump
+
 example1:
 make vm connect external
+0. create br0;
+./bin/ovs-vsctl add-br br0
+
 1. br0 add eth0;
-2. br0 add vport1(ip tuntap add mod tap vport1);
-3. vm bridge to vport1;
+./bin/ovs-vsctl add-port br0 eth0
+
+2. br0 add vport1;
+ip tuntap add mod tap vport1
+./bin/ovs-vsctl add-port br0 vport1
+
+3. virtual box create vm, vm bridge to vport1;
 4. ifconfig eth0 0;
 5. set br0 ip addr;
 6. set vm addr;
