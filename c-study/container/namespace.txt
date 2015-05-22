@@ -1,0 +1,6 @@
+net
+mount
+unix timesharing system
+IPC
+PID
+USER
