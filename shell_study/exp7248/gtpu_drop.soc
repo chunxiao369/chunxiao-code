@@ -1,0 +1,5 @@
+#到bcm命令行，先把gtpu干掉。
+fp action add 1 drop
+fp entry reinstall 1
+fp action add 2 drop
+fp entry reinstall 2
