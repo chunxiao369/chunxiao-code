@@ -1,5 +1,6 @@
 #!/bin/bash
 cpu_ip=192.168.1.4
+main() {
 times=0
 date_s=`date +%Y%m%d%H%M%S`
 echo "ping $cpu_ip start, $date_s" 
@@ -8,6 +9,7 @@ do ping -c1 $cpu_ip > /dev/null
     if [ $? -eq 0 ];
         then
         echo "success"
+        sleep 10
         else
         date_s=`date +%Y%m%d%H%M%S`
         echo "ping $cpu_ip failed, $date_s" 
@@ -32,3 +34,9 @@ if [ $times -eq 8 ];
     else
     echo "good state"
 fi
+}
+while [ 1 ];
+do 
+   main 
+done
+
