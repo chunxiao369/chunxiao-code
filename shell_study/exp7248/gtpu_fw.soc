@@ -1,0 +1,5 @@
+
+fp action ports add 1 redirectpbmp 0x108000000000000
+fp entry reinstall 1
+fp action ports add 2 redirectpbmp 0x108000000000000
+fp entry reinstall 2
