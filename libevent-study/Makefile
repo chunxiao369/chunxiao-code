@@ -12,9 +12,9 @@
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
 CFLAGS = -Wall -O2 -I /mnt/share_disk/program-files/libevent/include/
-LDFLAGS = /mnt/share_disk/program-files/libevent/lib/libevent.a -lrt 
+LDFLAGS = -levent -lrt 
 TARGET = xuexe
-OBJS = simple2.o 
+OBJS = board_manage.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
