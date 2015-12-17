@@ -9,9 +9,10 @@
 # link command
 #
 
-CC = gcc
+CC = mips64-octeon-linux-gnu-gcc
+#CC = gcc
 CFLAGS = -Wall -O2
-LDFLAGS = 
+LDFLAGS = -lpthread
 TARGET = server
 OBJS = socket-server.o
 TARGET_ = client
