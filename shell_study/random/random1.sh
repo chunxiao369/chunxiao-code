@@ -6,7 +6,10 @@ function rand(){
     echo $(($num%$max+$min))
 }
 
-rnd=$(rand 0 5000000000)
-printf "%x" $rnd
-
-exit 0
+i=0
+while [ $i -lt $1 ]
+    do
+    rnd=$(rand 0 5000000000)
+    printf "%x\n" $rnd
+    let i+=1
+done
