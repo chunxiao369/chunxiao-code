@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: cp936 -*-
-#hello
+# python guanlian_err.py -r cdr20160511-1000.pcap -w a.info > /tmp/txt
 import os
 from struct import unpack,pack
 import socket
 import sys,getopt
 from copy import deepcopy
 import time
-    
+
 
 def decode_pkt(data):
     pkt_num=0
@@ -24,14 +24,14 @@ def decode_pkt(data):
 
         hex_data=display_hex(data[offset+16:offset+16+pkt_len])
         pkt_data.append(hex_data)
-        
-        
+
+
         offset=offset+pkt_len+16
         pkt_num+=1
-#print pkt_num    
+#print pkt_num
     return pkt_data
 
-        
+
 
 def fw(string):
     fw=open(result,'a')
@@ -53,6 +53,7 @@ def display_hex(frame):
 def check_pkt(pkt):
     msisdn=time=userip=action=imsi=imei=cgi=pro=apn=guti=tai=tai_list=0
     index=0
+    print "imsi      msisdn      userip      action"
     while (index<len(pkt)):
         pkt_offset=108
         pkt[index]=pkt[index].replace(' ','')
@@ -70,10 +71,7 @@ def check_pkt(pkt):
         guti=list_type[9]
         tai=list_type[10]
         tai_list=list_type[11]
-        
-                                            
         index+=1
-
 
     print 'the pkts of msisdn is %s'%msisdn
     fw('the pkts of msisdn is %s'%msisdn)
@@ -146,85 +144,79 @@ def ascii2str(string):
 
 
 def check_type(string,msisdn,time,userip,action,imsi,imei,cgi,pro,apn,guti,tai,tai_list):
-    imsi_num=0
-    str_origial=string
+    my_msisdn = ""
+    my_imsi = ""
+    my_userip = ""
+    my_type = ""
+    imsi_num = 0
+    msisdn_num = 0
+    #print str_origial
+    str_origial = string
     dic=[{'msisdn':'01'},{'time':'02'},{'userip':'03'},{'action':'05'},
         {'imsi':'09'},{'imei':'oa'},{'cgi':'0d'},{'pro':'0e'},{'apn':'0f'},{'guti':'10'},
          {'tai':'11'},{'tai_list':'12'}]
     list_value=['01','02','03','05','06','07','1d','06','07','1d','09','0a','0c','0e','0f','10','11','12','13','14','15','16','17','18','19','1a','1b','1c','1e','1f']
+
     list_key=['msisdn','time','userip','action','sgw-teid','eNB-teid','EBI','imsi','imei','cgi','pro','apn','guti','tai','tai_list',
              'master-slave','sms','smsID','plmn ID','cellID','sms-time','eNBip','MMEip','sgwip','pgwip','src_port','dst_port']
-    
-
-
 
     dic_action={'01':'01-PDN online','02':'02-PDN release','03':'03-periodic TAU','05':'05-force TAU','06':'06-SMS','07':'07-CSFB','08':'08-Initial Attach',
-                 '09':'09-Detach','0a':'0a-Handover','0b':'0b-Bearer Modify','0c':'0c-PDN active','0d':'0d-dedicated bearer update','0e':'0e-Bearer Deactive',
-                 '0f':'0f-Service Request'}
+                '09':'09-Detach','0a':'0a-Handover','0b':'0b-Bearer Modify','0c':'0c-PDN active','0d':'0d-dedicated bearer update','0e':'0e-Bearer Deactive',
+                '0f':'0f-Service Request'}
 
     dic_net={'01':'3G-UTRAN','02':'2G-GERAN','06':'4G-EUTRAN'}
 
-    print "#############################################################"
     for i in range(len(list_value)):
         if string!='':
             type_tlv=string[0:2]
             len_tlv=string[2:4]
             len_tlv=int(len_tlv,16)*2
 
+            #print "------------------------------>"
             if type_tlv=='01':
                 msisdn+=1
-                print "------------------------------>"
-                print "the msisdn is:",hex2dec(string[4:len_tlv])
-                print "------------------------------>"
+                msisdn_num+=1
+                #print "the msisdn is:",hex2dec(string[4:len_tlv])
+                my_msisdn = hex2dec(string[4:len_tlv])
             elif type_tlv=='02':
                 time+=1
             elif type_tlv=='03':
                 userip+=1
-            #    print "------------------------------>"
-                print "the userip is:",hex2ip(string[4:len_tlv])
-                print "------------------------------>"
-        
-        
-        #    elif type_tlv=='05':
-        #        action+=1
-        #        print "the action type is:",dic_action[string[4:len_tlv]]
-        #        print "------------------------------>"
-
-        #    elif type_tlv=='06':
-        #        print "the sgw-teid  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-        #    elif type_tlv=='07':
-        #        print "the eNB-teid  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-        #    elif type_tlv=='1d':
-        #        print "the EBI  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-        #    elif type_tlv=='06':
-        #        print "the sgw-teid-1  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-        #
-        #    elif type_tlv=='07':
-        #        print "the eNB-teid-2  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-        
-        #    elif type_tlv=='1d':
-        #        print "the EBI  is:",string[4:len_tlv]
-        #        print "------------------------------>"
-            
-        
-
+                #print "the userip is:",hex2ip(string[4:len_tlv])
+                my_userip = hex2ip(string[4:len_tlv])
             elif type_tlv=='09':
                 imsi+=1
                 imsi_num+=1
-                print "the imsi is:",hex2dec(string[4:len_tlv])
-                print "------------------------------>"
+                #print "the imsi is:", hex2dec(string[4:len_tlv])
+                my_imsi = hex2dec(string[4:len_tlv])
+            elif type_tlv=='05':
+                action+=1
+                #print "the action type is:",dic_action[string[4:len_tlv]]
+                my_type = dic_action[string[4:len_tlv]]
+            '''
             elif type_tlv=='0a':
                 imei+=1
                 print "the imei is:",ascii2str(string[4:len_tlv])
                 print "------------------------------>"
 
-            '''
-
+            elif type_tlv=='06':
+                print "the sgw-teid  is:",string[4:len_tlv]
+                print "------------------------------>"
+            elif type_tlv=='07':
+                print "the eNB-teid  is:",string[4:len_tlv]
+                print "------------------------------>"
+            elif type_tlv=='1d':
+                print "the EBI  is:",string[4:len_tlv]
+                print "------------------------------>"
+            elif type_tlv=='06':
+                print "the sgw-teid-1  is:",string[4:len_tlv]
+                print "------------------------------>"
+            elif type_tlv=='07':
+                print "the eNB-teid-2  is:",string[4:len_tlv]
+                print "------------------------------>"
+            elif type_tlv=='1d':
+                print "the EBI  is:",string[4:len_tlv]
+                print "------------------------------>"
             elif type_tlv=='0c':
                 cgi+=1
                 print "the 3G CGI is:",ascii2str(string[4:len_tlv])
@@ -256,12 +248,12 @@ def check_type(string,msisdn,time,userip,action,imsi,imei,cgi,pro,apn,guti,tai,t
             elif type_tlv=='14':
                 print "the SMS content is:",string[4:len_tlv]
                 print "------------------------------>"
-            
+
             elif type_tlv=='15':
                 print "the SMS msisdn is:",hex2dec(string[4:len_tlv])
                 print "------------------------------>"
 
-            elif type_tlv=='16':    
+            elif type_tlv=='16':
                 print "the PLMN id is:",string[4:len_tlv]
                 print "------------------------------>"
 
@@ -295,12 +287,12 @@ def check_type(string,msisdn,time,userip,action,imsi,imei,cgi,pro,apn,guti,tai,t
                 print "the dst_port ip is:",hex2dec(string[4:len_tlv])
                 print "------------------------------>"
             '''
-
             string=string[len_tlv:]
-    
-    if imsi_num==0:
+    if imsi_num == 0 and msisdn_num == 0:
         pass
-        #print str_origial
+    #print "imsi      msisdn      userip      action"
+    else:
+        print my_imsi, "\t", my_msisdn, "\t", my_userip, "\t", my_type
     return msisdn,time,userip,action,imsi,imei,cgi,pro,apn,guti,tai,tai_list
 
 def Usage():
@@ -315,14 +307,14 @@ if __name__=="__main__":
     longargs = ["help","read=",'write=']
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], shortargs, longargs) 
+        opts, args = getopt.getopt(sys.argv[1:], shortargs, longargs)
         print "opts:",opts
         print "args:",args
     except getopt.GetoptError , err:
         print str(err)
         sys.exit(2)
 
-    for o, value in opts: 
+    for o, value in opts:
         if o in ("-h","--help"):
             Usage()
             sys.exit()
@@ -350,6 +342,6 @@ if __name__=="__main__":
     else:
         fw('the start time is %s'%start)
         check_pkt(pkt)
-    
+
     print 'the end time is %s'%time.ctime()
     fw('the end time is %s'%time.ctime())
