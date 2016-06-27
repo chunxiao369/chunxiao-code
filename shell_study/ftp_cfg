@@ -1,0 +1,5 @@
+# anonymous login
+# /etc/pure-ftpd/conf/NoAnonymous 的内容改为 no
+apt-get install pure-ftpd
+groupadd ftpgroup
+useradd ftpuser -g ftpgroup -d /home/ftp -s /sbin/nologin 
