@@ -2,4 +2,7 @@
 # /etc/pure-ftpd/conf/NoAnonymous 的内容改为 no
 apt-get install pure-ftpd
 groupadd ftpgroup
-useradd ftpuser -g ftpgroup -d /home/ftp -s /sbin/nologin 
+useradd ftp -g ftpgroup -d /home/ftp -s /sbin/nologin 
+
+# add ftp user, 一个系统用户可以绑定多个ftp用户
+pure-pw useradd user1 -u ftp -g ftpgroup -d /var/www/site1
