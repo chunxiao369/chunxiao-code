@@ -7,3 +7,5 @@ ip tuntap add mod tap vport1
 ip tuntap add mod tap vport2
 
 ip route add default via 192.168.33.1 dev br0
+ip route del default
+ip route del 192.168.33.0/24
