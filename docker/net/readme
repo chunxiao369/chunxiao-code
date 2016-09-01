@@ -1,0 +1,3 @@
+docker run --name angry_easley --privileged=true -it ubuntu-net bash
+docker run --name=angry_easley2 --link=angry_easley --privileged=true -it ubuntu-net bash
+That will echo angry_easley ip to /etc/hosts
