@@ -1,0 +1,3 @@
+docker run --name=angry_easley --privileged=true -d -P -it centos:ssh
+docker run --name=angry_easley2 --link=angry_easley --privileged=true -d -P -it centos:ssh
+That will echo angry_easley ip to /etc/hosts
