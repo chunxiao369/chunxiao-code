@@ -34,4 +34,23 @@ docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/disk_10G/:/v
 #   ip addr add 10.6.1.56/16 dev br0
 #   ip link set br0 up
 #   ip route add default via 10.6.0.1 dev br0
+#   ./bin/ovs-vsctl add-port br0 eth0
+
+#   ip addr del 192.168.33.29/24 dev enp0s25
+#   ip addr add 192.168.33.29/24 dev br0
+#   ip link set br0 up
+#   ip route add default via 192.168.33.1 dev br0
+#   ovs-vsctl add-port br0 enp0s25
+
+#-----------------------------------------------------------------
+#   vm:
+#   set ip 192.168.1.3 255.255.255.0
+#   set gatewayip 192.168.1.1
+#   set dns ip 10.0.1.1
+#   
+#   host:
+#   ip addr add 192.168.1.1/24 dev br0
+#   sysctl -w net.ipv4.ip_forward=1
+#   iptables -t nat -A POSTROUTING -o eth0 -s 192.168.1.0/24 -j MASQUERADE
+
 

@@ -1,0 +1,10 @@
+docker run -tid --restart=always \
+-p 9200:9200 \
+-p 9300:9300 \
+--oom-kill-disable=true \
+--memory-swappiness=1 \
+-v `pwd`/data:/usr/share/elasticsearch/data \
+-v `pwd`/logs:/usr/share/elasticsearch/logs \
+-v `pwd`/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
+--name=elasticsearch-data1 \
+elasticsearch:2.3.3
