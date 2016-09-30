@@ -12,3 +12,10 @@ http.port: 9200
 index.refresh_interval: 5s
 script.inline: true
 script.indexed: true
+
+discovery.zen.ping.timeout: 100s
+discovery.zen.fd.ping_timeout: 100s
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: ["10.40.0.67:9300", "10.40.0.66:9300", "10.40.0.68:9300"]
+discovery.zen.minimum_master_nodes: 2
+gateway.recover_after_nodes: 2

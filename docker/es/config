@@ -1,3 +1,10 @@
 client  :10.40.0.67  (client node)
 master1 :10.40.0.66  (master node)
 data1   :10.40.0.68  (data   node)
+
+[root@localhost data1]# curl 'localhost:9200/_cat/nodes?v'
+host       ip         heap.percent ram.percent load node.role master name         
+10.40.0.67 10.40.0.67           10          96 0.00 -         -      e7ce1d6c6c95 
+10.40.0.68 10.40.0.68            6          94 0.09 d         -      a72708fcc0ba 
+10.40.0.66 10.40.0.66            7          43 0.02 -         *      095de0bf67f5 
+
