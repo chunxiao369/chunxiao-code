@@ -10,5 +10,9 @@
 *.mod
 *.bak
 tags
+*.pyc
+*.png
+*.jpg
+*.out
 c-study/simple_test/xuexe
 !config/cscope.sh
