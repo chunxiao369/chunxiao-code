@@ -1,0 +1,291 @@
+len is:  20
+
+
+-------------------------------
+this b+tree is:
+
+([(1, 'Re')], 'the leaf is,', 0)
+
+
+-------------------------------
+this b+tree is:
+
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 0)
+
+
+-------------------------------
+this b+tree is:
+
+([(1, 'Re'), (7, 'Mi'), (38, 'Mi')], 'the leaf is,', 0)
+
+
+-------------------------------
+this b+tree is:
+
+([(1, 'Re'), (7, 'Mi'), (38, 'Mi'), (55, 'Re')], 'the leaf is,', 0)
+
+
+-------------------------------
+this b+tree is:
+
+([38], 'the height is', 0)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 1)
+([(38, 'Mi'), (55, 'Re'), (89, 'Do')], 'the leaf is,', 1)
+
+
+-------------------------------
+this b+tree is:
+
+([38], 'the height is', 0)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 1)
+([(38, 'Mi'), (55, 'Re'), (89, 'Do'), (225, 'La')], 'the leaf is,', 1)
+
+
+-------------------------------
+this b+tree is:
+
+([38, 89], 'the height is', 0)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 1)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 1)
+([(89, 'Do'), (225, 'La'), (251, 'Mi')], 'the leaf is,', 1)
+
+
+-------------------------------
+this b+tree is:
+
+([38, 89], 'the height is', 0)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 1)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 1)
+([(89, 'Do'), (225, 'La'), (251, 'Mi'), (372, 'Si')], 'the leaf is,', 1)
+
+
+-------------------------------
+this b+tree is:
+
+([38, 89, 251], 'the height is', 0)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 1)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 1)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 1)
+([(251, 'Mi'), (372, 'Si'), (410, 'Mi')], 'the leaf is,', 1)
+
+
+-------------------------------
+this b+tree is:
+
+([89], 'the height is', 0)
+([38], 'the height is', 1)
+([251], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si'), (410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89], 'the height is', 0)
+([38], 'the height is', 1)
+([251, 410], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do'), (510, 'Mi')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89], 'the height is', 0)
+([38], 'the height is', 1)
+([251, 410], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do'), (510, 'Mi'), (691, 'La')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89], 'the height is', 0)
+([38], 'the height is', 1)
+([251, 410, 510], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La'), (693, 'Mi')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89, 410], 'the height is', 0)
+([38], 'the height is', 1)
+([251], 'the height is', 1)
+([510], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La'), (693, 'Mi'), (721, 'Fa')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89, 410], 'the height is', 0)
+([38], 'the height is', 1)
+([251], 'the height is', 1)
+([510, 693], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 2)
+([(693, 'Mi'), (721, 'Fa'), (723, 'Re')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89, 410], 'the height is', 0)
+([38], 'the height is', 1)
+([251], 'the height is', 1)
+([510, 693], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 2)
+([(693, 'Mi'), (721, 'Fa'), (723, 'Re'), (724, 'Si')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([89, 410], 'the height is', 0)
+([38], 'the height is', 1)
+([251], 'the height is', 1)
+([510, 693, 723], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 2)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 2)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 2)
+([(723, 'Re'), (724, 'Si'), (860, 'Si')], 'the leaf is,', 2)
+
+
+-------------------------------
+this b+tree is:
+
+([410], 'the height is', 0)
+([89], 'the height is', 1)
+([693], 'the height is', 1)
+([38], 'the height is', 2)
+([251], 'the height is', 2)
+([510], 'the height is', 2)
+([723], 'the height is', 2)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 3)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 3)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 3)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 3)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 3)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 3)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 3)
+([(723, 'Re'), (724, 'Si'), (860, 'Si'), (926, 'So')], 'the leaf is,', 3)
+
+
+-------------------------------
+this b+tree is:
+
+([410], 'the height is', 0)
+([89], 'the height is', 1)
+([693], 'the height is', 1)
+([38], 'the height is', 2)
+([251], 'the height is', 2)
+([510], 'the height is', 2)
+([723, 860], 'the height is', 2)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 3)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 3)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 3)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 3)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 3)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 3)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 3)
+([(723, 'Re'), (724, 'Si')], 'the leaf is,', 3)
+([(860, 'Si'), (926, 'So'), (985, 'So')], 'the leaf is,', 3)
+
+
+-------------------------------
+this b+tree is:
+
+([410], 'the height is', 0)
+([89], 'the height is', 1)
+([693], 'the height is', 1)
+([38], 'the height is', 2)
+([251], 'the height is', 2)
+([510], 'the height is', 2)
+([723, 860], 'the height is', 2)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 3)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 3)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 3)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 3)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 3)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 3)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 3)
+([(723, 'Re'), (724, 'Si')], 'the leaf is,', 3)
+([(860, 'Si'), (926, 'So'), (985, 'So'), (991, 'So')], 'the leaf is,', 3)
+-------------------------------
+this b+tree is:
+
+([410], 'the height is', 0)
+([89], 'the height is', 1)
+([693], 'the height is', 1)
+([38], 'the height is', 2)
+([251], 'the height is', 2)
+([510], 'the height is', 2)
+([723, 860], 'the height is', 2)
+([(1, 'Re'), (7, 'Mi')], 'the leaf is,', 3)
+([(38, 'Mi'), (55, 'Re')], 'the leaf is,', 3)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 3)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 3)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 3)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 3)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 3)
+([(723, 'Re'), (724, 'Si')], 'the leaf is,', 3)
+([(860, 'Si'), (926, 'So'), (985, 'So'), (991, 'So')], 'the leaf is,', 3)
+
+now we are searching item between 50 and 200
+==>
+[55, 89]
+
+删除 (1, 'Re')后， the newtree is:
+
+this b+tree is:
+
+([410, 693], 'the height is', 0)
+([89, 251], 'the height is', 1)
+([510], 'the height is', 1)
+([723, 860], 'the height is', 1)
+([(1, 'Re'), (7, 'Mi'), (38, 'Mi'), (55, 'Re')], 'the leaf is,', 2)
+([(89, 'Do'), (225, 'La')], 'the leaf is,', 2)
+([(251, 'Mi'), (372, 'Si')], 'the leaf is,', 2)
+([(410, 'Mi'), (436, 'Do')], 'the leaf is,', 2)
+([(510, 'Mi'), (691, 'La')], 'the leaf is,', 2)
+([(693, 'Mi'), (721, 'Fa')], 'the leaf is,', 2)
+([(723, 'Re'), (724, 'Si')], 'the leaf is,', 2)
+([(860, 'Si'), (926, 'So'), (985, 'So'), (991, 'So')], 'the leaf is,', 2)
+
+key of this b+tree is 
+
+[1, 7, 38, 55, 89, 225, 251, 372, 410, 436, 510, 691, 693, 721, 723, 724, 860, 926, 985, 991]
