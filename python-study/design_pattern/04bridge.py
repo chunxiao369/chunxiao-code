@@ -37,9 +37,11 @@ def main():
     )
  
     for shape in shapes:
-        shape.scale(2.5)
         shape.draw()
  
+    for shape in shapes:
+        shape.scale(2.5)
+        shape.draw()
 
 if __name__ == '__main__':
     main()

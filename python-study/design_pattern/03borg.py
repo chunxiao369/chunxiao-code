@@ -21,17 +21,16 @@ if __name__ == '__main__':
     #print('rm1:', rm1.__str__())
     print('rm1:', format(rm1))
     print('rm2:', rm2.__str__())
+    print("")
 
     rm2.state = 'Zombie'
-
-    print('rm1:', rm1.__str__())
-    print('rm2:', rm2.__str__())
-
     print('rm1 id:', id(rm1))
     print('rm2 id:', id(rm2))
+    print('rm1:', rm1.__str__())
+    print('rm2:', rm2.__str__())
+    print("")
 
     rm3 = YourBorg()
-
     print('rm1:', rm1.__str__())
     print('rm2:', rm2.__str__())
     print('rm3:', rm3.__str__())
