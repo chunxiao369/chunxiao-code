@@ -46,7 +46,9 @@ def startbrowser():
     elif sys.platform.startswith('win'):
         os.system('start '+url)
     else:
-        os.system('xdg-open '+url)
+#chrome browser will cause vim show problem
+#chrome browser output "Created new window in existing browser session"
+        os.system('xdg-open '+url + ' 1>/dev/null')
 
 
 t_server = None
