@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/chunxiao/Project/wuhan_code/nisac-host-de76197/ddq/src/driver'
+let g:netrw_dirhist_2='/home/chunxiao/Project/mii_project'
+let g:netrw_dirhist_3='/home/chunxiao/Project/OCTEON-SDK'
