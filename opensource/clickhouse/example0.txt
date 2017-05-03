@@ -1,0 +1,6 @@
+CREATE TABLE arrays_test (s String, arr Array(UInt8)) ENGINE = Memory
+INSERT INTO arrays_test VALUES ('Hello', [1,2]), ('World', [3,4,5]), ('Goodbye', [])
+SELECT * FROM arrays_test
+select count(*) from arrays_test
+select count() from arrays_test
+drop table arrays_test;
