@@ -4,3 +4,8 @@ SELECT * FROM arrays_test
 select count(*) from arrays_test
 select count() from arrays_test
 drop table arrays_test;
+
+CREATE DATABASE test
+use test
+CREATE TABLE test2 (num Int32, s String, dt DateTime) ENGINE = Memory
+cat file.csv | clickhouse-client --database=test --query="INSERT INTO test2 FORMAT CSV";
