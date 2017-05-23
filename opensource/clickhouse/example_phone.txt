@@ -41,3 +41,30 @@ sudo du -sh clickhouse/data/db1/phone_record
 sort -n -k 1,1 -t "," ericsson/ericsson.csv -S 2G -o ericsson/ericsson_sort2.csv
 du -sh  clickhouse/data/db1/phone_record/
 146M    /var/lib/clickhouse/data/db1/phone_record/
+
+CREATE TABLE phone4G
+(
+    calling String, 
+    called String, 
+    type Int8, 
+    area1 String, 
+    area2 String, 
+    from String, 
+    imsi1 Int64, 
+    imsi2 Int64, 
+    imei1 Int64, 
+    imei2 Int64, 
+    s_time DateTime, 
+    e_time String, 
+    length Int32, 
+    lac1 Int32, 
+    ci1 Int32, 
+    lac2 Int32, 
+    ci2 Int32
+) ENGINE = TinyLog
+
+ls -l ~/Videos/init_4G_sort.csv 
+4384914248
+sudo ls -l /var/lib/clickhouse/data/db1/phone4G | awk '{sum += $5}; END{print sum}'
+759244587
+
