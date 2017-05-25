@@ -41,13 +41,14 @@ docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/disk_10G/:/v
 #-------------------with wifi--------------------------------------
 #------------------my notebook
 #   vm:
-#   set ip 192.168.1.3 255.255.255.0
-#   set gatewayip 192.168.1.1
+#   set ip 192.168.3.3 255.255.255.0
+#   set gatewayip 192.168.3.1
 #   set dns ip 10.0.1.1
 #   
 #   host:
-#   ip addr add 192.168.1.1/24 dev br0
+#   ip link set br0 up
+#   ip addr add 192.168.3.1/24 dev br0
 #   sysctl -w net.ipv4.ip_forward=1
-#   iptables -t nat -A POSTROUTING -o eth0 -s 192.168.1.0/24 -j MASQUERADE
+#   iptables -t nat -A POSTROUTING -o wlp3s0 -s 192.168.3.0/24 -j MASQUERADE
 
 

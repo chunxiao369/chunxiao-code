@@ -1,0 +1,17 @@
+CREATE TABLE arrays_test (s String, arr Array(UInt8)) ENGINE = Memory
+INSERT INTO arrays_test VALUES ('Hello', [1,2]), ('World', [3,4,5]), ('Goodbye', [])
+SELECT * FROM arrays_test
+select count(*) from arrays_test
+select count() from arrays_test
+drop table arrays_test;
+
+CREATE DATABASE db1
+use db1 
+CREATE TABLE table1 (num Int32, s String, dt DateTime) ENGINE = Memory
+cat file.csv | clickhouse-client --database=db1 --query="INSERT INTO table1 FORMAT CSV";
+
+CREATE TABLE table2 (num Int32, s String, dt DateTime) ENGINE = TinyLog
+cat file.csv | clickhouse-client --database=db1 --query="INSERT INTO table2 FORMAT CSV";
+
+rest(curl GET POST)
+echo 'SELECT * FROM db1.table2' | curl -XGET 'http://localhost:8123/?' --data-binary @-

@@ -1,0 +1,16 @@
+{
+    "template" : "imsi_loc",
+    "order"    : 1,
+    "mappings" : {
+        "_default_" : {
+            "properties" : {
+                "location" : { 
+                    "type" : "geo_point" 
+                },
+                "imsi" : {
+                    "type" : "string"
+				}
+            }
+        }
+    }
+}
