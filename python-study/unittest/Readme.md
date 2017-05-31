@@ -11,3 +11,6 @@ python -m unittest -v test_module
 
 python -m unittest -h
 
+python -m unittest demo0
+python -m unittest demo0.TestStringMethods
+python -m unittest demo0.TestStringMethods.test_split
