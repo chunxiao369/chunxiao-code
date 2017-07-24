@@ -1,4 +1,13 @@
 #!/bin/sh
+
+###查看虚拟交换机的端口计数
+    ./bin/ovs-vsctl list interface myport0
+###查看虚拟交换机的端口状态, openflow控制器相关
+    ./bin/ovs-ofctl show br0
+###查看与虚拟交换机相连接的设备的MAC等
+    ./bin/ovs-appctl fdb/show br0
+#./bin/ovs-dpctl show -s
+
 modprobe vxlan
 modprobe gre
 insmod /home/chunxiao/project/openvswitch-2.3.0/datapath/linux/openvswitch.ko

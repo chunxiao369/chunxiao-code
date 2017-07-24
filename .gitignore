@@ -16,3 +16,7 @@ tags
 *.out
 c-study/simple_test/xuexe
 !config/cscope.sh
+opensource/clickhouse/20090613/*.csv
+opensource/clickhouse/ericsson/*.csv
+opensource/clickhouse/clickhouse/
+
