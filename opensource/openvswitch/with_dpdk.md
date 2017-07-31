@@ -22,7 +22,7 @@ ldconfig
 
 mkdir -p /home/cxxu/openvswitch-2.7.1/install/etc/openvswitch
 mkdir -p /home/cxxu/openvswitch-2.7.1/install/var/run/openvswitch
-rm /home/cxxu/openvswitch-2.7.1/install/etc/openvswitch/conf.db
+rm -f /home/cxxu/openvswitch-2.7.1/install/etc/openvswitch/conf.db
 /home/cxxu/openvswitch-2.7.1/install/bin/ovsdb-tool create /home/cxxu/openvswitch-2.7.1/install/etc/openvswitch/conf.db  \
        /home/cxxu/openvswitch-2.7.1/install/share/openvswitch/vswitch.ovsschema
  
