@@ -8,7 +8,12 @@ kvm -m 1024 -net nic,macaddr=00:11:11:EE:EE:EE -net tap,script=/etc/openvswitch/
 ----boot---
 kvm -m 1024 -net nic,macaddr=00:11:11:EE:EE:EE -net tap,script=/etc/openvswitch/ovs-ifup,downscript=/etc/openvswitch/ovs-ifdown -drive file=centos.img -boot c
 
-kvm -m 512 -net nic,macaddr=00:11:22:33:44:55 -net tap,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown /home/lance/Project/vm_img/centos.img -drive file=/home/lance/Project/vm_img/disk_xx.img
+kvm -m 512 -net nic,macaddr=00:11:22:33:44:55 -net tap,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown /home/lance/Project/vm_img/centos1.img
+#this is new method
+kvm -m 512 -device rtl8139,mac=00:11:22:33:44:55,netdev=tap0 -netdev tap,id=tap0,ifname=tap0,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown /home/lance/Project/vm_img/centos1.img
+
+qemu-system-x86_64 --enable-kvm -m 2048 -device virtio-net-pci,mac=00:00:00:00:00:01,netdev=net1  -netdev tap,id=net1,script=./etc/ovs-ifup /home/lance/Project/vm_img/centos1.img
+qemu-system-x86_64 --enable-kvm -m 2048 -device virtio-net-pci,mac=00:00:00:00:00:02,netdev=net2  -netdev tap,id=net2,script=./etc/ovs-ifup /home/lance/Project/vm_img/centos2.img
 
 sudo kvm -m 1024 -net nic,macaddr=00:11:22:33:44:56 -net tap,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown /home/lance/Project/vm_img/win7-64.img
 
@@ -49,6 +54,7 @@ docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/disk_10G/:/v
 #   ip link set br0 up
 #   ip addr add 192.168.3.1/24 dev br0
 #   sysctl -w net.ipv4.ip_forward=1
-#   iptables -t nat -A POSTROUTING -o wlp3s0 -s 192.168.3.0/24 -j MASQUERADE
+#   iptables -t nat -A POSTROUTING -o enp0s25 -s 192.168.3.0/24 -j MASQUERADE
+#   iptables -t nat -A POSTROUTING -o wlp3s0  -s 192.168.3.0/24 -j MASQUERADE
 
 

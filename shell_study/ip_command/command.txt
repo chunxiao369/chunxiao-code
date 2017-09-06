@@ -1,6 +1,7 @@
 ip addr show
 ip -s link ls eth0
 ip link set eth0 up
+ip link set eth0 promisc on/off
 ip addr add 192.168.2.193/24 dev eth0
 
 ifconfig eth0 0

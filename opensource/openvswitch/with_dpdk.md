@@ -60,6 +60,9 @@ $DPDK_DIR/tools/dpdk-devbind.py --status
 ./bin/ovs-vsctl add-port br0 myport0 -- set Interface myport0 type=dpdkvhostuser options:dpdk-devargs=0000:02:00.0
 ./bin/ovs-vsctl add-port br0 myport1 -- set Interface myport1 type=dpdkvhostuser options:dpdk-devargs=0000:02:00.1
 
+ovs-vsctl add-port br0 myport0 -- set Interface myport0 type=tap
+ovs-vsctl add-port br0 myport1 -- set Interface myport1 type=tap
+
 qemu-system-x86_64 -m 1024 -cpu host -hda centos7_no1.img -boot c -enable-kvm -no-reboot -nographic -net none \
 -chardev socket,id=char0,path=./var/run/openvswitch/myport0 \
 -netdev type=vhost-user,id=mynet0,chardev=char0,vhostforce \
