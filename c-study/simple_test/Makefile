@@ -9,12 +9,12 @@
 # link command
 #
 
-CC = mips64-octeon-linux-gnu-gcc
-#CC = gcc
+#CC = mips64-octeon-linux-gnu-gcc
+CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS =#-lpthread
 TARGET = xuexe
-OBJS = select.o
+OBJS = malloc.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
