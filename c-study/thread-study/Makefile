@@ -11,10 +11,10 @@
 
 CC=gcc
 #CC=ppc_82xx-gcc
-CFLAGS=-Wall -O2
+CFLAGS=-Wall -O2 -g
 LDFLAGS=-lpthread
 TARGET=xuexe
-OBJS=thread07.o
+OBJS=thread08.o
 COMPILE  =  $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
