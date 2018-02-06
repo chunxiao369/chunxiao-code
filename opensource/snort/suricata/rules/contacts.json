@@ -1,0 +1,46 @@
+{
+  "contactlist": [
+    {
+      "display_name": "6",
+      "lastname": "6",
+      "contactid": 550,
+      "phone": [
+        {
+          "phoneNumber": "18729565569",
+          "lable": "手机"
+        }
+      ]
+    },
+    {
+      "display_name": "张三",
+      "lastname": "张三",
+      "contactid": 551,
+      "phone": [
+        {
+          "phoneNumber": "13228012642",
+          "lable": "住宅"
+        },
+        {
+          "phoneNumber": "0991-4110491",
+          "lable": "办公"
+        }
+      ]
+    },
+    {
+      "display_name": "和中堂",
+      "lastname": "和中堂",
+      "contactid": 548
+    },
+    {
+      "display_name": "和中堂",
+      "lastname": "和中堂",
+      "contactid": 549,
+      "phone": [
+        {
+          "phoneNumber": "17711668899",
+          "lable": "手机"
+        }
+      ]
+    }
+ ]
+}
