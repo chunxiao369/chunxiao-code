@@ -47,6 +47,7 @@ int show_time()
     gettimeofday( &cur, NULL );
     //printf("time string: %s.\n", ctime(&cur.tv_sec));
     tma = *localtime(&cur.tv_sec);
+    printf("%ld\n", cur.tv_sec);
     printf("%d-%d-%d %d:%d:%d\n", tma.tm_year + 1900,
                                   tma.tm_mon + 1,
                                   tma.tm_mday,
