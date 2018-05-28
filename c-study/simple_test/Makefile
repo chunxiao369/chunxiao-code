@@ -14,9 +14,9 @@ CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS =#-lpthread
 TARGET = xuexe
-OBJS = malloc.o
+OBJS = signal.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
-LINK = $(CC) $< $(LDFLAGS) -o $@
+LINK = $(CC) $< $(LDFLAGS) -o $@ -lpthread
 
 ALL:$(TARGET)
 

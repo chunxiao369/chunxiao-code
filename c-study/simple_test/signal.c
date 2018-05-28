@@ -48,10 +48,10 @@ int main()
     /* 
     signal( SIGKILL, on_signal );
     signal( SIGSTOP, on_signal );
-    signal( SIGINT, on_signal );
     signal( SIGTERM, on_signal );
     */
-    //signal( SIGHUP, on_signal );
+    signal( SIGHUP, on_signal );
+    signal( SIGINT, on_signal );
     signal( SIGALRM, on_signal2 );
     alarm(1);
     while (1) {

@@ -11,7 +11,7 @@
 #include <wchar.h>
 int main()
 {
-    const wchar_t *abc = L"我而做地铁去紧路上";
+    const wchar_t *abc = L"我而做地铁去紧路上舀蜀";
     char buff2[256] = {0};
     unsigned long length = wcslen(abc);
     unsigned long i;

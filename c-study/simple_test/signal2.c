@@ -43,7 +43,7 @@ int main ()
     printf("p address %p.\n", p);
   /* Do some lengthy stuff here.  */
   /* ...  */
-  //while(1);
+  while(1);
   printf ("SIGUSR1 was raised %d times\n", sigusr1_count);
   return 0;
 }
