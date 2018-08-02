@@ -45,7 +45,11 @@ static void on_signal2 ( int signo )
 int main()
 {
     int aaa = 16;
+    int a = 0x80808080;
     printf("%d\n", !!aaa);
+    a = a >> 1;
+    printf("%x\n", a);
+    return 0;
     /* 
     signal( SIGKILL, on_signal );
     signal( SIGSTOP, on_signal );
