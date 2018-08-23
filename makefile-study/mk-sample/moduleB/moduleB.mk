@@ -8,10 +8,8 @@ OBJS_$(d) = \
 	$(OBJ_DIR)/moduleB.o \
 	#$(OBJ_DIR)/moduleB2.o \
 
-CFLAGS_LOCAL :=
 $(OBJS_$(d)) : CFLAGS_LOCAL := -I$(d) -O2 -g -W -Wall
 
-CFLAGS_LOCAL :=
 DEPS_$(d) :=  $(OBJS_$(d):.o=.d)
 LIBS_LIST := $(LIBS_LIST) $(LIBRARY)
 LDFLAGS_GLOBAL := $(LDFLAGS_GLOBAL) -l$(NAME) 

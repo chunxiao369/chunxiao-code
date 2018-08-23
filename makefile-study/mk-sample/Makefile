@@ -5,11 +5,11 @@ OBJ_DIR := objs
 OBJS := $(OBJ_DIR)/test.o
 #objs in current directory
 TOP := $(PWD)
-CFLAGS_GLOBAL=-I$(TOP)/include -g -Wall
-COMPILE  =  $(CC) $(CFLAGS_GLOBAL) $(CFLAGS_LOCAL) -MD -c -o $@ $<
+CFLAGS_GLOBAL=-g -Wall -Werror
 MAKELIB  = $(AR) -cr $@ $^
-CFLAGS_LOCAL = 
+CFLAGS_LOCAL := -I$(TOP)/moduleA -I$(TOP)/moduleB
 LDFLAGS_PATH = -L$(OBJ_DIR)
+COMPILE  =  $(CC) $(CFLAGS_GLOBAL) $(CFLAGS_LOCAL) -MD -c -o $@ $<
 #the directory where the objs put
 
 all: $(TARGET)

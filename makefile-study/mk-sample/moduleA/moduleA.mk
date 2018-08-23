@@ -7,8 +7,6 @@ LIBRARY = $(OBJ_DIR)/lib$(NAME).a
 OBJS_$(d) = $(OBJ_DIR)/moduleA.o
 
 $(OBJS_$(d)) : CFLAGS_LOCAL := -I$(d) -O2 -g -W -Wall
-#CFLAGS_LOCAL := -I$(d) -O2 -g -W -Wall 
-#CFLAGS_LOCAL := -Dbbb 
 
 DEPS_$(d) :=  $(OBJS_$(d):.o=.d)
 LIBS_LIST := $(LIBS_LIST) $(LIBRARY)

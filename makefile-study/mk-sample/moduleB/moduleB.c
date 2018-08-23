@@ -1,7 +1,7 @@
 #include <stdio.h>
-int tb()
+int func_b()
 {
-	printf("in tb\n");
+	printf("in funcb\n");
 	return 0;
 }
 
