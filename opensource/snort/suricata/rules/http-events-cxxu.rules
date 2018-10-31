@@ -18,5 +18,6 @@
 #alert http any any -> any any (msg:"key value found"; lua:json.lua; sid:6; rev:6;)
 alert http any any -> any any (msg:"sina mail"; content:"mail.sina";  sid:7;)
 alert http any any -> any any (msg:"qq"; content:"vuin=";  sid:8;)
+alert http any any -> any any (msg:"meituan"; content:"meituan";  sid:9;)
 #alert http any any -> any any (msg:"embedway doku src found"; content:"doku"; detection_filter: track by_src, count 1, seconds 1; sid:1; rev:2;)
 #alert http any any -> any any (msg:"embedway doku found"; content:"doku"; sid:1;)

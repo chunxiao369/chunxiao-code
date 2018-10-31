@@ -394,7 +394,7 @@ outputs:
       scripts-dir: /home/lance/Project/chunxiao-code/opensource/snort/suricata/lua-output/
       scripts:
          - rule-match.lua
-         - qq-extract.lua
+         - body.lua
          #- sinawebmail-extract.lua
 
 # Magic file. The extension .mgc is added to the value here.
