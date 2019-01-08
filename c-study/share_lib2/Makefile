@@ -30,7 +30,8 @@ $(LIBS):$(LIB_OBJS)
 	$(COMPILE_LIB)
 
 $(SO):$(SO_OBJS)
-	$(CC) $^ $(LIBS) -shared -o $@
+	$(CC) -Wl,-Bsymbolic $^ $(LIBS) -shared -o $@
+#	$(CC) $^ $(LIBS) -shared -o $@
 
 $(TARGET):$(OBJS)
 	$(LINK)

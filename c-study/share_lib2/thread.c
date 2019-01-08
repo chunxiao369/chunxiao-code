@@ -10,6 +10,7 @@
 
 #define MAX 1
 
+int g_var = 0;
 pthread_t thread[2];
 pthread_mutex_t mut;
 int number = 0;
@@ -26,11 +27,13 @@ void *thread1()
         printf("thread1 : number = %d\n", number);
         a();
         b_inc();
+        g_var = 0;
         b_print();
 
         void *phandle = dlopen("liba.so", RTLD_LAZY);
         p_myinc = dlsym(phandle, "b_inc");
         p_myinc();
+        g_var = 0;
         p_myprint = dlsym(phandle, "b_print");
         p_myprint();
 
