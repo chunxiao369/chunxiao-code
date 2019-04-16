@@ -7,7 +7,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
-#include <sys/time.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
@@ -16,16 +15,25 @@
 
 #define PORT           8888
 #define MAXDATASIZE    100
-#define MAXCONN        10
+#define MAXCONN        2
 
 int *g_fd = NULL;
+void *thread()
+{
+    for (i = 0; i < MAX; i++) {
+        printf("thread2 : number = %d\n", number);
+        number++;
+        sleep(1);
+    }
+}
+
 int main(int argc, char **argv)
 {
     int numbytes;
     int i = 0;
-    struct timeval timeo = {1, 0};
     char buf[MAXDATASIZE];
-    struct sockaddr_in server[MAXCONN];  //server's address information
+    pthread_t thread[MAXCONN];
+    struct sockaddr_in server[MAXCONN]; //server's address information
     struct hostent *he;
 
     if (argc != 2) {
@@ -37,6 +45,14 @@ int main(int argc, char **argv)
         printf("gethostbyname() error\n");
         exit(1);
     }
+    for (i = 0; i < MAXCONN; i++) {
+        if ((temp = pthread_create(&thread[i], NULL, thread, NULL)) != 0) {
+            printf("线程1创建失败!\n");
+        } else {
+            printf("线程1被创建\n");
+        }
+    }
+
     g_fd = malloc(sizeof(int) * MAXCONN);
     if (g_fd == NULL) {
         exit(1);
@@ -56,13 +72,12 @@ int main(int argc, char **argv)
         server[i].sin_addr.s_addr = inet_addr(argv[1]);
         server[i].sin_port = htons(PORT);
 
-        setsockopt(g_fd[i], SOL_SOCKET, SO_SNDTIMEO, &timeo, sizeof(struct timeval));
-        printf("fd is %d.\n", g_fd[i]);
         if (connect(g_fd[i], (struct sockaddr *)&server[i], sizeof(struct sockaddr_in)) != 0) {
             /*handle exception */
             printf("errno: %d.\n", errno);
             exit(1);
         }
+        printf("fd is %d.\n", g_fd[i]);
     }
     while (1) {
         //printf("i is %d, %d\n", i, __LINE__);
@@ -77,12 +92,21 @@ int main(int argc, char **argv)
                 continue;
             }
             buf[numbytes] = '\0';
-            printf("Server Message: %s\n", buf);
+            //printf("Server Message: %s\n", buf);
         }
     }
     for (i = 0; i < MAXCONN; i++) {
         close(g_fd[i]);
     }
+    if (thread[0] != 0) {       //comment4
+        pthread_join(thread[0], NULL);
+        printf("线程1已经结束\n");
+    }
+    if (thread[1] != 0) {       //comment5
+        pthread_join(thread[1], NULL);
+        printf("线程2已经结束\n");
+    }
+
     if (g_fd != NULL) {
         free(g_fd);
     }

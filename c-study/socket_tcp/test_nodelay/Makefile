@@ -9,8 +9,8 @@
 # link command
 #
 
-CC = mips64-octeon-linux-gnu-gcc
-#CC = gcc
+#CC = mips64-octeon-linux-gnu-gcc
+CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS = -lpthread
 TARGET = server
