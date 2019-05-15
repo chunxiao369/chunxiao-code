@@ -2,6 +2,7 @@
 alerts = {}
 function init (args)
     local needs = {}
+    print ("    Copyright©2019 EmbedWay")
     needs["type"] = "packet"
     needs["filter"] = "alerts"
     return needs
@@ -27,11 +28,17 @@ function log(args)
     end
 end
 
+local apps = {}
+apps[54]   = "qq"
+apps[189]  = "meituan"
+apps[228]  = "douyin"
+apps[1704] = "kuaishou"
+
 function deinit (args)
     for key, value in pairs(alerts) do
         if alerts[key] == 0 then
         else
-            print ("packets rule " .. key .. " match:", alerts[key])
+            print ("application [" .. apps[key] .. "] match times:", alerts[key])
         end
     end
 end

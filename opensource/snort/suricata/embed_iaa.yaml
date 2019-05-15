@@ -65,7 +65,7 @@ host-mode: auto
 # The default logging directory.  Any log or output file will be
 # placed here if its not specified with a full path name.  This can be
 # overridden with the -l command line parameter.
-default-log-dir: /var/log/suricata/
+default-log-dir: /var/log/embed_iaa/
 
 # Unix command socket can be used to pass commands to suricata.
 # An external tool can then connect to get information from suricata
@@ -220,11 +220,12 @@ outputs:
 
   # a line based log of HTTP requests (no alerts)
   - http-log:
-      enabled: no
+      enabled: yes
       filename: http.log
       append: yes
       #extended: yes     # enable this for extended logging information
-      #custom: yes       # enabled the custom logging format (defined by customformat)
+      custom: yes       # enabled the custom logging format (defined by customformat)
+      customformat: "%t %a %p  %A %P %h %u %{User-agent}i %H %m %s %B %{header_name}o"
       #customformat: "%{%D-%H:%M:%S}t.%z %{X-Forwarded-For}i %H %m %h %u %s %B %a:%p -> %A:%P"
       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
 
@@ -243,7 +244,7 @@ outputs:
 
   # a line based log of DNS requests and/or replies (no alerts)
   - dns-log:
-      enabled: no
+      enabled: yes
       filename: dns.log
       append: yes
       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
@@ -391,9 +392,9 @@ outputs:
   # https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Lua_Output
   - lua:
       enabled: yes
-      scripts-dir: /etc/suricata/lua-output/
+      scripts-dir: /home/lance/Project/chunxiao-code/opensource/snort/suricata/lua-output/
       scripts:
-         - script1.lua
+         - rule-match.lua
          #- doku.lua
 
 # Magic file. The extension .mgc is added to the value here.
@@ -961,7 +962,8 @@ logging:
   # compiled with the --enable-debug configure option.
   #
   # This value is overriden by the SC_LOG_LEVEL env var.
-  default-log-level: notice
+  # default-log-level: notice
+  default-log-level: none
 
   # The default output format.  Optional parameter, should default to
   # something reasonable if not provided.  Can be overriden in an
@@ -1125,9 +1127,9 @@ ipfw:
 
 # Set the default rule path here to search for the files.
 # if not set, it will look at the current working dir
-default-rule-path: /etc/suricata/rules
+default-rule-path: /home/lance/Project/chunxiao-code/opensource/snort/suricata/rules/
 rule-files:
-  - http-events-cxxu.rules
+  - embedway_iaa.rules
 # - app-layer-events.rules
 # - decoder-events.rules
 # - dns-events.rules
@@ -1188,8 +1190,8 @@ rule-files:
 ## - modbus-events.rules  # available in suricata sources under rules dir
 # - app-layer-events.rules  # available in suricata sources under rules dir
 
-classification-file: /etc/suricata/classification.config
-reference-config-file: /etc/suricata/reference.config
+classification-file: /home/lance/Project/open-source/suricata/classification.config
+reference-config-file: /home/lance/Project/open-source/suricata/reference.config
 
 # Holds variables that would be used by the engine.
 vars:

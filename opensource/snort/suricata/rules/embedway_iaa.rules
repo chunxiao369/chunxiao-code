@@ -1,0 +1,5 @@
+#doku
+alert http any any -> any any (msg:"qq"; content:"qq.com";  sid:54;)
+alert http any any -> any any (msg:"meituan"; content:"meituan"; sid:189;)
+alert http any any -> any any (msg:"douyin"; content:"douyin.com";  sid:228;)
+alert http any any -> any any (msg:"kuaishou"; content:"gifshow.com"; sid:1704;)
