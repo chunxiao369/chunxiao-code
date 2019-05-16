@@ -222,10 +222,10 @@ outputs:
   - http-log:
       enabled: yes
       filename: http.log
-      append: yes
+      append: no
       #extended: yes     # enable this for extended logging information
       custom: yes       # enabled the custom logging format (defined by customformat)
-      customformat: "%t %a %p  %A %P %h %u %{User-agent}i %H %m %s %B %{header_name}o"
+      customformat: "%t.%z || %a || %p || %A || %P || %h || %u || %H || %m || %s || %B || %{User-agent}i"
       #customformat: "%{%D-%H:%M:%S}t.%z %{X-Forwarded-For}i %H %m %h %u %s %B %a:%p -> %A:%P"
       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
 
@@ -246,7 +246,7 @@ outputs:
   - dns-log:
       enabled: yes
       filename: dns.log
-      append: yes
+      append: no
       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
 
   # Packet log... log packets in pcap format. 3 modes of operation: "normal"
@@ -395,6 +395,7 @@ outputs:
       scripts-dir: /home/lance/Project/chunxiao-code/opensource/snort/suricata/lua-output/
       scripts:
          - rule-match.lua
+         - flow-match.lua
          #- doku.lua
 
 # Magic file. The extension .mgc is added to the value here.
