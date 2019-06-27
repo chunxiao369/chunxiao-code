@@ -30,10 +30,18 @@ function log(args)
 end
 
 local apps = {}
+--apps[1]   = "sip_match_test"
+--apps[1]   = "dip_match_test"
+--apps[1]   = "sport_match_test"
+--apps[1]   = "dport_match_test"
+apps[1]   = "sip_sport_test"
 apps[54]   = "qq"
 apps[112]  = "weixin"
 apps[189]  = "meituan"
+apps[199]  = "uri test"
+apps[200]  = "pcre test"
 apps[228]  = "douyin"
+apps[658]  = "zhihu"
 apps[1704] = "kuaishou"
 
 function deinit (args)

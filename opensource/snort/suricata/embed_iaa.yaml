@@ -1128,9 +1128,25 @@ ipfw:
 
 # Set the default rule path here to search for the files.
 # if not set, it will look at the current working dir
-default-rule-path: /home/lance/Project/chunxiao-code/opensource/snort/suricata/rules/
+#default-rule-path: /home/lance/Project/chunxiao-code/opensource/snort/suricata/rules/
+default-rule-path: /home/lance/Software/dpi/suricata/rules/
 rule-files:
-  - embedway_iaa.rules
+  - 360map.rules
+  - airetalk.rules
+  - airtalk.rules
+  - AOL.rules
+  - badoo.rules
+  - baiduditu.rules
+  - bingmap.rules
+  - didapinche.rules
+  - didicx.rules
+  - gaodeditu.rules
+  - hellotalk.rules
+  - QQ.rules
+  - sogouditu.rules
+  - tengxunditu.rules
+  - uber.rules
+# - embedway_iaa.rules
 # - app-layer-events.rules
 # - decoder-events.rules
 # - dns-events.rules

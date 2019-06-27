@@ -1,6 +1,10 @@
 #install
 clone libhtp to current dir
-sudo apt-get install libcap-ng-dev libmagic-dev libluajit-5.1-dev
+ubuntu: sudo apt-get install libcap-ng-dev libmagic-dev libluajit-5.1-dev
+centos: 
+yum install file-devel
+yum install luajit-devel.x86_64
+
 autogen.sh
 ./configure --enable-luajit --prefix=/home/lance/Project/open-source/suricata/install
 make; make install

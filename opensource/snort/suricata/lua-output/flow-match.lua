@@ -21,6 +21,7 @@ function setup (args)
 end
 
 function log(args)
+    ts = SCPacketTimeString()
     alproto = SCFlowAppLayerProto()
     --if alproto ~= nil then
     --    print (alproto)
@@ -72,7 +73,9 @@ function log(args)
     current_tsbytes=tsbytes-flow_dic[idstr]['no_match_tsbytes']-flow_dic[idstr]['match_tsbytes']
     current_tcbytes=tcbytes-flow_dic[idstr]['no_match_tcbytes']-flow_dic[idstr]['match_tcbytes']
     
-	--print ('current  ' .. current_tscnt,current_tccnt,current_tsbytes,current_tcbytes)
+    --print ("19/05/29-11:37:04", idstr, srcip, dstip, sp, dp, proto, 
+    --       current_tscnt, current_tsbytes, current_tccnt, current_tcbytes, 1, "command",
+    --       "username", "segs", "sessionid")
 	
     if has_alerts then
         flow_match = flow_match + 1
