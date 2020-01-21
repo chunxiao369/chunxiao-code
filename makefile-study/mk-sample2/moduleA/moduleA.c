@@ -6,9 +6,10 @@
 #else
 #include <stdio.h>
 #endif
+#include "app.h"
 
 int ta(void)
 {
-	printf("in ta\n");
+	printf("in ta, a: %d\n", a);
 	return 0;
 }
