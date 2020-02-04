@@ -1,7 +1,6 @@
 
 cmake_minimum_required(VERSION 2.10)
-
-PROJECT(test)
+PROJECT(test C)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/moduleA
@@ -34,3 +33,5 @@ target_link_libraries(${PROJECT_NAME} ${LIB_A} ${LIB_B})
 
 # make VERBOSE=1
 # set(CMAKE_VERBOSE_MAKEFILE ON)
+# set(CMAKE_CXX_COMPILER, gcc)
+# set(CMAKE_C_COMPILER, gcc)
