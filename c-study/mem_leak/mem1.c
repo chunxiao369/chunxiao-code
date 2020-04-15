@@ -6,6 +6,7 @@ int b = 1;
 
 int main(void)
 {
+    return true;
     int n = 0;
     char *p1 = NULL;
     char *p2 = NULL;
