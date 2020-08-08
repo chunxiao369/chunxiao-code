@@ -14,7 +14,7 @@ CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS =#-lpthread
 TARGET = xuexe
-OBJS = signal.o
+OBJS = long_to_short.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@ -lpthread
 

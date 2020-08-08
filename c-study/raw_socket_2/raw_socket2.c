@@ -5,6 +5,17 @@
 #include <string.h>             // strcpy
 #include <stdio.h>              // printf
 #include <linux/if_packet.h>    // sockaddr_ll
+#include <unistd.h>
+#include <stdlib.h>
+#include <netdb.h>
+#include <netinet/ip.h>
+#include <netinet/in.h>
+#include <net/ethernet.h>
+#include <net/if.h>
+#include <arpa/inet.h>
+#include <errno.h>
+
+
 #include "raw_socket.h"
 #define BOOL   unsigned char
 #define U8     unsigned char
@@ -26,13 +37,13 @@ BOOL InitEtherNetIf(void)
 {
     struct ifreq req;
 
-    if ((fd = socket(AF_PACKET, SOCK_RAW, htons(0x0003))) < 0) {
-    //if ((fd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL))) < 0) {
+    //if ((fd = socket(AF_PACKET, SOCK_RAW, htons(0x0003))) < 0) {
+    if ((fd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL))) < 0) {
         printf("failed to create raw socket!\n");
         return FALSE;
     }
 
-    strcpy(req.ifr_name, "oct0");
+    strcpy(req.ifr_name, "lo");
     if (ioctl(fd, SIOCGIFFLAGS, &req) < 0) {
         printf("failed to do ioctl!");
         return FALSE;

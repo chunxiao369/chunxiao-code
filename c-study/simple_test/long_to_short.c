@@ -20,7 +20,7 @@ int main()
 	char buf[250]={0};
 	int len,i;
 	char temp_short_ge[24][15];
-	strcpy(buf,"1/f/23,1/f/24,2/f/3,2/f/4,2/f/13-18,2/f/21,2/f/22,2/r/10,2/r/12,2/r/14-18,2/r/20-24,1/r/2,1/r/6,1/r/8,1/r/10-20,1/r/22,1/r/24");
+	strcpy(buf,"1/f/23,1/f/24,,,2/f/3");
 	len=get_short_string_from_long(buf,temp_short_ge);
 	printf("%s\n",buf);
 	for(i=0;i<len;i++)
