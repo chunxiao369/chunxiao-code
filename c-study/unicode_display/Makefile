@@ -10,7 +10,7 @@
 #
 
 CC = gcc
-CFLAGS = -Wall -O2
+CFLAGS = -Wall -O2 -Werror
 LDFLAGS =#-lpthread
 TARGET = unicode_dis
 OBJS = unicode_dis.o

@@ -7,20 +7,60 @@
  */
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 #include <locale.h>
 #include <wchar.h>
+#include <iconv.h>
+#include <errno.h>
+
 int main()
 {
-    const wchar_t *abc = L"我而做地铁去紧路上舀蜀";
+    char a[256] = {0};
+    strcpy(a, "333中国银行222");
+    //strcpy(a, "中国银行");
+    char *a_ptr = a;
+    //const wchar_t *abc = L"我而做地铁去紧路上舀蜀";
+    const wchar_t *abc = L"中国银行";
     char buff2[256] = {0};
+    char *xx = buff2;
     unsigned long length = wcslen(abc);
     unsigned long i;
     uint32_t *buff = NULL;
+    size_t len = 0;
+    size_t len_left = 256;
+    size_t len_out = 0;
+    iconv_t cd;
+#if 0
     if (!setlocale(LC_CTYPE, "")) {
         printf("errrrrrrr\n");
         return 0;
     }
-
+#endif
+    len = strlen(a);
+    printf("inpurt len: %ld.\n", len);
+    for (i = 0; i < len; i++) {
+        printf("%02x ", (uint8_t)a[i]);
+    }
+    printf("\n");
+    cd = iconv_open("UTF-16BE","UTF8");
+    len_out = iconv(cd, &a_ptr, &len, &xx, &len_left);
+    if (-1 == len_out) {
+        printf("error, len: %ld, %s\n", strlen(buff2), strerror(errno));
+        return 0;
+    }
+    printf("xxxxxxxxxxxxx, len: %ld, %ld\n", strlen(buff2), len_left);
+    iconv_close(cd);
+    //for (i = 0; i < strlen(buff2); i++) {
+    for (i = 0; i < (int)(xx - buff2); i++) {
+        printf("%02x ", (uint8_t)buff2[i]);
+    }
+    printf("\n");
+    return 0;
+#if 0
+    size_t iconv(iconv_t cd,
+                    char **inbuf, size_t *inbytesleft,
+                    char **outbuf, size_t *outbytesleft);
+#endif
     printf("%ls\n", abc);
     printf("%lu\n", length);
     buff = (uint32_t *)abc;

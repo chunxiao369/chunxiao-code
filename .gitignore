@@ -19,4 +19,5 @@ c-study/simple_test/xuexe
 opensource/clickhouse/20090613/*.csv
 opensource/clickhouse/ericsson/*.csv
 opensource/clickhouse/clickhouse/
-
+.cache.mk
+modules.order
