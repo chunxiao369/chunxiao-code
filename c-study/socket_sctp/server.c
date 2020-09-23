@@ -73,20 +73,27 @@ int main()
             continue;
         } else
             printf("New client connected....\n");
+    
+        while (1) {
+            memset(buffer, 0, sizeof(buffer));
+            in = sctp_recvmsg(connSock, buffer, sizeof(buffer), (struct sockaddr *)NULL, 0, &sndrcvinfo, &flags);
 
-        in = sctp_recvmsg(connSock, buffer, sizeof(buffer), (struct sockaddr *)NULL, 0, &sndrcvinfo, &flags);
+            if (in == -1) {
+                printf("Error in sctp_recvmsg\n");
+                perror("sctp_recvmsg()");
+                break;
+            } else {
+                if (0 == strncmp(buffer, "exit", sizeof("exit"))) {
+                    break;
+                }
+                //Add '\0' in case of text data
+                buffer[in] = '\0';
 
-        if (in == -1) {
-            printf("Error in sctp_recvmsg\n");
-            perror("sctp_recvmsg()");
-            close(connSock);
-            continue;
-        } else {
-            //Add '\0' in case of text data
-            buffer[in] = '\0';
-
-            printf(" Length of Data received: %d\n", in);
-            printf(" Data : %s\n", (char *)buffer);
+                printf(" Length of Data received: %d\n", in);
+                printf(" Data : %s\n", (char *)buffer);
+                send(connSock, "Welcome to my server.\n", 22, 0);
+                //sctp_sendmsg(connSock, (void *)"server server", (size_t)11, NULL, 0, 0, 0, 0, 0, 0);
+            }
         }
         close(connSock);
     }
