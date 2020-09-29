@@ -127,7 +127,7 @@ static void *thread_recv(void *arg)
     socklen_t stFromLen = 0;
     char g_acRecvBuf[RCV_BUF_SIZE] = { 0 };
     int counter = 0;
-    struct sockaddr addr = { 0 };
+    struct sockaddr_ll addr = { 0 };
 
     stFromLen = sizeof(struct sockaddr);
     /* 循环监听 */
@@ -135,7 +135,7 @@ static void *thread_recv(void *arg)
         memset(g_acRecvBuf, 0, RCV_BUF_SIZE);
 
         /* 接收数据帧 */
-        iRet = recvfrom(p->fdr, g_acRecvBuf, g_iRecvBufSize, 0, &addr, &stFromLen);
+        iRet = recvfrom(p->fdr, g_acRecvBuf, g_iRecvBufSize, 0, (struct sockaddr *)&addr, &stFromLen);
         if (0 > iRet) {
             continue;
         }
@@ -167,7 +167,6 @@ static void *thread_send(void *arg)
     p = (fd_t *) arg;
     printf("rfd is %d, sfd is %d.\n", p->fdr, p->fds);
     int iRet = 256;
-    socklen_t stFromLen = 0;
     char g_acRecvBuf[RCV_BUF_SIZE] = { 0 };
     int counter = 0;
 
