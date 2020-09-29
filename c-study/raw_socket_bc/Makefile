@@ -14,7 +14,7 @@ CC = gcc
 CFLAGS = -Wall -O2
 LDFLAGS = -lpthread
 TARGET = raw
-OBJS = raw_socket.o
+OBJS = raw_socket2.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 

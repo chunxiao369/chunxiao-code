@@ -12,6 +12,7 @@
 #include <string.h>
 #include <netdb.h>
 #include <sys/ioctl.h>
+#include <fcntl.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/ip.h>
@@ -34,6 +35,7 @@ static int g_iRecvBufSize = RCV_BUF_SIZE;
 static int ethdump_setPromisc(const char *pcIfName, int fd, int iFlags)
 {
     int iRet = -1;
+    int flags;
     struct ifreq stIfr;
 
     /* 获取接口属性标志位 */
@@ -43,6 +45,8 @@ static int ethdump_setPromisc(const char *pcIfName, int fd, int iFlags)
         perror("[Error]Get Interface Flags");
         return -1;
     }
+    flags = fcntl(fd, F_GETFL, 0);
+    fcntl(fd, F_SETFL, flags | O_NONBLOCK);
 
     if (0 == iFlags) {
         /* 取消混杂模式 */
@@ -109,49 +113,76 @@ static int ethdump_initSocket(char *g_szIfName)
     return fd;
 }
 
-/* 捕获网卡数据帧 */
-static void ethdump_startCapture(const int fd_r, int fd_s)
-{
-    int iRet = -1;
-    socklen_t stFromLen = 0;
-    char g_acRecvBuf[RCV_BUF_SIZE] = { 0 };
-    int counter = 0;
-
-    /* 循环监听 */
-    while (1) {
-        /* 清空接收缓冲区 */
-        //printf("bbbbbbbbbbbbbbbbb.\n");
-        memset(g_acRecvBuf, 0, RCV_BUF_SIZE);
-
-        /* 接收数据帧 */
-        iRet = recvfrom(fd_r, g_acRecvBuf, g_iRecvBufSize, 0, NULL, &stFromLen);
-        if (0 > iRet) {
-            continue;
-        }
-        if (0 == (counter % 10000)) {
-            printf("aaaaaaaaaaaaaa: len: %d, fd: %d, counter: %d.\n", iRet, fd_r, counter);
-        }
-        if (counter <= 20000) {
-            sendto(fd_s, g_acRecvBuf, iRet, 0, (struct sockaddr *)NULL, sizeof(struct sockaddr_ll));
-        }
-        counter++;
-
-        /* 解析数据帧 */
-        //ethdump_parseFrame(g_acRecvBuf);
-    }
-}
-
-typedef struct fd_s {
+typedef struct _fd_t {
     int fds;
     int fdr;
 } fd_t;
 
-static void *thread_func(void *arg)
+static void *thread_recv(void *arg)
 {
     fd_t *p = NULL;
     p = (fd_t *) arg;
     printf("rfd is %d, sfd is %d.\n", p->fdr, p->fds);
-    ethdump_startCapture(p->fdr, p->fds);
+    int iRet = -1;
+    socklen_t stFromLen = 0;
+    char g_acRecvBuf[RCV_BUF_SIZE] = { 0 };
+    int counter = 0;
+    struct sockaddr addr = { 0 };
+
+    stFromLen = sizeof(struct sockaddr);
+    /* 循环监听 */
+    while (1) {
+        memset(g_acRecvBuf, 0, RCV_BUF_SIZE);
+
+        /* 接收数据帧 */
+        iRet = recvfrom(p->fdr, g_acRecvBuf, g_iRecvBufSize, 0, &addr, &stFromLen);
+        if (0 > iRet) {
+            continue;
+        }
+        if (addr.sll_pkttype == PACKET_OUTGOING) {
+            continue;
+        }
+        /*
+        if (0 == strncmp(g_acRecvBuf, "embedwayembedway", 16)) {
+            //printf("recv send content, counter: %d....\n", counter);
+            //break;
+        }
+        */
+        strcpy(g_acRecvBuf, "embedwayembedway");
+        //sendto(p->fds, g_acRecvBuf, iRet, 0, (struct sockaddr *)NULL, sizeof(struct sockaddr_ll));
+        counter++;
+        if (0 == (counter % 10000)) {
+            printf("aaaaaaaaaaaaaa recv counter: len: %d, fd: %d, counter: %d.\n", iRet, p->fdr, counter);
+        }
+
+        /* 解析数据帧 */
+        //ethdump_parseFrame(g_acRecvBuf);
+    }
+    return 0;
+}
+
+static void *thread_send(void *arg)
+{
+    fd_t *p = NULL;
+    p = (fd_t *) arg;
+    printf("rfd is %d, sfd is %d.\n", p->fdr, p->fds);
+    int iRet = 256;
+    socklen_t stFromLen = 0;
+    char g_acRecvBuf[RCV_BUF_SIZE] = { 0 };
+    int counter = 0;
+
+    usleep(1000000);
+    while (counter < 10000) {
+        memset(g_acRecvBuf, 0, RCV_BUF_SIZE);
+        strcpy(g_acRecvBuf, "abcdefghijklmnopqrstuvwxyz1234567890");
+
+        sendto(p->fdr, g_acRecvBuf, iRet, 0, (struct sockaddr *)NULL, sizeof(struct sockaddr_ll));
+        sendto(p->fds, g_acRecvBuf, iRet, 0, (struct sockaddr *)NULL, sizeof(struct sockaddr_ll));
+        counter++;
+        usleep(100);
+        //printf("send counter: %d.\n", counter);
+    }
+
     return 0;
 }
 
@@ -171,8 +202,8 @@ int main(int argc, char *argv[])
     if (0 > fd1.fds) {
         return -1;
     }
-
-    fd2.fdr = ethdump_initSocket("cxxu2");
+#if 1
+    fd2.fdr = ethdump_initSocket("cxxu1");
     if (0 > fd2.fdr) {
         return -1;
     }
@@ -180,9 +211,10 @@ int main(int argc, char *argv[])
     if (0 > fd2.fds) {
         return -1;
     }
+#endif
     /* 捕获数据包 */
-    pthread_create(&tid1, NULL, thread_func, (void *)&fd1);
-    //pthread_create(&tid2, NULL, thread_func, (void *)&fd2);
+    pthread_create(&tid2, NULL, thread_recv, (void *)&fd2);
+    pthread_create(&tid1, NULL, thread_send, (void *)&fd1);
     while (1);
 
     /* 关闭SOCKET */
