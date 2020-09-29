@@ -13,6 +13,7 @@
 int main()
 {
     int listenSock, connSock, ret, in, flags;
+    int opt = SO_REUSEADDR;
     struct sockaddr_in servaddr;
     struct sctp_initmsg initmsg;
     struct sctp_sndrcvinfo sndrcvinfo;
@@ -38,6 +39,8 @@ int main()
         close(listenSock);
         exit(1);
     }
+    /*Set socket can be reused*/
+    setsockopt(listenSock, IPPROTO_SCTP, SO_REUSEADDR, &opt, sizeof(opt));
 
     /* Specify that a maximum of 5 streams will be available per socket */
     memset(&initmsg, 0, sizeof(initmsg));
@@ -78,12 +81,12 @@ int main()
             memset(buffer, 0, sizeof(buffer));
             in = sctp_recvmsg(connSock, buffer, sizeof(buffer), (struct sockaddr *)NULL, 0, &sndrcvinfo, &flags);
 
-            if (in == -1) {
-                printf("Error in sctp_recvmsg\n");
-                perror("sctp_recvmsg()");
-                break;
+            if (in <= 0) {
+                //printf("Error in sctp_recvmsg\n");
+                //perror("sctp_recvmsg()");
+                continue;
             } else {
-                if (0 == strncmp(buffer, "exit", sizeof("exit"))) {
+                if (0 == strncmp(buffer, "exit", strlen("exit"))) {
                     break;
                 }
                 //Add '\0' in case of text data
