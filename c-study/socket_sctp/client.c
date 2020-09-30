@@ -8,7 +8,7 @@
 #include <netinet/sctp.h>
 #include <arpa/inet.h>
 #define MAX_BUFFER 1024
-#define MY_PORT_NUM 62324       /* This can be changed to suit the need and should be same in server and client */
+#define MY_PORT_NUM 3868        /* This can be changed to suit the need and should be same in server and client */
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     int flags;
     struct sockaddr_in servaddr;
     struct sctp_sndrcvinfo sndrcvinfo;
-    char buffer[MAX_BUFFER + 1] = {0};
+    char buffer[MAX_BUFFER + 1] = { 0 };
     int datalen = 0;
     int i = 0;
     char *p;
@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
     bzero((void *)&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(MY_PORT_NUM);
-    servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    servaddr.sin_addr.s_addr = inet_addr("172.16.33.171");
+    //servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
     ret = connect(connSock, (struct sockaddr *)&servaddr, sizeof(servaddr));
 
@@ -46,10 +47,10 @@ int main(int argc, char *argv[])
         exit(1);
     }
     while (1) {
-        printf("Enter data to send: ");
-        p = fgets(buffer, MAX_BUFFER, stdin);
-        if (NULL == p) {
-            return 1;
+        if (i & 0x1) {
+            strcpy(buffer, "1111111111");
+        } else {
+            strcpy(buffer, "2222222222");
         }
         /* Clear the newline or carriage return from the end */
         buffer[strlen(buffer)] = 0;
@@ -63,8 +64,8 @@ int main(int argc, char *argv[])
         } else
             printf("Successfully sent %d bytes data to server\n", ret);
 #if 1
-        /*Recv welcome message*/
-        if((in = recv(connSock, buffer, MAX_BUFFER, 0)) == -1) {
+        /*Recv welcome message */
+        if ((in = recv(connSock, buffer, MAX_BUFFER, 0)) == -1) {
             perror("recv() error\n");
             break;
         } else {
@@ -72,7 +73,7 @@ int main(int argc, char *argv[])
             printf("Server Message: %s\n", buffer);
         }
 #endif
- 
+
 #if 0
         in = sctp_recvmsg(connSock, buffer, MAX_BUFFER, (struct sockaddr *)NULL, 0, &sndrcvinfo, &flags);
 
@@ -85,6 +86,7 @@ int main(int argc, char *argv[])
             printf(" Data : %s\n", (char *)buffer);
         }
 #endif
+        usleep(1000000);
         i++;
     }
     close(connSock);

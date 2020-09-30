@@ -8,7 +8,7 @@
 #include <netinet/in.h>
 #include <netinet/sctp.h>
 #define MAX_BUFFER 1024
-#define MY_PORT_NUM 62324       /* This can be changed to suit the need and should be same in server and client */
+#define MY_PORT_NUM 3868        /* This can be changed to suit the need and should be same in server and client */
 
 int main()
 {
@@ -39,7 +39,7 @@ int main()
         close(listenSock);
         exit(1);
     }
-    /*Set socket can be reused*/
+    /*Set socket can be reused */
     setsockopt(listenSock, IPPROTO_SCTP, SO_REUSEADDR, &opt, sizeof(opt));
 
     /* Specify that a maximum of 5 streams will be available per socket */
@@ -68,7 +68,7 @@ int main()
         //Clear the buffer
         bzero(buffer, MAX_BUFFER + 1);
         printf("Awaiting a new connection\n");
-        connSock = accept(listenSock, (struct sockaddr *)NULL, (socklen_t *)NULL);
+        connSock = accept(listenSock, (struct sockaddr *)NULL, (socklen_t *) NULL);
         if (connSock == -1) {
             printf("accept() failed\n");
             perror("accept()");
@@ -76,7 +76,7 @@ int main()
             continue;
         } else
             printf("New client connected....\n");
-    
+
         while (1) {
             memset(buffer, 0, sizeof(buffer));
             in = sctp_recvmsg(connSock, buffer, sizeof(buffer), (struct sockaddr *)NULL, 0, &sndrcvinfo, &flags);
@@ -94,7 +94,8 @@ int main()
 
                 printf(" Length of Data received: %d\n", in);
                 printf(" Data : %s\n", (char *)buffer);
-                send(connSock, "Welcome to my server.\n", 22, 0);
+                strcat(buffer, "Welcome to my server\n");
+                send(connSock, buffer, strlen(buffer), 0);
                 //sctp_sendmsg(connSock, (void *)"server server", (size_t)11, NULL, 0, 0, 0, 0, 0, 0);
             }
         }
