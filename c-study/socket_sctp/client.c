@@ -7,20 +7,86 @@
 #include <netinet/in.h>
 #include <netinet/sctp.h>
 #include <arpa/inet.h>
+#include <netdb.h>
+#include <errno.h>
 #define MAX_BUFFER 1024
-#define MY_PORT_NUM 3868        /* This can be changed to suit the need and should be same in server and client */
+#define MY_PORT_NUM 33333       /* This can be changed to suit the need and should be same in server and client */
+
+#define MAX_BIND_RETRYS 10
+struct sockaddr_storage s_loc;
+int l_len = 0;
+int bind_r(int sk, struct sockaddr_storage *saddr)
+{
+    int error = 0, i = 0;
+    char *host_s, *serv_s;
+
+    if ((host_s = malloc(NI_MAXHOST)) == NULL) {
+        fprintf(stderr, "\n\t\t*** host_s malloc failed!!! ***\n");
+        exit(1);
+    }
+    if ((serv_s = malloc(NI_MAXSERV)) == NULL) {
+        fprintf(stderr, "\n\t\t*** serv_s malloc failed!!! ***\n");
+        exit(1);
+    }
+
+    do {
+        if (i > 0)
+            sleep(1);           /* sleep a while before new try... */
+
+        error = getnameinfo((struct sockaddr *)saddr, l_len, host_s, NI_MAXHOST, serv_s, NI_MAXSERV, NI_NUMERICHOST);
+
+        if (error)
+            printf("%s\n", gai_strerror(error));
+
+        printf("\tbind(sk=%d, [a:%s,p:%s])  --  attempt %d/%d\n", sk, host_s, serv_s, i + 1, MAX_BIND_RETRYS);
+
+        error = bind(sk, (struct sockaddr *)saddr, l_len);
+
+        if (error != 0) {
+            if (errno != EADDRINUSE) {
+                fprintf(stderr, "\n\n\t\t***bind: can "
+                        "not bind to %s:%s: %s ****\n", host_s, serv_s, strerror(errno));
+                exit(1);
+            }
+        }
+        i++;
+        if (i >= MAX_BIND_RETRYS) {
+            fprintf(stderr, "Maximum bind() attempts. " "Die now...\n\n");
+            exit(1);
+        }
+    } while (error < 0 && i < MAX_BIND_RETRYS);
+
+    return 0;
+}
 
 int main(int argc, char *argv[])
 {
     int connSock, ret;
     int in;
-    int flags;
+    //int flags;
     struct sockaddr_in servaddr;
-    struct sctp_sndrcvinfo sndrcvinfo;
+    struct sockaddr_in *t_addr;
+    //struct sctp_sndrcvinfo sndrcvinfo;
+
+    //struct sctp_initmsg initmsg;
+    //struct sctp_event_subscribe events;
+
     char buffer[MAX_BUFFER + 1] = { 0 };
     int datalen = 0;
     int i = 0;
-    char *p;
+    //char *p;
+    struct addrinfo *res;
+    int error = 0;
+    char *host_s, *serv_s;
+
+    if ((host_s = malloc(NI_MAXHOST)) == NULL) {
+        fprintf(stderr, "\n\t\t*** host_s malloc failed!!! ***\n");
+        exit(1);
+    }
+    if ((serv_s = malloc(NI_MAXSERV)) == NULL) {
+        fprintf(stderr, "\n\t\t*** serv_s malloc failed!!! ***\n");
+        exit(1);
+    }
 
     /*Get the input from user */
 
@@ -35,9 +101,32 @@ int main(int argc, char *argv[])
     bzero((void *)&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(MY_PORT_NUM);
+    //servaddr.sin_addr.s_addr = inet_addr("10.17.1.171");
     servaddr.sin_addr.s_addr = inet_addr("172.16.33.171");
     //servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    error = getaddrinfo("172.16.33.222", 0, NULL, &res);
+    if (error) {
+        printf("%s.\n", gai_strerror(error));
+        exit(1);
+    }
 
+    switch (res->ai_family) {
+    case AF_INET:
+        t_addr = (struct sockaddr_in *)&s_loc;
+        memcpy(t_addr, res->ai_addr, res->ai_addrlen);
+        t_addr->sin_family = res->ai_family;
+        //t_addr->sin_port = htons(local_port);
+
+        l_len = res->ai_addrlen;
+        break;
+    default:
+        break;
+    }
+    /*
+       error = getnameinfo((struct sockaddr *)&s_loc, l_len, host_s,
+       NI_MAXHOST, serv_s, NI_MAXSERV, NI_NUMERICHOST);
+     */
+    bind_r(connSock, &s_loc);
     ret = connect(connSock, (struct sockaddr *)&servaddr, sizeof(servaddr));
 
     if (ret == -1) {
