@@ -1,3 +1,27 @@
 docker run --name angry_easley --privileged=true -it ubuntu-net bash
 docker run --name=angry_easley2 --link=angry_easley --privileged=true -it ubuntu-net bash
 That will echo angry_easley ip to /etc/hosts
+
+docker build -t ubuntu-net .
+docker run -it -d --privileged=true --name=t_ubuntu ubuntu-net
+docker rm -f t_ubuntu
+
+docker run -it -d --privileged=true --net=none --name=t_ubuntu1 ubuntu-net
+docker run -it -d --privileged=true --net=none --name=t_ubuntu2 ubuntu-net
+ovs-docker add-port br0 eth0 t_ubuntu1
+ovs-docker add-port br0 eth0 t_ubuntu2
+
+ip addr show br0
+docker exec -it t_ubuntu1 bash
+>>ip addr add 192.168.3.3/24 dev eth0
+docker exec -it t_ubuntu2 bash
+>>ip addr add 192.168.3.4/24 dev eth0
+
+ovs-ofctl dump-flows br0
+ovs-ofctl add-flow br0 "in_port=1,actions=drop"
+ovs-ofctl add-flow br0 "in_port=2,actions=drop"
+ovs-ofctl del-flows br0 "in_port=1"
+ovs-ofctl del-flows br0 "in_port=2"
+
+ovs-ofctl add-flow br0 "icmp,actions=drop"
+ovs-ofctl del-flows br0 "icmp"
