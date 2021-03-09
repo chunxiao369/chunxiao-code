@@ -9,12 +9,14 @@
 # link command
 #
 
-#CC = mips64-octeon-linux-gnu-gcc
+PKG_LIB = `pkg-config --libs libfixbuf`
+PKG_INC = `pkg-config --cflags libfixbuf`
+
 CC = gcc
-CFLAGS = -Wall -O0 -g -I/usr/include/glib-2.0/ -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/
-LDFLAGS = -lglib-2.0
-TARGET = xuexe
-OBJS = tap.o
+CFLAGS = $(PKG_INC)
+LDFLAGS = $(PKG_LIB) 
+TARGET = fix_test
+OBJS = fix_test.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
