@@ -520,6 +520,8 @@ class Flowmeter:
 
         src = self.get_src_ip(df)
         src_df = df.loc[df["src"]==src]
+        #print(src_df["time"])
+        #print(src_df["time"].diff())
         return  src_df["time"].diff().sum() 
 
     def get_iat_backward_total_time(self, df):
@@ -959,6 +961,8 @@ class Flowmeter:
         df (Dataframe): A bi-directional flow pandas dataframe.
         """
     
+        print(df["time"])
+        print(df["time"].diff())
         if df.shape[0] > 1:
             return  max(df["time"].astype(float).diff().dropna())
         else:
@@ -1332,7 +1336,8 @@ class Flowmeter:
         return row["protocol"]
 
     def get_timestamp(self, df):
-        return str(pd.to_datetime(df["time"].astype(float), unit='s').min())
+        #print(str(pd.to_datetime(df["time"].astype(float), unit='s').min()))
+        return str(pd.to_datetime(df["time"].astype(int), unit='s').min())
         #return str(df["time"])
 
     def get_timedelta_ns(self, df):
@@ -1500,7 +1505,7 @@ class Flowmeter:
             result["dst"] = [self.get_dst_ip(flow)]
             result["dst_port"] = [self.get_dst_port(flow)]
             result["protocol"] = [self.get_protocol(flow)]
-            result['timestamp'] = [self.get_timestamp(flow)]
+            result["timestamp"] = [self.get_timestamp(flow)]
             result["duration"] = [self.get_flow_duration(flow)]
             
             result["total_fpackets"] = [self.get_total_forward_packets(flow)]
@@ -1625,6 +1630,7 @@ class Flowmeter:
         
         
         self._sessions = self.build_sessions()
+        #print(self._sessions)
         gc.collect()
         # print("\nBuilding Pool\n") # Test
         # pool = Pool()
@@ -1637,7 +1643,7 @@ class Flowmeter:
         final = pd.concat(self._frames)
         final.set_index(["flow"], inplace=True)
         for column in final.columns:
-            final[column] = final[column].replace(r'\s+', np.nan, regex=True)
+            final[column] = final[column].replace(r'\s+$', np.nan, regex=True)
             final[column] = final[column].fillna(0)
 
         return final
