@@ -3,9 +3,10 @@ kind: Pod
 metadata:
   name: test
   labels:
-    app: test
+    app: sh
 spec:
   containers:
-  - name: embedway-test
+  - name: embedway
     image: centos_net
-    imagePullPolicy: Never
+    imagePullPolicy: IfNotPresent
+    command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]

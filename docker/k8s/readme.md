@@ -11,6 +11,7 @@ kubectl run --image=nginx:alpine nginx-app --port=80
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
 kubectl get pod,svc
+kubectl get pod,service
 
 kubectl get pods -o wide
 kubectl delete pod [pod_name]
@@ -27,6 +28,10 @@ kubectl exec -c <container> <pod> -n <namespace> -- sh -c "command"
 kubeadm config images list --kubernetes-version v1.16.0
 
 kubectl describe pod nginx-86c57db685-264s8
+kubectl describe service nginx
 
 kubectl create -f embed_net.yaml
+kubectl scale --replicas=3 deployment/nginx
+kubectl rolling-update滚动升级与回滚
 
+pod/service/rolling-update/set(resource limit)/probe(healthy check)
