@@ -63,7 +63,7 @@ void read_and_write(int fd, short event, void *arg)
 int setnonblock(int fd)
 {
     int flags;
-    flags = fcntl(fd, F_GETFL);
+    flags = fcntl(fd, F_GETFL, 0);
     if (flags < 0)
         return flags;
     flags |= O_NONBLOCK;
@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
         exit(-1);
     }
     s = ethdump_initSocket(argv[1]);
+    setnonblock(s);
   
     /* Initial libevent. */
     event_init();

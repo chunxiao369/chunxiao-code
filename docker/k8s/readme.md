@@ -8,6 +8,8 @@ kubeadm init \
 kubectl run --image=nginx:alpine nginx-app --port=80
 下载下来的image可以node上用docker image查看到
 
+kubectl delete node k8s-node1
+
 kubectl create deployment nginx --image=nginx
 kubectl delete deployment nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
@@ -16,6 +18,7 @@ kubectl expose pod mc3          --port=80 --type=NodePort
 kubectl get pod,svc
 kubectl get pod,service
 kubectl get deployment
+kubectl get ns
 kubectl get network-attachment-definitions
 
 kubectl get pods -o wide
@@ -61,3 +64,32 @@ kubectl -n kube-system get pods
 kubectl get nodes
 kubectl get node k8s-node1 -o json | jq '.status.allocatable'
 kubectl logs kube-sriov-device-plugin-amd64-** -n kube-system
+
+kubectl get pods --all-namespaces | grep -i multus
+kubectl exec -it sriovpod1 bash
+
+kubectl delete pod virtiopod1
+kubectl delete -f deployments/k8s-v1.16/sriovdp-embedway.yaml
+kubectl delete -f deployments/configMap_embedway.yaml
+kubectl delete -f deployments/embedway-crd.yaml
+
+kubectl create -f deployments/embedway-crd.yaml
+#kubectl get network-attachment-definitions
+kubectl create -f deployments/configMap_embedway.yaml
+#kubectl get configmaps -A
+#kubectl describe configmaps sriovdp-config -n kube-system
+kubectl create -f deployments/k8s-v1.16/sriovdp-embedway.yaml
+kubectl create -f deployments/pod-embd1.yaml
+kubectl describe pod virtiopod1
+journalctl -xefu kubelet
+
+
+kubectl delete -f deployments/pod-eth4.yaml
+kubectl delete -f deployments/eth4-crd.yaml
+kubectl create -f deployments/eth4-crd.yaml
+kubectl create -f deployments/pod-eth4.yaml
+
+kubectl delete -f deployments/pod-eth5.yaml
+kubectl delete -f deployments/eth5-crd.yaml
+kubectl create -f deployments/eth5-crd.yaml
+kubectl create -f deployments/pod-eth5.yaml
