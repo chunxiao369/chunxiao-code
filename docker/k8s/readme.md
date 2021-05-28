@@ -93,3 +93,10 @@ kubectl delete -f deployments/pod-eth5.yaml
 kubectl delete -f deployments/eth5-crd.yaml
 kubectl create -f deployments/eth5-crd.yaml
 kubectl create -f deployments/pod-eth5.yaml
+
+
+kubectl create -f deployments/configMap_hostdev.yaml
+kubectl create -f deployments/eth-crd.yaml
+kubectl create -f deployments/k8s-v1.16/sriovdp-embedway.yaml
+kubectl create -f deployments/pod-eth.yaml
+

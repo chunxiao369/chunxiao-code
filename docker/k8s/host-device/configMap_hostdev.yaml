@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sriovdp-config
+  namespace: kube-system
+data:
+  config.json: |
+    {
+        "resourceList": [
+            {
+                "resourceName": "embedway_virtionet",
+                "resourcePrefix": "intel.com",
+                "deviceType": "netDevice",
+                "selectors": {
+                    "vendors": ["1af4"],
+                    "devices": ["1000"],
+                    "pciAddresses": ["0000:06:00.5", "0000:06:00.6"]
+                }
+            },
+            {
+                "resourceName": "intel_sriov_netdevice",
+                "resourcePrefix": "intel.com",
+                "selectors": {
+                    "vendors": ["8086"],
+                    "devices": ["154c", "10ed"],
+                    "drivers": ["i40evf", "iavf", "ixgbevf"]
+                }
+            },
+            {
+                "resourceName": "mlnx_sriov_rdma",
+                "selectors": {
+                    "vendors": ["15b3"],
+                    "devices": ["1018"],
+                    "drivers": ["mlx5_ib"],
+                    "isRdma": true
+                }
+            }
+        ]
+    }
