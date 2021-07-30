@@ -1,0 +1,4 @@
+||123456||haha
+345678||||非常高兴
+345678||123456||非常高兴
+sip:ximipsmgw1bzx.ipsmgw.fj.chinamobile.com,,sip:+8613999999999@fj.ims.mnc000.mcc460.3gppnetwork.org,,【中国银行】

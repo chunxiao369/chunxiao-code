@@ -11,7 +11,7 @@
 
 CC=gcc
 #CC=ppc_82xx-gcc
-CFLAGS=-Wall -O2
+CFLAGS=-Wall -O0
 LDFLAGS=-lpthread
 TARGET=xuexe
 OBJS=thread.o
