@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
      */
     hs_database_t *database;
     hs_compile_error_t *compile_err;
-    if (hs_compile(pattern, HS_FLAG_SINGLEMATCH | HS_FLAG_DOTALL | HS_FLAG_MULTILINE, \
+    if (hs_compile(pattern, HS_FLAG_CASELESS | HS_FLAG_SINGLEMATCH | HS_FLAG_DOTALL | HS_FLAG_MULTILINE, \
         HS_MODE_BLOCK, NULL, &database, &compile_err) != HS_SUCCESS) {
         fprintf(stderr, "ERROR: Unable to compile pattern \"%s\": %s\n", pattern, compile_err->message);
         hs_free_compile_error(compile_err);
@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
         } else {
             p = inputData + i * LEN_PER_LINE;
         }
-        //printf("p: %s", p);
+        printf("p: %s", p);
         if ('p' == *type) {
             if (pcre_exec(p_pcre, NULL, p, strlen(p), 0, 0, NULL, 0) < 0) {
                 //printf("%s doesn't match %s\n", pText, pattern);
