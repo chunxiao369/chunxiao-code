@@ -16,6 +16,7 @@ int main()
     char str[12];
     GHashTable *g_table = NULL;
 
+    //strncpy(str, NULL, 11);
     if((fp=fopen("a.txt", "w"))==NULL)
     {
         printf("not open\n");
