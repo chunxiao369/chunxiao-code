@@ -59,4 +59,30 @@ qemu-system-x86_64 -m 1024 -cpu host -hda centos7_no2.img -boot c -enable-kvm -n
 -object memory-backend-file,id=mem,size=1024M,mem-path=/dev/hugepages,share=on \
 -numa node,memdev=mem -mem-prealloc
 
+------------------------
+|              |       |
+|br0: 10.1.1.2 | eth0 10.9.0.87 <-----
+|              |       |              |
+------------------------              |
+                                vxlan |
+--------------------------            |
+|                |       |            |
+|eth1 10.1.1.125 | eth0 10.17.3.2 <---
+|                |       |
+--------------------------
+
+在本地笔记本：
+ovs-vsctl add-br br0
+ip link set br0 up
+ovs-vsctl add-port br0 cxxu1 -- set interface cxxu1 type=vxlan options:{local_ip=10.9.0.87,remote_ip=10.17.3.2,key=1}
+ip addr add 10.1.1.2/24 dev br0
+ip link set ovs-system up
+
+在10.17.3.2上：
+ovs-vsctl add-br br_vx
+ovs-vsctl add-port br_vx  vx1 -- set interface vx1 type=vxlan options:{local_ip=10.17.3.2,remote_ip=10.9.0.87,key=1}
+ip link set ovs-system up
+ip link set br_vx up
+ip route add 10.1.1.2/32 dev br_vx
+ip route add 10.1.1.0/24 dev eth1
 

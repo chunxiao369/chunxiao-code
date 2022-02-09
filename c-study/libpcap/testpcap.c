@@ -32,6 +32,7 @@ int main(int argc, char **argv)
     //pcap_t *pcap_open_dead(int linktype, int snaplen);
     uint8_t data[DSIZE] = {0};
     int i = 0;
+    pcap_dumper_t **g_dumper = NULL;
     pcap_t *dev = NULL;
     pcap_dumper_t *dumper = NULL;
     struct pcap_pkthdr header;
@@ -41,6 +42,8 @@ int main(int argc, char **argv)
     char str_time[16] = {0};
     time_t time;
 
+    g_dumper = malloc(10 * sizeof(pcap_dumper_t **));
+    memset(g_dumper, 0, 10 * sizeof(pcap_dumper_t **));
     //dir and name
     gettimeofday(&tm, NULL);
     time = tm.tv_sec;
@@ -65,8 +68,13 @@ int main(int argc, char **argv)
         printf("line: %d.\n", __LINE__);
         return 1;
     }
+    printf("line: %d, dumper: %p.\n", __LINE__, dumper);
     for (i = 0; i < DSIZE; i++) {
         data[i] = 'x';
+    }
+    *(g_dumper + 2) = dumper;
+    for (i = 0; i < 10; i++) {
+        printf("g    dumper: %p.\n", *(g_dumper + i));
     }
 
     gettimeofday(&tm, NULL);
