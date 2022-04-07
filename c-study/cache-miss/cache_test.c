@@ -4,7 +4,8 @@
 #include <unistd.h>
 
 #define ARRAY_SIZE 8192 
-int main(int argc, char **argv)
+
+int func_a(int num)
 {
     int i;
     int j;
@@ -15,7 +16,7 @@ int main(int argc, char **argv)
         printf("malloc failed.\n");
         return 0;
     }
-    if (1 == argc) {
+    if (1 == num) {
         for (i = 0; i < ARRAY_SIZE; ++i) {
             for (j = 0; j < ARRAY_SIZE; ++j) {
                 a[i * ARRAY_SIZE + j] = 2;
@@ -29,6 +30,20 @@ int main(int argc, char **argv)
         }
     }
     free(a);
+    return 0;
+}
 
+int func_b(void)
+{
+    int i;
+    i = atoi("333");
+    i = i + i;
+    return i;
+}
+
+int main(int argc, char **argv)
+{
+    func_a(argc);
+    func_b();
     return 0;
 }
