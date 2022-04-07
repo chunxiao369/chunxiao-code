@@ -7,8 +7,9 @@ typedef struct _em_list {
 
 int em_list_print(em_list_t *head)
 {
+    printf ("value: ");
     while (head) {
-        printf ("value: %d\n", head->v);
+        printf(" %d\n", head->v);
         head = head->next;
     }
     printf("\n");

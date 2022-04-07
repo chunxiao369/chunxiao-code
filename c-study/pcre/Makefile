@@ -11,10 +11,10 @@
 
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
-CFLAGS = -Wall -O0 -g -I/usr/include/glib-2.0/ -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/
-LDFLAGS = -lglib-2.0
+CFLAGS = -Wall -O0 -g 
+LDFLAGS = -lpcre
 TARGET = xuexe
-OBJS = time1.o
+OBJS = tap.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
