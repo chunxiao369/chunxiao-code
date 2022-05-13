@@ -55,7 +55,7 @@ int main()
         printf("%02x ", (uint8_t)buff2[i]);
     }
     printf("\n");
-    return 0;
+    //return 0;
 #if 0
     size_t iconv(iconv_t cd,
                     char **inbuf, size_t *inbytesleft,
