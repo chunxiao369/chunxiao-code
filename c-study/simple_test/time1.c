@@ -44,12 +44,31 @@ int main()
     time_t middle;
     time_t smallest;
     sccp_t *temp;
+    char *p;
 
     char buf[64] = {0};
     time_t random_time = 0;
+    /*
+     * Jun 12, 2038 07:36:38.000000000 CST
+     */
     uint8_t xx[4] = {0x80, 0xbd, 0xa5, 0x06};
     struct tm tm_s;
     struct tm tm_d;
+    char *t1 = "2022-03-31 02:00:01";
+    char *t2 = "2022-03-31 02:00:00";
+    struct tm tm_1;
+    struct tm tm_2;
+    time_t tt1;
+    time_t tt2;
+
+    strptime(t1, "%Y-%m-%d %H:%M:%S", &tm_1);
+    strptime(t2, "%Y-%m-%d %H:%M:%S", &tm_2);
+
+    tt1 = mktime(&tm_1);
+    tt2 = mktime(&tm_2);
+
+    // > -0.1 < 0.1
+    printf("difftime: %f.\n", difftime(tt1, tt2));
 
     random_time = ntohl(*(uint32_t*)xx);
     localtime_r(&random_time, &tm_s);
@@ -58,9 +77,10 @@ int main()
     printf("strftime buf: %s\n", buf);
 
     memset(&tm_d, 0, sizeof(struct tm));
-    strptime(buf, "%Y-%m-%d %H:%M:%S", &tm_d);
+    p = strptime(buf, "%Y-%m-%d %H:%M:%S", &tm_d);
+    printf("%p\n", p);
     strftime(buf, sizeof(buf), "%Y/%m/%d %H:%M:%S", &tm_d);
-    printf("strptime-strftime buf: %s\n", buf);
+    printf("strptime-strftime buf: %s, %p, %u\n", buf, p, (uint8_t)*p);
 
     asctime_r(&tm_s, buf);
     printf("buf: %s\n", buf);
