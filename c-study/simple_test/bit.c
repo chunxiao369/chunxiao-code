@@ -3,14 +3,24 @@
 
 static inline uint64_t __align64pow2(uint64_t v) {
     v--;
+    //printf("0x%lx\n", v);
     v |= v >> 1;
+    //printf("0x%lx\n", v);
     v |= v >> 2;
+    //printf("0x%lx\n", v);
     v |= v >> 4;
+    //printf("0x%lx\n", v);
     v |= v >> 8;
+    //printf("0x%lx\n", v);
     v |= v >> 16;
+    //printf("0x%lx\n", v);
     v |= v >> 32;
+    //printf("0x%lx\n", v);
     return v + 1;
 }
+/* 就是把连同最高位之后的所有的bit都变为1，最后由二进制若干个1加上1就变成1和若干个0。
+ * 一种情况是数本身就是2的幂次方，这时就先-1，再去执行此操作。
+ */
 
 int main()
 {
@@ -21,6 +31,7 @@ int main()
     int i;
     int j;
     uint64_t array[16][5];
+    printf("%lu, 0x%lx, %d\n", __align64pow2(10), __align64pow2(10), 10);
     
     printf("%lu, 0x%lx, %d\n", __align64pow2(33), __align64pow2(33), 33);
     printf("%lu, 0x%lx, %d\n", __align64pow2(0), __align64pow2(0), 0);

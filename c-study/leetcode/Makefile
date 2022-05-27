@@ -4,8 +4,8 @@ CFLAGS = -Wall
 LFLAGS =
 COMPILE = $(CC) $(CFLAGS) $< -c -o $@
 LINK = $(CC) $(LFLAGS) $^ -o $@
-OBJS = g.o
-TARGET = xuexe
+OBJS = buildin.o
+TARGET = a.out
 
 all:$(TARGET)
 
@@ -14,4 +14,4 @@ $(TARGET):$(OBJS)
 %.o:%.c
 	$(COMPILE)
 clean:
-	rm *.o *.d $(TARGET)
+	rm -f *.o $(TARGET)
