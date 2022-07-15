@@ -11,12 +11,12 @@
 
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
-CFLAGS = -Wall -O0
-LDFLAGS = -lglib-2.0 -lpthread
+CFLAGS = -Wall -O2
+LDFLAGS = -levent
 TARGET = xuexe
-OBJS = cache_test.o
+OBJS = server_nothread.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
-LINK = $(CC) $< $(LDFLAGS) -o $@
+LINK = $(CC) $^ $(LDFLAGS) -o $@
 
 ALL:$(TARGET)
 

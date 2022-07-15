@@ -10,6 +10,9 @@ kubectl run --image=nginx:alpine nginx-app --port=80
 
 kubectl delete node k8s-node1
 
+kubectl create -f nginx-deployment.yaml
+kubectl create -f nginx-service.yaml
+
 kubectl create deployment nginx --image=nginx
 kubectl delete deployment nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
