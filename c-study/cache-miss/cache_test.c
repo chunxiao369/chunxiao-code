@@ -9,9 +9,9 @@
 
 #define CACHE_ALIGNMENT 128
 
-//#define PERF_WELL
+#define PERF_WELL
 #ifdef PERF_WELL
-#define attr_cache_aligned __attribute__((aligned(CACHE_ALIGNMENT)))
+#define attr_cache_aligned __attribute__((aligned(CACHE_ALIGNMENT * 2)))
 #else
 #define attr_cache_aligned
 #endif

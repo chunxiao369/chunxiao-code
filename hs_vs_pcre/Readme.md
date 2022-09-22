@@ -56,3 +56,5 @@ real	0m11.145s
 user	0m11.137s
 sys	0m0.008s
 
+stream mode: ./multi_grep n
+block  mode: ./multi_grep
