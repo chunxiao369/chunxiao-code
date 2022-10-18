@@ -391,10 +391,9 @@ outputs:
   # https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Lua_Output
   - lua:
       enabled: yes
-      scripts-dir: /home/lance/Project/chunxiao-code/opensource/snort/suricata/lua-output/
+      scripts-dir: /home/lance/Summary/chunxiao-code/opensource/snort/suricata/lua-output/
       scripts:
-         - rule-match.lua
-         - body.lua
+         - flow-cnt.lua
          #- sinawebmail-extract.lua
 
 # Magic file. The extension .mgc is added to the value here.
@@ -573,7 +572,7 @@ legacy:
 
 # You can specify a threshold config file by setting "threshold-file"
 # to the path of the threshold config file:
-#threshold-file: /etc/suricata/threshold.config
+threshold-file: /home/lance/Project/open-source/suricata/threshold.config
 
 # The detection engine builds internal groups of signatures. The engine
 # allow us to specify the profile to use for them, to manage memory on an
@@ -1126,9 +1125,9 @@ ipfw:
 
 # Set the default rule path here to search for the files.
 # if not set, it will look at the current working dir
-default-rule-path:  /home/lance/Project/chunxiao-code/opensource/snort/suricata/rules/
+default-rule-path:  /home/lance/Summary/chunxiao-code/opensource/snort/suricata/rules/
 rule-files:
-  - http-events-cxxu.rules
+  - common.rules
 # - app-layer-events.rules
 # - decoder-events.rules
 # - dns-events.rules
@@ -1189,8 +1188,8 @@ rule-files:
 ## - modbus-events.rules  # available in suricata sources under rules dir
 # - app-layer-events.rules  # available in suricata sources under rules dir
 
-classification-file: /home/lance/Project/open-source/suricata/classification.config
-reference-config-file: /home/lance/Project/open-source/suricata/reference.config
+classification-file: /home/lance/Project/open-source/suricata/etc/classification.config
+reference-config-file: /home/lance/Project/open-source/suricata/etc/reference.config
 
 # Holds variables that would be used by the engine.
 vars:

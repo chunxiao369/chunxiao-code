@@ -10,3 +10,5 @@ autogen.sh
 make; make install
 #how to use
 suricata -c /etc/suricata/suricata-debian.yaml  -r /home/lance/Project/pcap_file/suricata/http_kv_json.pcap  -k none --init-errors-fatal
+
+cargo install --force cbindgen

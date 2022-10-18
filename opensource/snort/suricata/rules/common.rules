@@ -1,0 +1,3 @@
+#doku
+alert ip any any -> any 53 (msg:"five tuple test"; sid:1;)
+

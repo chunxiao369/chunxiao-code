@@ -1,6 +1,6 @@
 cjson = require("cjson")
 zlib = require("zlib")
-package.path = '/home/lance/Project/chunxiao-code/opensource/snort/suricata/lua-output/multipart.lua;'
+package.path = '/home/lance/Summary/chunxiao-code/opensource/snort/suricata/lua-output/multipart.lua;'
 Multipart = require("multipart")
 content_type_header = "form-data; boundary=----WebKitFormBoundaryX4ThBgBtmXL30XI2"
 
