@@ -15,9 +15,9 @@ end
 function setup (args)
     flow_all = 0
     flow_match = 0
-	udp_cnt=0
-	tcp_cnt=0
-	other_cnt=0
+    udp_cnt=0
+    tcp_cnt=0
+    other_cnt=0
 end
 
 function log(args)
@@ -32,26 +32,34 @@ function log(args)
     has_alerts = SCFlowHasAlerts()
     tscnt, tsbytes, tccnt, tcbytes = SCFlowStats()
 
+    pps = 0
+    bps = 0
+    tmp = 0
+    tmp = (lastts_s - startts_s) * 1000000 + (lastts_us - startts_us)
+    if tmp > 0 then
+        pps = (tscnt + tccnt) * 1000000 / tmp
+        bps = 8 * (tsbytes + tcbytes) * 1000000  / tmp
+    end
     flowid = SCFlowId()
     idstr = string.format("%.0f",flowid)
-	--print ("idstr" .. idstr) 
+    --print ("idstr" .. idstr)
 
-	if proto == 6 then
-		tcp_cnt = tcp_cnt+1
-	elseif proto == 17 then
-		udp_cnt = udp_cnt+1
+    if proto == 6 then
+        tcp_cnt = tcp_cnt+1
+    elseif proto == 17 then
+         udp_cnt = udp_cnt+1
     else
-		other_cnt = other_cnt+1
-	end
+        other_cnt = other_cnt+1
+    end
 
-	--if proto == 50 then
-	if proto == 6 or proto == 17 then
-        --print (idstr, srcip, dstip, sp, dp, proto, 
+    --if proto == 50 then
+    if proto == 6 or proto == 17 then
+        --print (idstr, srcip, dstip, sp, dp, proto,
         --       tscnt, tsbytes, tccnt, tcbytes,
         --       startts_s, lastts_s, startts_us, lastts_us)
-        file:write(idstr, ",", srcip, ",", dstip, ",", sp, ",", dp, ",", proto, ",", 
-               tscnt, ",", tsbytes, ",", tccnt, ",", tcbytes, ",", 
-               startts_s, ",", lastts_s, ",", startts_us, ",", lastts_us, "\n")
+        file:write(idstr, ",", srcip, ",", dstip, ",", sp, ",", dp, ",", proto, ",",
+               tscnt, ",", tsbytes, ",", tccnt, ",", tcbytes, ",",
+               startts_s, ",", lastts_s, ",", startts_us, ",", lastts_us, ",", pps, ",", bps, "\n")
     end
 
     if flow_all % 100 == 0 then
@@ -64,6 +72,6 @@ end
 
 function deinit (args)
     file:close()
-    print("  flow all: " .. flow_all .. ", flow udp: " .. udp_cnt.. 
+    print("  flow all: " .. flow_all .. ", flow udp: " .. udp_cnt..
           ", flow tcp: " .. tcp_cnt .. ", flow other: " .. other_cnt)
 end
