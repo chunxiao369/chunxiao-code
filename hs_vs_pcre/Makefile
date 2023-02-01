@@ -14,7 +14,7 @@ CFLAGS = -Wall -O2 -I/home/lance/install/include/hs/
 LDFLAGS = -L/home/lance/install/lib/
 #TARGET = simple_grep
 TARGET = multi_grep
-OBJS = multigrep2.o
+OBJS = multigrep.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@ -lhs -lpcre
 

@@ -28,7 +28,7 @@ static int g_match = 0;
  */
 static int eventHandler(unsigned int id, unsigned long long from, unsigned long long to, unsigned int flags, void *ctx)
 {
-    //printf("Match for pattern \"%s\" at offset %llu\n", (char *)ctx, to);
+    printf("Match for pattern \"%s\" at offset %llu\n", (char *)ctx, to);
     g_match++;
     return 0;
 }
@@ -134,7 +134,8 @@ int main(int argc, char *argv[])
      */
     hs_database_t *database;
     hs_compile_error_t *compile_err;
-    if (hs_compile(pattern, HS_FLAG_CASELESS | HS_FLAG_SINGLEMATCH | HS_FLAG_DOTALL | HS_FLAG_MULTILINE, \
+    //if (hs_compile(pattern, HS_FLAG_CASELESS | HS_FLAG_SINGLEMATCH | HS_FLAG_DOTALL | HS_FLAG_MULTILINE, 
+    if (hs_compile(pattern, HS_FLAG_CASELESS |HS_FLAG_DOTALL | HS_FLAG_MULTILINE, \
         HS_MODE_BLOCK, NULL, &database, &compile_err) != HS_SUCCESS) {
         fprintf(stderr, "ERROR: Unable to compile pattern \"%s\": %s\n", pattern, compile_err->message);
         hs_free_compile_error(compile_err);

@@ -56,28 +56,32 @@ int main(int argc, char *argv[])
     const char *expr[] = {
         "abc",
         "def",
+        "abc",
+        "def",
         "foobar.*gh",
         "teakettle{4,10}",
         "ijkl[mMn]",           /* 105 */
         "(101 & 102 & 103) | (104 & 105)", /* 1001 */
-        "(!101 & 102)",           /* 1002 */
-        "!(!101 | 102)",        /* 1003 */
-        "(!102 & 101)",           /* 1004 */
-        "!102"           /* 1005 */
+        "(101 & 102)",           /* 1002 */
+        "(101 | 102)",        /* 1003 */
+        "(102 & 101)",           /* 1004 */
+        "(102 & 103)"           /* 1005 */
     };
     unsigned flags[] = {
         HS_FLAG_SINGLEMATCH,
         HS_FLAG_SINGLEMATCH,
-        HS_FLAG_SINGLEMATCH,
-        HS_FLAG_SINGLEMATCH,
-        HS_FLAG_SINGLEMATCH,
+        HS_FLAG_SINGLEMATCH | HS_FLAG_QUIET,
+        HS_FLAG_SINGLEMATCH | HS_FLAG_QUIET,
+        HS_FLAG_SINGLEMATCH | HS_FLAG_QUIET,
+        HS_FLAG_SINGLEMATCH | HS_FLAG_QUIET,
+        HS_FLAG_SINGLEMATCH | HS_FLAG_QUIET,
         HS_FLAG_COMBINATION | HS_FLAG_SINGLEMATCH,
         HS_FLAG_COMBINATION | HS_FLAG_SINGLEMATCH,
         HS_FLAG_COMBINATION | HS_FLAG_SINGLEMATCH,
         HS_FLAG_COMBINATION | HS_FLAG_SINGLEMATCH,
         HS_FLAG_COMBINATION | HS_FLAG_SINGLEMATCH
     };
-    unsigned ids[] = { 101, 102, 103, 104, 105, 1001, 1002, 1003, 1004, 1005};
+    unsigned ids[] = { 91, 92, 101, 102, 103, 104, 105, 1001, 1002, 1003, 1004, 1005};
 #endif
 
     /*  ./simplegrep_multi
