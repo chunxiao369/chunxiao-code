@@ -71,4 +71,6 @@ thread coreid: 2.
 
       16.048510069 seconds time elapsed
 
-
+perf top
+perf stat
+perf record

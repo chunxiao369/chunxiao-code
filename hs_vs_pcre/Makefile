@@ -13,8 +13,8 @@ CC = gcc
 CFLAGS = -Wall -O2 -I/home/lance/install/include/hs/
 LDFLAGS = -L/home/lance/install/lib/
 #TARGET = simple_grep
-TARGET = multi_grep
-OBJS = multigrep.o
+TARGET = capture
+OBJS = capture.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@ -lhs -lpcre
 

@@ -1,0 +1,7 @@
+abced12def12xxx12xxx12
+sip:ximipsmgw1bzx.ipsmgw.fj.chinamobile.com,,sip:+8613999999999@fj.ims.mnc000.mcc460.3gppnetwork.org,,【中国银行】
+ sip=lance,dip=xxxx
+sip=123456, sip=test5, sip=abc
+href="www.baidu.com">百度一下
+Windows3.1
+Windows2000
