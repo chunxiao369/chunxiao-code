@@ -1,6 +1,7 @@
 
 http://docs.openvswitch.org/en/latest/intro/install/dpdk/
 
+10.17.0.65 /home/cxxu/
 export DPDK_DIR=/home/cxxu/dpdk-18.11/
 export DPDK_TARGET=x86_64-native-linuxapp-gcc
 export DPDK_BUILD=$DPDK_DIR/$DPDK_TARGET
@@ -18,8 +19,9 @@ export PATH=$PATH:/home/cxxu/ovs-install/share/openvswitch/scripts
 export DB_SOCK=/home/cxxu/ovs-install/var/run/openvswitch/db.sock
 
 cd /home/cxxu/dpdk-18.11/x86_64-native-linuxapp-gcc/lib
-ldconfig
+ldconfig `pwd`
 
+rm -f var/run/openvswitch/myport?
 mkdir -p /home/cxxu/ovs-install/etc/openvswitch
 mkdir -p /home/cxxu/ovs-install/var/run/openvswitch
 

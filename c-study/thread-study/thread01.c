@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define _POSIX_THREAD_ATTR_STACKSIZE
 void *thread_routine()
 {
     //栈大小为16M,如果直接分配16M的栈空间，会出现段错误 ，因为栈中还有其它的
@@ -33,7 +34,7 @@ int main (int argc, char *argv[])
 {
     pthread_t thread_id;
     pthread_attr_t thread_attr;
-    //size_t stack_size;
+    size_t stack_size;
     int status;
     int i = 5;
 
