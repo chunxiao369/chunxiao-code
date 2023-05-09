@@ -56,3 +56,9 @@ qemu-system-x86_64 --enable-kvm -m 1024 -net nic,macaddr=00:00:00:00:00:01 -net 
 qemu-system-x86_64 --enable-kvm -m 1024 -net nic,model=i82559er,macaddr=00:00:00:00:00:01 -net tap,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown centos7_no1.img -nographic
 qemu-system-x86_64 --enable-kvm -m 1024 -net nic,model=i82559er,macaddr=00:00:00:00:00:02 -net tap,script=./etc/ovs-ifup,downscript=./etc/ovs-ifdown centos7_no2.img -nographic
 
+
+/home/cxxu/dpdk-18.11/examples/vhost
+HOST: bind interface to igb_uio 
+./build/vhost-switch -l 0-3 -n 4 --socket-mem 1024 -- --socket-file /tmp/sock0 --client -p 0x1
+qemu-system-x86_64 -machine accel=kvm -m 1024 -hda /home/cxxu/centos7_no1.img -nographic -chardev socket,id=char2,path=/tmp/sock0,server -netdev type=vhost-user,id=mynet2,chardev=char2 -device virtio-net-pci,mac=00:00:00:00:00:01,netdev=mynet2,id=net2,mac=00:00:00:66:66:66 -object memory-backend-file,id=mem,size=1024M,mem-path=/mnt/huge/,share=on -numa node,memdev=mem -mem-prealloc
+
