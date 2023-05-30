@@ -91,5 +91,8 @@ int main(void)
     char *txt = "abcdefghijklmnopqrstuvwxyz";
     char *ptr= "rst";
     KMP(txt, strlen(txt), ptr, strlen(ptr));
+    txt = "abczdabczeabczabcd";
+    ptr= "abczabc";
+    KMP(txt, strlen(txt), ptr, strlen(ptr));
     return 0;
 }

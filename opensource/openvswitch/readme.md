@@ -1,4 +1,15 @@
 good summary website
+
+RYU is a component-based software defined networking framework.
+Ryu provides software components with well defined API that make it easy for developers to create new network management and control applications. 
+
+# ovs mirror
+
+ovs-vsctl -- set Bridge br0 mirrors=@m \
+-- --id=@tap0 get Port tap0 \
+-- --id=@tap1 get Port tap1 \
+-- --id=@m create Mirror name=mirror_test select-dst-port=@tap0 select-src-port=@tap0 output-port=@tap1
+
 https://www.intel.com/content/www/us/en/developer/articles/technical/ovs-dpdk-datapath-classifier-part-2.html
 http://vinllen.com/
 http://vinllen.com/ovs-2-3-datapatchnei-he-liu-biao-pi-pei-guo-cheng/
