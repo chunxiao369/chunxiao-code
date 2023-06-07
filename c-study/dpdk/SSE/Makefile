@@ -12,9 +12,10 @@
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
 CFLAGS = -Wall -O0 -g -msse4
+#CFLAGS = -Wall -O0 -g -msse4  -mavx512f -Wpsabi
 LDFLAGS = 
 TARGET = sse_test
-OBJS = time1.o
+OBJS = time2.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
