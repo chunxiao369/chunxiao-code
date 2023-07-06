@@ -1,0 +1,70 @@
+/*
+ * Apr, 25, 2010
+ */
+|----trie树
+     单词查找树，其核心的思想是用空间换时间。
+     字典树，DPDK ACL中用这个
+
+/*
+ * Apr, 25, 2010
+ */
+|----设置环境变量
+     $PATH的设置方法
+
+/*
+ * Apr, 25, 2010
+ */
+|----visio stdio product key:
+     YCFHQ9DWCYDKV88T2TMHG7BHP
+
+/*
+ * Apr, 26, 2010
+ */
+|----指向常量的指针与指针常量
+     const int * p;
+     int * const p;
+     以前记住了，现在又忘了。
+     要用p与const的相近程度来记忆。
+     p与const离得越近，越专一。
+     第二个p更近，所以他只指向一个地址，是指针常量。
+     第一个远一点，他爱的是专一的人，只要对方专一就行，自己不专一。
+
+/*
+ * Apr, 28, 2010
+ */
+|----linux里面更改文件编码方式的命令
+     iconv -f utf-8 -t gb2312 ewx_hash_table.c > a.c
+     这样source insight打开就没有乱码了。
+     
+|----Linux Shell 环境中支持输入输出重定向, 用符号"<"和">"来表示。
+     0, 1, 2分别表示标准输入, 标准输出和标准错误信息输出
+     可以用来指定需要重定向的标准输入或输出
+     比如 2 > a.txt 表示将错误信息输出到文件a.txt中
+     
+|----set tags=/home/wooin/vim71/tags
+     ctrl + ] 和 ctrl + t 可以跳来跳去
+     CTRL + S表示停止向终端停止输出; 
+     CTRL + Q恢复向终端输出流.
+
+/*
+ * Apr, 29, 2010
+ */
+|----Cscope 自己的话说 - "你可以把它当做是超过频的ctags".
+     
+|----最小二乘法（又称最小平方法）是一种数学优化技术。
+     它通过最小化误差的平方和寻找数据的最佳函数匹配。
+     利用最小二乘法可以简便地求得未知的数据，
+     并使得这些求得的数据与实际数据之间误差的平方和为最小。
+     最小二乘法还可用于曲线拟合。
+     最小二乘法用来做损失函数的计算？
+
+|----vim 中复制之后, / + ctr + r + ". 
+
+/*
+ * Apr, 30, 2010
+ */
+|----Getting Started with Multicore
+     it is worth reminding ourselves that what is fashion today 
+     will be 'old hat' within a relatively short period. 
+
+
