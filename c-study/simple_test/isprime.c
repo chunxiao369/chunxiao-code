@@ -19,12 +19,19 @@ int isprime(long num)
     }
 }
 
+#define NUM_SIZE 16
 int main(void)
 {
     long i = 0;
-    long num[16] = {3,23,823,823,90823,190823,190823,20190823};
-    for (i = 0; i <= 15; i++) {
-        printf("%ld prime: %d.\n", num[i], isprime(num[i]));
+    long num[NUM_SIZE] = { 3, 23, 823, 823, 90823, 190823, 190823, 20190823 };
+    for (i = 0; i < NUM_SIZE; i++) {
+        printf("%10ld prime: %d.\n", num[i], isprime(num[i]));
     }
+    for (i = 1; i <= 100; i++) {
+        if (isprime(i)) {
+            printf("%3ld,", i);
+        }
+    }
+    printf("\n");
     return 0;
 }

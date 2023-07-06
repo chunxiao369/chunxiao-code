@@ -14,7 +14,7 @@ CC = gcc
 CFLAGS = -Wall -O0 -g -I/usr/include/glib-2.0/ -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/
 LDFLAGS = -lglib-2.0
 TARGET = xuexe
-OBJS = bit.o
+OBJS = isprime.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
