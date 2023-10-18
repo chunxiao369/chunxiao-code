@@ -1,0 +1,9 @@
+*.d
+*.o
+*.a
+*.la
+*.lo
+neural_test
+cscope.*
+ctags
+data/*
