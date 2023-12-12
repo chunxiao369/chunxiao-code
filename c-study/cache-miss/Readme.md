@@ -74,3 +74,5 @@ thread coreid: 2.
 perf top
 perf stat
 perf record
+perf list cache --details
+perf list -h

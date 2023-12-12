@@ -102,6 +102,7 @@ static double sigmoid(double value)
 static double sigmoid_derivative(double nodeOutput)
 {
     return nodeOutput * (1 - nodeOutput);
+    //return sigmoid(nodeOutput)* (1 - sigmoid(nodeOutput));
 }
 
 static void feed_forward_layer(layer_t * previous_layer, layer_t * layer)
