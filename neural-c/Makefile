@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -O2
 LDFLAGS= -lm
 TARGET=neural_test
-OBJS=data_load.o  main.o  nn.o
+OBJS=data_load.o main.o nn.o
 COMPILE=$(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK=$(CC) $^ $(LDFLAGS) -o $@
 

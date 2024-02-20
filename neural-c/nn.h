@@ -12,6 +12,7 @@
 typedef struct _node {
     double bias;
     double output;
+    double real_output;
     double back_prop_value;
     int weights_number;
     double *weights;
@@ -28,6 +29,7 @@ typedef struct _network {
     layer_t output_layer;
 } network_t;
 
-void  network_init(network_t *network);
+void network_init(network_t *network);
 void network_train(network_t *network);
-void  network_test(network_t *network);
+void network_test(network_t *network);
+void network_check(int num);
