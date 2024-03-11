@@ -1,4 +1,6 @@
-/* Given a number X, find next number with same number of 1 bits in its binary representation. */
+/* Given a number X, find next number with same number of 1 bits in its binary representation.
+ * How do I find the nth number that has same 1's in its binary representation?
+ */
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
