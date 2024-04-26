@@ -26,3 +26,21 @@ mpirun --allow-run-as-root -n 6 -x UCX_NET_DEVICES=rxe_0 --hostfile ./hostfile /
 not use roce, why?
 but ib_send_bw -d rxe_0 192.168.3.5 uses rocev2.
 What is the difference?
+
+# issue1
+
+   [lance-vm5:01354] Process received signal
+   [lance-vm5:01354] Signal: Segmentation fault (11)
+   [lance-vm5:01354] Signal code: Address not mapped (1)
+   [lance-vm5:01354] Failing at address: 0x440000e8
+   [lance-vm5:01354] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x43090)[0x7f6ffe720090]
+   [lance-vm5:01354] [ 1] /lib/x86_64-linux-gnu/libmpi.so.40(MPI_Comm_size+0x3b)[0x7f6ffe93b32b]
+   [lance-vm5:01354] [ 2] ./test_mpi(+0x1351)[0x55dbdf586351]
+   [lance-vm5:01354] [ 3] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7f6ffe701083]
+   [lance-vm5:01354] [ 4] ./test_mpi(+0x11ee)[0x55dbdf5861ee]
+   [lance-vm5:01354] *** End of error message ***
+   Segmentation fault (core dumped)
+use 2nd mpi.h
+/usr/include/x86_64-linux-gnu/mpich/mpi.h
+/usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
+
