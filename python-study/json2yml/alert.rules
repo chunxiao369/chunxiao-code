@@ -1,0 +1,59 @@
+groups:
+   - name: userdefine 
+     rules:
+     - alert: CpuUsageAlert
+       expr: avg(nvi_cpu_cpu_usage) by (instance) > 80
+       for: 1m
+       labels:
+         severity: severe
+       annotations:
+         summary: "Instance {{ $labels.instance }} CPU usgae high (current value: {{ $value }})"
+     - alert: SwitchPortAlert
+       expr: nvi_switch_inter_logical_state == 2
+       for: 5s
+       labels:
+         severity: abnormal
+       annotations:
+         summary: "Switch {{ $labels.switch_ip }} port {{ $labels.inter_name }} link abnormal (current value: {{ $value }})"
+     - alert: SwitchPortAlert
+       expr: rate(nvi_switch_inter_rx_error[5s]) != 0 or rate(nvi_switch_inter_tx_error[5s]) != 0
+       for: 5s
+       labels:
+         severity: error
+       annotations:
+         summary: "Switch {{ $labels.switch_ip }} port {{ $labels.inter_name }} error (current value: {{ $value }})"
+     - alert: SwitchPortAlert
+       expr: rate(nvi_switch_inter_rx_drop[5s]) != 0 or rate(nvi_switch_inter_tx_drop[5s]) != 0
+       for: 5s
+       labels:
+         severity: drop
+       annotations:
+         summary: "Switch {{ $labels.switch_ip }} port {{ $labels.inter_name }} drop (current value: {{ $value }})"
+     - alert: NodePortAlert
+       expr: nvi_net_interface_info_port_state != 1
+       for: 5s
+       labels:
+         severity: abnormal
+       annotations:
+         summary: "Node {{ $labels.instance }} port {{ $labels.ifname }} link abnormal (current value: {{ $value }})"
+     - alert: NodePortAlert
+       expr: rate(nvi_net_interface_info_rx_errors[5s]) != 0 or rate(nvi_net_interface_info_tx_errors[5s]) != 0
+       for: 5s
+       labels:
+         severity: error
+       annotations:
+         summary: "Node {{ $labels.instance }} port {{ $labels.ifname }} error (current value: {{ $value }})"
+     - alert: NodePortAlert
+       expr: rate(nvi_net_interface_info_rx_dropped[5s]) != 0 or rate(nvi_net_interface_info_tx_dropped[5s]) != 0
+       for: 5s
+       labels:
+         severity: drop
+       annotations:
+         summary: "Node {{ $labels.instance }} port {{ $labels.ifname }} drop (current value: {{ $value }})"
+     - alert: GpuUsageAlert
+       expr: avg(nvi_gpu_gpu_utilization) by (instance) > 80
+       for: 1m
+       labels:
+         severity: severe
+       annotations:
+         summary: "Instance {{ $labels.instance }} GPU usgae high (current value: {{ $value }})"

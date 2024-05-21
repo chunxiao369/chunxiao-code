@@ -1,0 +1,11 @@
+groups:
+   - name: userdefine 
+     rules:
+     - alert: CpuUsageAlert
+       expr: avg(nvi_cpu_cpu_usage) by (instance) > 80
+       for: 1m
+       labels:
+         severity: severe
+       annotations:
+         summary: "Instance {{ $labels.instance }} CPU usgae high (current value: {{ $value }})"
+
