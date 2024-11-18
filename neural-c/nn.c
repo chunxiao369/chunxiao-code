@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <math.h>
 
+//#define SIGMOID 1
+//#define PERF_OPT 1
+#define ATANACT 1
 static void layer_init(int nodes_number, int weights_number, layer_t * layer);
 static void node_init(int weights_number, node_t * node);
 static void feed_forward_layer(layer_t * previous_layer, layer_t * layer);
@@ -125,9 +128,6 @@ static double tanh_derivative(double value)
     return 1 / (2 * cosh(value) * cosh(value));
 }
 
-//#define SIGMOID 1
-//#define PERF_OPT 1
-#define ATANACT 1
 static double act_func(double value)
 {
 #ifdef SIGMOID
