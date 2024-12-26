@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+
+
 /* 
+ * Dynamic programming is a powerful technique for solving optimization problems.
+ * Two classic examples are the 0/1 knapsack problem and the longest common subsequence problem.
  * 给定两个序列，找出它们的最长公共子序列。
  * 子序列的定义是：一个序列的子序列是从原序列中删除若干个字符（可以是0个）后得到的序列。
  * 并且子序列中的字符保持原来的顺序。
