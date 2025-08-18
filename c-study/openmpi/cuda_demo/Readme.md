@@ -27,3 +27,4 @@ Device 1: NVIDIA A10, has SM Count: 72
 编译器将这些繁琐步骤被封装在 stub 中，stub 的名字通常是
 _Z10myKernelPfS_i(...params...)
 在 CPU 端看到的 <<< >>> 最终就是一次普通的 C 函数调用，目标函数就是这个stub。stub 内部再完成真正的 GPU 启动。
+桩（Stub / Method Stub ）是指用来替换一部分功能的程序段。 桩程序可以用来模拟已有程序的行为（比如一个远端机器的过程）或是对将要开发的代码的一种临时替代。
