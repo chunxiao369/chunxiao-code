@@ -1,0 +1,97 @@
+root@A800:/home/cxxu/cuda_simt# ./mini_nccl_thread 
+A800:38844:38844 [0] NCCL INFO cudaDriverVersion 12060
+A800:38844:38844 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+A800:38844:38844 [0] NCCL INFO Bootstrap: Using lo:127.0.0.1<0>
+A800:38844:38844 [0] NCCL INFO NCCL version 2.27.3+cuda12.9
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Plugin name set by env to libnccl-net.so
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v10 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v9 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Loaded net plugin NCCL RDMA Plugin v6 (v6)
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v10 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v9 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+A800:38844:38849 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+A800:38844:38849 [0] NCCL INFO Successfully loaded external plugin libnccl-net.so
+A800:38844:38849 [0] NCCL INFO Plugin Path : /usr/local/lib/libnccl-net.so
+A800:38844:38849 [0] NCCL INFO Plugin version : 1.3@Tencent Cloud
+A800:38844:38849 [0] NCCL INFO P2P plugin IBext
+A800:38844:38849 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+A800:38844:38849 [0] NCCL INFO NET/IB : No device found.
+A800:38844:38849 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+A800:38844:38849 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+A800:38844:38849 [0] NCCL INFO NET/Socket : Using [0]lo:127.0.0.1<0>
+A800:38844:38849 [0] NCCL INFO Initialized NET plugin Socket
+A800:38844:38849 [0] NCCL INFO Assigned NET plugin Socket to comm
+A800:38844:38849 [0] NCCL INFO Using network Socket
+A800:38844:38850 [1] NCCL INFO Assigned NET plugin Socket to comm
+A800:38844:38850 [1] NCCL INFO Using network Socket
+A800:38844:38849 [0] NCCL INFO ncclCommInitAll comm 0x5637683b4fb0 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 52000 commId 0x722e040c2704f3b5 - Init START
+A800:38844:38850 [1] NCCL INFO ncclCommInitAll comm 0x563768f2b370 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId d6000 commId 0x722e040c2704f3b5 - Init START
+
+[2025-08-22 17:39:56] A800:38844:38849 [0] ras/client_support.cc:159 NCCL WARN Call to bind failed: Address already in use
+A800:38844:38849 [0] NCCL INFO RAS failed to establish a client listening socket at localhost:28028
+A800:38844:38849 [0] NCCL INFO Bootstrap timings total 0.001731 (create 0.000056, send 0.000260, recv 0.000486, ring 0.000065, delay 0.000001)
+A800:38844:38850 [1] NCCL INFO Bootstrap timings total 0.001717 (create 0.000065, send 0.000287, recv 0.000624, ring 0.000064, delay 0.000000)
+A800:38844:38849 [0] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+A800:38844:38850 [1] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+A800:38844:38849 [0] NCCL INFO NCCL_SHM_DISABLE set by environment to 1.
+A800:38844:38849 [0] NCCL INFO Setting affinity for GPU 0 to 0-1,32-47
+A800:38844:38850 [1] NCCL INFO Setting affinity for GPU 1 to 22-31,48-63
+A800:38844:38850 [1] NCCL INFO comm 0x563768f2b370 rank 1 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0
+A800:38844:38849 [0] NCCL INFO comm 0x5637683b4fb0 rank 0 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0
+A800:38844:38850 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] 0/-1/-1->1->-1
+A800:38844:38850 [1] NCCL INFO P2P Chunksize set to 131072
+A800:38844:38849 [0] NCCL INFO Channel 00/02 : 0 1
+A800:38844:38849 [0] NCCL INFO Channel 01/02 : 0 1
+A800:38844:38849 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] -1/-1/-1->0->1
+A800:38844:38849 [0] NCCL INFO P2P Chunksize set to 131072
+A800:38844:38850 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+A800:38844:38852 [1] NCCL INFO [Proxy Service] Device 1 CPU core 31
+A800:38844:38849 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+A800:38844:38849 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+A800:38844:38853 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 55
+A800:38844:38854 [0] NCCL INFO [Proxy Service] Device 0 CPU core 33
+A800:38844:38855 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 35
+A800:38844:38850 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+A800:38844:38850 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+A800:38844:38849 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+A800:38844:38849 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+A800:38844:38850 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+A800:38844:38850 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v4 symbol.
+A800:38844:38850 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v3 symbol.
+A800:38844:38850 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2 symbol, using internal tuner instead.
+A800:38844:38850 [1] NCCL INFO ncclCommInitAll comm 0x563768f2b370 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId d6000 commId 0x722e040c2704f3b5 - Init COMPLETE
+A800:38844:38850 [1] NCCL INFO Init timings - ncclCommInitAll: rank 1 nranks 2 total 0.33 (kernels 0.27, alloc 0.04, bootstrap 0.00, allgathers 0.00, topo 0.02, graphs 0.00, connections 0.00, rest 0.00)
+A800:38844:38849 [0] NCCL INFO CC Off, workFifoBytes 1048576
+A800:38844:38849 [0] NCCL INFO ncclCommInitAll comm 0x5637683b4fb0 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 52000 commId 0x722e040c2704f3b5 - Init COMPLETE
+A800:38844:38849 [0] NCCL INFO Init timings - ncclCommInitAll: rank 0 nranks 2 total 0.34 (kernels 0.27, alloc 0.04, bootstrap 0.00, allgathers 0.00, topo 0.02, graphs 0.00, connections 0.00, rest 0.00)
+[Rank 0] start ...
+[Rank 1] start ...
+[Rank 0] start ...
+[Rank 0] start ...line: 58
+[Rank 1] start ...
+[Rank 1] start ...line: 58
+A800:38844:38861 [0] NCCL INFO [Proxy Progress] Device 0 CPU core 1
+A800:38844:38859 [0] NCCL INFO Channel 00/0 : 1[1] -> 0[0] [receive] via NET/Socket/0
+A800:38844:38859 [0] NCCL INFO Channel 01/0 : 1[1] -> 0[0] [receive] via NET/Socket/0
+A800:38844:38859 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] [send] via NET/Socket/0
+A800:38844:38859 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] [send] via NET/Socket/0
+A800:38844:38862 [1] NCCL INFO [Proxy Progress] Device 1 CPU core 54
+A800:38844:38860 [1] NCCL INFO Channel 00/0 : 0[0] -> 1[1] [receive] via NET/Socket/0
+A800:38844:38860 [1] NCCL INFO Channel 01/0 : 0[0] -> 1[1] [receive] via NET/Socket/0
+A800:38844:38860 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] [send] via NET/Socket/0
+A800:38844:38860 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] [send] via NET/Socket/0
+A800:38844:38859 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+A800:38844:38860 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 0
+[Rank 0] start ...line: 61
+[Rank 1] start ...line: 61
+[Rank 0] start ...line: 65
+[Rank 1] start ...line: 65
+[Rank 0] Result = 3.000000
+[Rank 1] Result = 3.000000
+A800:38844:38858 [0] NCCL INFO comm 0x5637683b4fb0 rank 0 nranks 2 cudaDev 0 busId 52000 - Destroy COMPLETE
+A800:38844:38858 [1] NCCL INFO comm 0x563768f2b370 rank 1 nranks 2 cudaDev 1 busId d6000 - Destroy COMPLETE
+
