@@ -12,9 +12,9 @@
 #CC = mips64-octeon-linux-gnu-gcc
 CC = gcc
 CFLAGS = -Wall -O0 -g -I/usr/include/glib-2.0/ -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/
-LDFLAGS = -lglib-2.0
+LDFLAGS = -lglib-2.0 -lm
 TARGET = xuexe
-OBJS = isprime.o
+OBJS = float_test.o
 COMPILE  = $(CC) $(CFLAGS) -MD -c -o $@ $<
 LINK = $(CC) $< $(LDFLAGS) -o $@
 
