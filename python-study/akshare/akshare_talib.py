@@ -18,7 +18,7 @@ def df_ma(df):
 
     # 查看是否出现上穿
     latest_cross = df['cross_up'].iloc[-1]
-    print("最新MA5是否上穿MA20:", latest_cross)
+    print("MA5是否上穿MA20                : ", latest_cross)
 
 def df_ema(df):
    # 指数移动平均线
@@ -36,9 +36,9 @@ def df_macd(df):
         (df['DIF'].shift(1) <= df['DEA'].shift(1))
     )
 
-    # 最新是否出现金叉
+    # 是否出现金叉
     latest_golden_cross = df['DIF_cross_up_DEA'].iloc[-1]
-    print("最新DIF是否上穿DEA:", latest_golden_cross)
+    print("DIF是否上穿DEA                 : ", latest_golden_cross)
 
 def df_bollinger_band(df):
     #布林带（Bollinger Bands）
@@ -48,21 +48,21 @@ def df_bollinger_band(df):
     # 判断是否触及下轨
     df['touch_lower'] = df['收盘'] <= df['lower']
 
-    # 查看最新结果
+    # 查看结果
     latest_touch_upper = df['touch_upper'].iloc[-1]
     latest_touch_lower = df['touch_lower'].iloc[-1]
 
-    print("最新是否触及布林上轨:", latest_touch_upper)
-    print("最新是否触及布林下轨:", latest_touch_lower)
+    print("是否触及布林上轨               : ", latest_touch_upper)
+    print("是否触及布林下轨               : ", latest_touch_lower)
 
 def df_rsi(df):
     #RSI（相对强弱指数）
     df['RSI'] = ta.RSI(df['收盘'], timeperiod=14)
-    is_overbought = df['RSI'].iloc[-1] >= 70
-    is_oversold   = df['RSI'].iloc[-1] <= 30
-    print("最新RSI是:", df['RSI'].iloc[-1])
-    print("最新RSI是否 > 70:", is_overbought)
-    print("最新RSI是否 < 30:", is_oversold)
+    round_df = round(df['RSI'].iloc[-1], 2)
+    is_overbought = round_df >= 70
+    is_oversold   = round_df <= 30
+    print("RSI", round_df, "是否 > 70            : " , is_overbought)
+    print("RSI", round_df, "是否 < 30            : " , is_oversold)
 
 def df_sar(df):
     # 计算 SAR
@@ -72,12 +72,12 @@ def df_sar(df):
     df['SAR_above_close'] = df['SAR'] > df['收盘']    # SAR 在 K 线上方
     df['SAR_below_close'] = df['SAR'] < df['收盘']    # SAR 在 K 线下方
 
-    # 查看最新结果
+    # 查看结果
     latest_above = df['SAR_above_close'].iloc[-1]
     latest_below = df['SAR_below_close'].iloc[-1]
 
-    print("最新SAR在K线下方(看涨信号):", latest_below)
-    print("最新SAR在K线上方(看跌信号):", latest_above)
+    print("SAR在K线下方(看涨信号)         : ", latest_below)
+    print("SAR在K线上方(看跌信号)         : ", latest_above)
 
 def df_cdlmorningstar(df):
     # 1) 计算晨星标记
@@ -97,14 +97,17 @@ def df_cdlmorningstar(df):
         (df['CDLMORNINGSTAR'] == 100) &   # 出现晨星
         df['down_trend']                  # 同时处于下跌趋势末端
     )
-    # 查看最新结果
+    # 查看结果
     latest = df['morning_star_end_of_down'].iloc[-1]
-    print("最新是否下跌趋势末端出现晨星:", latest)
+    print("是否下跌趋势末端出现晨星       : ", latest)
 
-print(ak.__version__)
-print(ta.__version__)
-df = ak.stock_zh_a_hist(symbol="603496", period="daily", start_date="20250301", end_date='20250724', adjust="")
-print(df)
+print("------", "ak version:", ak.__version__, "ta version:", ta.__version__, "------")
+# 002912
+# 002439
+# 603496
+# 688017
+df = ak.stock_zh_a_hist(symbol="688017", period="daily", start_date="20250501", end_date='20250905', adjust="")
+#print(df)
 df_ma(df)
 df_macd(df)
 df_bollinger_band(df)
