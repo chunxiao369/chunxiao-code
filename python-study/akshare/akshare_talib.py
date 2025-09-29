@@ -59,10 +59,10 @@ def df_rsi(df):
     #RSI（相对强弱指数）
     df['RSI'] = ta.RSI(df['收盘'], timeperiod=14)
     round_df = round(df['RSI'].iloc[-1], 2)
-    is_overbought = round_df >= 70
-    is_oversold   = round_df <= 30
-    print("RSI", round_df, "是否 > 70            : " , is_overbought)
-    print("RSI", round_df, "是否 < 30            : " , is_oversold)
+    is_overbought = round_df >= 66
+    is_oversold   = round_df <= 33
+    print("RSI", round_df, "是否 > 66            : " , is_overbought)
+    print("RSI", round_df, "是否 < 33            : " , is_oversold)
 
 def df_sar(df):
     # 计算 SAR
@@ -106,7 +106,8 @@ print("------", "ak version:", ak.__version__, "ta version:", ta.__version__, "-
 # 002439
 # 603496
 # 688017
-df = ak.stock_zh_a_hist(symbol="688017", period="daily", start_date="20250501", end_date='20250905', adjust="")
+# 600503
+df = ak.stock_zh_a_hist(symbol="600503", period="daily", start_date="20250501", end_date='20250908', adjust="")
 #print(df)
 df_ma(df)
 df_macd(df)
