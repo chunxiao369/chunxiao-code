@@ -1,0 +1,14 @@
+blocks: 32, threads: 256, sharemem: 1024.
+gridx 32, gridy 1 gridz 1.
+blocks per grid: 32, threads per block: 256, block index: 0, thread index: 0.
+sum: 2.
+sum: 4.
+sum: 8.
+sum: 16.
+sum: 32.
+sum: 64.
+sum: 128.
+sum: 256.
+Input size N = 8192
+Expected Sum = 8192
+Calculated Sum = 8192

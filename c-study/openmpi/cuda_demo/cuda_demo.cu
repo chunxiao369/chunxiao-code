@@ -26,9 +26,11 @@ __global__ void reduce_sum_shared(const int* g_input, int* g_output, int N) {
     // threadIdx.x：当前线程在块内的索引 (Thread Index)
     
     // 线程在整个 Grid 中的全局索引
+    // 一次kernel调用只有一个grid
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
     if (0 == threadIdx.x && 0 == blockIdx.x) {
-        printf("grid x blocks: %d, dim blocks: %d, block: %d, thread: %d.\n", gridDim.x, blockDim.x, blockIdx.x, threadIdx.x);
+        printf("gridx %d, gridy %d gridz %d.\n", gridDim.x, gridDim.y, gridDim.z);
+        printf("blocks per grid: %d, threads per block: %d, block index: %d, thread index: %d.\n", gridDim.x, blockDim.x, blockIdx.x, threadIdx.x);
     }
     
     // 线程在块内的局部索引
@@ -77,6 +79,11 @@ __global__ void reduce_sum_shared(const int* g_input, int* g_output, int N) {
             // 在这一步，归约操作由 SM 上的多个 Warp 并行执行。
             // 由于数据在共享内存中，访问速度快，且 sdata[local_tid] 和 sdata[local_tid + stride]
             // 在内存中往往是分散在不同的 Bank，可以实现无 Bank Conflict 的并行访问。
+            // 在 NVIDIA GPU 架构中，共享内存被分割成许多独立的物理存储单元，称为 Banks（存储体）。
+            // Bank 数量： 现代 NVIDIA GPU 通常将共享内存分割成 32 个或 64 个 Bank。
+            // 地址映射： 共享内存中的连续 4 个字节（一个字/word）通常会被映射到 连续的 Bank 中。
+            // sdata[local_tid] 和 sdata[local_tid + 1] （即相邻的 4 字节整数）通常属于不同的 Bank。
+
         }
     }
     // 4. 结果写回：将 Block 结果写回全局内存
@@ -88,6 +95,13 @@ __global__ void reduce_sum_shared(const int* g_input, int* g_output, int N) {
     }
 }
 
+/*
+ * NVIDIA Ampere 架构（包括 A100/A800）的共享内存被分割为 32 个 Bank。
+ * 这些 Bank 支持一个 Warp（32 个线程）在不发生冲突的情况下，
+ * 对连续 32 个 4 字节（32-bit word）的访问，即 32 个线程可以同时访问 32 个不同的 Bank。
+ * L1/Shared Memory： Ampere 架构允许每个 Streaming Multiprocessor (SM) 
+ * 将 L1 数据缓存和共享内存配置为不同的组合（例如，最高 192KB 的组合容量），但 Bank 的基本数量仍然保持 32 个。
+ */
 // -------------------------------------------------------------
 // Host 代码 (CPU)
 // -------------------------------------------------------------

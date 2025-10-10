@@ -30,3 +30,21 @@ _Z10myKernelPfS_i(...params...)
 桩（Stub / Method Stub ）是指用来替换一部分功能的程序段。 桩程序可以用来模拟已有程序的行为（比如一个远端机器的过程）或是对将要开发的代码的一种临时替代。
 
 nvcc cuda_demo.cu -lcudart -lrt -o cuda_demo
+
+nvcc  core_num.cu -lcudart -lrt -o core_num
+
+log: 
+Found 2 CUDA devices.
+
+--- GPU Device 0: NVIDIA A800 80GB PCIe ---
+Compute Capability: 8.0
+Streaming Multiprocessors (SM) Count: 108
+CUDA Cores Per SM: 128
+Total CUDA Cores: 13824
+
+--- GPU Device 1: NVIDIA A800 80GB PCIe ---
+Compute Capability: 8.0
+Streaming Multiprocessors (SM) Count: 108
+CUDA Cores Per SM: 128
+Total CUDA Cores: 13824
+
