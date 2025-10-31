@@ -28,6 +28,10 @@ int log_src_ip(struct xdp_md *ctx) {
     // 提取源IP（对端IP）
     //__u32 src_ip = bpf_ntohl(iph->saddr);
     __u32 src_ip = iph->saddr;
+    if (src_ip == 0x356e3c0a) {
+        //10.60.110.53该ip的数据包即被在进入协议栈之前丢弃
+        return XDP_DROP;
+    }
 
     // 打印日志（格式：源IP的点分十进制）
     bpf_printk("Received packet from IP: %pI4\n", &src_ip);
