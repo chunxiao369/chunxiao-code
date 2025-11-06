@@ -12,7 +12,7 @@
 CC = gcc
 CL = clang
 CFLAGS = -Wall -O2 -g
-CFLAGS_CL =  -I/usr/include/x86_64-linux-gnu/
+CFLAGS_CL = -I/usr/include/x86_64-linux-gnu/
 LDFLAGS = -lbpf
 TARGET = ip_log
 OBJS = ip_log.o
