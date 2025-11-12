@@ -6,7 +6,6 @@ int b = 1;
 
 int main(void)
 {
-    return true;
     int n = 0;
     char *p1 = NULL;
     char *p2 = NULL;
@@ -22,6 +21,12 @@ int main(void)
     printf("常量     s   %p\n", &s);
     printf("常字符串 p2  %p\n", p2);
 
-    while (1) {
+    while (n < 100) {
+        p1 = (char *)malloc(200);
+	if ((n % 2) == 0) {
+	    free(p1);
+	}
+	usleep(1000000);
+	n++;
     }
 }
