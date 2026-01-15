@@ -1,5 +1,7 @@
 量化库ta-lib
 
+OHLCV数据
+
 python3.10 data_print.py
 
 df['WILLR'] = talib.WILLR(df['最高'], df['最低'], df['收盘'], timeperiod=14)
