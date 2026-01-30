@@ -27,6 +27,19 @@ ovs-ofctl del-flows br0 tcp,tcp_src=22/0xfff0
 ovs-ofctl show br0
 ovs-appctl fdb/show br0
 
+# 1. 查看 OVS 的 MAC 地址表（类比交换机的 CAM 表）
+sudo ovs-appctl fdb/show br0
+
+# 2. 查看端口统计（类比 show interface counters）
+sudo ovs-ofctl dump-ports br0
+
+# 3. 查看流表（OpenFlow 规则，类似 ACL）
+sudo ovs-ofctl dump-flows br0
+
+# 4. 查看端口详细信息
+sudo ovs-vsctl list port win1
+
+
 in_port: switch的入端口
 dl_src: 源mac
 dl_dst:目的mac

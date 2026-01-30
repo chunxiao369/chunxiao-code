@@ -66,6 +66,13 @@ apt-get update && apt-get install -y \
     squidclient \
     libecap3 libecap3-dev
 
+sudo systemctl status squid.service
+iptables -t nat -A PREROUTING -i br0 -p tcp --dport 443 -j REDIRECT --to-port 3129
+iptables -t nat -I OUTPUT -p tcp -m owner --uid-owner root --dport 443 -j RETURN
+
+iptables -t nat -D PREROUTING -i br0 -p tcp --dport 443 -j REDIRECT --to-port 3129
+iptables -t nat -nL OUTPUT --line-numbers
+
 squid FATAL: The sslcrtd_program helpers are crashing too rapidly, need help!
  /usr/lib/squid/security_file_certgen -c -s /var/spool/squid/ssl_db -M 4MB
 Initialization SSL db...
