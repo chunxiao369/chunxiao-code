@@ -78,3 +78,10 @@ squid FATAL: The sslcrtd_program helpers are crashing too rapidly, need help!
 Initialization SSL db...
 Done
 
+
+# tinyproxy
+https://github.com/tinyproxy
+
+# SSLproxy
+
+https://github.com/sonertari/SSLproxy

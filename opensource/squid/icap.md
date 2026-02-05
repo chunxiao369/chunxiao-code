@@ -26,3 +26,4 @@ ls /usr/lib/x86_64-linux-gnu/c_icap/
 bdb_tables.so  clamd_mod.so     shared_cache.so           srv_echo.so   srv_url_check.so  virus_scan.so
 clamav_mod.so  dnsbl_tables.so  srv_content_filtering.so  srv_ex206.so  sys_logger.so
 
+c-icap-client -i 10.60.110.53 -p 1344 -s srv_cfg_filter -resp http://porn.com -f /tmp/test.html -rhx "Content-Type: text/html"
