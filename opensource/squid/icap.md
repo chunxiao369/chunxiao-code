@@ -27,3 +27,6 @@ bdb_tables.so  clamd_mod.so     shared_cache.so           srv_echo.so   srv_url_
 clamav_mod.so  dnsbl_tables.so  srv_content_filtering.so  srv_ex206.so  sys_logger.so
 
 c-icap-client -i 10.60.110.53 -p 1344 -s srv_cfg_filter -resp http://porn.com -f /tmp/test.html -rhx "Content-Type: text/html"
+c-icap-client -i 10.60.110.53 -p 1344 -s srv_cfg_filter -resp http://bbb.com -f /tmp/test2.html -rhx "Content-Type: text/html"
+返回内容如下: ICAP server:10.60.110.53, ip:10.60.110.45, port:1344
+<html><body>This is a test with test content.</body></html>
