@@ -77,8 +77,20 @@ static int load_ca(const char *cert_file, const char *key_file) {
 
 static void server_read_cb(struct bufferevent *bev, void *arg) {
     struct proxy_conn *conn = (struct proxy_conn *)arg;
+    int PRINT_SIZE = 256;
     if (conn->client) {
         struct evbuffer *input = bufferevent_get_input(bev);
+        size_t len = evbuffer_get_length(input);
+        if (len > 0) {
+            char buf[PRINT_SIZE + 1];  // 多一个字节用于null终止，如果打印字符串
+            size_t to_copy = (len < PRINT_SIZE) ? len : PRINT_SIZE;
+            evbuffer_copyout(input, buf, to_copy);
+            buf[to_copy] = '\0';  // 如果作为字符串打印，确保终止
+            printf("Decrypted server response (first %zu bytes): %s\n", to_copy, buf);
+            //for (size_t i = 0; i < to_copy; i++)
+            //    printf("%02x ", (unsigned char)buf[i]);
+            // printf("\n");
+        }
         bufferevent_write_buffer(conn->client, input);
     }
 }
@@ -111,6 +123,7 @@ static void event_cb(struct bufferevent *bev, short events, void *arg) {
 }
 
 static int sni_cb(SSL *ssl, int *al, void *arg) {
+    X509 *server_cert = NULL;
     const char *hostname = SSL_get_servername(ssl, TLSEXT_NAMETYPE_host_name);
     if (!hostname || *hostname == '\0') {
         return SSL_TLSEXT_ERR_NOACK;
@@ -133,7 +146,7 @@ static int sni_cb(SSL *ssl, int *al, void *arg) {
     rsa = NULL;
 
     // Generate cert
-    X509 *server_cert = X509_new();
+    server_cert = X509_new();
     if (!server_cert) goto err;
     X509_set_version(server_cert, 2);
     ASN1_INTEGER_set(X509_get_serialNumber(server_cert), (long)time(NULL));
