@@ -30,3 +30,10 @@ c-icap-client -i 10.60.110.53 -p 1344 -s srv_cfg_filter -resp http://porn.com -f
 c-icap-client -i 10.60.110.53 -p 1344 -s srv_cfg_filter -resp http://bbb.com -f /tmp/test2.html -rhx "Content-Type: text/html"
 返回内容如下: ICAP server:10.60.110.53, ip:10.60.110.45, port:1344
 <html><body>This is a test with test content.</body></html>
+
+以下配置替换验证成功
+srv_content_filtering.Match dpdkWords body /sinovatio/ig score=12 info{NVI_NADK}=NVI_NADK
+#srv_content_filtering.Match dpdkWords body /登录/ig score=12 info{NVI_NADK}=NVI_NADK
+#srv_content_filtering.Profile default replace score{dpdkWords>7} replaceInfo=NVI_NADK
+srv_content_filtering.Action replace score{dpdkWords>7} replaceInfo=NVI_NADK
+
