@@ -88,8 +88,8 @@ Value* add(Value* a, Value* b) {
 }
 
 Value* sub(Value* a, Value* b) {
-    Value* neg_b = new_value(-b->data); // Creating intermediate node
-    neg_b->prev[0] = b; neg_b->prev[1] = NULL; neg_b->op = OP_MUL; neg_b->aux = -1.0f; // Hack: mul by constant -1
+    Value* neg_b = new_value(-b->data); 
+    neg_b->prev[0] = b; neg_b->prev[1] = NULL; neg_b->op = OP_MUL; neg_b->aux = -1.0f; 
     return add(a, neg_b);
 }
 
@@ -123,12 +123,9 @@ Value* relu(Value* a) {
     return v;
 }
 
-// Special case for mul by constant to save graph nodes
 Value* mul_const(Value* a, float c) {
     Value* v = new_value(a->data * c);
-    v->prev[0] = a; v->op = OP_MUL; // Handled as binary op where b is implicit or handled in backprop logic specially
-    // For simplicity in this C port, we won't optimize const mul backprop deeply,
-    // we will just create a const node.
+    v->prev[0] = a; v->op = OP_MUL; 
     Value* c_val = new_value(c);
     v->prev[1] = c_val;
     return v;
@@ -148,21 +145,14 @@ void build_topo(Value* v) {
 }
 
 void backward(Value* root) {
-    // 1. Build topological order
     topo_idx = 0;
-    // Reset visited flags in the pool is costly, but necessary if we reuse nodes (we don't here per step)
-    // Since we reset node_idx every step, visited flags are implicitly garbage. 
-    // We must ensure new_value inits visited to false.
-    
-    // We also need to traverse params.
+    // Reset param visited flags
     for(int i=0; i<param_count; i++) params[i]->visited = false;
     
     build_topo(root);
     
-    // 2. Set root gradient
     root->grad = 1.0f;
     
-    // 3. Process in reverse topological order
     for (int i = topo_idx - 1; i >= 0; i--) {
         Value* v = topo[i];
         if (v->op == OP_CONST) continue;
@@ -206,9 +196,10 @@ float random_normal() {
     return u * sqrtf(-2 * logf(r) / r);
 }
 
-// Matrix Initialization helper
-void init_matrix(Value*** mat, int rows, int cols) {
-    *mat = malloc(rows * sizeof(Value*));
+// FIX 1: Change argument to Value**** (pointer to Value***)
+// and allocate Value** (rows) containing Value* (columns).
+void init_matrix(Value**** mat, int rows, int cols) {
+    *mat = malloc(rows * sizeof(Value**));
     for (int i = 0; i < rows; i++) {
         (*mat)[i] = malloc(cols * sizeof(Value*));
         for (int j = 0; j < cols; j++) {
@@ -217,38 +208,13 @@ void init_matrix(Value*** mat, int rows, int cols) {
     }
 }
 
-// Linear Layer
-Value** linear(Value** x, int seq_len, int in_dim, Value** w, int out_dim) {
-    Value** out = malloc(seq_len * sizeof(Value*)); // Array of rows
-    for (int i = 0; i < seq_len; i++) {
-        // x[i] is a pointer to the start of the row in the flattened input? 
-        // No, x is a list of Value*. 
-        // Wait, the python linear receives 'x' which is a list of Values (representing a vector of embeddings)
-        // OR a list of vectors. In GPT2, x is (B, T, C). Here B=1.
-        // Input x is array of pointers to Values. Length = in_dim. 
-        // Actually, Python code: linear takes x (list of Values) and w (list of lists).
-        // It returns a list of Values.
-        
-        // Let's adopt the Python signature: x is a list of `Value*`, w is matrix.
-        // But wait, the loop in Python `gpt` processes the sequence. 
-        // `x` in the python code changes shape. 
-        // At input: x is list of Embeddings (len = n_embd).
-        // Linear projects x (n_embd) -> (output_dim).
-        
-        // Re-implementing exactly:
-        // def linear(x, w): return [sum(wi * xi for wi, xi in zip(wo, x)) for wo in w]
-        // x: array of Value*, len = in_dim
-        // w: array of array of Value*, dim = out_dim x in_dim
-        // returns: array of Value*, len = out_dim
-    }
-    return NULL; // Not used directly, implemented inside logic below for clarity
-}
-
-Value** apply_linear(Value** x, int in_dim, Value** w, int out_dim) {
+// FIX 2: Change `w` argument to Value*** (matrix of pointers)
+Value** apply_linear(Value** x, int in_dim, Value*** w, int out_dim) {
     Value** out = malloc(out_dim * sizeof(Value*));
     for (int o = 0; o < out_dim; o++) {
         Value* acc = new_value(0.0f);
         for (int i = 0; i < in_dim; i++) {
+            // w[o][i] is now correctly Value*
             acc = add(acc, mul(w[o][i], x[i]));
         }
         out[o] = acc;
@@ -262,7 +228,6 @@ Value** softmax(Value** logits, int len) {
     for (int i = 0; i < len; i++) {
         if (logits[i]->data > max_val) max_val = logits[i]->data;
     }
-    // Stabilize
     Value* v_max = new_value(max_val);
     
     Value** exps = malloc(len * sizeof(Value*));
@@ -278,7 +243,7 @@ Value** softmax(Value** logits, int len) {
         out[i] = mul(exps[i], power(sum_exps, -1.0f));
     }
     free(exps);
-    return out; // caller frees array pointer
+    return out;
 }
 
 Value** rmsnorm(Value** x, int len) {
@@ -297,18 +262,19 @@ Value** rmsnorm(Value** x, int len) {
 }
 
 /* --- State Dictionary --- */
-Value** wte; // [vocab_size][n_embd]
-Value** wpe; // [block_size][n_embd]
-Value** lm_head; // [vocab_size][n_embd]
+// FIX 3: Global matrices must be Value*** (array of array of pointers)
+Value*** wte; // [vocab_size][n_embd]
+Value*** wpe; // [block_size][n_embd]
+Value*** lm_head; // [vocab_size][n_embd]
 
-// Layers
+// FIX 4: Layer members must be Value***
 struct Layer {
-    Value** attn_wq; // [n_embd][n_embd]
-    Value** attn_wk;
-    Value** attn_wv;
-    Value** attn_wo;
-    Value** mlp_fc1; // [4*n_embd][n_embd]
-    Value** mlp_fc2; // [n_embd][4*n_embd]
+    Value*** attn_wq; // [n_embd][n_embd]
+    Value*** attn_wk;
+    Value*** attn_wv;
+    Value*** attn_wo;
+    Value*** mlp_fc1; // [4*n_embd][n_embd]
+    Value*** mlp_fc2; // [n_embd][4*n_embd]
 } layers[N_LAYER];
 
 int vocab_size;
@@ -329,9 +295,8 @@ void init_model() {
 }
 
 /* --- GPT Forward Pass --- */
-// Returns logits (vocab_size)
 Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
-    // 1. Embedding
+    // FIX 5: wte is Value***, so wte[token_id] returns Value** (array of pointers). Correct.
     Value** tok_emb = wte[token_id];
     Value** pos_emb = wpe[pos_id];
     Value** x = malloc(N_EMBD * sizeof(Value*));
@@ -341,27 +306,17 @@ Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
     }
     
     Value** x_norm = rmsnorm(x, N_EMBD);
-    // free(x); // Don't free x array yet, needed for residual? No, pointer copy.
-    // Actually in C we malloc'd the array 'x'. We need to be careful with array pointers.
-    // For this snippet, we leak the small pointer arrays (mallocs) inside the forward pass 
-    // to keep code readable. In production, use an arena for Value** arrays too.
-    
+    free(x); // x was malloc'd locally, free it since we have x_norm now
     x = x_norm;
 
     for (int li = 0; li < N_LAYER; li++) {
-        Value** x_residual = x; // Copy pointers
+        Value** x_residual = x; 
         x = rmsnorm(x, N_EMBD);
         
-        // Attention
         Value** q = apply_linear(x, N_EMBD, layers[li].attn_wq, N_EMBD);
         Value** k = apply_linear(x, N_EMBD, layers[li].attn_wk, N_EMBD);
         Value** v = apply_linear(x, N_EMBD, layers[li].attn_wv, N_EMBD);
         
-        // Cache K, V
-        // keys[li] is a list of K vectors. We assume caller handles growing this list.
-        // In this C impl, keys[layer][pos][embedding_dim]
-        // But Python appends k (vector).
-        // Caller passes pointers to buffers.
         for(int i=0; i<N_EMBD; i++) {
             keys[li][pos_id][i] = k[i];
             values[li][pos_id][i] = v[i];
@@ -369,21 +324,14 @@ Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
 
         Value** x_attn = malloc(N_EMBD * sizeof(Value*));
         
-        // Heads
         for (int h = 0; h < N_HEAD; h++) {
             int hs = h * HEAD_DIM;
-            
-            // For this head
-            // q_h is slice of q
-            // k_h is slice of all past k's
-            
             int current_ctx_len = pos_id + 1;
             Value** attn_logits = malloc(current_ctx_len * sizeof(Value*));
             
             for (int t = 0; t < current_ctx_len; t++) {
                 Value* dot = new_value(0.0f);
                 for (int j = 0; j < HEAD_DIM; j++) {
-                     // q[hs+j] * keys[li][t][hs+j]
                      dot = add(dot, mul(q[hs+j], keys[li][t][hs+j]));
                 }
                 attn_logits[t] = mul_const(dot, 1.0f / sqrtf(HEAD_DIM));
@@ -391,7 +339,6 @@ Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
             
             Value** attn_weights = softmax(attn_logits, current_ctx_len);
             
-            // Weighted sum of values
             for (int j = 0; j < HEAD_DIM; j++) {
                 Value* acc = new_value(0.0f);
                 for (int t = 0; t < current_ctx_len; t++) {
@@ -403,23 +350,49 @@ Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
             free(attn_weights);
         }
         
-        // Projection
-        x = apply_linear(x_attn, N_EMBD, layers[li].attn_wo, N_EMBD);
+        // Cleanup intermediate arrays of pointers
+        free(q); free(k); free(v);
         
-        // Residual
-        for(int i=0; i<N_EMBD; i++) x[i] = add(x[i], x_residual[i]);
+        Value** proj = apply_linear(x_attn, N_EMBD, layers[li].attn_wo, N_EMBD);
+        free(x_attn);
+        
+        // Residual Add
+        Value** x_next = malloc(N_EMBD * sizeof(Value*));
+        for(int i=0; i<N_EMBD; i++) x_next[i] = add(proj[i], x_residual[i]);
+        free(proj);
+        free(x); // free normalized x
+        // Note: x_residual points to the same memory as previous x (or x_next from prev layer)
+        // We need to manage memory carefully. In this simple C port,
+        // we might leak small pointer arrays or double free if not careful.
+        // For simplicity: x comes from previous loop alloc.
+        
+        x = x_next;
         
         // MLP
         x_residual = x;
         x = rmsnorm(x, N_EMBD);
-        x = apply_linear(x, N_EMBD, layers[li].mlp_fc1, 4 * N_EMBD);
-        for(int i=0; i< 4*N_EMBD; i++) x[i] = relu(x[i]);
-        x = apply_linear(x, 4 * N_EMBD, layers[li].mlp_fc2, N_EMBD);
+        Value** fc1 = apply_linear(x, N_EMBD, layers[li].mlp_fc1, 4 * N_EMBD);
+        for(int i=0; i< 4*N_EMBD; i++) fc1[i] = relu(fc1[i]);
         
-        for(int i=0; i<N_EMBD; i++) x[i] = add(x[i], x_residual[i]);
+        Value** fc2 = apply_linear(fc1, 4 * N_EMBD, layers[li].mlp_fc2, N_EMBD);
+        free(fc1);
+        
+        Value** x_out = malloc(N_EMBD * sizeof(Value*));
+        for(int i=0; i<N_EMBD; i++) x_out[i] = add(fc2[i], x_residual[i]);
+        
+        free(fc2);
+        free(x); // free norm x
+        
+        // Don't free x_residual here, as it pointed to 'x' from the beginning of loop
+        // but 'x' was reassigned.
+        // The pointers inside x_residual are nodes (safe), we just free the array container.
+        free(x_residual);
+        
+        x = x_out;
     }
     
     Value** logits = apply_linear(x, N_EMBD, lm_head, vocab_size);
+    free(x);
     return logits;
 }
 
@@ -427,7 +400,7 @@ Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
 
 char* docs[MAX_DOCS];
 int n_docs = 0;
-char uchars[256]; // Simplistic vocab mapping
+char uchars[256];
 int uchar_count = 0;
 
 void load_data() {
@@ -448,7 +421,6 @@ void load_data() {
     }
     fclose(f);
     
-    // Sort chars simplistic
     for(int i=0; i<256; i++) {
         if(char_exists[i]) uchars[uchar_count++] = (char)i;
     }
@@ -477,8 +449,7 @@ int main() {
     float eps = 1e-8f;
     int num_steps = 100;
     
-    // Cache memory for attention (avoid malloc per step)
-    // [layer][block_size][n_embd]
+    // Cache memory [layer][block_size][n_embd]
     Value**** cache_k = malloc(N_LAYER * sizeof(Value***));
     Value**** cache_v = malloc(N_LAYER * sizeof(Value***));
     for(int i=0; i<N_LAYER; i++) {
@@ -491,13 +462,13 @@ int main() {
     }
 
     for (int step = 0; step < num_steps; step++) {
-        zero_tape(); // Reset graph memory
+        zero_tape();
         
         char* doc = docs[step % n_docs];
         int len = strlen(doc);
-        int seq_len = (len + 2); // BOS + chars + BOS
+        int seq_len = (len + 2); 
         if (seq_len > BLOCK_SIZE) seq_len = BLOCK_SIZE;
-        if (seq_len < 2) continue; // safety
+        if (seq_len < 2) continue; 
         
         int tokens[BLOCK_SIZE];
         tokens[0] = BOS;
@@ -513,24 +484,19 @@ int main() {
             Value** logits = gpt(tokens[pos], pos, cache_k, cache_v);
             Value** probs = softmax(logits, vocab_size);
             
-            // Cross entropy: -log(prob[target])
             Value* log_prob = vlog(probs[target]);
             loss = add(loss, mul_const(log_prob, -1.0f));
             n_targets++;
             
-            // Note: In C we are leaking the logits/probs arrays here strictly speaking 
-            // but they point to pool nodes, so it's just the array pointers.
+            free(logits);
+            free(probs);
         }
         
         loss = mul_const(loss, 1.0f / n_targets);
         
-        // Zero Gradients
         for(int i=0; i<param_count; i++) params[i]->grad = 0.0f;
-        
-        // Backward
         backward(loss);
         
-        // Adam Update
         float lr_t = learning_rate * (1.0f - (float)step / num_steps);
         for (int i = 0; i < param_count; i++) {
             Value* p = params[i];
@@ -548,21 +514,17 @@ int main() {
         }
     }
 
-    // Inference
     printf("\n--- inference ---\n");
     for (int i = 0; i < 20; i++) {
         int token = BOS;
         printf("sample %2d: ", i+1);
         
-        // Clear KV cache for inference (conceptually) - actually we just overwrite
-        
         for (int pos = 0; pos < BLOCK_SIZE; pos++) {
-            zero_tape(); // Inference creates nodes too!
+            zero_tape(); 
             
             Value** logits = gpt(token, pos, cache_k, cache_v);
             Value** probs = softmax(logits, vocab_size);
             
-            // Simple sampling (greedy/weighted)
             float r = (float)rand() / RAND_MAX;
             float cdf = 0.0f;
             int next_tok = 0;
@@ -570,6 +532,9 @@ int main() {
                 cdf += probs[k]->data;
                 if (r < cdf) { next_tok = k; break; }
             }
+            
+            free(logits);
+            free(probs);
             
             token = next_tok;
             if (token == BOS) break;
