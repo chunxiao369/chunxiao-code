@@ -13,8 +13,8 @@
 #define HEAD_DIM (N_EMBD / N_HEAD)
 #define MAX_DOCS 1000
 #define MAX_DOC_LEN 100
-#define MAX_NODES 1000000  // Size of the computation graph tape
-#define MAX_PARAMS 10000   // Max number of model parameters
+#define MAX_NODES 5000000       // Size of the computation graph tape
+#define MAX_PARAMS 10000        // Max number of model parameters
 
 /* --- Autograd Engine --- */
 
@@ -23,10 +23,10 @@ typedef enum { OP_CONST, OP_ADD, OP_MUL, OP_POW, OP_LOG, OP_EXP, OP_RELU } OpTyp
 typedef struct Value {
     float data;
     float grad;
-    struct Value* prev[2]; // Children in the graph
+    struct Value *prev[2];      // Children in the graph
     OpType op;
-    float aux; // Auxiliary data (e.g., exponent for POW)
-    bool visited; // For topological sort
+    float aux;                  // Auxiliary data (e.g., exponent for POW)
+    bool visited;               // For topological sort
 } Value;
 
 // The "Tape" - A static memory arena for the computation graph
@@ -34,24 +34,26 @@ Value node_pool[MAX_NODES];
 int node_idx = 0;
 
 // Parameter storage (these persist across steps, unlike the graph nodes)
-Value* params[MAX_PARAMS];
+Value *params[MAX_PARAMS];
 int param_count = 0;
 // Adam Optimizer buffers
 float adam_m[MAX_PARAMS];
 float adam_v[MAX_PARAMS];
 
 // Reset the graph memory for a new step
-void zero_tape() {
+void zero_tape()
+{
     node_idx = 0;
 }
 
 // Allocate a new node on the tape
-Value* new_value(float data) {
+Value *new_value(float data)
+{
     if (node_idx >= MAX_NODES) {
-        printf("Error: Computation graph memory exhausted.\n");
+        fprintf(stderr, "Error: MAX_NODES(%d) Computation graph memory exhausted., cur idx: %d\n", MAX_NODES, node_idx);
         exit(1);
     }
-    Value* v = &node_pool[node_idx++];
+    Value *v = &node_pool[node_idx++];
     v->data = data;
     v->grad = 0.0f;
     v->prev[0] = NULL;
@@ -62,14 +64,15 @@ Value* new_value(float data) {
 }
 
 // Create a persistent parameter (weight)
-Value* new_param(float data) {
-    Value* v = malloc(sizeof(Value));
+Value *new_param(float data)
+{
+    Value *v = malloc(sizeof(Value));
     v->data = data;
     v->grad = 0.0f;
     v->prev[0] = NULL;
     v->prev[1] = NULL;
     v->op = OP_CONST;
-    
+
     if (param_count < MAX_PARAMS) {
         params[param_count] = v;
         adam_m[param_count] = 0.0f;
@@ -81,127 +84,164 @@ Value* new_param(float data) {
 
 /* --- Operations --- */
 
-Value* add(Value* a, Value* b) {
-    Value* v = new_value(a->data + b->data);
-    v->prev[0] = a; v->prev[1] = b; v->op = OP_ADD;
+Value *add(Value * a, Value * b)
+{
+    Value *v = new_value(a->data + b->data);
+    v->prev[0] = a;
+    v->prev[1] = b;
+    v->op = OP_ADD;
     return v;
 }
 
-Value* sub(Value* a, Value* b) {
-    Value* neg_b = new_value(-b->data); 
-    neg_b->prev[0] = b; neg_b->prev[1] = NULL; neg_b->op = OP_MUL; neg_b->aux = -1.0f; 
+Value *sub(Value * a, Value * b)
+{
+    Value *neg_b = new_value(-b->data);
+    neg_b->prev[0] = b;
+    neg_b->prev[1] = NULL;
+    neg_b->op = OP_MUL;
+    neg_b->aux = -1.0f;
     return add(a, neg_b);
 }
 
-Value* mul(Value* a, Value* b) {
-    Value* v = new_value(a->data * b->data);
-    v->prev[0] = a; v->prev[1] = b; v->op = OP_MUL;
+Value *mul(Value * a, Value * b)
+{
+    Value *v = new_value(a->data * b->data);
+    v->prev[0] = a;
+    v->prev[1] = b;
+    v->op = OP_MUL;
     return v;
 }
 
-Value* power(Value* a, float exponent) {
-    Value* v = new_value(powf(a->data, exponent));
-    v->prev[0] = a; v->op = OP_POW; v->aux = exponent;
+Value *power(Value * a, float exponent)
+{
+    Value *v = new_value(powf(a->data, exponent));
+    v->prev[0] = a;
+    v->op = OP_POW;
+    v->aux = exponent;
     return v;
 }
 
-Value* vlog(Value* a) {
-    Value* v = new_value(logf(a->data));
-    v->prev[0] = a; v->op = OP_LOG;
+Value *vlog(Value * a)
+{
+    Value *v = new_value(logf(a->data));
+    v->prev[0] = a;
+    v->op = OP_LOG;
     return v;
 }
 
-Value* vexp(Value* a) {
-    Value* v = new_value(expf(a->data));
-    v->prev[0] = a; v->op = OP_EXP;
+Value *vexp(Value * a)
+{
+    Value *v = new_value(expf(a->data));
+    v->prev[0] = a;
+    v->op = OP_EXP;
     return v;
 }
 
-Value* relu(Value* a) {
-    Value* v = new_value(a->data > 0 ? a->data : 0);
-    v->prev[0] = a; v->op = OP_RELU;
+Value *relu(Value * a)
+{
+    Value *v = new_value(a->data > 0 ? a->data : 0);
+    v->prev[0] = a;
+    v->op = OP_RELU;
     return v;
 }
 
-Value* mul_const(Value* a, float c) {
-    Value* v = new_value(a->data * c);
-    v->prev[0] = a; v->op = OP_MUL; 
-    Value* c_val = new_value(c);
+Value *mul_const(Value * a, float c)
+{
+    Value *v = new_value(a->data * c);
+    v->prev[0] = a;
+    v->op = OP_MUL;
+    Value *c_val = new_value(c);
     v->prev[1] = c_val;
     return v;
 }
 
 /* --- Backward Pass --- */
 
-Value* topo[MAX_NODES];
+Value *topo[MAX_NODES];
 int topo_idx = 0;
 
-void build_topo(Value* v) {
-    if (v->visited) return;
+void build_topo(Value * v)
+{
+    if (v->visited)
+        return;
     v->visited = true;
-    if (v->prev[0]) build_topo(v->prev[0]);
-    if (v->prev[1]) build_topo(v->prev[1]);
+    if (v->prev[0])
+        build_topo(v->prev[0]);
+    if (v->prev[1])
+        build_topo(v->prev[1]);
     topo[topo_idx++] = v;
 }
 
-void backward(Value* root) {
+void backward(Value * root)
+{
     topo_idx = 0;
     // Reset param visited flags
-    for(int i=0; i<param_count; i++) params[i]->visited = false;
-    
+    for (int i = 0; i < param_count; i++)
+        params[i]->visited = false;
+
     build_topo(root);
-    
+
     root->grad = 1.0f;
-    
+
     for (int i = topo_idx - 1; i >= 0; i--) {
-        Value* v = topo[i];
-        if (v->op == OP_CONST) continue;
-        
-        Value* child1 = v->prev[0];
-        Value* child2 = v->prev[1];
-        
+        Value *v = topo[i];
+        if (v->op == OP_CONST)
+            continue;
+
+        Value *child1 = v->prev[0];
+        Value *child2 = v->prev[1];
+
         switch (v->op) {
-            case OP_ADD:
-                child1->grad += v->grad;
-                child2->grad += v->grad;
-                break;
-            case OP_MUL:
-                child1->grad += child2->data * v->grad;
-                child2->grad += child1->data * v->grad;
-                break;
-            case OP_POW:
-                child1->grad += (v->aux * powf(child1->data, v->aux - 1)) * v->grad;
-                break;
-            case OP_LOG:
-                child1->grad += (1.0f / child1->data) * v->grad;
-                break;
-            case OP_EXP:
-                child1->grad += v->data * v->grad;
-                break;
-            case OP_RELU:
-                child1->grad += (v->data > 0 ? 1.0f : 0.0f) * v->grad;
-                break;
-            default: break;
+        case OP_ADD:
+            child1->grad += v->grad;
+            child2->grad += v->grad;
+            break;
+        case OP_MUL:
+            if (v->prev[0] && v->prev[1]) {
+                v->prev[0]->grad += v->prev[1]->data * v->grad;
+                v->prev[1]->grad += v->prev[0]->data * v->grad;
+            } else if (v->prev[0]) {
+                // 处理 mul_const 情况，如果 prev[1] 是通过 aux 存储常数的
+                v->prev[0]->grad += v->aux * v->grad;
+            }
+            break;
+        case OP_POW:
+            child1->grad += (v->aux * powf(child1->data, v->aux - 1)) * v->grad;
+            break;
+        case OP_LOG:
+            child1->grad += (1.0f / child1->data) * v->grad;
+            break;
+        case OP_EXP:
+            child1->grad += v->data * v->grad;
+            break;
+        case OP_RELU:
+            child1->grad += (v->data > 0 ? 1.0f : 0.0f) * v->grad;
+            break;
+        default:
+            break;
         }
     }
 }
 
 /* --- Model Utils --- */
 
-float random_normal() {
+float random_normal()
+{
     float u = ((float)rand() / (RAND_MAX)) * 2 - 1;
     float v = ((float)rand() / (RAND_MAX)) * 2 - 1;
     float r = u * u + v * v;
-    if (r == 0 || r > 1) return random_normal();
+    if (r == 0 || r > 1)
+        return random_normal();
     return u * sqrtf(-2 * logf(r) / r);
 }
 
 // FIX 1: Change argument to Value**** (pointer to Value***)
 // and allocate Value** (rows) containing Value* (columns).
-void init_matrix(Value**** mat, int rows, int cols) {
-    *mat = malloc(rows * sizeof(Value**));
+void init_matrix(Value **** mat, int rows, int cols)
+{
+    *mat = malloc(rows * sizeof(Value **));
     for (int i = 0; i < rows; i++) {
-        (*mat)[i] = malloc(cols * sizeof(Value*));
+        (*mat)[i] = malloc(cols * sizeof(Value *));
         for (int j = 0; j < cols; j++) {
             (*mat)[i][j] = new_param(random_normal() * 0.08f);
         }
@@ -209,10 +249,11 @@ void init_matrix(Value**** mat, int rows, int cols) {
 }
 
 // FIX 2: Change `w` argument to Value*** (matrix of pointers)
-Value** apply_linear(Value** x, int in_dim, Value*** w, int out_dim) {
-    Value** out = malloc(out_dim * sizeof(Value*));
+Value **apply_linear(Value ** x, int in_dim, Value *** w, int out_dim)
+{
+    Value **out = malloc(out_dim * sizeof(Value *));
     for (int o = 0; o < out_dim; o++) {
-        Value* acc = new_value(0.0f);
+        Value *acc = new_value(0.0f);
         for (int i = 0; i < in_dim; i++) {
             // w[o][i] is now correctly Value*
             acc = add(acc, mul(w[o][i], x[i]));
@@ -222,23 +263,25 @@ Value** apply_linear(Value** x, int in_dim, Value*** w, int out_dim) {
     return out;
 }
 
-Value** softmax(Value** logits, int len) {
-    Value** out = malloc(len * sizeof(Value*));
+Value **softmax(Value ** logits, int len)
+{
+    Value **out = malloc(len * sizeof(Value *));
     float max_val = -1e9;
     for (int i = 0; i < len; i++) {
-        if (logits[i]->data > max_val) max_val = logits[i]->data;
+        if (logits[i]->data > max_val)
+            max_val = logits[i]->data;
     }
-    Value* v_max = new_value(max_val);
-    
-    Value** exps = malloc(len * sizeof(Value*));
-    Value* sum_exps = new_value(0.0f);
-    
+    Value *v_max = new_value(max_val);
+
+    Value **exps = malloc(len * sizeof(Value *));
+    Value *sum_exps = new_value(0.0f);
+
     for (int i = 0; i < len; i++) {
-        Value* diff = sub(logits[i], v_max);
+        Value *diff = sub(logits[i], v_max);
         exps[i] = vexp(diff);
         sum_exps = add(sum_exps, exps[i]);
     }
-    
+
     for (int i = 0; i < len; i++) {
         out[i] = mul(exps[i], power(sum_exps, -1.0f));
     }
@@ -246,15 +289,16 @@ Value** softmax(Value** logits, int len) {
     return out;
 }
 
-Value** rmsnorm(Value** x, int len) {
-    Value* sum_sq = new_value(0.0f);
+Value **rmsnorm(Value ** x, int len)
+{
+    Value *sum_sq = new_value(0.0f);
     for (int i = 0; i < len; i++) {
         sum_sq = add(sum_sq, mul(x[i], x[i]));
     }
-    Value* mean_sq = mul_const(sum_sq, 1.0f / len);
-    Value* scale = power(add(mean_sq, new_value(1e-5f)), -0.5f);
-    
-    Value** out = malloc(len * sizeof(Value*));
+    Value *mean_sq = mul_const(sum_sq, 1.0f / len);
+    Value *scale = power(add(mean_sq, new_value(1e-5f)), -0.5f);
+
+    Value **out = malloc(len * sizeof(Value *));
     for (int i = 0; i < len; i++) {
         out[i] = mul(x[i], scale);
     }
@@ -263,28 +307,29 @@ Value** rmsnorm(Value** x, int len) {
 
 /* --- State Dictionary --- */
 // FIX 3: Global matrices must be Value*** (array of array of pointers)
-Value*** wte; // [vocab_size][n_embd]
-Value*** wpe; // [block_size][n_embd]
-Value*** lm_head; // [vocab_size][n_embd]
+Value ***wte;                   // [vocab_size][n_embd]
+Value ***wpe;                   // [block_size][n_embd]
+Value ***lm_head;               // [vocab_size][n_embd]
 
 // FIX 4: Layer members must be Value***
 struct Layer {
-    Value*** attn_wq; // [n_embd][n_embd]
-    Value*** attn_wk;
-    Value*** attn_wv;
-    Value*** attn_wo;
-    Value*** mlp_fc1; // [4*n_embd][n_embd]
-    Value*** mlp_fc2; // [n_embd][4*n_embd]
+    Value ***attn_wq;           // [n_embd][n_embd]
+    Value ***attn_wk;
+    Value ***attn_wv;
+    Value ***attn_wo;
+    Value ***mlp_fc1;           // [4*n_embd][n_embd]
+    Value ***mlp_fc2;           // [n_embd][4*n_embd]
 } layers[N_LAYER];
 
 int vocab_size;
 
-void init_model() {
+void init_model()
+{
     init_matrix(&wte, vocab_size, N_EMBD);
     init_matrix(&wpe, BLOCK_SIZE, N_EMBD);
     init_matrix(&lm_head, vocab_size, N_EMBD);
-    
-    for(int i=0; i<N_LAYER; i++) {
+
+    for (int i = 0; i < N_LAYER; i++) {
         init_matrix(&layers[i].attn_wq, N_EMBD, N_EMBD);
         init_matrix(&layers[i].attn_wk, N_EMBD, N_EMBD);
         init_matrix(&layers[i].attn_wv, N_EMBD, N_EMBD);
@@ -295,249 +340,276 @@ void init_model() {
 }
 
 /* --- GPT Forward Pass --- */
-Value** gpt(int token_id, int pos_id, Value**** keys, Value**** values) {
+Value **gpt(int token_id, int pos_id, Value **** keys, Value **** values)
+{
     // FIX 5: wte is Value***, so wte[token_id] returns Value** (array of pointers). Correct.
-    Value** tok_emb = wte[token_id];
-    Value** pos_emb = wpe[pos_id];
-    Value** x = malloc(N_EMBD * sizeof(Value*));
-    
-    for(int i=0; i<N_EMBD; i++) {
+    Value **tok_emb = wte[token_id];
+    Value **pos_emb = wpe[pos_id];
+    Value **x = malloc(N_EMBD * sizeof(Value *));
+
+    for (int i = 0; i < N_EMBD; i++) {
         x[i] = add(tok_emb[i], pos_emb[i]);
     }
-    
-    Value** x_norm = rmsnorm(x, N_EMBD);
-    free(x); // x was malloc'd locally, free it since we have x_norm now
+
+    Value **x_norm = rmsnorm(x, N_EMBD);
+    free(x);                    // x was malloc'd locally, free it since we have x_norm now
     x = x_norm;
 
     for (int li = 0; li < N_LAYER; li++) {
-        Value** x_residual = x; 
+        Value **x_residual = x;
         x = rmsnorm(x, N_EMBD);
-        
-        Value** q = apply_linear(x, N_EMBD, layers[li].attn_wq, N_EMBD);
-        Value** k = apply_linear(x, N_EMBD, layers[li].attn_wk, N_EMBD);
-        Value** v = apply_linear(x, N_EMBD, layers[li].attn_wv, N_EMBD);
-        
-        for(int i=0; i<N_EMBD; i++) {
+
+        Value **q = apply_linear(x, N_EMBD, layers[li].attn_wq, N_EMBD);
+        Value **k = apply_linear(x, N_EMBD, layers[li].attn_wk, N_EMBD);
+        Value **v = apply_linear(x, N_EMBD, layers[li].attn_wv, N_EMBD);
+
+        for (int i = 0; i < N_EMBD; i++) {
             keys[li][pos_id][i] = k[i];
             values[li][pos_id][i] = v[i];
         }
 
-        Value** x_attn = malloc(N_EMBD * sizeof(Value*));
-        
+        Value **x_attn = malloc(N_EMBD * sizeof(Value *));
+
         for (int h = 0; h < N_HEAD; h++) {
             int hs = h * HEAD_DIM;
             int current_ctx_len = pos_id + 1;
-            Value** attn_logits = malloc(current_ctx_len * sizeof(Value*));
-            
+            Value **attn_logits = malloc(current_ctx_len * sizeof(Value *));
+
             for (int t = 0; t < current_ctx_len; t++) {
-                Value* dot = new_value(0.0f);
+                Value *dot = new_value(0.0f);
                 for (int j = 0; j < HEAD_DIM; j++) {
-                     dot = add(dot, mul(q[hs+j], keys[li][t][hs+j]));
+                    dot = add(dot, mul(q[hs + j], keys[li][t][hs + j]));
                 }
                 attn_logits[t] = mul_const(dot, 1.0f / sqrtf(HEAD_DIM));
             }
-            
-            Value** attn_weights = softmax(attn_logits, current_ctx_len);
-            
+
+            Value **attn_weights = softmax(attn_logits, current_ctx_len);
+
             for (int j = 0; j < HEAD_DIM; j++) {
-                Value* acc = new_value(0.0f);
+                Value *acc = new_value(0.0f);
                 for (int t = 0; t < current_ctx_len; t++) {
-                    acc = add(acc, mul(attn_weights[t], values[li][t][hs+j]));
+                    acc = add(acc, mul(attn_weights[t], values[li][t][hs + j]));
                 }
-                x_attn[hs+j] = acc;
+                x_attn[hs + j] = acc;
             }
             free(attn_logits);
             free(attn_weights);
         }
-        
+
         // Cleanup intermediate arrays of pointers
-        free(q); free(k); free(v);
-        
-        Value** proj = apply_linear(x_attn, N_EMBD, layers[li].attn_wo, N_EMBD);
+        free(q);
+        free(k);
+        free(v);
+
+        Value **proj = apply_linear(x_attn, N_EMBD, layers[li].attn_wo, N_EMBD);
         free(x_attn);
-        
+
         // Residual Add
-        Value** x_next = malloc(N_EMBD * sizeof(Value*));
-        for(int i=0; i<N_EMBD; i++) x_next[i] = add(proj[i], x_residual[i]);
+        Value **x_next = malloc(N_EMBD * sizeof(Value *));
+        for (int i = 0; i < N_EMBD; i++)
+            x_next[i] = add(proj[i], x_residual[i]);
         free(proj);
-        free(x); // free normalized x
+        free(x);                // free normalized x
         // Note: x_residual points to the same memory as previous x (or x_next from prev layer)
         // We need to manage memory carefully. In this simple C port,
         // we might leak small pointer arrays or double free if not careful.
         // For simplicity: x comes from previous loop alloc.
-        
+
         x = x_next;
-        
+
         // MLP
         x_residual = x;
         x = rmsnorm(x, N_EMBD);
-        Value** fc1 = apply_linear(x, N_EMBD, layers[li].mlp_fc1, 4 * N_EMBD);
-        for(int i=0; i< 4*N_EMBD; i++) fc1[i] = relu(fc1[i]);
-        
-        Value** fc2 = apply_linear(fc1, 4 * N_EMBD, layers[li].mlp_fc2, N_EMBD);
+        Value **fc1 = apply_linear(x, N_EMBD, layers[li].mlp_fc1, 4 * N_EMBD);
+        for (int i = 0; i < 4 * N_EMBD; i++)
+            fc1[i] = relu(fc1[i]);
+
+        Value **fc2 = apply_linear(fc1, 4 * N_EMBD, layers[li].mlp_fc2, N_EMBD);
         free(fc1);
-        
-        Value** x_out = malloc(N_EMBD * sizeof(Value*));
-        for(int i=0; i<N_EMBD; i++) x_out[i] = add(fc2[i], x_residual[i]);
-        
+
+        Value **x_out = malloc(N_EMBD * sizeof(Value *));
+        for (int i = 0; i < N_EMBD; i++)
+            x_out[i] = add(fc2[i], x_residual[i]);
+
         free(fc2);
-        free(x); // free norm x
-        
+        free(x);                // free norm x
+
         // Don't free x_residual here, as it pointed to 'x' from the beginning of loop
         // but 'x' was reassigned.
         // The pointers inside x_residual are nodes (safe), we just free the array container.
         free(x_residual);
-        
+
         x = x_out;
     }
-    
-    Value** logits = apply_linear(x, N_EMBD, lm_head, vocab_size);
+
+    Value **logits = apply_linear(x, N_EMBD, lm_head, vocab_size);
     free(x);
     return logits;
 }
 
 /* --- Data & Main --- */
 
-char* docs[MAX_DOCS];
+char *docs[MAX_DOCS];
 int n_docs = 0;
 char uchars[256];
 int uchar_count = 0;
 
-void load_data() {
-    FILE* f = fopen("input.txt", "r");
-    if (!f) { printf("input.txt not found\n"); exit(1); }
+void load_data()
+{
+    FILE *f = fopen("input.txt", "r");
+    if (!f) {
+        printf("input.txt not found\n");
+        exit(1);
+    }
     char line[256];
-    bool char_exists[256] = {false};
-    
-    while(fgets(line, sizeof(line), f)) {
+    bool char_exists[256] = { false };
+
+    while (fgets(line, sizeof(line), f)) {
         size_t len = strlen(line);
-        if (len > 0 && line[len-1] == '\n') line[--len] = 0;
-        if (len == 0) continue;
-        
+        if (len > 0 && line[len - 1] == '\n')
+            line[--len] = 0;
+        if (len == 0)
+            continue;
+
         docs[n_docs] = strdup(line);
-        for(int i=0; i<len; i++) char_exists[(unsigned char)line[i]] = true;
+        for (int i = 0; i < len; i++)
+            char_exists[(unsigned char)line[i]] = true;
         n_docs++;
-        if (n_docs >= MAX_DOCS) break;
+        if (n_docs >= MAX_DOCS)
+            break;
     }
     fclose(f);
-    
-    for(int i=0; i<256; i++) {
-        if(char_exists[i]) uchars[uchar_count++] = (char)i;
+
+    for (int i = 0; i < 256; i++) {
+        if (char_exists[i])
+            uchars[uchar_count++] = (char)i;
     }
-    vocab_size = uchar_count + 1; // +1 for BOS
+    vocab_size = uchar_count + 1;   // +1 for BOS
     printf("Loaded %d docs, vocab size: %d\n", n_docs, vocab_size);
 }
 
-int char_to_id(char c) {
-    for(int i=0; i<uchar_count; i++) if(uchars[i] == c) return i;
+int char_to_id(char c)
+{
+    for (int i = 0; i < uchar_count; i++)
+        if (uchars[i] == c)
+            return i;
     return -1;
 }
 
-int main() {
+int main()
+{
     srand(42);
     load_data();
     init_model();
-    
+
     printf("Num params: %d\n", param_count);
-    
+
     int BOS = uchar_count;
-    
+
     // Training Loop
     float learning_rate = 0.01f;
     float beta1 = 0.85f;
     float beta2 = 0.99f;
     float eps = 1e-8f;
     int num_steps = 100;
-    
+
     // Cache memory [layer][block_size][n_embd]
-    Value**** cache_k = malloc(N_LAYER * sizeof(Value***));
-    Value**** cache_v = malloc(N_LAYER * sizeof(Value***));
-    for(int i=0; i<N_LAYER; i++) {
-        cache_k[i] = malloc(BLOCK_SIZE * sizeof(Value**));
-        cache_v[i] = malloc(BLOCK_SIZE * sizeof(Value**));
-        for(int j=0; j<BLOCK_SIZE; j++) {
-            cache_k[i][j] = malloc(N_EMBD * sizeof(Value*));
-            cache_v[i][j] = malloc(N_EMBD * sizeof(Value*));
+    Value ****cache_k = malloc(N_LAYER * sizeof(Value ***));
+    Value ****cache_v = malloc(N_LAYER * sizeof(Value ***));
+    for (int i = 0; i < N_LAYER; i++) {
+        cache_k[i] = malloc(BLOCK_SIZE * sizeof(Value **));
+        cache_v[i] = malloc(BLOCK_SIZE * sizeof(Value **));
+        for (int j = 0; j < BLOCK_SIZE; j++) {
+            cache_k[i][j] = malloc(N_EMBD * sizeof(Value *));
+            cache_v[i][j] = malloc(N_EMBD * sizeof(Value *));
         }
     }
 
     for (int step = 0; step < num_steps; step++) {
         zero_tape();
-        
-        char* doc = docs[step % n_docs];
+
+        char *doc = docs[step % n_docs];
         int len = strlen(doc);
-        int seq_len = (len + 2); 
-        if (seq_len > BLOCK_SIZE) seq_len = BLOCK_SIZE;
-        if (seq_len < 2) continue; 
-        
+        int seq_len = (len + 2);
+        if (seq_len > BLOCK_SIZE)
+            seq_len = BLOCK_SIZE;
+        if (seq_len < 2)
+            continue;
+
         int tokens[BLOCK_SIZE];
         tokens[0] = BOS;
-        for(int i=0; i<len && i < BLOCK_SIZE-2; i++) tokens[i+1] = char_to_id(doc[i]);
-        tokens[seq_len-1] = BOS;
-        
-        Value* loss = new_value(0.0f);
+        for (int i = 0; i < len && i < BLOCK_SIZE - 2; i++)
+            tokens[i + 1] = char_to_id(doc[i]);
+        tokens[seq_len - 1] = BOS;
+
+        Value *loss = new_value(0.0f);
         int n_targets = 0;
-        
+
         for (int pos = 0; pos < seq_len - 1; pos++) {
-            int target = tokens[pos+1];
-            
-            Value** logits = gpt(tokens[pos], pos, cache_k, cache_v);
-            Value** probs = softmax(logits, vocab_size);
-            
-            Value* log_prob = vlog(probs[target]);
+            int target = tokens[pos + 1];
+
+            Value **logits = gpt(tokens[pos], pos, cache_k, cache_v);
+            Value **probs = softmax(logits, vocab_size);
+
+            Value *log_prob = vlog(probs[target]);
             loss = add(loss, mul_const(log_prob, -1.0f));
             n_targets++;
-            
+
             free(logits);
             free(probs);
         }
-        
+
         loss = mul_const(loss, 1.0f / n_targets);
-        
-        for(int i=0; i<param_count; i++) params[i]->grad = 0.0f;
+
+        for (int i = 0; i < param_count; i++)
+            params[i]->grad = 0.0f;
         backward(loss);
-        
+
         float lr_t = learning_rate * (1.0f - (float)step / num_steps);
         for (int i = 0; i < param_count; i++) {
-            Value* p = params[i];
+            Value *p = params[i];
             adam_m[i] = beta1 * adam_m[i] + (1 - beta1) * p->grad;
             adam_v[i] = beta2 * adam_v[i] + (1 - beta2) * p->grad * p->grad;
-            
+
             float m_hat = adam_m[i] / (1.0f - powf(beta1, step + 1));
             float v_hat = adam_v[i] / (1.0f - powf(beta2, step + 1));
-            
+
             p->data -= lr_t * m_hat / (sqrtf(v_hat) + eps);
         }
-        
-        if ((step+1) % 10 == 0) {
-            printf("step %4d | loss %.4f | nodes used %d\n", step+1, loss->data, node_idx);
+
+        if ((step + 1) % 10 == 0) {
+            printf("step %4d | loss %.4f | nodes used %d\n", step + 1, loss->data, node_idx);
         }
     }
 
     printf("\n--- inference ---\n");
     for (int i = 0; i < 20; i++) {
         int token = BOS;
-        printf("sample %2d: ", i+1);
-        
+        printf("sample %2d: ", i + 1);
+
         for (int pos = 0; pos < BLOCK_SIZE; pos++) {
-            zero_tape(); 
-            
-            Value** logits = gpt(token, pos, cache_k, cache_v);
-            Value** probs = softmax(logits, vocab_size);
-            
+            zero_tape();
+
+            Value **logits = gpt(token, pos, cache_k, cache_v);
+            Value **probs = softmax(logits, vocab_size);
+
             float r = (float)rand() / RAND_MAX;
             float cdf = 0.0f;
             int next_tok = 0;
-            for(int k=0; k<vocab_size; k++) {
+            for (int k = 0; k < vocab_size; k++) {
                 cdf += probs[k]->data;
-                if (r < cdf) { next_tok = k; break; }
+                if (r < cdf) {
+                    next_tok = k;
+                    break;
+                }
             }
-            
+
             free(logits);
             free(probs);
-            
+
             token = next_tok;
-            if (token == BOS) break;
+            if (token == BOS)
+                break;
             printf("%c", uchars[token]);
         }
         printf("\n");
